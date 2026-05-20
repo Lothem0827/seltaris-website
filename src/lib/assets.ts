@@ -1,287 +1,103 @@
-/** Figma MCP asset URLs (expire after ~7 days — replace with local /public assets for production). */
+/** Figma-exported assets (valid ~7 days; replace with /public for production). */
 
 export const assets = {
-  hero: {
-    background:
-      "https://www.figma.com/api/mcp/asset/fd4bd3b5-e033-4c85-91fa-00f663812144",
-
-    stars:
-      "https://www.figma.com/api/mcp/asset/63eb8607-011b-48dc-b586-569b0005ada2",
+  logo: "https://www.figma.com/api/mcp/asset/b21acc2c-d3cd-4e98-aa98-c213db81af39",
+  heroBackground: "/images/hero1-bg.png",
+  whatIsImage:
+    "https://www.figma.com/api/mcp/asset/bd4e7371-cc55-441e-ba09-d28bc5057188",
+  servicesHero:
+    "https://www.figma.com/api/mcp/asset/94960541-8cbc-4fd8-8c8c-2c69685c74ed",
+  humanTouchShowcase:
+    "https://www.figma.com/api/mcp/asset/f7632a79-0688-45e1-931c-f416a00d613c",
+  humanTouchSide:
+    "https://www.figma.com/api/mcp/asset/6695eae7-d20d-4181-87ef-e74137649697",
+  humanTouch1:
+    "https://www.figma.com/api/mcp/asset/0bb14afe-2dec-4ba3-9129-8e8e7e312525",
+  humanTouch2:
+    "https://www.figma.com/api/mcp/asset/5d0f9428-8b89-4dd4-8a04-89973a2695f0",
+  humanTouch3:
+    "https://www.figma.com/api/mcp/asset/4a6a580a-acb5-4c19-bc50-2313ed758426",
+  altraserviceHero:
+    "https://www.figma.com/api/mcp/asset/4dfe3b28-54db-4098-9547-5d3652f06b38",
+  altraserviceSide:
+    "https://www.figma.com/api/mcp/asset/51883f70-cf1e-4c26-a483-3e6574bb2d29",
+  altraservice1:
+    "https://www.figma.com/api/mcp/asset/f500224f-bd70-44d4-b6c9-30422f66c495",
+  altraservice2:
+    "https://www.figma.com/api/mcp/asset/89f56129-c7ea-41a4-9690-995a0efa5cae",
+  altraservice3:
+    "https://www.figma.com/api/mcp/asset/b08eef4b-dd2c-45b0-83d0-5d6ba9dda527",
+  platformShowcase:
+    "https://www.figma.com/api/mcp/asset/525a6834-4f15-427b-8da0-311a12ec2cab",
+  securitySide:
+    "https://www.figma.com/api/mcp/asset/6c9fcdd3-8267-4b1a-a82f-5ab91211e956",
+  security1:
+    "https://www.figma.com/api/mcp/asset/3e9df31b-b9ac-4137-aed3-3954e7f7012f",
+  security2:
+    "https://www.figma.com/api/mcp/asset/e69fd94b-1cea-49e6-b39f-75fd75853002",
+  security3:
+    "https://www.figma.com/api/mcp/asset/ceeebcd7-4cfe-45c3-a671-b86eff4670e9",
+  workflowShowcase:
+    "https://www.figma.com/api/mcp/asset/6226abea-911f-4407-a1ea-e068d0f2eaf1",
+  healthSide:
+    "https://www.figma.com/api/mcp/asset/607f026b-cfb9-4aaf-ade7-e01fca3e6b2f",
+  health1:
+    "https://www.figma.com/api/mcp/asset/5a556930-25c5-4c17-86b3-a8bbf54379ab",
+  health2:
+    "https://www.figma.com/api/mcp/asset/a110f125-13b9-4977-b547-e7eaef78cb23",
+  health3:
+    "https://www.figma.com/api/mcp/asset/f0d0eb36-1002-4189-ad3a-b3e732f9f060",
+  analyticsShowcase:
+    "https://www.figma.com/api/mcp/asset/6226abea-911f-4407-a1ea-e068d0f2eaf1",
+  chevronDown: "/icons/chevron.svg",
+  arrowUp: "/icons/arrow.svg",
+  learnMoreArrow:
+    "https://www.figma.com/api/mcp/asset/7a4277c4-f81b-4fda-ba22-772834a362ba",
+  sliderButton: "/icons/slider-button.svg",
+  checkIcon:
+    "https://www.figma.com/api/mcp/asset/7e3c7c0e-bb55-4150-952d-92f6afffff53",
+  checkIconAlt:
+    "https://www.figma.com/api/mcp/asset/7d67a95f-08fe-45cb-9ecb-2f73d4d95f77",
+  pricingIcons: {
+    repaired:
+      "https://www.figma.com/api/mcp/asset/cd11f40a-ff5b-4d7f-bea1-de217c5438ee",
+    health:
+      "https://www.figma.com/api/mcp/asset/f0f6f2b1-5f7e-43aa-81dd-f84aaa73ff5b",
+    subscription:
+      "https://www.figma.com/api/mcp/asset/f37a831d-60a6-45f3-b34b-3a479707f312",
   },
-
-  logos: {
-    qantas:
-      "https://www.figma.com/api/mcp/asset/5c1f46d1-214e-4887-abeb-2c3621b328de",
-
-    serviceNsw:
-      "https://www.figma.com/api/mcp/asset/b9227572-9b87-4d69-9809-39edda7a94a2",
-
-    leukaemia:
-      "https://www.figma.com/api/mcp/asset/58bf9113-3573-4de6-9b25-46778c5990a3",
-
-    bibleSociety:
-      "https://www.figma.com/api/mcp/asset/8d62d87d-d0ce-4c54-a438-e0b1db0308bc",
-
-    hcf: "https://www.figma.com/api/mcp/asset/621e89b8-1fc0-4679-ae35-6d70fa786d1a",
-
-    guideDogs:
-      "https://www.figma.com/api/mcp/asset/18e9c49b-7ae1-413f-ae9c-56fcdc7f2434",
-  },
-
-  brand: {
-    logo: "https://www.figma.com/api/mcp/asset/cc4e66d9-61b8-4635-8ae1-6f1bf2e0cb9d",
-
-    chevron: "/chevron.svg",
-
-    backArrow: "/arrow.svg",
-
-    learnMoreArrow:
-      "https://www.figma.com/api/mcp/asset/4d87b232-515b-4dd2-8494-99145ab10da3",
-
-    arrowRight:
-      "https://www.figma.com/api/mcp/asset/a87975b0-fc38-44b2-aae2-d66e37b7c808",
-
-    gradientArrow:
-      "https://www.figma.com/api/mcp/asset/f636d4f8-f480-46c6-89ec-e33960671a23",
-  },
-
-  whatIs: {
-    screenshot:
-      "https://www.figma.com/api/mcp/asset/1e49f78f-caed-4d35-a82e-6fab30421e58",
-
-    glow: "https://www.figma.com/api/mcp/asset/41da5ad9-723c-4346-a488-753be1cefd8d",
-  },
-
-  services: {
-    diagram:
-      "https://www.figma.com/api/mcp/asset/9900f829-87f0-4e84-b91d-2ab7dfbf83cf",
-
-    addressValidation:
-      "https://www.figma.com/api/mcp/asset/ea0827af-470e-47b9-8319-5fd3ef83feee",
-
-    emailValidation:
-      "https://www.figma.com/api/mcp/asset/893031c3-a098-4086-a70f-83e9936c1195",
-
-    phoneValidation:
-      "https://www.figma.com/api/mcp/asset/d1cbfc03-7f6f-4ffd-ac77-e59ee77ccdd5",
-
+  trustedLogos: [
+    "https://www.figma.com/api/mcp/asset/22b20e6c-b7a9-4fa7-9cca-fd8bc9b474ca",
+    "https://www.figma.com/api/mcp/asset/12c52e24-c2a2-4a1f-b2b5-5aa583f5f098",
+    "https://www.figma.com/api/mcp/asset/f1d307c4-e541-454d-a74c-a481318f608c",
+    "https://www.figma.com/api/mcp/asset/b8624bec-8b96-47f3-92c0-add7f651e851",
+    "https://www.figma.com/api/mcp/asset/1fe0ad67-76e0-423e-81fd-e42c76d9dd31",
+    "https://www.figma.com/api/mcp/asset/97384ccc-ee5e-498f-bb89-2d38627ef96a",
+  ],
+  serviceIcons: {
+    address:
+      "https://www.figma.com/api/mcp/asset/41c9e4ab-39f7-44bb-a5ef-16073ccff2ec",
+    email:
+      "https://www.figma.com/api/mcp/asset/5e630ffc-fc26-4ea4-aa72-6a4b73fc8a08",
+    phone:
+      "https://www.figma.com/api/mcp/asset/1a0347e3-9267-4f26-b178-03b052619aa2",
     geocode:
-      "https://www.figma.com/api/mcp/asset/dd23ea12-e9d9-4714-9f6b-c4d3926619eb",
-
-    australiaFlag: "/australia-flag.svg",
-
-    newZealandFlag: "/nz-flag.svg",
-
-    internationalFlag: "/international-flag.svg",
+      "https://www.figma.com/api/mcp/asset/4c9f87f3-d1d7-4e10-a540-808ba72dd20f",
   },
-
-  altraservice: {
-    prevButton:
-      "https://www.figma.com/api/mcp/asset/e78b59c5-4dc8-4855-ba40-4a598f589b84",
-    nextButton:
-      "https://www.figma.com/api/mcp/asset/c758224f-057e-44df-84dc-f7fe4ef860bd",
-    headerVisual:
-      "https://www.figma.com/api/mcp/asset/c45915df-f50b-4fe6-99ad-c8ab92530c39",
-    slides: {
-      fastest:
-        "https://www.figma.com/api/mcp/asset/547e832e-ae89-4ad5-86c5-0cf70afcb726",
-      scale:
-        "https://www.figma.com/api/mcp/asset/3daa0d15-57e7-486d-89ac-5483b09a6dcd",
-      security:
-        "https://www.figma.com/api/mcp/asset/05b7664f-cbb7-4727-bce7-cbf5b98661cd",
-    },
-  },
-
-  security: {
-    prevButton:
-      "https://www.figma.com/api/mcp/asset/f3ebfa88-3ba9-46d4-a29c-3f9af210a5a5",
-    nextButton:
-      "https://www.figma.com/api/mcp/asset/65f65a29-5264-4ddb-81fe-75bba2939006",
-    stars:
-      "https://www.figma.com/api/mcp/asset/f692d728-2e5a-40fa-b95c-66b1f99bf50b",
-    headerVisual:
-      "https://www.figma.com/api/mcp/asset/ce5b8786-1185-48a7-b613-a5a57f659cea",
-    slides: {
-      privateKeys:
-        "https://www.figma.com/api/mcp/asset/923efbe2-63fe-4b6b-a6aa-f672d9fd20fc",
-      encryptedCloud:
-        "https://www.figma.com/api/mcp/asset/554b4a55-b9dc-4f43-a7ca-c4ad66f3d791",
-      iso27001:
-        "https://www.figma.com/api/mcp/asset/00e4b6c7-b244-412a-83e8-d7cb9dcc8489",
-    },
-  },
-
-  healthCheck: {
-    prevButton:
-      "https://www.figma.com/api/mcp/asset/be2e58e9-7c0c-40f4-b687-1f79a80aaed7",
-    nextButton:
-      "https://www.figma.com/api/mcp/asset/c746f3ff-f4bc-4ded-8749-bed42fce0617",
-    headerVisual:
-      "https://www.figma.com/api/mcp/asset/af1590ee-f334-4bbf-aad0-35c10bad4f04",
-    slides: {
-      refinementCodes:
-        "https://www.figma.com/api/mcp/asset/6aa12fa2-287c-435f-ae40-5f08ad133a80",
-      accuracyCodes:
-        "https://www.figma.com/api/mcp/asset/61acfc0a-6953-4102-b7df-cf6ddfd86519",
-      preview:
-        "https://www.figma.com/api/mcp/asset/a15f2fd2-39b1-41c9-8d8f-1f27a4690d88",
-    },
-  },
-
-  businessSlider: {
-    prevButton:
-      "https://www.figma.com/api/mcp/asset/e6ca4e85-cad6-4a52-8918-e9dea2e210de",
-    nextButton:
-      "https://www.figma.com/api/mcp/asset/9ca37642-942a-46b2-a93c-ea456742f02b",
-    glowLeft:
-      "https://www.figma.com/api/mcp/asset/d76e56ad-5c2a-45ee-8872-05f2cdb6821b",
-    glowRight:
-      "https://www.figma.com/api/mcp/asset/9a7fca86-15bf-47f8-b3ec-e38742ed512d",
-    slides: {
-      easyToStart: {
-        image:
-          "https://www.figma.com/api/mcp/asset/6d26888a-9740-4cd0-bfe3-624280ca00cf",
-        glow: "https://www.figma.com/api/mcp/asset/575156cf-9963-408a-beff-d3d3cf242bbe",
-      },
-      builtForScale: {
-        image:
-          "https://www.figma.com/api/mcp/asset/6d828df2-e17a-46a3-af9f-8eaee999f457",
-        chart:
-          "https://www.figma.com/api/mcp/asset/f1cfb19f-2c23-4c31-865c-2e1f26a7cce3",
-        glow: "https://www.figma.com/api/mcp/asset/8b74c9d8-a664-48de-b4d8-d5cf6dd885e6",
-      },
-      enterprise: {
-        image:
-          "https://www.figma.com/api/mcp/asset/df95a776-69c1-46f3-a11e-25bdfdfa2238",
-        glow: "https://www.figma.com/api/mcp/asset/8b74c9d8-a664-48de-b4d8-d5cf6dd885e6",
-      },
-    },
-  },
-
-  featuresIntro: {
-    heroVisual:
-      "https://www.figma.com/api/mcp/asset/40d4a46d-21c9-4402-b5e4-bf678717d2d1",
-    glow: "https://www.figma.com/api/mcp/asset/15acfa63-b025-409f-9c9b-00e8f2fcffb0",
-  },
-
-  humanTouch: {
-    stars:
-      "https://www.figma.com/api/mcp/asset/e34843c9-f239-4afd-97ed-07474570ba7b",
-
-    rings:
-      "https://www.figma.com/api/mcp/asset/e839a1c0-0858-4934-8fe5-617e848f81ba",
-
-    logoMark:
-      "https://www.figma.com/api/mcp/asset/3b50b7c1-4862-4476-9be2-bfad04e5fce7",
-
-    glowLeft:
-      "https://www.figma.com/api/mcp/asset/ba406d32-6e9a-4e5d-ac62-4be8911b8011",
-
-    glowRight:
-      "https://www.figma.com/api/mcp/asset/ddab70b0-3189-4295-8946-58d30da60942",
-
-    cards: {
-      formatting: {
-        visual:
-          "https://www.figma.com/api/mcp/asset/ca93ddb1-596f-472c-b2bf-8a78fc079cab",
-      },
-
-      advanced: {
-        visual:
-          "https://www.figma.com/api/mcp/asset/5c52a1d2-70e4-4252-a60c-1992c4231752",
-
-        puzzle:
-          "https://www.figma.com/api/mcp/asset/78751c89-c179-4dc4-93c9-00da82c92420",
-      },
-
-      vanity: {
-        visual:
-          "https://www.figma.com/api/mcp/asset/eafbbd5a-b120-4f65-b7db-25dcfb70f483",
-      },
-    },
-  },
-
-  dataToolsDifference: {
-    prevButton:
-      "https://www.figma.com/api/mcp/asset/d477fcee-bdfb-48e3-94f4-826dbdac5a5d",
-    nextButton:
-      "https://www.figma.com/api/mcp/asset/acbd032b-9ff9-49df-80ed-e4d8abb47812",
-    icons: {
-      iso: "https://www.figma.com/api/mcp/asset/40600010-2651-4ce6-86f4-fbbb64dfe2ee",
-      security:
-        "https://www.figma.com/api/mcp/asset/d6e81f64-a757-4b8f-a9cb-f542c0dd3b2c",
-      servers:
-        "https://www.figma.com/api/mcp/asset/4c25dba3-0aa4-4247-9f77-e3509fffb687",
-    },
-  },
-
-  customerStories: {
-    prevButton:
-      "https://www.figma.com/api/mcp/asset/9c4eca6f-b848-4a70-bd52-f125ea6dadee",
-    nextButton:
-      "https://www.figma.com/api/mcp/asset/e23fdaf8-27b8-400b-8882-482c93e16bda",
-    slides: {
-      templeWebster: {
-        image:
-          "https://www.figma.com/api/mcp/asset/633dcb5f-a650-4f00-826d-48451cf54997",
-        logo: "https://www.figma.com/api/mcp/asset/3e581fc7-c33e-48f0-af39-6669e9d3e56f",
-      },
-      magazine: {
-        image:
-          "https://www.figma.com/api/mcp/asset/40d06895-2471-4c7e-ad4c-71728631dcc0",
-        logo: "https://www.figma.com/api/mcp/asset/d3e7ec44-aa5a-4f64-bd55-72ec5eb21c3a",
-      },
-      police: {
-        image:
-          "https://www.figma.com/api/mcp/asset/41b15b40-6a2b-4b66-9805-843c7a5d3a0d",
-        logo: "https://www.figma.com/api/mcp/asset/607ef711-eb18-4d77-8b5c-b06c555ce438",
-      },
-    },
-  },
-
-  testimonials: {
-    prevButton:
-      "https://www.figma.com/api/mcp/asset/3966882f-4590-4fb7-8b8e-332038238030",
-    nextButton:
-      "https://www.figma.com/api/mcp/asset/e5145a27-836e-405a-8da3-a2c09b1af4e7",
-  },
-
-  ourServicesPlans: {
-    australiaIcon:
-      "https://www.figma.com/api/mcp/asset/1dfce9c5-3420-4ec4-a608-481300978a67",
-    learnMoreArrow:
-      "https://www.figma.com/api/mcp/asset/5f788a58-2069-4e64-93de-6588c42317a1",
-    checkIcon:
-      "https://www.figma.com/api/mcp/asset/4473819e-631e-4d60-90c1-1a0220d306d9",
-    healthCheckIcon:
-      "https://www.figma.com/api/mcp/asset/e445b5e0-7f86-4b05-824d-ae4807235249",
-    healthCheckCheck:
-      "https://www.figma.com/api/mcp/asset/414ed7c7-3183-46cc-8c29-a57c06f5a720",
-    subscriptionLogo:
-      "https://www.figma.com/api/mcp/asset/ff8f2065-791d-4ff6-b3ce-1969f9de411b",
-    subscriptionCheck:
-      "https://www.figma.com/api/mcp/asset/89227a29-edf6-4979-891e-8952b000c006",
-    addressValidation: {
-      iconPart1:
-        "https://www.figma.com/api/mcp/asset/1cb434dc-59b4-4c74-bfc0-237576f6b31c",
-      iconPart2:
-        "https://www.figma.com/api/mcp/asset/8ca917dc-2abf-4c9f-8639-72a55d24e776",
-      iconPart3:
-        "https://www.figma.com/api/mcp/asset/88f19f29-7871-4d9a-869c-9f34ef67fd70",
-      badge:
-        "https://www.figma.com/api/mcp/asset/e32de447-542c-4542-8e81-f5ee2b5f8b15",
-    },
-  },
-
-  footer: {
-    ctaGlow:
-      "https://www.figma.com/api/mcp/asset/8917edb5-2df2-41de-a485-1b0c3a11b878",
-    logoIcon:
-      "https://www.figma.com/api/mcp/asset/aa55dbae-a7c5-4f78-9d91-663a9d6f5894",
-    logoWordmark:
-      "https://www.figma.com/api/mcp/asset/7022aea5-9d7d-400d-94f1-a7310c1b3fdb",
-    x: "x-logo.svg",
-    instagram: "/instagram-logo.svg",
-    youtube: "youtube-logo.svg",
-  },
+  australiaFlag: "/icons/australiaFlag.svg",
+  nzFlag: "/icons/nzFlag.svg",
+  internationalFlag: "/icons/internationalFlag.svg",
+  featureSlides: [
+    "https://www.figma.com/api/mcp/asset/23be9490-aa5f-4261-9544-d87dd60e3b8c",
+    "https://www.figma.com/api/mcp/asset/553420f6-6276-4813-80fa-6412c419472d",
+    "https://www.figma.com/api/mcp/asset/0132bc22-61a6-4165-b5bc-250f71748d0b",
+  ],
 } as const;
+
+export function getAsset(key: string): string {
+  if (key in assets) {
+    const value = assets[key as keyof typeof assets];
+    if (typeof value === "string") return value;
+  }
+  return assets.heroBackground;
+}

@@ -1,0 +1,45 @@
+import Image from "next/image";
+import { Badge } from "@/components/atoms/Badge";
+import { Heading } from "@/components/atoms/Heading";
+import { Text } from "@/components/atoms/Text";
+import { cn } from "@/lib/utils";
+
+type ServiceCardProps = {
+  title: string;
+  description: string;
+  iconSrc: string;
+  comingSoon?: boolean;
+};
+
+export function ServiceCard({
+  title,
+  description,
+  iconSrc,
+  comingSoon,
+}: ServiceCardProps) {
+  return (
+    <article
+      className={cn(
+        "relative flex flex-1 items-center gap-5 rounded-radius-md border border-border bg-white p-4",
+        comingSoon && "opacity-50",
+      )}
+    >
+      {comingSoon ? (
+        <div className="absolute -top-2 right-6">
+          <Badge>COMING SOON</Badge>
+        </div>
+      ) : null}
+      <div className="relative size-[61px] shrink-0">
+        <Image src={iconSrc} alt="" fill className="object-cover" sizes="61px" />
+      </div>
+      <div className="flex min-w-0 flex-col gap-1">
+        <Heading as="h3" level="h2" className="!text-sm !leading-[1.35]">
+          {title}
+        </Heading>
+        <Text variant="body-sm" className="!text-xs !leading-snug">
+          {description}
+        </Text>
+      </div>
+    </article>
+  );
+}

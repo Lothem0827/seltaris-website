@@ -6,24 +6,24 @@ import "./globals.css";
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "600"],
 });
 
 const mintGrotesk = localFont({
-  src: "../lib/fonts/MintGrotesk-Bold.woff",
+  src: "../fonts/MintGrotesk-Bold.woff2",
   variable: "--font-mint-grotesk",
   weight: "700",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "DataTools Seltaris | Bulk Data Enhancement Tool",
+  title: "DataTools Seltaris | Bulk Data Enhancement",
   description:
     "High quality, secure, and powerful data quality platform for formatting, cleansing, repairing, and verifying your datasets.",
 };
@@ -36,11 +36,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${inter.variable} ${mintGrotesk.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${inter.variable} ${mintGrotesk.variable}`}
     >
-      <body className="min-h-full bg-white font-sans text-charcoal-700">
-        {children}
-      </body>
+      <body className="min-h-screen antialiased">{children}</body>
     </html>
   );
 }

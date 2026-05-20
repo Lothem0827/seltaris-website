@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DataTools Seltaris Website
 
-## Getting Started
+Next.js marketing site built from the official Figma design with **atomic components** and a **token-based Tailwind** design system.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Swiper.js (for `THIS IS A SLIDER` frames)
+
+## Design tokens
+
+Edit **`src/styles/tokens.css`** to change colors, typography, spacing, and border radius site-wide. Tokens are wired into Tailwind via `src/app/globals.css`.
+
+## Project structure
+
+```
+src/
+  components/
+    atoms/       # Button, Badge, Heading, Text, Container, Eyebrow
+    molecules/   # Logo, SplitIntro, ImageSlideCard, TabGroup, PricingCard, …
+    organisms/   # SiteHeader, HeroSection, SliderSection, pricing, …
+    templates/   # HomePage
+  lib/
+    assets.ts    # Image URLs (replace with /public assets for production)
+    content/     # home.ts, sections.tsx (copy + slider data)
+  styles/
+    tokens.css   # Design system source of truth
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Homepage sections (in order)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Header, Hero, What is Seltaris, Services  
+2. Feature slider (businesses → enterprise)  
+3. Human Touch showcase + detail (tabs + cards)  
+4. Altraservice showcase + performance slider  
+5. Advanced Data Protection showcase + security slider  
+6. Health Check workflow + detail slider  
+7. Social proof (value props + testimonials sliders)  
+8. Pricing cards, Footer  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Sliders
 
-## Learn More
+Figma frames named **`THIS IS A SLIDER`** use Swiper with controls named:
 
-To learn more about Next.js, take a look at the following resources:
+- `THIS IS A SLIDER PREVIOUS BUTTON`
+- `THIS IS A SLIDER NEXT BUTTON`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See `ContentSlider` and `SliderNavButtons`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Development
 
-## Deploy on Vercel
+```bash
+npm install
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Assets
+
+Figma MCP asset URLs expire after ~7 days. Download images from Figma into `public/` and update `src/lib/assets.ts` for production.
