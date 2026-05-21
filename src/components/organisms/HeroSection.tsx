@@ -16,7 +16,7 @@ export function HeroSection() {
           src={assets.heroBackground}
           alt=""
           fill
-          className="object-cover object-bottom border-2 "
+          className="object-cover object-center "
           priority
           sizes="100vw"
         />
@@ -26,7 +26,7 @@ export function HeroSection() {
             <div className="flex flex-col items-center gap-2.5 ">
               <Eyebrow
                 label="Bulk Data Enhancement Tool"
-                badge="EARLY ACCESS PREVIEW"
+                badge="AVAILABLE NOW"
               />
               <Heading level="display" className="max-w-4xl">
                 Seltaris
