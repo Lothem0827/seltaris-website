@@ -27,7 +27,7 @@
   --text-heading-line: 1.35;
 
   /* Display / hero */
-  --text-display-size: 4.5rem; /* 90px */
+  --text-display-size: 5.5rem; /* 90px */
   --text-display-line: var(--text-heading-line);
   --text-display-tracking: -0.009em;
 

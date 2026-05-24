@@ -1,10 +1,8 @@
 import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
-import { ImageTextCard } from "@/components/molecules/ImageTextCard";
+import { HumanTouchTabPanels } from "@/components/molecules/HumanTouchTabPanels";
 import { SplitIntro } from "@/components/molecules/SplitIntro";
-import { TabGroup } from "@/components/molecules/TabGroup";
-import { assets, getAsset } from "@/lib/assets";
-import { humanTouchCards, humanTouchTabs } from "@/lib/content/sections";
+import { assets } from "@/lib/assets";
 
 export function HumanTouchDetailSection() {
   return (
@@ -36,18 +34,7 @@ export function HumanTouchDetailSection() {
             className="mb-16"
           />
 
-          <TabGroup tabs={humanTouchTabs} className="mb-12 max-w-container" />
-
-          <div className="mb-12 grid gap-8 lg:grid-cols-3">
-            {humanTouchCards.map((card) => (
-              <ImageTextCard
-                key={card.id}
-                imageSrc={getAsset(card.imageKey)}
-              >
-                {card.body}
-              </ImageTextCard>
-            ))}
-          </div>
+          <HumanTouchTabPanels />
 
           <div className="flex justify-center">
             <Button href="#get-started">Get started with Seltaris</Button>

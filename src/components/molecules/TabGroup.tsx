@@ -1,40 +1,52 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
 
 type TabGroupProps = {
   tabs: readonly string[];
+  activeIndex: number;
+  onChange: (index: number) => void;
   className?: string;
 };
 
-/** Figma frame: THIS IS A TAB */
-export function TabGroup({ tabs, className }: TabGroupProps) {
-  const [active, setActive] = useState(0);
-
+/** Figma: THIS IS A TAB — pill container with gradient active state */
+export function TabGroup({
+  tabs,
+  activeIndex,
+  onChange,
+  className,
+}: TabGroupProps) {
   return (
     <div
       className={cn(
-        "flex w-full flex-wrap items-center gap-1 rounded-radius-full border border-border bg-white p-1.5",
+        "w-full rounded-radius-full border border-border bg-white p-1.5",
         className,
       )}
       data-name="THIS IS A TAB"
+      role="tablist"
     >
-      {tabs.map((tab, index) => (
-        <button
-          key={tab}
-          type="button"
-          onClick={() => setActive(index)}
-          className={cn(
-            "rounded-radius-full px-4 py-1.5 font-body text-body transition-colors",
-            active === index
-              ? "bg-brand-light text-brand"
-              : "text-paragraph opacity-60 hover:opacity-100",
-          )}
-        >
-          {tab}
-        </button>
-      ))}
+      <div className="flex flex-wrap items-center">
+        {tabs.map((tab, index) => {
+          const isActive = activeIndex === index;
+          return (
+            <button
+              key={tab}
+              type="button"
+              role="tab"
+              aria-selected={isActive}
+              onClick={() => onChange(index)}
+              className={cn(
+                "shrink-0 rounded-radius-full px-4 py-1.5 font-body text-body leading-body transition-colors",
+                isActive
+                  ? "bg-gradient-to-r from-brand-light to-transparent text-brand"
+                  : "text-paragraph opacity-60 hover:opacity-100",
+              )}
+            >
+              {tab}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

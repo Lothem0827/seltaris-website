@@ -4,6 +4,7 @@ import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
+import { AddressDemo } from "@/components/molecules/AddressDemo";
 import { LogoMarquee } from "@/components/molecules/LogoMarquee";
 import { assets } from "@/lib/assets";
 
@@ -48,36 +49,6 @@ export function HeroSection() {
         <TrustedBy />
       </Container>
     </section>
-  );
-}
-
-function AddressDemo() {
-  const segments = [
-    { text: "5", valid: true },
-    { text: "secil", valid: false },
-    { text: "st,", valid: false },
-    { text: "marylands", valid: false },
-    { text: "nsw", valid: false },
-    { text: "2160", valid: true },
-  ];
-
-  return (
-    <div className="mt-8 rounded-radius-lg border-2 border-brand bg-white px-5 py-4">
-      <div className="flex flex-wrap items-center justify-center gap-1 font-label text-body font-semibold">
-        {segments.map((seg, i) => (
-          <span
-            key={i}
-            className={
-              seg.valid
-                ? "text-brand"
-                : "border-l border-error/40 bg-gradient-to-r from-error/20 to-error/5 pl-1 text-error"
-            }
-          >
-            {seg.text}
-          </span>
-        ))}
-      </div>
-    </div>
   );
 }
 

@@ -17,6 +17,16 @@ export const assets = {
     "https://www.figma.com/api/mcp/asset/5d0f9428-8b89-4dd4-8a04-89973a2695f0",
   humanTouch3:
     "https://www.figma.com/api/mcp/asset/4a6a580a-acb5-4c19-bc50-2313ed758426",
+  humanTouchQuality1:
+    "https://www.figma.com/api/mcp/asset/3621a818-ae36-441a-ad5f-8332da6cffd7",
+  humanTouchQuality2:
+    "https://www.figma.com/api/mcp/asset/bd6cb48e-e44a-4580-8188-8b086d821354",
+  humanTouchQuality3:
+    "https://www.figma.com/api/mcp/asset/a9427da6-3adf-40dc-a856-d0a41cf8e451",
+  humanTouchUnverified1:
+    "https://www.figma.com/api/mcp/asset/e4f7b21b-637e-4aa8-a81e-b83cfff58f16",
+  humanTouchUnverified2:
+    "https://www.figma.com/api/mcp/asset/8c69b150-be60-4a2f-93ff-df560e7e9659",
   altraserviceHero:
     "https://www.figma.com/api/mcp/asset/4dfe3b28-54db-4098-9547-5d3652f06b38",
   altraserviceSide:
