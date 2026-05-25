@@ -71,8 +71,13 @@
   animation: logo-marquee 45s linear infinite;
 }
 
+.animate-logo-marquee-reverse {
+  animation: logo-marquee 45s linear infinite reverse;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-logo-marquee {
+  .animate-logo-marquee,
+  .animate-logo-marquee-reverse {
     animation: none;
     transform: translateX(0);
   }

@@ -7,15 +7,8 @@ export function DataProtectionShowcaseSection() {
     <section className="py-section">
       <Container>
         <CenteredShowcase
-          size="large"
-          title={
-            <>
-              Advanced
-              <br />
-              Data Protection™
-            </>
-          }
-          subtitle="Your business is nobody else's. Not even DataTools."
+          title="Advanced Data Protection"
+          subtitle="Your business is nobody else's. Not even GBG."
           imageSrc={assets.platformShowcase}
           imageHeight="h-[730px]"
         />

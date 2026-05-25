@@ -18,7 +18,7 @@ export function ServicesSection() {
           </Heading>
           <div className="max-w-md space-y-2.5">
             <Text>
-              DataTools Seltaris brings together a powerful suite of services
+              Seltaris brings together a powerful suite of services
               designed to clean and enrich your organisation&apos;s data.
               We&apos;re proud to offer our most advanced tools that make data
               quality simple. Starting today, you can clean and validate

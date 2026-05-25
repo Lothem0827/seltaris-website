@@ -13,7 +13,7 @@ export function AltraserviceSliderSection() {
   return (
     <SliderSection
       intro={{
-        eyebrow: "DataTools Altraservice™",
+        eyebrow: "Altraservice™",
         heading: (
           <>
             Groundbreaking
@@ -24,10 +24,10 @@ export function AltraserviceSliderSection() {
         body: (
           <>
             Over the past few years, we have dedicated substantial effort to
-            optimising efficiency at every layer of our cloud technology stack.{" "}
+            optimising efficiency at every layer of our cloud technology stack.
+            As a result, we are proud to announce that{" "}
             <strong>
-              DataTools Seltaris sets a new industry standard as the
-              world&apos;s fastest addressing batch processing tool
+              Seltaris sets a new industry standard in performance
             </strong>
             , delivering unprecedented speed and reliability for all your data
             processing needs.

@@ -8,37 +8,35 @@ export function HumanTouchDetailSection() {
   return (
     <section className="px-container-padding pb-section">
       <Container>
-        <div className="rounded-[40px] bg-brand-surface px-6 py-16 md:px-12 md:py-24">
-          <SplitIntro
-            eyebrow="DataTools Human Touch™"
-            heading={
-              <>
-                <span className="text-brand">The tool is innovative.</span>
-                <br />
-                The experience is magical.
-              </>
-            }
-            body={
-              <>
-                The DataTools Human Touch™ logic, tightly integrated with
-                DataTools Seltaris, intelligently interprets information in the
-                same intuitive way a human would.{" "}
-                <strong>
-                  We continue to push the limits of what it means to have the
-                  most accurate data possible.
-                </strong>
-              </>
-            }
-            imageSrc={assets.humanTouchSide}
-            imageAlt="Human Touch"
-            className="mb-16"
-          />
+        <SplitIntro
+          eyebrow="Human Touch™"
+          heading={
+            <>
+              <span className="text-brand">The tool is innovative.</span>
+              <br />
+              The experience is magical.
+            </>
+          }
+          body={
+            <>
+              The Human Touch™ logic, tightly integrated with Seltaris,
+              intelligently interprets information in the same intuitive way a
+              human would. With our most advanced and expansive methodologies,
+              we continue to push the limits of what it means to have the most
+              accurate data possible.
+            </>
+          }
+          imageSrc={assets.humanTouchSide}
+          imageAlt="Human Touch"
+          className="mb-16"
+        />
 
-          <HumanTouchTabPanels />
+        <HumanTouchTabPanels />
 
-          <div className="flex justify-center">
-            <Button href="#get-started">Get started with Seltaris</Button>
-          </div>
+        <div className="flex justify-center">
+          <Button href="#features" variant="secondary">
+            Explore all features
+          </Button>
         </div>
       </Container>
     </section>

@@ -22,7 +22,7 @@ export function SecuritySliderSection() {
           </>
         ),
         body:
-          "An enterprise-grade protection package built for today's most demanding security requirements. With private keys and our all-new Encrypted Cloud Computing™ architecture, DataTools takes its industry-leading security to a whole new level.",
+          "An enterprise-grade protection package built for today's most demanding security requirements. With private keys and our all-new Encrypted Cloud Computing™ architecture, we take its industry-leading security to a whole new level. Ensuring your data remains strictly confidential, heavily encrypted, and completely inaccessible.",
         imageSrc: assets.securitySide,
       }}
       navAlign="end"

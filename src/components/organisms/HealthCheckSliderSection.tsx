@@ -22,7 +22,7 @@ export function HealthCheckSliderSection() {
           </>
         ),
         body:
-          "The Health Check Report in DataTools Seltaris assesses each record in your dataset for completeness, accuracy, and compliance with official postal standards. It highlights issues and provides clear recommendations, corrections, and enhancements.",
+          "To help you better understand your current datasets, the Health Check Report in Seltaris assesses each record in your dataset for completeness, accuracy, and compliance with official postal standards. It highlights issues and provides clear recommendations, corrections, and enhancements—helping you improve the quality, deliverability, and reliability of your address data so it\u2019s ready for use across mailing, logistics, and compliance systems.",
         imageSrc: assets.healthSide,
       }}
       navAlign="end"

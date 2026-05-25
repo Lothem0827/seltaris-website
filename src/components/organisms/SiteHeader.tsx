@@ -4,7 +4,6 @@ import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Logo } from "@/components/molecules/Logo";
 import { NavLink } from "@/components/molecules/NavLink";
-import { assets } from "@/lib/assets";
 import { navLinks } from "@/lib/content/home";
 
 export function SiteHeader() {
@@ -14,19 +13,18 @@ export function SiteHeader() {
       <div className="bg-brand-light py-1.5">
         <Container className="flex items-center justify-between gap-4 text-[12px]">
           <Link
-            href="https://datatools.com.au"
-            className="inline-flex items-center gap-1.5 font-label text-text hover:text-brand"
+            href="https://www.gbg.com"
+            className="inline-flex shrink-0 items-center opacity-90 transition-opacity hover:opacity-100"
+            aria-label="GBG"
           >
             <Image
-              src={assets.arrowUp}
-              alt=""
-              width={14}
-              height={14}
-              aria-hidden
+              src="/gbg-logo.svg"
+              alt="GBG"
+              width={45}
+              height={12}
+              className="h-4 w-auto"
+              priority
             />
-            <span>
-              Return to <strong>datatools.com.au</strong>
-            </span>
           </Link>
           <nav className="hidden items-center gap-6 font-label uppercase tracking-wide text-text md:flex">
             <Link href="#about">About us</Link>
@@ -59,15 +57,14 @@ export function SiteHeader() {
       <div className="border-t border-border bg-white py-3">
         <Container className="text-center text-[12px] text-paragraph">
           <span>
-            Get your first month for just $1. Enjoy free Health Check Reports
-            and volume discounts — only with{" "}
+            Enjoy free Health Check Reports and volume discounts with{" "}
             <strong className="font-semibold text-text">Seltaris+</strong>.
           </span>{" "}
           <Link
             href="#seltaris-plus"
             className="font-label text-brand underline"
           >
-            Start with DataTools Seltaris+ today.
+            Start with Seltaris+ today.
           </Link>
         </Container>
       </div>

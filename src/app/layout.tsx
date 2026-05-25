@@ -23,7 +23,7 @@ const mintGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "DataTools Seltaris | Bulk Data Enhancement",
+  title: "Seltaris | Bulk Data Enhancement",
   description:
     "High quality, secure, and powerful data quality platform for formatting, cleansing, repairing, and verifying your datasets.",
 };

@@ -1,12 +1,7 @@
 import type { SlideItem } from "@/lib/types/slider";
 
 export const humanTouchShowcase = {
-  title: (
-    <>
-      DataTools Seltaris Built with{" "}
-      <span className="text-brand">DataTools Human Touch™</span>
-    </>
-  ),
+  title: <>Seltaris built with our innovative Human Touch™</>,
   subtitle: "AI, finely tuned for the language of addresses.",
 } as const;
 
@@ -27,9 +22,9 @@ export const humanTouchTabPanels = [
           <>
             <strong>Correct formatting and missing details.</strong> See an
             address typed with no care for format or detail? Instead of letting
-            it pass through broken, DataTools Human Touch™ steps in. Like magic,
-            the address is re-formatted, misspellings repaired, and missing
-            details are now filled in.
+            it pass through broken, Human Touch™ steps in. Like magic, the
+            address is re-formatted, misspellings repaired, and missing details
+            are now filled in.
           </>
         ),
       },
@@ -39,9 +34,10 @@ export const humanTouchTabPanels = [
         body: (
           <>
             <strong>Advanced address handling.</strong> Not all addresses are
-            just street, suburb, and postcode. DataTools Human Touch™
-            understands complex details — from units, levels, and floors to
-            lots, sites, ranges, and hyphenation.
+            just street, suburb, and postcode. Human Touch™ understands complex
+            details — from units, levels, and floors to lots, sites, ranges, and
+            hyphenation. It recognises how these interact with streets,
+            localities, and numbering systems.
           </>
         ),
       },
@@ -51,8 +47,8 @@ export const humanTouchTabPanels = [
         body: (
           <>
             <strong>Vanity Suburbs.</strong> Swapping a suburb for a more
-            prestigious one sounds harmless, until customer address return
-            invalid. DataTools Human Touch™ spots these vanity suburbs, and
+            &ldquo;prestigious&rdquo; one sounds harmless, until customer
+            address return invalid. Human Touch™ spots these vanity suburbs, and
             correctly fixes them to the official suburb of the address.
           </>
         ),
@@ -82,12 +78,12 @@ export const humanTouchTabPanels = [
         imageKey: "humanTouchQuality2" as const,
         body: (
           <>
-            <strong>Australia & New Zealand Data.</strong> In Australia,
-            DataTools has two primary data sources: the Postal Address File
-            (PAF) and the Geocoded National Address File (GNAF). In New
-            Zealand, there are three main sources: the Postal Address File
-            (PAF), the New Zealand Address Dataset (NZAD), and the Land
-            Information New Zealand database (LINZ).
+            <strong>Australia & New Zealand Data.</strong> In Australia, we have
+            two primary data sources: the Postal Address File (PAF) and the
+            Geocoded National Address File (GNAF). In New Zealand, there are
+            three main sources: the Postal Address File (PAF), the New Zealand
+            Address Dataset (NZAD), and the Land Information New Zealand
+            database (LINZ).
           </>
         ),
       },
@@ -96,9 +92,9 @@ export const humanTouchTabPanels = [
         imageKey: "humanTouchQuality3" as const,
         body: (
           <>
-            <strong>International data.</strong> DataTools partners with the
-            leading data quality organisations in specific countries to deliver
-            address verification for more than 245 countries and territories.
+            <strong>International data.</strong> We partner with the leading
+            data quality organisations in specific countries to deliver address
+            verification for more than 245 countries and territories.
           </>
         ),
       },
@@ -115,12 +111,11 @@ export const humanTouchTabPanels = [
           <>
             <strong>Individual field corrections.</strong> Others might reject
             an address as unfixable when key parts are missing — we don&apos;t.
-            With DataTools Seltaris, even if all you have is a suburb and the
-            rest is incomplete or incorrect, we still validate and correct
-            what&apos;s there. Every field is processed, errors are cleaned,
-            and details are standardised to match your verified records. The
-            result? The highest quality version of that address, ready for
-            future updates.
+            With Seltaris, even if all you have is a suburb and the rest is
+            incomplete or incorrect, we still validate and correct what&apos;s
+            there. Every field is processed, errors are cleaned, and details are
+            standardised to match your verified records. The result? The highest
+            quality version of that address, ready for future updates.
           </>
         ),
       },
@@ -132,11 +127,11 @@ export const humanTouchTabPanels = [
           <>
             <strong>Standardisation on invalid entries.</strong> We always look
             for ways to go the extra step. Even if an address is marked as
-            invalid, DataTools Human Touch™ refines every part it can —
-            correcting errors and standardising details upfront. That way, even
-            when an address can&apos;t be fully fixed, the parts you do have
-            are already accurate, structured, and ready for correction when
-            further information arrives.
+            invalid, Human Touch™ refines every part it can — correcting errors
+            and standardising details upfront. That way, even when an address
+            can&apos;t be fully fixed, the parts you do have are already
+            accurate, structured, and ready for correction when further
+            information arrives.
           </>
         ),
       },
@@ -150,7 +145,9 @@ export const altraservicePerformanceSlides: SlideItem[] = [
     imageSrcKey: "altraservice1",
     description: (
       <>
-        <strong>World&apos;s Fastest Addressing Batch Processing Tool.</strong>{" "}
+        <strong>
+          The fastest addressing Batch processing tool we&apos;ve ever created.
+        </strong>{" "}
         By leveraging advanced computing techniques, we developed innovative
         methodologies for processing files more efficiently, resulting in
         significantly faster processing times and improved system performance.
@@ -192,7 +189,8 @@ export const securitySlides: SlideItem[] = [
       <>
         <strong>Private Keys.</strong> Your very own unique security key —
         it&apos;s the single key to your encrypted result file — and without it,
-        no one can gain access. Not even DataTools under force.
+        no one can gain access. Not even us under force. There are no backdoors,
+        no hidden pathways and no exceptions.
       </>
     ),
     width: "narrow",
@@ -204,7 +202,9 @@ export const securitySlides: SlideItem[] = [
       <>
         <strong>Encrypted Cloud Computing.</strong> An exclusive cloud security
         architecture purpose-built to process batch data securely at the scale
-        today&apos;s largest enterprises demand.
+        today&apos;s largest enterprises demand. Embedded in Seltaris it
+        delivers groundbreaking speed and reliability to keep your data fully
+        encrypted from upload to processing to download.
       </>
     ),
     width: "wide",
@@ -214,9 +214,10 @@ export const securitySlides: SlideItem[] = [
     imageSrcKey: "security3",
     description: (
       <>
-        <strong>ISO27001 certified.</strong> Have peace of mind knowing that
-        DataTools doesn&apos;t just claim to prioritise security; its practices
-        have been thoroughly vetted by independent third parties.
+        <strong>ISO27001 certified.</strong> Have peace of mind knowing that we
+        don&apos;t just claim to prioritise security; its practices have been
+        thoroughly vetted by independent third parties and validated against
+        international standards of ISO27001.
       </>
     ),
     width: "narrow",
@@ -230,9 +231,10 @@ export const healthCheckSlides: SlideItem[] = [
     description: (
       <>
         <strong>Address refinement codes.</strong> Each code is designed to make
-        it easy to pinpoint the specific issues in your dataset. And if you choose
-        to purchase a repaired file, you&apos;ll know exactly what you are—and
-        aren&apos;t—paying for.
+        it easy to pinpoint the specific issues in your dataset. And if you
+        choose to purchase a repaired file, you&apos;ll know exactly what you
+        are—and aren&apos;t—paying for. Each code is tied to a set price,
+        keeping the entire process clear and transparent.
       </>
     ),
     width: "narrow",
@@ -242,9 +244,11 @@ export const healthCheckSlides: SlideItem[] = [
     imageSrcKey: "health2",
     description: (
       <>
-        <strong>Data accuracy codes.</strong> DataTools Seltaris assigns an
-        accuracy code to every address, showing the level of precision achieved
-        in matching and validation.
+        <strong>Data accuracy codes.</strong> Seltaris assigns an accuracy code
+        to every address, showing the level of precision achieved in matching
+        and validation. These codes make it clear how reliable each address is
+        for business operations, logistics, or compliance, with a full summary
+        provided for easy reference.
       </>
     ),
     width: "narrow",
@@ -256,8 +260,9 @@ export const healthCheckSlides: SlideItem[] = [
       <>
         <strong>Preview before purchase.</strong> Health Check Report shows you
         exactly how your addresses were returned after being processed through
-        Seltaris. Happy with what you see, purchasing your refined file is just
-        one click away.
+        Seltaris. You can review the transformation in complete detail, giving
+        you a clear, transparent view of how your file performed. Happy with
+        what you see, purchasing your refined file is just one click away.
       </>
     ),
     width: "wide",
@@ -302,7 +307,7 @@ export const testimonialSlides = [
     id: "enterprise-lead",
     author: "Enterprise Customer",
     quote:
-      "DataTools Seltaris delivered the capacity we needed for a large-scale migration. The speed and security credentials gave our team absolute confidence.",
+      "Seltaris delivered the capacity we needed for a large-scale migration. The speed and security credentials gave our team absolute confidence.",
   },
   {
     id: "data-manager",

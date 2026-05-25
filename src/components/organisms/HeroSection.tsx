@@ -33,8 +33,8 @@ export function HeroSection() {
                 Seltaris
               </Heading>
               <Text className="max-w-3xl text-xl font-medium">
-                High Quality Results. Unbelievable Performance. Incredibly
-                Secure.
+                High quality results. Unbelievable performance. Incredibly
+                secure.
               </Text>
             </div>
 
@@ -60,8 +60,8 @@ function TrustedBy() {
           Trusted by leading companies worldwide
         </Heading>
         <Text className="mx-auto max-w-md">
-          Join the many innovative companies that have used DataTools to
-          securely improve the quality of their data.
+          Join the many innovative companies that have securely improved the
+          quality of their data.
         </Text>
       </div>
       <LogoMarquee logos={assets.trustedLogos} />

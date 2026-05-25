@@ -1,4 +1,4 @@
-# DataTools Seltaris Website
+# Seltaris Website
 
 Next.js marketing site built from the official Figma design with **atomic components** and a **token-based Tailwind** design system.
 

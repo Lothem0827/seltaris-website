@@ -7,13 +7,12 @@ export function AltraserviceShowcaseSection() {
     <section className="py-section">
       <Container>
         <CenteredShowcase
-          size="large"
           title={
             <>
-              DataTools Altraservice™.
+              Altraservice™.
             </>
           }
-          subtitle="Feel the need. The need for processing speed."
+          subtitle="Groundbreaking performance."
           imageSrc={assets.altraserviceHero}
           imageHeight="h-[740px]"
         />

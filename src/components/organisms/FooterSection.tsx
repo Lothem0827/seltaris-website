@@ -3,43 +3,30 @@ import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
-import Link from "next/link";
+import { FooterExtendedSection } from "@/components/organisms/FooterExtendedSection";
 
 export function FooterSection() {
   return (
-    <footer className="border-t border-border bg-white py-section">
-      <Container className="flex flex-col items-center gap-16 text-center">
-        <div className="flex max-w-3xl flex-col items-center gap-8">
-          <Eyebrow
-            label="Bulk Data Enhancement Tool"
-            badge="EARLY ACCESS PREVIEW"
-          />
-          <Heading level="display" className="!text-5xl md:!text-6xl">
-            DataTools Seltaris
-          </Heading>
-          <Text className="text-xl font-medium">
-            High Quality Results. Unbelievable Performance. Incredibly Secure.
-          </Text>
-          <Button href="#get-started">Get started with Seltaris</Button>
-        </div>
+    <footer className="border-t border-border bg-white">
+      <div className="py-section">
+        <Container className="relative z-10 flex flex-col items-center gap-28 text-center">
+          <div className="flex flex-col items-center gap-10">
+            <div className="flex flex-col items-center gap-2.5">
+              <Eyebrow label="Bulk Data Enhancement Tool" badge="AVAILABLE NOW" />
+              <Heading level="display" className="max-w-4xl">
+                Seltaris
+              </Heading>
+              <Text className="max-w-3xl text-xl font-medium">
+                High quality results. Unbelievable performance. Incredibly
+                secure.
+              </Text>
+            </div>
 
-        <nav className="flex flex-wrap justify-center gap-8 font-body text-body text-text">
-          <Link href="#datatools">DataTools</Link>
-          <Link href="#features">Features</Link>
-          <Link href="#pricing">Pricing</Link>
-          <Link href="#faq">FAQ</Link>
-        </nav>
-
-        <Text variant="body-sm" className="max-w-3xl text-left text-muted">
-          Performance, availability, security, and pricing details are provided
-          for general guidance. See datatools.com.au for full terms and
-          certification scope.
-        </Text>
-
-        <Text variant="utility" className="text-muted">
-          © {new Date().getFullYear()} DataTools. All rights reserved.
-        </Text>
-      </Container>
+            <Button href="#get-started">Get started with Seltaris</Button>
+          </div>
+        </Container>
+      </div>
+      <FooterExtendedSection />
     </footer>
   );
 }

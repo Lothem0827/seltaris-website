@@ -7,13 +7,12 @@ import { assets } from "@/lib/assets";
 
 export function PricingSection() {
   return (
-    <section className="py-section" id="pricing">
+    <section className="py-section" id="get-started">
       <Container className="flex flex-col items-center gap-12">
         <div className="max-w-2xl text-center">
           <Eyebrow label="Our Services" className="mb-5" />
-          <Heading level="h1">
-            There&apos;s never been a better time to{" "}
-            <span className="text-brand">get started.</span>
+          <Heading level="display" className="!text-[48px] !leading-[1.35]">
+            There&apos;s never been a better time to get started.
           </Heading>
         </div>
 
@@ -42,7 +41,7 @@ export function PricingSection() {
             headerClass="bg-[#10823e]"
             iconSrc={assets.pricingIcons.health}
             title="Address Quality Health Check Report"
-            description="Test your Australian data and return advanced reporting that pinpoints areas for improvement."
+            description="Test your Australian data and return advanced reporting that pinpoints areas for improvement. After the job, a repaired high quality version of your data is available for purchase."
             features={[
               "1x Health Check Report",
               "1x Repaired File Available for Purchase",
@@ -54,22 +53,21 @@ export function PricingSection() {
             label="Subscription"
             headerClass="bg-gradient-to-r from-[#3a7cfb] via-[#d03afb] to-[#ffa04b]"
             iconSrc={assets.pricingIcons.subscription}
-            title="DataTools Seltaris+ Subscription"
-            description="DataTools Seltaris+ brings together the best of Seltaris in one powerful subscription."
+            title="Seltaris+ Subscription"
+            description="Seltaris+ brings together the best of Seltaris in one powerful subscription, giving your organisation advanced capabilities and real savings for a single monthly price."
             features={[
-              "Free Health Check Reports",
+              "1x Health Check Report",
               "Free Advanced Data Protection, Private Keys, volume discounts and licence sharing with your organisation.",
             ]}
-            price={{
-              amount: "$1 for 1 month",
-              gst: "Excludes GST of $0.10",
-              note: "Get your first month for $1, then ongoing pricing from $70.00/month.",
-            }}
             cta={{ label: "Explore plans", href: "#seltaris-plus" }}
           />
         </div>
 
-        <Button href="#services" variant="secondary" className="bg-text text-white">
+        <Button
+          href="#services"
+          variant="secondary"
+          className="bg-text text-white"
+        >
           View all services
         </Button>
       </Container>

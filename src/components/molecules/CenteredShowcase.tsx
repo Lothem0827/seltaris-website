@@ -10,7 +10,6 @@ type CenteredShowcaseProps = {
   imageSrc: string;
   imageAlt?: string;
   imageHeight?: string;
-  size?: "default" | "large";
   className?: string;
 };
 
@@ -20,16 +19,14 @@ export function CenteredShowcase({
   imageSrc,
   imageAlt = "",
   imageHeight = "h-[556px]",
-  size = "default",
   className,
 }: CenteredShowcaseProps) {
   return (
-    <div className={cn("flex flex-col items-center gap-12 text-center", className)}>
+    <div
+      className={cn("flex flex-col items-center gap-12 text-center", className)}
+    >
       <div className="mx-auto max-w-3xl space-y-4">
-        <Heading
-          level={size === "large" ? "display" : "h1"}
-          className={size === "large" ? "!text-[68px] !leading-[1.35]" : undefined}
-        >
+        <Heading level="display" className="!text-[48px] !leading-[1.35]">
           {title}
         </Heading>
         {subtitle ? (
@@ -39,13 +36,7 @@ export function CenteredShowcase({
         ) : null}
       </div>
       <div className={cn("relative w-full max-w-container", imageHeight)}>
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          className="object-cover"
-          sizes="1200px"
-        />
+        <Image src={imageSrc} alt={imageAlt} fill sizes="1200px" />
       </div>
     </div>
   );

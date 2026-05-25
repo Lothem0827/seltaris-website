@@ -64,8 +64,7 @@ export const assets = {
   learnMoreArrow:
     "https://www.figma.com/api/mcp/asset/7a4277c4-f81b-4fda-ba22-772834a362ba",
   sliderButton: "/icons/slider-button.svg",
-  checkIcon:
-    "https://www.figma.com/api/mcp/asset/7e3c7c0e-bb55-4150-952d-92f6afffff53",
+  checkIcon: "/icons/check-icon.svg",
   checkIconAlt:
     "https://www.figma.com/api/mcp/asset/7d67a95f-08fe-45cb-9ecb-2f73d4d95f77",
   pricingIcons: {
@@ -73,16 +72,31 @@ export const assets = {
       "https://www.figma.com/api/mcp/asset/cd11f40a-ff5b-4d7f-bea1-de217c5438ee",
     health:
       "https://www.figma.com/api/mcp/asset/f0f6f2b1-5f7e-43aa-81dd-f84aaa73ff5b",
-    subscription:
-      "https://www.figma.com/api/mcp/asset/f37a831d-60a6-45f3-b34b-3a479707f312",
+    subscription: "/seltaris-logo.svg",
   },
   trustedLogos: [
-    "https://www.figma.com/api/mcp/asset/22b20e6c-b7a9-4fa7-9cca-fd8bc9b474ca",
-    "https://www.figma.com/api/mcp/asset/12c52e24-c2a2-4a1f-b2b5-5aa583f5f098",
-    "https://www.figma.com/api/mcp/asset/f1d307c4-e541-454d-a74c-a481318f608c",
-    "https://www.figma.com/api/mcp/asset/b8624bec-8b96-47f3-92c0-add7f651e851",
-    "https://www.figma.com/api/mcp/asset/1fe0ad67-76e0-423e-81fd-e42c76d9dd31",
-    "https://www.figma.com/api/mcp/asset/97384ccc-ee5e-498f-bb89-2d38627ef96a",
+    "/images/company-icons/boq-logo-6511cbd6c366f.webp",
+    "/images/company-icons/leukaemia-foundation-logo-6511cbd8dbed6.webp",
+    "/images/company-icons/apra-amcos-logo-6511cbd57b7db.webp",
+    "/images/company-icons/hcf-logo-6511cbd81b4b0.webp",
+    "/images/company-icons/rabobank-logo-6511cbda23b00.webp",
+    "/images/company-icons/commonwealth_bank.webp",
+    "/images/company-icons/crown-logo-1.png",
+    "/images/company-icons/qantas.webp",
+    "/images/company-icons/guide-dogs-logo-6511cbd81b4ba.webp",
+    "/images/company-icons/seafolly-australia-logo-6511cbdb7ed7b.webp",
+    "/images/company-icons/nimble-logo-6511cbd985177.webp",
+    "/images/company-icons/david-jones-logo-6511cbd775386.webp",
+    "/images/company-icons/boc-logo-6511cbd649388.webp",
+    "/images/company-icons/specasvers-logo-6511cbdc32c67.webp",
+    "/images/company-icons/bible-society-logo-6511cbd631f29.webp",
+    "/images/company-icons/unsw-logo-6511cbdcc724c.webp",
+    "/images/company-icons/huntry-jacks-logo-6511cbd8d79b4.webp",
+    "/images/company-icons/redballoon-logo-6511cbdac4ed7.webp",
+    "/images/company-icons/catholic-mission-logo-6511cbd6decc4.webp",
+    "/images/company-icons/uniqlo-1-2048x584.webp",
+    "/images/company-icons/rmwilliams.png",
+    "/images/company-icons/rodd-and-gunn-logo-6511cbdac4eb9.webp",
   ],
   serviceIcons: {
     address:
@@ -97,6 +111,14 @@ export const assets = {
   australiaFlag: "/icons/australiaFlag.svg",
   nzFlag: "/icons/nzFlag.svg",
   internationalFlag: "/icons/internationalFlag.svg",
+  footerLargeLogo: "/seltaris-full-logo.svg",
+  footerSocial: {
+    facebook: "/icons/fb-logo.svg",
+    youtube: "/icons/youtube-logo.svg",
+    x: "/icons/x-logo.svg",
+    linkedin: "/icons/linkedIn-logo.svg",
+    trust: "/icons/lock-logo.svg",
+  },
   featureSlides: [
     "https://www.figma.com/api/mcp/asset/23be9490-aa5f-4261-9544-d87dd60e3b8c",
     "https://www.figma.com/api/mcp/asset/553420f6-6276-4813-80fa-6412c419472d",

@@ -12,7 +12,6 @@ import { PricingSection } from "@/components/organisms/PricingSection";
 import { SecuritySliderSection } from "@/components/organisms/SecuritySliderSection";
 import { ServicesSection } from "@/components/organisms/ServicesSection";
 import { SiteHeader } from "@/components/organisms/SiteHeader";
-import { SocialProofSection } from "@/components/organisms/SocialProofSection";
 import { WhatIsSection } from "@/components/organisms/WhatIsSection";
 
 export function HomePage() {
@@ -26,13 +25,12 @@ export function HomePage() {
         <FeatureSliderSection />
         <HumanTouchShowcaseSection />
         <HumanTouchDetailSection />
-        <AltraserviceShowcaseSection />
+        {/* <AltraserviceShowcaseSection /> */}
         <AltraserviceSliderSection />
         <DataProtectionShowcaseSection />
         <SecuritySliderSection />
         <HealthCheckWorkflowSection />
         <HealthCheckSliderSection />
-        <SocialProofSection />
         <PricingSection />
       </main>
       <FooterSection />

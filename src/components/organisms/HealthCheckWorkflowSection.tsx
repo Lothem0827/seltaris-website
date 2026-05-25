@@ -7,7 +7,6 @@ export function HealthCheckWorkflowSection() {
     <section className="py-section">
       <Container>
         <CenteredShowcase
-          size="large"
           title="Health Check Report"
           subtitle="Data quality at its finest detail."
           imageSrc={assets.workflowShowcase}
