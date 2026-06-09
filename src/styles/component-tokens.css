@@ -6,9 +6,6 @@
 :root {
   /* ─── Extended colors ─── */
   --color-surface-muted: #f1f1f3;
-  --color-brand-accent: #574dff;
-  --color-pricing-navy: #0f2459;
-  --color-pricing-muted: #3d4d83;
   --color-pricing-border: #a9adcf;
   --color-pricing-accent-bg: #ece9ff;
   --color-pricing-success: #10823e;
@@ -43,7 +40,7 @@
   /* ─── Feature page typography (seltaris.com Elementor kit — max desktop sizes) ─── */
   --text-fp-eyebrow: 1.5rem; /* 24px — d39c97f */
   --leading-fp-eyebrow: 1.3;
-  --weight-fp-eyebrow: 400;
+  --weight-fp-eyebrow: 600;
   --text-fp-hero: 3rem; /* 48px — 358e3dc */
   --leading-fp-hero: 1.2;
   --tracking-fp-hero: -0.05em;

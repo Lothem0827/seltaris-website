@@ -9,7 +9,6 @@
   --color-brand-light: var(--color-brand-light);
   --color-brand-muted: var(--color-brand-muted);
   --color-brand-surface: var(--color-brand-surface);
-  --color-heading: var(--color-heading);
   --color-text: var(--color-text);
   --color-paragraph: var(--color-paragraph);
   --color-muted: var(--color-muted);
@@ -19,9 +18,6 @@
   --color-success: var(--color-success);
   --color-card-dark: var(--color-card-dark);
   --color-surface-muted: var(--color-surface-muted);
-  --color-brand-accent: var(--color-brand-accent);
-  --color-pricing-navy: var(--color-pricing-navy);
-  --color-pricing-muted: var(--color-pricing-muted);
   --color-pricing-border: var(--color-pricing-border);
   --color-pricing-accent-bg: var(--color-pricing-accent-bg);
   --color-pricing-success: var(--color-pricing-success);
@@ -45,11 +41,12 @@
   /* Typography — families from layout.tsx font variables */
   --font-display: var(--font-mint-grotesk), system-ui, sans-serif;
   --font-body: var(--font-dm-sans), system-ui, sans-serif;
-  --font-label: var(--font-inter), system-ui, sans-serif;
+  --font-label: var(--font-dm-sans), system-ui, sans-serif;
 
   --text-display: var(--text-display-size);
   --text-h1: var(--text-h1-size);
   --text-h2: var(--text-h2-size);
+  --text-h3: var(--text-h3-size);
   --text-subheading: var(--text-subheading-size);
   --text-body: var(--text-body-size);
   --text-body-sm: var(--text-body-sm-size);
@@ -66,6 +63,7 @@
   --leading-micro: var(--text-micro-line);
   --leading-h1: var(--text-h1-line);
   --leading-h2: var(--text-h2-line);
+  --leading-h3: var(--text-h3-line);
   --leading-subheading: var(--text-subheading-line);
   --leading-body: var(--text-body-line);
   --leading-body-sm: var(--text-body-sm-line);
@@ -240,7 +238,7 @@
 
 body {
   background: var(--color-white);
-  color: var(--color-text);
+  color: var(--color-paragraph);
   font-family: var(--font-body);
 }
 
@@ -291,7 +289,7 @@ body {
     font-size: var(--text-fp-banner-sub);
     line-height: var(--leading-fp-banner-sub);
     font-weight: var(--weight-fp-banner-sub);
-    color: var(--color-text);
+    color: var(--color-paragraph);
     text-align: center;
   }
   .fp-section-title {
@@ -416,7 +414,7 @@ body {
     line-height: var(--leading-fp-body-lead);
     letter-spacing: var(--tracking-fp-body-lead);
     font-weight: var(--weight-fp-body-lead);
-    color: var(--color-text);
+    color: var(--color-paragraph);
   }
   .fp-slide-title {
     font-family: var(--font-display);
@@ -541,7 +539,6 @@ body {
   }
 
   .prose-strong strong {
-    color: var(--color-text);
     font-weight: 600;
   }
 
@@ -552,7 +549,6 @@ body {
     margin-top: 0;
   }
   .prose-list strong {
-    color: var(--color-text);
     font-weight: 600;
   }
 }

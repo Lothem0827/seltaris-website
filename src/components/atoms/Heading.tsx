@@ -1,6 +1,13 @@
 import { cn } from "@/lib/utils";
 
-type HeadingLevel = "display" | "sectionDisplay" | "h1" | "h2" | "subheading" | "panel";
+type HeadingLevel =
+  | "display"
+  | "sectionDisplay"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "subheading"
+  | "panel";
 
 type HeadingProps = {
   as?: "h1" | "h2" | "h3" | "p";
@@ -17,8 +24,9 @@ const levelStyles: Record<HeadingLevel, string> = {
     "font-display text-section-display leading-h1 font-bold text-text tracking-h1",
   h1: "font-display text-h1 leading-h1 font-bold text-text tracking-h1",
   h2: "font-display text-h2 leading-h2 font-bold text-text tracking-h2",
+  h3: "font-body text-h3 leading-h3 font-bold text-text",
   subheading:
-    "font-body text-subheading leading-subheading font-semibold text-text",
+    "font-display text-subheading leading-subheading font-semibold text-text",
   panel:
     "font-display text-nav-title leading-nav-title font-bold text-text tracking-nav-title",
 };
@@ -28,6 +36,7 @@ const defaultTags: Record<HeadingLevel, "h1" | "h2" | "h3" | "p"> = {
   sectionDisplay: "h2",
   h1: "h1",
   h2: "h2",
+  h3: "h3",
   subheading: "h3",
   panel: "p",
 };

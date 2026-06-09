@@ -40,7 +40,13 @@ function BannerImage({
   return (
     <div className={cn("relative w-full", className)}>
       <div className="relative mx-auto h-visual-hero max-w-visual-hero overflow-hidden">
-        <Image src={src} alt={alt} fill className="object-cover" sizes="1600px" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="1600px"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white" />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/90 to-transparent px-6 pb-8 pt-24">
           {children}
@@ -60,13 +66,14 @@ function FeatureImage({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "banner-media",
-        className,
-      )}
-    >
-      <Image src={src} alt={alt} fill className="object-contain p-4" sizes="512px" />
+    <div className={cn("banner-media", className)}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-contain p-4"
+        sizes="512px"
+      />
     </div>
   );
 }
@@ -83,10 +90,7 @@ function SplitContentRow({
   const image = <FeatureImage src={imageSrc} />;
   const text = (
     <div className="flex flex-col justify-center px-8 py-4 lg:px-8">
-      <Text
-        as="div"
-        className="prose-list space-y-4"
-      >
+      <Text as="div" className="prose-list space-y-4">
         {children}
       </Text>
     </div>
@@ -294,7 +298,9 @@ export function HumanTouchUnverifiedSection() {
           imageSrc={getHumanTouchPageImage("fieldCorrections")}
           imagePosition="left"
         >
-          <Badge className="mb-6 w-fit px-2 py-1">{fieldCorrections.badge}</Badge>
+          <Badge className="mb-6 w-fit px-2 py-1">
+            {fieldCorrections.badge}
+          </Badge>
           <FeaturePageHeading as="h3" variant="headingSplitDm" className="mb-6">
             {fieldCorrections.title}
           </FeaturePageHeading>
@@ -385,15 +391,6 @@ export function HumanTouchAltraserviceTeaserSection() {
           {teaser.cta.label}
         </Button>
       </Container>
-      <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-0 mx-auto h-glow-accent w-full max-w-container -translate-y-1/2 opacity-40">
-        <Image
-          src={assets.humanTouchPage.altraserviceEngine}
-          alt=""
-          fill
-          className="object-contain"
-          sizes="1200px"
-        />
-      </div>
     </section>
   );
 }

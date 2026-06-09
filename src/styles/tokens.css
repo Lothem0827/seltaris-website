@@ -13,7 +13,6 @@
   --color-brand-muted: #f0f0fe;
   --color-brand-surface: #f8f8ff;
 
-  --color-heading: #002e48;
   --color-text: #0b0b0c;
   --color-paragraph: #3a3943;
   --color-muted: #acacb7;
@@ -42,6 +41,10 @@
   --text-h2-size: 1.4rem; /* 28px */
   --text-h2-line: var(--text-heading-line);
   --text-h2-tracking: -0.036em;
+
+  /* Heading 3 — compact card titles */
+  --text-h3-size: 0.875rem; /* 14px */
+  --text-h3-line: var(--text-heading-line);
 
   /* Subheading */
   --text-subheading-size: 1.5rem; /* 24px */
@@ -80,7 +83,7 @@
   /* ─── Border radius ─── */
   --radius-xs: 0.25rem; /* 4px */
   --radius-sm: 0.5rem; /* 8px */
-  --radius-md: 0.875rem; /* 14px */
+  --radius-md: 0.75rem; /* 12px */
   --radius-lg: 1rem; /* 16px */
   --radius-panel: 1.25rem; /* 20px — dropdowns, floating panels */
   --radius-icon: 0.4375rem; /* 7px — compact feature icons */

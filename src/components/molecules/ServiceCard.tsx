@@ -25,15 +25,21 @@ export function ServiceCard({
       )}
     >
       {comingSoon ? (
-        <div className="absolute -top-2 right-6">
+        <div className="absolute -top-4 right-6">
           <Badge>COMING SOON</Badge>
         </div>
       ) : null}
       <div className="relative size-service-icon shrink-0">
-        <Image src={iconSrc} alt="" fill className="object-cover" sizes="61px" />
+        <Image
+          src={iconSrc}
+          alt=""
+          fill
+          className="object-cover"
+          sizes="61px"
+        />
       </div>
       <div className="flex min-w-0 flex-col gap-1">
-        <Heading as="h3" level="h2" className="text-body-sm leading-h1">
+        <Heading as="h3" level="h3">
           {title}
         </Heading>
         <Text variant="caption">{description}</Text>

@@ -9,7 +9,7 @@ type TabGroupProps = {
   className?: string;
 };
 
-/** Figma: THIS IS A TAB — pill container with gradient active state */
+/** Figma: THIS IS A TAB — pill container with dark active state */
 export function TabGroup({
   tabs,
   activeIndex,
@@ -38,7 +38,7 @@ export function TabGroup({
               className={cn(
                 "shrink-0 rounded-radius-full px-4 py-1.5 font-body text-body leading-body transition-colors",
                 isActive
-                  ? "bg-gradient-to-r from-brand-light to-transparent text-brand"
+                  ? "bg-text text-white"
                   : "text-paragraph opacity-60 hover:opacity-100",
               )}
             >

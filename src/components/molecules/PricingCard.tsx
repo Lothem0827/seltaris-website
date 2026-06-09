@@ -121,7 +121,7 @@ export function PricingCard({
           ) : null}
           {price ? (
             <div className="space-y-1">
-              <p className="font-display text-xl font-bold text-pricing-navy">
+              <p className="font-display text-xl font-bold text-text">
                 {price.amount}
               </p>
               {price.gst ? (

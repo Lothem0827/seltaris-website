@@ -25,7 +25,7 @@ export function SiteHeader() {
               priority
             />
           </Link>
-          <nav className="hidden items-center gap-6 font-label uppercase tracking-wide text-text md:flex">
+          <nav className="hidden items-center gap-6 font-label text-label uppercase tracking-wide text-text md:flex">
             <Link href="#about">About us</Link>
             <Link href="#contact">Contact us</Link>
             <Link href="#login">Log in / Sign up</Link>
@@ -58,7 +58,7 @@ export function SiteHeader() {
           </Text>{" "}
           <Link
             href="/seltaris-plus"
-            className="font-label text-brand underline"
+            className="font-label text-label text-brand underline"
           >
             Start with Seltaris+ today.
           </Link>

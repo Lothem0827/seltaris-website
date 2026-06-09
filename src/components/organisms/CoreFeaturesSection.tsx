@@ -34,7 +34,10 @@ export function CoreFeaturesSection() {
   const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <section id="features" className="overflow-hidden px-container-padding py-section">
+    <section
+      id="features"
+      className="overflow-hidden px-container-padding py-section"
+    >
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl space-y-4">

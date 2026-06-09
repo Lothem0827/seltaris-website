@@ -112,7 +112,7 @@ function OfferingCard({
         </div>
         <Link
           href={href}
-          className="inline-flex w-fit items-center gap-3 font-body text-body-sm font-medium text-brand-accent"
+          className="inline-flex w-fit items-center gap-3 font-body text-body-sm font-medium text-brand"
         >
           Learn more
           <Image
@@ -146,7 +146,7 @@ export function SeltarisPlusIncludedSection() {
           <FeaturePageHeading
             as="p"
             variant="bannerSubtitle"
-            className="text-brand-accent"
+            className="text-brand"
           >
             {section.eyebrow}
           </FeaturePageHeading>

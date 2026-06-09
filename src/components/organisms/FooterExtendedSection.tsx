@@ -125,10 +125,10 @@ function FooterBottomBar() {
     <div className="bg-surface-muted py-10">
       <Container>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
-          <Text as="p" variant="body-sm" className="max-w-xl text-text">
+          <Text as="p" variant="body-sm" className="max-w-xl">
             {footerTagline}
           </Text>
-          <Text as="p" variant="body-sm" className="shrink-0 text-text lg:text-right">
+          <Text as="p" variant="body-sm" className="shrink-0 lg:text-right">
             © {new Date().getFullYear()} GB Group plc (&apos;GBG&apos;).
             <br />
             GBG is the trading name and a trademark of GB Group plc.

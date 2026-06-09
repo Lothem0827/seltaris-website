@@ -47,14 +47,14 @@ function FeatureStatusIcon({
 }) {
   if (isReports) {
     return (
-      <span className="inline-flex size-3.5 items-center justify-center text-pricing-navy">
+      <span className="inline-flex size-3.5 items-center justify-center text-text">
         ∞
       </span>
     );
   }
   if (included === false) {
     return (
-      <span className="inline-flex size-3.5 items-center justify-center text-pricing-navy">
+      <span className="inline-flex size-3.5 items-center justify-center text-text">
         ✕
       </span>
     );
@@ -72,7 +72,7 @@ function FeatureStatusIcon({
     );
   }
   return (
-    <span className="inline-flex size-4 items-center justify-center text-pricing-navy">
+    <span className="inline-flex size-4 items-center justify-center text-text">
       👥
     </span>
   );
@@ -87,7 +87,7 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
         return (
           <div key={feature.label} className="flex flex-col gap-2">
             <div className="flex flex-col gap-0.5">
-              <Text variant="caption" className="font-medium text-pricing-muted/70">
+              <Text variant="caption" className="font-medium text-paragraph/70">
                 {feature.label}
               </Text>
               <div className="flex items-center gap-2">
@@ -95,10 +95,10 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
                   included={feature.included}
                   isReports={isReports}
                 />
-                <span className="font-body text-body text-pricing-navy">
+                <span className="font-body text-body text-text">
                   {feature.value}
                   {feature.period ? (
-                    <span className="ml-1.5 text-body-sm font-medium text-pricing-navy">
+                    <span className="ml-1.5 text-body-sm font-medium text-text">
                       {feature.period}
                     </span>
                   ) : null}
@@ -110,7 +110,7 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
               <div className="flex flex-wrap items-center gap-2">
                 <Badge>{feature.subscriptionBadge}</Badge>
                 {feature.subscriptionValue ? (
-                  <Text variant="tiny" className="italic text-pricing-muted/70">
+                  <Text variant="tiny" className="italic text-paragraph/70">
                     {feature.subscriptionValue}
                   </Text>
                 ) : null}
@@ -135,20 +135,20 @@ export function SeltarisPlusPlanCard({ plan }: { plan: SeltarisPlusPlan }) {
         <div className="flex flex-col gap-5">
           <PlanTierIcon tier={plan.tier} />
           <div className="space-y-1">
-            <Heading as="h3" level="h2" className="text-pricing-navy">
+            <Heading as="h3" level="h2">
               {plan.name}
             </Heading>
-            <Text className="font-medium text-pricing-muted">{plan.tagline}</Text>
+            <Text className="font-medium text-paragraph">{plan.tagline}</Text>
           </div>
           <div className="flex items-end gap-1.5">
-            <span className="font-body text-2xl font-medium text-pricing-navy">
+            <span className="font-body text-2xl font-medium text-text">
               {plan.price}
             </span>
-            <span className="pb-1 font-body text-body font-medium text-pricing-muted">
+            <span className="pb-1 font-body text-body font-medium text-paragraph">
               /month
             </span>
           </div>
-          <Text variant="body-sm" className="text-pricing-muted">
+          <Text variant="body-sm" className="text-paragraph">
             {plan.gstNote}
           </Text>
         </div>
