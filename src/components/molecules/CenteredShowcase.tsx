@@ -4,12 +4,21 @@ import { Text } from "@/components/atoms/Text";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
+export type ShowcaseSize = "default" | "tall" | "data" | "health";
+
+const showcaseHeights: Record<ShowcaseSize, string> = {
+  default: "h-showcase",
+  tall: "h-showcase-tall",
+  data: "h-showcase-data",
+  health: "h-showcase-health",
+};
+
 type CenteredShowcaseProps = {
   title: ReactNode;
   subtitle?: ReactNode;
   imageSrc: string;
   imageAlt?: string;
-  imageHeight?: string;
+  imageSize?: ShowcaseSize;
   className?: string;
 };
 
@@ -18,7 +27,7 @@ export function CenteredShowcase({
   subtitle,
   imageSrc,
   imageAlt = "",
-  imageHeight = "h-[556px]",
+  imageSize = "default",
   className,
 }: CenteredShowcaseProps) {
   return (
@@ -26,16 +35,19 @@ export function CenteredShowcase({
       className={cn("flex flex-col items-center gap-12 text-center", className)}
     >
       <div className="mx-auto max-w-3xl space-y-4">
-        <Heading level="display" className="!text-[48px] !leading-[1.35]">
-          {title}
-        </Heading>
+        <Heading level="sectionDisplay">{title}</Heading>
         {subtitle ? (
           <Text variant="body" className="text-subheading font-semibold">
             {subtitle}
           </Text>
         ) : null}
       </div>
-      <div className={cn("relative w-full max-w-container", imageHeight)}>
+      <div
+        className={cn(
+          "relative w-full max-w-container",
+          showcaseHeights[imageSize],
+        )}
+      >
         <Image src={imageSrc} alt={imageAlt} fill sizes="1200px" />
       </div>
     </div>

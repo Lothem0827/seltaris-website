@@ -21,7 +21,7 @@ export function WhatIsSection() {
             standardise your existing datasets.
           </Text>
         </div>
-        <div className="relative h-[354px] w-full max-w-[581px] shrink-0">
+        <div className="relative h-what-is w-full max-w-what-is shrink-0">
           <Image
             src={assets.whatIsImage}
             alt="Seltaris dashboard on laptop"

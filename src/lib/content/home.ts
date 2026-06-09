@@ -1,7 +1,7 @@
 export const navLinks = [
   { label: "Solutions", href: "#solutions", hasDropdown: true },
   { label: "Features", href: "#features", hasDropdown: true },
-  { label: "Seltaris+", href: "#seltaris-plus" },
+  { label: "Seltaris+", href: "/seltaris-plus" },
   { label: "Enterprise", href: "#enterprise" },
   { label: "Support", href: "#support" },
 ] as const;

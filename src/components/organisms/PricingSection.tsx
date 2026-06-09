@@ -11,7 +11,7 @@ export function PricingSection() {
       <Container className="flex flex-col items-center gap-12">
         <div className="max-w-2xl text-center">
           <Eyebrow label="Our Services" className="mb-5" />
-          <Heading level="display" className="!text-[48px] !leading-[1.35]">
+          <Heading level="sectionDisplay">
             There&apos;s never been a better time to get started.
           </Heading>
         </div>
@@ -19,7 +19,7 @@ export function PricingSection() {
         <div className="grid w-full gap-6 lg:grid-cols-3">
           <PricingCard
             label="Repaired file only"
-            headerClass="bg-text"
+            tone="default"
             iconSrc={assets.pricingIcons.repaired}
             title="Address Validation"
             description="Validate, Repair and Standardise. Improve the quality of your Australian address data."
@@ -38,7 +38,7 @@ export function PricingSection() {
           />
           <PricingCard
             label="Health check report"
-            headerClass="bg-[#10823e]"
+            tone="success"
             iconSrc={assets.pricingIcons.health}
             title="Address Quality Health Check Report"
             description="Test your Australian data and return advanced reporting that pinpoints areas for improvement. After the job, a repaired high quality version of your data is available for purchase."
@@ -51,7 +51,7 @@ export function PricingSection() {
           />
           <PricingCard
             label="Subscription"
-            headerClass="bg-gradient-to-r from-[#3a7cfb] via-[#d03afb] to-[#ffa04b]"
+            tone="subscription"
             iconSrc={assets.pricingIcons.subscription}
             title="Seltaris+ Subscription"
             description="Seltaris+ brings together the best of Seltaris in one powerful subscription, giving your organisation advanced capabilities and real savings for a single monthly price."
@@ -59,7 +59,7 @@ export function PricingSection() {
               "1x Health Check Report",
               "Free Advanced Data Protection, Private Keys, volume discounts and licence sharing with your organisation.",
             ]}
-            cta={{ label: "Explore plans", href: "#seltaris-plus" }}
+            cta={{ label: "Explore plans", href: "/seltaris-plus" }}
           />
         </div>
 

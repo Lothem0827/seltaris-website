@@ -4,7 +4,7 @@ import { assets } from "@/lib/assets";
 
 export function Logo() {
   return (
-    <Link href="/" className="relative block h-[42px] w-[150px] shrink-0">
+    <Link href="/" className="relative block h-logo w-logo shrink-0">
       <Image
         src={assets.logo}
         alt="Seltaris"

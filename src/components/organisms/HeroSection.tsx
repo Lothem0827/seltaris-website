@@ -12,7 +12,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full ">
       {/* Full-bleed page background */}
-      <div className="relative flex h-[77svh] w-full flex-col items-center justify-center overflow-hidden px-container-padding ">
+      <div className="relative flex h-hero w-full flex-col items-center justify-center overflow-hidden px-container-padding ">
         <Image
           src={assets.heroBackground}
           alt=""

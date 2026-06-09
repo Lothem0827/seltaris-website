@@ -29,16 +29,14 @@ export function ServiceCard({
           <Badge>COMING SOON</Badge>
         </div>
       ) : null}
-      <div className="relative size-[61px] shrink-0">
+      <div className="relative size-service-icon shrink-0">
         <Image src={iconSrc} alt="" fill className="object-cover" sizes="61px" />
       </div>
       <div className="flex min-w-0 flex-col gap-1">
-        <Heading as="h3" level="h2" className="!text-sm !leading-[1.35]">
+        <Heading as="h3" level="h2" className="text-body-sm leading-h1">
           {title}
         </Heading>
-        <Text variant="body-sm" className="!text-xs !leading-snug">
-          {description}
-        </Text>
+        <Text variant="caption">{description}</Text>
       </div>
     </article>
   );

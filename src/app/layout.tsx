@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter } from "next/font/google";
 import localFont from "next/font/local";
+import { DevInspector } from "@/components/dev/DevInspector";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -36,9 +37,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${dmSans.variable} ${inter.variable} ${mintGrotesk.variable}`}
     >
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased" suppressHydrationWarning>
+        {process.env.NODE_ENV === "development" ? <DevInspector /> : null}
+        {children}
+      </body>
     </html>
   );
 }

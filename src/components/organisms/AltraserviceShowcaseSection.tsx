@@ -14,7 +14,7 @@ export function AltraserviceShowcaseSection() {
           }
           subtitle="Groundbreaking performance."
           imageSrc={assets.altraserviceHero}
-          imageHeight="h-[740px]"
+          imageSize="tall"
         />
       </Container>
     </section>

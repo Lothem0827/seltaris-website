@@ -245,14 +245,14 @@ export function AddressDemo() {
 
   return (
     <div
-      className="w-[352px] max-w-full rounded-radius-lg border-2 border-brand bg-white px-5 py-4"
+      className="w-address-demo max-w-full rounded-radius-lg border-2 border-brand bg-white px-5 py-4"
       aria-live="polite"
       aria-label="Data correction demonstration"
     >
       <div
         ref={displayRef}
         id="address-display"
-        className="flex h-[30px] w-full items-center overflow-hidden whitespace-nowrap font-label text-body font-semibold leading-[30px] text-brand"
+        className="flex h-address-input w-full items-center overflow-hidden whitespace-nowrap font-label text-body font-semibold text-brand"
       />
     </div>
   );

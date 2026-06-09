@@ -41,7 +41,7 @@ export function ServicesSection() {
           </div>
         </div>
 
-        <div className="relative h-[377px] w-full overflow-hidden rounded-radius-lg">
+        <div className="relative h-services-visual w-full overflow-hidden rounded-radius-lg">
           <Image
             src={assets.servicesHero}
             alt="Data validation workflow"
@@ -82,9 +82,7 @@ function AvailableFor() {
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-6">
-      <Text variant="label" className="!text-[12px]">
-        Available for:
-      </Text>
+      <Text variant="utility">Available for:</Text>
       <div className="flex flex-wrap items-center gap-3">
         {regions.map((region) => (
           <span
@@ -102,7 +100,7 @@ function AvailableFor() {
             />
             {region.label}
             {region.comingSoon ? (
-              <span className="rounded-radius-xs bg-brand-light px-1 py-0.5 text-[7px] font-semibold uppercase tracking-widest text-brand-dark">
+              <span className="rounded-radius-xs bg-brand-light px-1 py-0.5 font-label text-badge font-semibold uppercase tracking-widest text-brand-dark">
                 Coming soon
               </span>
             ) : null}

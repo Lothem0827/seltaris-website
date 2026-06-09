@@ -3,15 +3,14 @@ import Link from "next/link";
 import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Logo } from "@/components/molecules/Logo";
-import { NavLink } from "@/components/molecules/NavLink";
-import { navLinks } from "@/lib/content/home";
+import { MainNav } from "@/components/molecules/MainNav";
+import { Text } from "@/components/atoms/Text";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white">
-      {/* Top utility bar */}
       <div className="bg-brand-light py-1.5">
-        <Container className="flex items-center justify-between gap-4 text-[12px]">
+        <Container className="flex items-center justify-between gap-4">
           <Link
             href="https://www.gbg.com"
             className="inline-flex shrink-0 items-center opacity-90 transition-opacity hover:opacity-100"
@@ -34,17 +33,15 @@ export function SiteHeader() {
         </Container>
       </div>
 
-      {/* Main navbar — equal-width side columns keep center nav truly centered when logo/CTA change */}
-      <Container className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4 py-3.5 lg:gap-6">
+      <Container
+        id="site-main-nav"
+        className="grid-header items-center gap-4 py-3.5 lg:gap-6"
+      >
         <div className="flex min-w-0 items-center justify-self-stretch justify-start">
           <Logo />
         </div>
-        <div className="flex min-w-0 shrink-0 items-center justify-center">
-          <nav className="hidden items-center gap-4 lg:flex">
-            {navLinks.map((link) => (
-              <NavLink key={link.label} {...link} />
-            ))}
-          </nav>
+        <div className="relative flex min-w-0 shrink-0 items-center justify-center overflow-visible">
+          <MainNav />
         </div>
         <div className="flex min-w-0 items-center justify-self-stretch justify-end">
           <Button href="#get-started" size="small" className="shrink-0">
@@ -53,15 +50,14 @@ export function SiteHeader() {
         </div>
       </Container>
 
-      {/* Promo strip */}
       <div className="border-t border-border bg-white py-3">
-        <Container className="text-center text-[12px] text-paragraph">
-          <span>
+        <Container className="text-center">
+          <Text as="span" variant="utility">
             Enjoy free Health Check Reports and volume discounts with{" "}
             <strong className="font-semibold text-text">Seltaris+</strong>.
-          </span>{" "}
+          </Text>{" "}
           <Link
-            href="#seltaris-plus"
+            href="/seltaris-plus"
             className="font-label text-brand underline"
           >
             Start with Seltaris+ today.

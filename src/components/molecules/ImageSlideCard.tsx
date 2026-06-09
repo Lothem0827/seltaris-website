@@ -1,20 +1,22 @@
 import Image from "next/image";
-import { Heading } from "@/components/atoms/Heading";
+import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-const widthClasses = {
-  default: "w-[min(572px,85vw)]",
-  wide: "w-[min(604px,90vw)]",
-  narrow: "w-[min(441px,80vw)]",
+type SlideCardWidth = "default" | "wide" | "narrow";
+
+const widthClasses: Record<SlideCardWidth, string> = {
+  default: "w-slide-card",
+  wide: "w-slide-card-wide",
+  narrow: "w-slide-card-narrow",
 };
 
 type ImageSlideCardProps = {
   imageSrc: string;
   title?: string;
   description: ReactNode;
-  width?: keyof typeof widthClasses;
+  width?: SlideCardWidth;
   imageVariant?: "dark" | "light";
 };
 
@@ -29,7 +31,7 @@ export function ImageSlideCard({
     <article className={cn("flex shrink-0 flex-col gap-4", widthClasses[width])}>
       <div
         className={cn(
-          "relative h-[363px] w-full overflow-hidden rounded-radius-xl",
+          "relative h-card-slide w-full overflow-hidden rounded-radius-xl",
           imageVariant === "dark" ? "bg-card-dark" : "border border-border bg-white",
         )}
       >
@@ -37,11 +39,11 @@ export function ImageSlideCard({
       </div>
       <div className="space-y-4 px-4 py-2">
         {title ? (
-          <Heading as="h3" level="h2">
+          <FeaturePageHeading as="h3" variant="slideTitle">
             {title}
-          </Heading>
+          </FeaturePageHeading>
         ) : null}
-        <Text className="[&_strong]:font-semibold [&_strong]:text-text">
+        <Text className="prose-strong">
           {description}
         </Text>
       </div>

@@ -3,6 +3,8 @@
  * Mapped into Tailwind via globals.css @theme.
  */
 
+@import "./component-tokens.css";
+
 :root {
   /* ─── Colors ─── */
   --color-brand: #4d4dff;
@@ -80,8 +82,25 @@
   --radius-sm: 0.5rem; /* 8px */
   --radius-md: 0.875rem; /* 14px */
   --radius-lg: 1rem; /* 16px */
+  --radius-panel: 1.25rem; /* 20px — dropdowns, floating panels */
+  --radius-icon: 0.4375rem; /* 7px — compact feature icons */
   --radius-xl: 2rem; /* 32px */
   --radius-full: 9999px;
+
+  /* ─── Nav / panel typography ─── */
+  --text-nav-title-size: 1.25rem; /* 20px */
+  --text-nav-title-line: 1.4;
+  --text-nav-title-tracking: -0.01em;
+
+  /* ─── Shadows ─── */
+  --shadow-icon: 0 2px 2px rgb(0 0 0 / 0.02);
+  --shadow-panel: 0 0 5px rgb(0 0 0 / 0.1);
+
+  /* ─── Z-index ─── */
+  --z-dropdown: 60;
+
+  /* ─── Component sizes ─── */
+  --size-icon-nav: 3rem; /* 48px */
 }
 
 body {

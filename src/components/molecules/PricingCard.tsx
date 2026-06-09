@@ -6,9 +6,11 @@ import { Text } from "@/components/atoms/Text";
 import { assets } from "@/lib/assets";
 import { cn } from "@/lib/utils";
 
+export type PricingCardTone = "default" | "success" | "subscription";
+
 type PricingCardProps = {
   label: string;
-  headerClass: string;
+  tone: PricingCardTone;
   borderClass?: string;
   iconSrc?: string;
   title: string;
@@ -20,9 +22,15 @@ type PricingCardProps = {
   showAustralia?: boolean;
 };
 
+const headerTones: Record<PricingCardTone, string> = {
+  default: "bg-text",
+  success: "bg-pricing-success",
+  subscription: "bg-gradient-popular",
+};
+
 export function PricingCard({
   label,
-  headerClass,
+  tone,
   borderClass,
   iconSrc,
   title,
@@ -36,8 +44,8 @@ export function PricingCard({
   return (
     <article
       className={cn(
-        "flex min-h-[700px] flex-1 flex-col overflow-hidden rounded-radius-lg p-1",
-        headerClass,
+        "flex min-h-pricing-card flex-1 flex-col overflow-hidden rounded-radius-lg p-1",
+        headerTones[tone],
         borderClass,
       )}
     >
@@ -69,7 +77,7 @@ export function PricingCard({
 
         <div className="flex flex-1 flex-col gap-6">
           <div className="space-y-2">
-            <Heading as="h3" level="h2" className="!text-2xl">
+            <Heading as="h3" level="h2">
               {title}
             </Heading>
             <Text>{description}</Text>
@@ -99,7 +107,7 @@ export function PricingCard({
                   className="shrink-0"
                   aria-hidden
                 />
-                <Text className="!text-body">{feature}</Text>
+                <Text>{feature}</Text>
               </li>
             ))}
           </ul>
@@ -107,13 +115,13 @@ export function PricingCard({
 
         <div className="mt-8 space-y-3">
           {footerNote ? (
-            <Text variant="body-sm" className="!text-[10px] text-center text-muted">
+            <Text variant="micro" className="text-center text-muted">
               {footerNote}
             </Text>
           ) : null}
           {price ? (
             <div className="space-y-1">
-              <p className="font-display text-xl font-bold text-[#0f2459]">
+              <p className="font-display text-xl font-bold text-pricing-navy">
                 {price.amount}
               </p>
               {price.gst ? (

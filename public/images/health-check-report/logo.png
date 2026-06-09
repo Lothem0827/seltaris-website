@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="pie-graph" clip-path="url(#clip0_0_233)">
+<path id="Vector" d="M34.975 21.4958H47.8543C47.1071 10.0491 37.9545 0.896513 26.5078 0.149263V13.0238C30.8723 13.6807 34.3182 17.1266 34.975 21.4958Z" fill="var(--fill-0, #4D4DFF)"/>
+<path id="Vector_2" d="M13.0241 26.5029H0.149515C0.896766 37.9496 10.0494 47.1022 21.496 47.8494V34.9749C17.1315 34.318 13.6809 30.8674 13.0241 26.5029Z" fill="var(--fill-0, #4D4DFF)"/>
+<path id="Vector_3" d="M0.149515 23.4646H13.0241C13.6809 19.0953 17.1315 15.6494 21.496 14.9926V2.11801C10.0494 2.86526 0.896766 12.0131 0.149515 23.4646Z" fill="var(--fill-0, #4D4DFF)"/>
+<path id="Vector_4" d="M24.5374 34.9749V47.8494C35.9841 47.1022 45.1367 37.9448 45.884 26.5029H33.0047C32.3479 30.8674 28.9019 34.318 24.5374 34.9749Z" fill="var(--fill-0, #4D4DFF)"/>
+</g>
+<defs>
+<clipPath id="clip0_0_233">
+<rect width="48" height="48" fill="white"/>
+</clipPath>
+</defs>
+</svg>

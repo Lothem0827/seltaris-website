@@ -11,7 +11,7 @@ export function HumanTouchShowcaseSection() {
           title={humanTouchShowcase.title}
           subtitle={humanTouchShowcase.subtitle}
           imageSrc={assets.altraserviceHero}
-          imageHeight="h-[740px]"
+          imageSize="tall"
         />
       </Container>
     </section>

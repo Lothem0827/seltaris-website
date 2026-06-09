@@ -10,7 +10,7 @@ export function HealthCheckWorkflowSection() {
           title="Health Check Report"
           subtitle="Data quality at its finest detail."
           imageSrc={assets.workflowShowcase}
-          imageHeight="h-[712px]"
+          imageSize="health"
         />
       </Container>
     </section>

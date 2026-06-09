@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/atoms/Container";
+import { Text } from "@/components/atoms/Text";
 import { FooterNavColumn } from "@/components/molecules/FooterNavColumn";
 import { assets } from "@/lib/assets";
 import {
@@ -12,11 +13,11 @@ import {
 
 function FooterLegalDisclosures() {
   return (
-    <div className="bg-[#f1f1f3] py-10">
+    <div className="bg-surface-muted py-10">
       <Container>
-        <div className="space-y-0 font-body text-[10px] leading-[13px] text-paragraph">
+        <div className="space-y-0 font-body text-micro leading-micro text-paragraph">
           {footerLegalDisclosures.map((block, blockIndex) => (
-            <div key={block.title} className={blockIndex > 0 ? "pt-[13px]" : ""}>
+            <div key={block.title} className={blockIndex > 0 ? "pt-3.5" : ""}>
               <p className="font-normal">{block.title}</p>
               {block.items.map((item, itemIndex) => (
                 <p key={itemIndex} className="font-normal">
@@ -46,9 +47,9 @@ function FooterLegalDisclosures() {
 
 function FooterLargeLogo() {
   return (
-    <div className="border-b border-[#f1f1f3] bg-white py-16 md:py-24">
+    <div className="border-b border-surface-muted bg-white py-16 md:py-24">
       <Container className="flex justify-center">
-        <div className="relative w-full max-w-[min(100%,1190px)]">
+        <div className="relative w-full max-w-footer-logo">
           <Image
             src={assets.footerLargeLogo}
             alt="Seltaris"
@@ -70,7 +71,7 @@ function FooterSiteNav() {
     <div className="bg-white py-12 md:py-14">
       <Container>
         <div className="flex flex-col gap-12 lg:flex-row lg:gap-10">
-          <div className="flex shrink-0 flex-col justify-between gap-10 lg:min-h-[347px] lg:w-[300px]">
+          <div className="flex shrink-0 flex-col justify-between gap-10 lg:min-h-footer-sidebar lg:w-footer-sidebar">
             <Link
               href="https://www.gbg.com"
               className="inline-flex shrink-0"
@@ -81,7 +82,7 @@ function FooterSiteNav() {
                 alt="GBG"
                 width={100}
                 height={25}
-                className="h-[25px] w-auto"
+                className="h-gbg-logo w-auto"
               />
             </Link>
             <div className="flex flex-wrap items-center gap-6">
@@ -121,17 +122,17 @@ function FooterSiteNav() {
 
 function FooterBottomBar() {
   return (
-    <div className="bg-[#f1f1f3] py-10">
+    <div className="bg-surface-muted py-10">
       <Container>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
-          <p className="max-w-xl font-body text-sm leading-[1.3] text-text">
+          <Text as="p" variant="body-sm" className="max-w-xl text-text">
             {footerTagline}
-          </p>
-          <p className="shrink-0 font-body text-sm leading-[1.3] text-text lg:text-right">
+          </Text>
+          <Text as="p" variant="body-sm" className="shrink-0 text-text lg:text-right">
             © {new Date().getFullYear()} GB Group plc (&apos;GBG&apos;).
             <br />
             GBG is the trading name and a trademark of GB Group plc.
-          </p>
+          </Text>
         </div>
       </Container>
     </div>

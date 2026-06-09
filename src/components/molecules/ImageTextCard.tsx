@@ -21,7 +21,7 @@ export function ImageTextCard({ imageSrc, children, badge }: ImageTextCardProps)
             {badge}
           </Badge>
         ) : null}
-        <Text className="[&_strong]:font-semibold [&_strong]:text-text">
+        <Text className="prose-strong">
           {children}
         </Text>
       </div>

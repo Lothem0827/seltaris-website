@@ -29,7 +29,7 @@ export function SplitIntro({
         <Heading level="h1">{heading}</Heading>
         <Text>{body}</Text>
       </div>
-      <div className="relative size-[315px] shrink-0 self-center">
+      <div className="relative size-split-intro shrink-0 self-center">
         <Image
           src={imageSrc}
           alt={imageAlt}

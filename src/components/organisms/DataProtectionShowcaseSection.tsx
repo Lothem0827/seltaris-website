@@ -10,7 +10,7 @@ export function DataProtectionShowcaseSection() {
           title="Advanced Data Protection"
           subtitle="Your business is nobody else's. Not even GBG."
           imageSrc={assets.platformShowcase}
-          imageHeight="h-[730px]"
+          imageSize="data"
         />
       </Container>
     </section>

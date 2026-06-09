@@ -34,7 +34,7 @@ export function SliderNavButtons({
           alt=""
           width={57}
           height={57}
-          className="size-14 scale-x-[-1]"
+          className="size-14 -scale-x-100"
           aria-hidden
         />
       </button>
