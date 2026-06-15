@@ -1,11 +1,10 @@
 "use client";
 
-import { useRef } from "react";
 import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { CoreFeatureSlideCard } from "@/components/molecules/CoreFeatureSlideCard";
-import { SliderNavButtons } from "@/components/molecules/SliderNavButtons";
+import { SliderNavButtons, useSliderNav } from "@/components/molecules/SliderNavButtons";
 import {
   ContentSlider,
   type SliderSlide,
@@ -30,8 +29,7 @@ const slides: SliderSlide[] = coreFeaturesSection.features.map((feature) => ({
 
 export function CoreFeaturesSection() {
   const section = coreFeaturesSection;
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const { navButtonProps, sliderProps } = useSliderNav();
 
   return (
     <section
@@ -46,10 +44,10 @@ export function CoreFeaturesSection() {
               {section.heading}
             </FeaturePageHeading>
           </div>
-          <SliderNavButtons prevRef={prevRef} nextRef={nextRef} />
+          <SliderNavButtons {...navButtonProps} />
         </div>
 
-        <ContentSlider prevRef={prevRef} nextRef={nextRef} slides={slides} />
+        <ContentSlider {...sliderProps} slides={slides} />
       </Container>
     </section>
   );

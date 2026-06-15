@@ -3,13 +3,36 @@
 import Image from "next/image";
 import { assets } from "@/lib/assets";
 import { cn } from "@/lib/utils";
-import type { RefObject } from "react";
+import { useRef, useState, type RefObject } from "react";
 
 type SliderNavButtonsProps = {
   prevRef: RefObject<HTMLButtonElement | null>;
   nextRef: RefObject<HTMLButtonElement | null>;
   className?: string;
+  /** When false, hides the control group (e.g. slider content fits without scrolling). */
+  visible?: boolean;
 };
+
+export function useSliderNav() {
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const [hasOverflow, setHasOverflow] = useState(false);
+
+  return {
+    prevRef,
+    nextRef,
+    navButtonProps: {
+      prevRef,
+      nextRef,
+      visible: hasOverflow,
+    },
+    sliderProps: {
+      prevRef,
+      nextRef,
+      onOverflowChange: setHasOverflow,
+    },
+  };
+}
 
 const navButtonClass =
   "relative flex size-14 shrink-0 items-center justify-center transition-opacity enabled:hover:opacity-80 disabled:pointer-events-none disabled:opacity-50 [&.swiper-button-disabled]:pointer-events-none [&.swiper-button-disabled]:opacity-50";
@@ -19,9 +42,13 @@ export function SliderNavButtons({
   prevRef,
   nextRef,
   className,
+  visible = true,
 }: SliderNavButtonsProps) {
   return (
-    <div className={cn("flex items-center gap-4", className)}>
+    <div
+      className={cn("flex items-center gap-4", !visible && "hidden", className)}
+      aria-hidden={!visible}
+    >
       <button
         ref={prevRef}
         type="button"

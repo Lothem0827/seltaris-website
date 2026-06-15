@@ -39,7 +39,7 @@ export function DesignMadeSimplePageHero() {
         </div>
 
         <div className="relative w-full max-w-content-wide">
-          <div className="relative h-visual-wide w-full">
+          <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
             <Image
               src={assets.designMadeSimplePage.heroMockup}
               alt="Seltaris interface"

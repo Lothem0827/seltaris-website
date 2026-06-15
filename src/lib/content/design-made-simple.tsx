@@ -44,5 +44,5 @@ export const designMadeSimpleDataProtectionTeaser = {
     </>
   ),
   subheading: "Your business is nobody else's. Not even GBG.",
-  cta: { label: "Learn more", href: "/seltaris-advanced-data-protection" },
+  cta: { label: "Learn more", href: "/advanced-data-protection" },
 } as const;

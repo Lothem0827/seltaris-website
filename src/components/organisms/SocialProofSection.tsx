@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Container } from "@/components/atoms/Container";
 import { Heading } from "@/components/atoms/Heading";
-import { SliderNavButtons } from "@/components/molecules/SliderNavButtons";
+import { SliderNavButtons, useSliderNav } from "@/components/molecules/SliderNavButtons";
 import { ContentSlider, type SliderSlide } from "@/components/organisms/ContentSlider";
 import {
   testimonialSlides,
@@ -19,8 +19,7 @@ function SliderBlock({
   title: React.ReactNode;
   slides: SliderSlide[];
 }) {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const { navButtonProps, sliderProps } = useSliderNav();
 
   return (
     <div className="flex flex-col gap-8">
@@ -33,9 +32,9 @@ function SliderBlock({
             {title}
           </Heading>
         </div>
-        <SliderNavButtons prevRef={prevRef} nextRef={nextRef} />
+        <SliderNavButtons {...navButtonProps} />
       </div>
-      <ContentSlider prevRef={prevRef} nextRef={nextRef} slides={slides} />
+      <ContentSlider {...sliderProps} slides={slides} />
     </div>
   );
 }

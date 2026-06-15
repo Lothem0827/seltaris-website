@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Heading } from "@/components/atoms/Heading";
 import { SplitIntro } from "@/components/molecules/SplitIntro";
-import { SliderNavButtons } from "@/components/molecules/SliderNavButtons";
+import { SliderNavButtons, useSliderNav } from "@/components/molecules/SliderNavButtons";
 import {
   ContentSlider,
   type SliderSlide,
@@ -36,8 +36,7 @@ export function SliderSection({
   className,
   backgroundClassName,
 }: SliderSectionProps) {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  const { navButtonProps, sliderProps } = useSliderNav();
 
   return (
     <section
@@ -60,10 +59,10 @@ export function SliderSection({
               {heading}
             </Heading>
           ) : null}
-          <SliderNavButtons prevRef={prevRef} nextRef={nextRef} />
+          <SliderNavButtons {...navButtonProps} />
         </div>
 
-        <ContentSlider prevRef={prevRef} nextRef={nextRef} slides={slides} />
+        <ContentSlider {...sliderProps} slides={slides} />
 
         {cta ? (
           <div className="flex justify-center pt-4">

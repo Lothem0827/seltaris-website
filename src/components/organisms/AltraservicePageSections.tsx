@@ -63,7 +63,7 @@ export function AltraservicePageHero() {
         </div>
 
         <div className="relative w-full max-w-container">
-          <div className="relative h-visual-wide w-full">
+          <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
             <Image
               src={assets.altraservicePage.heroMockup}
               alt="Seltaris dashboard"

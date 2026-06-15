@@ -28,24 +28,30 @@ export function ImageSlideCard({
   imageVariant = "dark",
 }: ImageSlideCardProps) {
   return (
-    <article className={cn("flex shrink-0 flex-col gap-4", widthClasses[width])}>
+    <article
+      className={cn("flex shrink-0 flex-col gap-4", widthClasses[width])}
+    >
       <div
         className={cn(
-          "relative h-card-slide w-full overflow-hidden rounded-radius-xl",
-          imageVariant === "dark" ? "bg-card-dark" : "border border-border bg-white",
+          "relative aspect-[4/3] w-full overflow-hidden rounded-radius-lg sm:aspect-auto sm:h-card-slide",
+          imageVariant === "light" && "border border-border",
         )}
       >
-        <Image src={imageSrc} alt="" fill className="object-cover" sizes="604px" />
+        <Image
+          src={imageSrc}
+          alt=""
+          fill
+          className="object-contain sm:object-cover"
+          sizes="(max-width: 640px) 88vw, 604px"
+        />
       </div>
-      <div className="space-y-4 px-4 py-2">
+      <div className="space-y-2 px-4 py-2">
         {title ? (
           <FeaturePageHeading as="h3" variant="slideTitle">
             {title}
           </FeaturePageHeading>
         ) : null}
-        <Text className="prose-strong">
-          {description}
-        </Text>
+        <Text className="prose-strong">{description}</Text>
       </div>
     </article>
   );

@@ -22,11 +22,11 @@ const levelStyles: Record<HeadingLevel, string> = {
     "font-display text-display leading-display font-bold text-text tracking-display",
   sectionDisplay:
     "font-display text-section-display leading-h1 font-bold text-text tracking-h1",
-  h1: "font-display text-h1 leading-h1 font-bold text-text tracking-h1",
-  h2: "font-display text-h2 leading-h2 font-bold text-text tracking-h2",
+  h1: "font-display text-h1 leading-h1 font-bold text-text",
+  h2: "font-display text-subheading leading-subheading font-bold text-text",
   h3: "font-body text-h3 leading-h3 font-bold text-text",
   subheading:
-    "font-display text-subheading leading-subheading font-semibold text-text",
+    "font-display text-subheading leading-subheading font-bold text-text",
   panel:
     "font-display text-nav-title leading-nav-title font-bold text-text tracking-nav-title",
 };

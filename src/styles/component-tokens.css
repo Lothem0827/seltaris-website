@@ -33,7 +33,6 @@
   --text-section-display-size: 3rem; /* 48px — compact display headings */
   --text-micro-size: 0.625rem; /* 10px */
   --text-micro-line: 0.8125rem; /* 13px */
-  --text-tiny-size: 0.5625rem; /* 9px */
   --text-badge-size: 0.4375rem; /* 7px */
   --text-link-nav-size: 0.875rem; /* 14px — footer nav links */
 
@@ -41,80 +40,80 @@
   --text-fp-eyebrow: 1.5rem; /* 24px — d39c97f */
   --leading-fp-eyebrow: 1.3;
   --weight-fp-eyebrow: 600;
-  --text-fp-hero: 3rem; /* 48px — 358e3dc */
-  --leading-fp-hero: 1.2;
-  --tracking-fp-hero: -0.05em;
-  --weight-fp-hero: 500;
-  --text-fp-hero-sub: 1.125rem; /* 18px — 16c892a */
-  --leading-fp-hero-sub: 1.6;
-  --weight-fp-hero-sub: 400;
-  --text-fp-banner: 3rem; /* 48px — 358e3dc */
-  --leading-fp-banner: 1.2;
-  --tracking-fp-banner: -0.05em;
-  --weight-fp-banner: 500;
-  --text-fp-banner-wide: 3rem; /* 48px — same token on live Human Touch */
-  --leading-fp-banner-wide: 1.2;
-  --tracking-fp-banner-wide: -0.05em;
-  --weight-fp-banner-wide: 500;
-  --text-fp-banner-sub: 1.125rem; /* 18px — 449d743 / 16c892a */
-  --leading-fp-banner-sub: 1.6;
-  --weight-fp-banner-sub: 500;
-  --text-fp-section: 2rem; /* 32px — 3544d72 */
-  --leading-fp-section: 1.3;
-  --tracking-fp-section: -0.04em;
-  --weight-fp-section: 500;
-  --text-fp-section-lg: 3rem; /* 48px — 358e3dc */
-  --leading-fp-section-lg: 1.2;
-  --tracking-fp-section-lg: -0.05em;
-  --weight-fp-section-lg: 500;
-  --text-fp-section-xl: 3rem;
-  --leading-fp-section-xl: 1.2;
-  --tracking-fp-section-xl: -0.05em;
-  --weight-fp-section-xl: 500;
-  --text-fp-heading-sm: 2rem; /* 32px — 3544d72 */
-  --leading-fp-heading-sm: 1.3;
-  --tracking-fp-heading-sm: -0.04em;
-  --weight-fp-heading-sm: 500;
-  --text-fp-heading-md: 2rem;
-  --leading-fp-heading-md: 1.3;
-  --tracking-fp-heading-md: -0.04em;
-  --weight-fp-heading-md: 500;
-  --text-fp-heading-split: 2rem; /* 32px — 3544d72 */
-  --leading-fp-heading-split: 1.3;
-  --tracking-fp-heading-split: -0.04em;
-  --weight-fp-heading-split: 500;
-  --text-fp-card: 2rem;
-  --leading-fp-card: 1.3;
-  --weight-fp-card: 500;
-  --text-fp-teaser: 3rem; /* 48px — 358e3dc */
-  --leading-fp-teaser: 1.2;
-  --tracking-fp-teaser: -0.05em;
-  --weight-fp-teaser: 500;
-  --text-fp-feature-eyebrow: 0.875rem; /* 14px — 1ab54a8 */
-  --leading-fp-feature-eyebrow: 1.3;
+  --text-fp-hero: var(--text-section-display-size);
+  --leading-fp-hero: var(--text-h1-line);
+  --tracking-fp-hero: var(--text-h1-tracking);
+  --weight-fp-hero: 700;
+  --text-fp-hero-sub: var(--text-fp-subtitle-size);
+  --leading-fp-hero-sub: var(--leading-fp-subtitle);
+  --weight-fp-hero-sub: var(--weight-fp-subtitle);
+  --text-fp-banner: var(--text-section-display-size);
+  --leading-fp-banner: var(--text-h1-line);
+  --tracking-fp-banner: var(--text-h1-tracking);
+  --weight-fp-banner: 700;
+  --text-fp-banner-wide: var(--text-section-display-size);
+  --leading-fp-banner-wide: var(--text-h1-line);
+  --tracking-fp-banner-wide: var(--text-h1-tracking);
+  --weight-fp-banner-wide: 700;
+  --text-fp-banner-sub: var(--text-fp-subtitle-size);
+  --leading-fp-banner-sub: var(--leading-fp-subtitle);
+  --weight-fp-banner-sub: var(--weight-fp-subtitle);
+  --text-fp-section: var(--text-h1-size);
+  --leading-fp-section: var(--text-h1-line);
+  --weight-fp-section: 700;
+  --text-fp-section-lg: var(--text-section-display-size);
+  --leading-fp-section-lg: var(--text-h1-line);
+  --tracking-fp-section-lg: var(--text-h1-tracking);
+  --weight-fp-section-lg: 700;
+  --text-fp-section-xl: var(--text-section-display-size);
+  --leading-fp-section-xl: var(--text-h1-line);
+  --tracking-fp-section-xl: var(--text-h1-tracking);
+  --weight-fp-section-xl: 700;
+  --text-fp-heading-sm: var(--text-h1-size);
+  --leading-fp-heading-sm: var(--text-h1-line);
+  --tracking-fp-heading-sm: var(--text-h1-tracking);
+  --weight-fp-heading-sm: 700;
+  --text-fp-heading-md: var(--text-h1-size);
+  --leading-fp-heading-md: var(--text-h1-line);
+  --tracking-fp-heading-md: var(--text-h1-tracking);
+  --weight-fp-heading-md: 700;
+  --text-fp-heading-split: var(--text-h1-size);
+  --leading-fp-heading-split: var(--text-h1-line);
+  --tracking-fp-heading-split: var(--text-h1-tracking);
+  --weight-fp-heading-split: 700;
+  --text-fp-card: var(--text-h1-size);
+  --leading-fp-card: var(--text-h1-line);
+  --weight-fp-card: 700;
+  --text-fp-teaser: var(--text-section-display-size);
+  --leading-fp-teaser: var(--text-h1-line);
+  --tracking-fp-teaser: var(--text-h1-tracking);
+  --weight-fp-teaser: 700;
+  --text-fp-feature-eyebrow: var(--text-body-sm-size);
+  --leading-fp-feature-eyebrow: var(--text-body-sm-line);
   --weight-fp-feature-eyebrow: 400;
-  --text-fp-feature-title: 2rem;
-  --leading-fp-feature-title: 1.3;
-  --weight-fp-feature-title: 500;
-  --text-fp-workflow-num: 2.5rem;
-  --leading-fp-workflow-num: 2.954rem;
-  --text-fp-workflow-title: 1.5rem;
-  --leading-fp-workflow-title: 2.1rem;
+  --text-fp-feature-title: var(--text-fp-section);
+  --leading-fp-feature-title: var(--leading-fp-section);
+  --weight-fp-feature-title: var(--weight-fp-section);
+  --text-fp-slide-title: var(--text-subheading-size);
+  --leading-fp-slide-title: var(--text-subheading-line);
+  --weight-fp-slide-title: var(--weight-subheading);
+  --text-fp-workflow-num: var(--text-h1-size);
+  --leading-fp-workflow-num: var(--text-h1-line);
+  --weight-fp-workflow-num: 700;
+  --text-fp-workflow-title: var(--text-subheading-size);
+  --leading-fp-workflow-title: var(--text-subheading-line);
   --tracking-fp-workflow-title: -1px;
+  --weight-fp-workflow-title: var(--weight-subheading);
   --text-fp-stat-label: 1rem; /* 16px — 98449ba */
   --leading-fp-stat-label: 1.4;
   --weight-fp-stat-label: 500;
-  --text-fp-stat-value: 2.5rem; /* 40px — 6ca77f7 */
-  --leading-fp-stat-value: 1.2;
-  --tracking-fp-stat-value: -0.04em;
-  --weight-fp-stat-value: 500;
-  --text-fp-body-lead: 2rem; /* 32px — 3544d72 */
-  --leading-fp-body-lead: 1.3;
-  --tracking-fp-body-lead: -0.04em;
-  --weight-fp-body-lead: 500;
-  --text-fp-slide: 1.75rem;
-  --leading-fp-slide: 1.35;
-
+  --text-fp-stat-value: var(--text-h1-size);
+  --leading-fp-stat-value: var(--text-h1-line);
+  --weight-fp-stat-value: 700;
+  --text-fp-body-lead: var(--text-h1-size);
+  --leading-fp-body-lead: var(--text-h1-line);
+  --tracking-fp-body-lead: var(--text-h1-tracking);
+  --weight-fp-body-lead: 700;
   /* ─── Layout widths ─── */
   --width-logo: 9.375rem;
   --height-logo: 2.625rem;

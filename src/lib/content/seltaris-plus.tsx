@@ -189,7 +189,7 @@ export const seltarisPlusOfferings: SeltarisPlusOffering[] = [
     backgroundTone: "health",
     heading: "Health Check Report",
     body: "Get the full picture of your existing data.",
-    href: "/seltaris-health-check-report",
+    href: "/health-check-report",
   },
   {
     id: "data-protection",
@@ -204,7 +204,7 @@ export const seltarisPlusOfferings: SeltarisPlusOffering[] = [
       </>
     ),
     body: "Enterprise grade security. Built from the ground up.",
-    href: "/seltaris-advanced-data-protection",
+    href: "/advanced-data-protection",
   },
   {
     id: "shared-licensing",

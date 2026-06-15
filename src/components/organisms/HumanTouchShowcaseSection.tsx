@@ -10,7 +10,7 @@ export function HumanTouchShowcaseSection() {
         <CenteredShowcase
           title={humanTouchShowcase.title}
           subtitle={humanTouchShowcase.subtitle}
-          imageSrc={assets.altraserviceHero}
+          imageSrc={assets.humanTouchShowcase}
           imageSize="tall"
         />
       </Container>

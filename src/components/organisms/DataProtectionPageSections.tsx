@@ -67,7 +67,7 @@ export function DataProtectionPageHero() {
         </div>
 
         <div className="relative w-full max-w-content-wide">
-          <div className="relative h-visual-data w-full">
+          <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-auto lg:h-visual-data">
             <Image
               src={assets.dataProtectionPage.heroBanner}
               alt="Advanced Data Protection"

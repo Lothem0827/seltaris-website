@@ -20,7 +20,7 @@ export function ServiceCard({
   return (
     <article
       className={cn(
-        "relative flex flex-1 items-center gap-5 rounded-radius-md border border-border bg-white p-4",
+        "relative flex h-full flex-1 items-start gap-5 rounded-radius-md border border-border bg-white p-4",
         comingSoon && "opacity-50",
       )}
     >
@@ -34,7 +34,7 @@ export function ServiceCard({
           src={iconSrc}
           alt=""
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="61px"
         />
       </div>

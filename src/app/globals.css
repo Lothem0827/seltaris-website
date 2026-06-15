@@ -45,7 +45,6 @@
 
   --text-display: var(--text-display-size);
   --text-h1: var(--text-h1-size);
-  --text-h2: var(--text-h2-size);
   --text-h3: var(--text-h3-size);
   --text-subheading: var(--text-subheading-size);
   --text-body: var(--text-body-size);
@@ -54,7 +53,6 @@
   --text-nav-title: var(--text-nav-title-size);
   --text-section-display: var(--text-section-display-size);
   --text-micro: var(--text-micro-size);
-  --text-tiny: var(--text-tiny-size);
   --text-badge: var(--text-badge-size);
   --text-link-nav: var(--text-link-nav-size);
 
@@ -62,7 +60,6 @@
   --leading-nav-title: var(--text-nav-title-line);
   --leading-micro: var(--text-micro-line);
   --leading-h1: var(--text-h1-line);
-  --leading-h2: var(--text-h2-line);
   --leading-h3: var(--text-h3-line);
   --leading-subheading: var(--text-subheading-line);
   --leading-body: var(--text-body-line);
@@ -70,7 +67,6 @@
 
   --tracking-display: var(--text-display-tracking);
   --tracking-h1: var(--text-h1-tracking);
-  --tracking-h2: var(--text-h2-tracking);
   --tracking-nav-title: var(--text-nav-title-tracking);
 
   /* Spacing */
@@ -296,7 +292,6 @@ body {
     font-family: var(--font-display);
     font-size: var(--text-fp-section);
     line-height: var(--leading-fp-section);
-    letter-spacing: var(--tracking-fp-section);
     font-weight: var(--weight-fp-section);
     color: var(--color-text);
   }
@@ -372,17 +367,17 @@ body {
     color: var(--color-brand);
   }
   .fp-feature-title {
-    font-family: var(--font-body);
+    font-family: var(--font-display);
     font-size: var(--text-fp-feature-title);
     line-height: var(--leading-fp-feature-title);
-    font-weight: 600;
+    font-weight: var(--weight-fp-feature-title);
     color: var(--color-text);
   }
   .fp-workflow-num {
-    font-family: var(--font-body);
+    font-family: var(--font-display);
     font-size: var(--text-fp-workflow-num);
     line-height: var(--leading-fp-workflow-num);
-    font-weight: 600;
+    font-weight: var(--weight-fp-workflow-num);
     color: var(--color-brand);
   }
   .fp-workflow-title {
@@ -390,7 +385,7 @@ body {
     font-size: var(--text-fp-workflow-title);
     line-height: var(--leading-fp-workflow-title);
     letter-spacing: var(--tracking-fp-workflow-title);
-    font-weight: 700;
+    font-weight: var(--weight-fp-workflow-title);
     color: var(--color-text);
   }
   .fp-stat-label {
@@ -404,7 +399,6 @@ body {
     font-family: var(--font-display);
     font-size: var(--text-fp-stat-value);
     line-height: var(--leading-fp-stat-value);
-    letter-spacing: var(--tracking-fp-stat-value);
     font-weight: var(--weight-fp-stat-value);
     color: var(--color-brand);
   }
@@ -418,9 +412,9 @@ body {
   }
   .fp-slide-title {
     font-family: var(--font-display);
-    font-size: var(--text-fp-slide);
-    line-height: var(--leading-fp-slide);
-    font-weight: 700;
+    font-size: var(--text-fp-slide-title);
+    line-height: var(--leading-fp-slide-title);
+    font-weight: var(--weight-fp-slide-title);
     color: var(--color-text);
   }
 

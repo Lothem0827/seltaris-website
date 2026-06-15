@@ -39,13 +39,13 @@ function BannerImage({
 }) {
   return (
     <div className={cn("relative w-full", className)}>
-      <div className="relative mx-auto h-visual-hero max-w-visual-hero overflow-hidden">
+      <div className="relative mx-auto aspect-[4/3] w-full max-w-visual-hero overflow-hidden md:aspect-auto md:h-visual-hero">
         <Image
           src={src}
           alt={alt}
           fill
-          className="object-cover"
-          sizes="1600px"
+          className="object-contain md:object-cover"
+          sizes="(max-width: 768px) 100vw, 1600px"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white" />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/90 to-transparent px-6 pb-8 pt-24">
@@ -158,7 +158,7 @@ export function HumanTouchPageHero() {
         </div>
 
         <div className="relative w-full max-w-container">
-          <div className="relative h-visual-wide w-full">
+          <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
             <Image
               src={assets.humanTouchPage.heroMockup}
               alt="Human Touch dashboard"

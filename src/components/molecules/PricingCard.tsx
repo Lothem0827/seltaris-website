@@ -19,7 +19,10 @@ type PricingCardProps = {
   footerNote?: string;
   price?: { amount: string; gst?: string; note?: string };
   cta: { label: string; href: string; variant?: "primary" | "secondary" };
+  learnMoreHref?: string;
   showAustralia?: boolean;
+  showNewZealand?: boolean;
+  showInternational?: boolean;
 };
 
 const headerTones: Record<PricingCardTone, string> = {
@@ -39,8 +42,19 @@ export function PricingCard({
   footerNote,
   price,
   cta,
+  learnMoreHref,
   showAustralia,
+  showNewZealand,
+  showInternational,
 }: PricingCardProps) {
+  const regionChip = showAustralia
+    ? { flag: assets.australiaFlag, label: "Australia" }
+    : showNewZealand
+      ? { flag: assets.nzFlag, label: "New Zealand" }
+      : showInternational
+        ? { flag: assets.internationalFlag, label: "International" }
+        : null;
+
   return (
     <article
       className={cn(
@@ -61,16 +75,16 @@ export function PricingCard({
           ) : (
             <span />
           )}
-          {showAustralia ? (
+          {regionChip ? (
             <span className="inline-flex items-center gap-1 rounded-radius-full border border-border px-3 py-1.5 text-xs font-medium">
               <Image
-                src={assets.australiaFlag}
+                src={regionChip.flag}
                 alt=""
                 width={16}
                 height={16}
                 aria-hidden
               />
-              Australia
+              {regionChip.label}
             </span>
           ) : null}
         </div>
@@ -81,19 +95,21 @@ export function PricingCard({
               {title}
             </Heading>
             <Text>{description}</Text>
-            <Link
-              href="#learn-more"
-              className="inline-flex items-center gap-2 font-label text-body-sm text-brand"
-            >
-              Learn more
-              <Image
-                src={assets.learnMoreArrow}
-                alt=""
-                width={10}
-                height={8}
-                aria-hidden
-              />
-            </Link>
+            {(learnMoreHref ?? "#learn-more") ? (
+              <Link
+                href={learnMoreHref ?? "#learn-more"}
+                className="inline-flex items-center gap-2 font-label text-body-sm text-brand"
+              >
+                Learn more
+                <Image
+                  src={assets.learnMoreArrow}
+                  alt=""
+                  width={10}
+                  height={8}
+                  aria-hidden
+                />
+              </Link>
+            ) : null}
           </div>
 
           <ul className="space-y-2">

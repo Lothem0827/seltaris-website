@@ -64,7 +64,7 @@ export function PricingSection() {
         </div>
 
         <Button
-          href="#services"
+          href="/services"
           variant="secondary"
           className="bg-text text-white"
         >

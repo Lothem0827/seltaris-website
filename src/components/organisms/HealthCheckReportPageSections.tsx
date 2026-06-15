@@ -40,7 +40,7 @@ export function HealthCheckReportPageHero() {
         </div>
 
         <div className="relative w-full max-w-content-wide">
-          <div className="relative h-visual-wide w-full">
+          <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
             <Image
               src={assets.healthCheckReportPage.heroMockup}
               alt="Health Check Report on MacBook"
@@ -116,7 +116,7 @@ export function HealthCheckReportNextStepsSection() {
             <div className="grid gap-8 lg:grid-cols-3">
               {healthCheckReportNextSteps.map((step) => (
                 <article key={step.id} className="flex flex-col gap-6">
-                  <div className="relative aspect-[445/426] overflow-hidden rounded-radius-panel">
+                  <div className="relative aspect-[445/426] overflow-hidden rounded-radius-lg">
                     <Image
                       src={getHealthCheckReportImage(step.imageKey)}
                       alt=""

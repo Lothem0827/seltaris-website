@@ -78,7 +78,7 @@ export function DesignSystemMoleculesShowroom() {
             <FeatureNavCard
               title="Human Touch™"
               description="Intelligent address correction"
-              href="/seltaris-human-touch"
+              href="/human-touch"
               iconSrc={assets.humanTouchPage.featureHumanTouch}
             />
           </ComponentDemo>
@@ -226,7 +226,7 @@ export function DesignSystemMoleculesShowroom() {
                 eyebrow="Human Touch™"
                 heading="Intelligent correction"
                 body="Automatically detect and repair address errors at scale."
-                href="/seltaris-human-touch"
+                href="/human-touch"
                 cta="Learn more"
               />
             </div>

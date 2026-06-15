@@ -338,5 +338,5 @@ export const humanTouchAltraserviceTeaser = {
     </>
   ),
   subheading: "The Fastest Addressing Batch Processor We've Ever Created",
-  cta: { label: "Learn more", href: "/seltaris-altraservice" },
+  cta: { label: "Learn more", href: "/altraservice" },
 } as const;

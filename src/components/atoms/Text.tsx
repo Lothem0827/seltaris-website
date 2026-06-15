@@ -13,7 +13,7 @@ const variants: Record<TextVariant, string> = {
   body: "font-body text-body text-paragraph leading-body",
   "body-sm": "font-body text-body-sm text-paragraph leading-body-sm",
   caption: "font-body text-label text-paragraph leading-body-sm",
-  tiny: "font-body text-tiny text-paragraph leading-body-sm",
+  tiny: "font-body text-micro text-paragraph leading-micro",
   micro: "font-body text-micro text-paragraph leading-micro",
   label: "font-label text-label text-paragraph uppercase tracking-wider",
   utility: "font-label text-label text-paragraph",

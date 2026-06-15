@@ -7,10 +7,10 @@ import type { ReactNode } from "react";
 export type ShowcaseSize = "default" | "tall" | "data" | "health";
 
 const showcaseHeights: Record<ShowcaseSize, string> = {
-  default: "h-showcase",
-  tall: "h-showcase-tall",
-  data: "h-showcase-data",
-  health: "h-showcase-health",
+  default: "aspect-[4/3] md:aspect-auto md:h-showcase",
+  tall: "aspect-[3/4] md:aspect-auto md:h-showcase-tall",
+  data: "aspect-[4/3] md:aspect-auto md:h-showcase-data",
+  health: "aspect-[4/3] md:aspect-auto md:h-showcase-health",
 };
 
 type CenteredShowcaseProps = {
@@ -48,7 +48,13 @@ export function CenteredShowcase({
           showcaseHeights[imageSize],
         )}
       >
-        <Image src={imageSrc} alt={imageAlt} fill sizes="1200px" />
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          className="object-contain"
+          sizes="(max-width: 768px) 100vw, 1200px"
+        />
       </div>
     </div>
   );

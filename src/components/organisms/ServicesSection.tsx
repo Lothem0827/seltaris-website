@@ -41,13 +41,13 @@ export function ServicesSection() {
           </div>
         </div>
 
-        <div className="relative h-services-visual w-full overflow-hidden rounded-radius-lg">
+        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-radius-lg sm:aspect-auto sm:h-services-visual">
           <Image
             src={assets.servicesHero}
             alt="Data validation workflow"
             fill
-            className="object-cover object-top"
-            sizes="1200px"
+            className="object-contain object-top sm:object-cover"
+            sizes="(max-width: 640px) 100vw, 1200px"
           />
         </div>
 

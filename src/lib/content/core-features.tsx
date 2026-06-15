@@ -21,7 +21,7 @@ export const coreFeaturesSection = {
         </>
       ),
       body: "At the core of Seltaris lies our intuitive Human Touch Technology. This powerful software features large, highly capable intelligence models specifically tailored to read and process data as efficiently as humans do.",
-      href: "/seltaris-human-touch",
+      href: "/human-touch",
       cta: "Learn more",
     },
     {
@@ -37,7 +37,7 @@ export const coreFeaturesSection = {
         </>
       ),
       body: "Feel the need. The need for processing speed. Our latest step in pushing the boundaries of batch processing data, this time in the direction of fast processing speeds.",
-      href: "/seltaris-altraservice",
+      href: "/altraservice",
       cta: "Learn more",
     },
     {
@@ -53,7 +53,7 @@ export const coreFeaturesSection = {
         </>
       ),
       body: "Seltaris is meticulously designed to protect your data at every step. Integrated into the core of our secure cloud environment, it utilises advanced encryption processes to handle your data without ever storing it unencrypted.",
-      href: "/seltaris-advanced-data-protection",
+      href: "/advanced-data-protection",
       cta: "Learn more",
     },
     {
@@ -67,7 +67,7 @@ export const coreFeaturesSection = {
         </>
       ),
       body: "The best innovations are built for everyone. We have always believed that data quality software should be simple.",
-      href: "/seltaris-design-made-simple",
+      href: "/design-made-simple",
       cta: "Learn more",
     },
     {
@@ -77,7 +77,7 @@ export const coreFeaturesSection = {
       eyebrow: "Health Check Report",
       heading: "Data quality at its finest detail.",
       body: "This Health Check Report delivers a clear and comprehensive assessment of your submitted address data delivered in an easy to read PDF, analysed through the Seltaris service.",
-      href: "/seltaris-health-check-report",
+      href: "/address-quality-health-check-report",
       cta: "Learn more",
     },
   ],

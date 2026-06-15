@@ -243,5 +243,5 @@ export const dataProtectionDesignTeaser = {
     </>
   ),
   subheading: "Built for everyone so anyone can use it.",
-  cta: { label: "Learn more", href: "/seltaris-design-made-simple" },
+  cta: { label: "Learn more", href: "/design-made-simple" },
 } as const;

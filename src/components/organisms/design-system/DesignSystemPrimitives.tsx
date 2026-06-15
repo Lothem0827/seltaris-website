@@ -48,7 +48,7 @@ export function GuideSubheading({
   return (
     <h3
       className={cn(
-        "mb-6 font-display text-h2 leading-h2 font-bold tracking-h2 text-text",
+        "mb-6 font-display text-subheading leading-subheading font-bold text-text",
         className,
       )}
     >
@@ -136,25 +136,6 @@ export function TokenCode({
   );
 }
 
-/** Size label shown under typography variant codes in the component showroom. */
-export function TypographySizeLabel({
-  cssVar,
-  size,
-  className,
-}: {
-  cssVar: string;
-  size: string;
-  className?: string;
-}) {
-  return (
-    <p className={cn("font-body text-body-sm text-muted", className)}>
-      <TokenCode>{cssVar}</TokenCode>
-      <span className="mx-1.5">·</span>
-      <span className="text-paragraph">{size}</span>
-    </p>
-  );
-}
-
 export function DesignSystemTopBar() {
   return (
     <div className="border-b border-border bg-white">
@@ -163,7 +144,7 @@ export function DesignSystemTopBar() {
           <p className="font-label text-label uppercase tracking-wider text-brand">
             Seltaris
           </p>
-          <h1 className="font-display text-h2 leading-h2 font-bold text-text">
+          <h1 className="font-display text-subheading leading-subheading font-bold text-text">
             Design System Guide
           </h1>
         </div>

@@ -16,18 +16,17 @@ export function WhatIsSection() {
             platform for all your data quality needs.
           </Heading>
           <Text>
-            Seltaris is a high quality, secure, and powerful data
-            quality platform designed to format, cleanse, repair, verify, and
+            Seltaris is a high quality, secure, and powerful data quality
+            platform designed to format, cleanse, repair, verify, and
             standardise your existing datasets.
           </Text>
         </div>
-        <div className="relative h-what-is w-full max-w-what-is shrink-0">
+        <div className="relative shrink-0">
           <Image
             src={assets.whatIsImage}
             alt="Seltaris dashboard on laptop"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 581px"
+            width={581}
+            height={581}
           />
         </div>
       </Container>

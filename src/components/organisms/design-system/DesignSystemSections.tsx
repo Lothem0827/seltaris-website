@@ -7,7 +7,6 @@ import {
   RADIUS_TOKENS,
   SPACING_TOKENS,
   TOKEN_SOURCE_FILES,
-  TYPOGRAPHY_TOKENS,
   type ColorGroup,
   type ComponentLayer,
 } from "@/lib/design-system/catalog";
@@ -15,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { DesignSystemAtomsShowroom } from "./DesignSystemAtomsShowroom";
 import { DesignSystemComponentShowroom } from "./DesignSystemComponentShowroom";
 import { DesignSystemMoleculesShowroom } from "./DesignSystemMoleculesShowroom";
+import { DesignSystemTypographyScale } from "./DesignSystemTypographyScale";
+import { DesignSystemTypographyTable } from "./DesignSystemTypographyTable";
 import {
   DemoPanel,
   GuideSection,
@@ -171,7 +172,7 @@ export function DesignSystemTypographySection() {
     <GuideSection
       id="typography"
       title="Typography"
-      description="Two font families power the system. Use Heading and Text atoms for marketing pages; FeaturePageHeading (fp-*) for feature page layouts."
+      description="Two font families, one merged type scale. Heading, Text, and FeaturePageHeading (fp-*) share tokens where font, size, and weight match — see the table for canonical tokens and all usages per row."
     >
       <GuideSubheading>Font families</GuideSubheading>
       <div className="mb-12 grid gap-4 md:grid-cols-2">
@@ -204,30 +205,17 @@ export function DesignSystemTypographySection() {
         ))}
       </div>
 
-      <GuideSubheading>Type scale</GuideSubheading>
-      <div className="space-y-8">
-        {TYPOGRAPHY_TOKENS.map((token) => (
-          <div
-            key={token.name}
-            className="grid gap-4 border-b border-border pb-8 last:border-0 lg:grid-cols-[1fr_16rem]"
-          >
-            <div>
-              <p className="mb-3 font-label text-label uppercase tracking-wider text-muted">
-                {token.name} · {token.fontFamily}
-              </p>
-              <p className={token.classes}>{token.sample}</p>
-            </div>
-            <div className="space-y-2 lg:text-right">
-              <TokenCode className="block lg:ml-auto lg:w-fit">
-                {token.classes}
-              </TokenCode>
-              <p className="font-body text-body-sm text-paragraph">
-                {token.cssSize}
-              </p>
-              <p className="font-body text-body-sm text-muted">{token.usage}</p>
-            </div>
-          </div>
-        ))}
+      <GuideSubheading>Type scale — review table</GuideSubheading>
+      <p className="mb-6 max-w-3xl font-body text-body-sm text-paragraph">
+        Canonical styles after token merges (sorted largest → smallest). Each
+        row lists every Heading, Text, and FeaturePageHeading API that shares
+        the same font, size, and weight.
+      </p>
+      <DesignSystemTypographyTable />
+
+      <div className="mt-12">
+        <GuideSubheading>Type scale — live previews</GuideSubheading>
+        <DesignSystemTypographyScale />
       </div>
 
       <div className="mt-10">

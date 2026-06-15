@@ -33,22 +33,23 @@
   --text-display-tracking: -0.009em;
 
   /* Heading 1 — section titles */
-  --text-h1-size: 2rem; /* 40px */
+  --text-h1-size: 2rem; /* 32px */
   --text-h1-line: var(--text-heading-line);
   --text-h1-tracking: -0.02em;
-
-  /* Heading 2 — card titles */
-  --text-h2-size: 1.4rem; /* 28px */
-  --text-h2-line: var(--text-heading-line);
-  --text-h2-tracking: -0.036em;
 
   /* Heading 3 — compact card titles */
   --text-h3-size: 0.875rem; /* 14px */
   --text-h3-line: var(--text-heading-line);
 
-  /* Subheading */
+  /* Subheading — also Heading level="h2" and fp-workflow-title */
   --text-subheading-size: 1.5rem; /* 24px */
   --text-subheading-line: var(--text-heading-line);
+  --weight-subheading: 700;
+
+  /* Feature page subtitle — hero & banner */
+  --text-fp-subtitle-size: 1.125rem; /* 18px */
+  --leading-fp-subtitle: 1.6;
+  --weight-fp-subtitle: 500;
 
   /* Body */
   --text-body-size: 1rem; /* 16px */

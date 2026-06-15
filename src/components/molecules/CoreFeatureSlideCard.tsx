@@ -42,7 +42,7 @@ export function CoreFeatureSlideCard({
           </Button>
         </div>
 
-        <div className="relative min-h-0 flex-1 w-full">
+        <div className="relative aspect-[4/3] w-full sm:aspect-auto sm:min-h-0 sm:flex-1">
           <Image
             src={visualSrc}
             alt=""
