@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { DevInspector } from "@/components/dev/DevInspector";
+import { ScrollToHash } from "@/components/providers/ScrollToHash";
+import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import "./globals.css";
+import "lenis/dist/lenis.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -35,8 +38,11 @@ export default function RootLayout({
       className={`${dmSans.variable} ${mintGrotesk.variable}`}
     >
       <body className="min-h-screen antialiased" suppressHydrationWarning>
-        {process.env.NODE_ENV === "development" ? <DevInspector /> : null}
-        {children}
+        <SmoothScroll>
+          <ScrollToHash />
+          {process.env.NODE_ENV === "development" ? <DevInspector /> : null}
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -21,12 +21,13 @@ export function WhatIsSection() {
             standardise your existing datasets.
           </Text>
         </div>
-        <div className="relative shrink-0">
+        <div className="relative shrink-0 overflow-hidden rounded-radius-lg">
           <Image
             src={assets.whatIsImage}
             alt="Seltaris dashboard on laptop"
             width={581}
-            height={581}
+            height={354}
+            className="h-auto w-full"
           />
         </div>
       </Container>

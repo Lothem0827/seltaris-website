@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import type { Swiper as SwiperInstance } from "swiper";
 import { ImageSlideCard } from "@/components/molecules/ImageSlideCard";
-import { TestimonialCard } from "@/components/molecules/TestimonialCard";
-import { ValuePropCard } from "@/components/molecules/ValuePropCard";
 import { assets, getAsset } from "@/lib/assets";
 import type { SlideItem } from "@/lib/types/slider";
 import { cn } from "@/lib/utils";
@@ -23,8 +21,6 @@ import "swiper/css";
 
 export type SliderSlide =
   | { type: "image"; id: string; item: SlideItem }
-  | { type: "testimonial"; id: string; author: string; quote: string }
-  | { type: "value"; id: string; title: string; description: string }
   | { type: "custom"; id: string; content: ReactNode };
 
 type ContentSliderProps = {
@@ -74,12 +70,6 @@ function renderSlide(slide: SliderSlide) {
               : "dark"
           }
         />
-      );
-    case "testimonial":
-      return <TestimonialCard author={slide.author} quote={slide.quote} />;
-    case "value":
-      return (
-        <ValuePropCard title={slide.title} description={slide.description} />
       );
     case "custom":
       return slide.content;

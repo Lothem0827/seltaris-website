@@ -18,12 +18,11 @@ export function ServicesSection() {
           </Heading>
           <div className="max-w-md space-y-2.5">
             <Text>
-              Seltaris brings together a powerful suite of services
-              designed to clean and enrich your organisation&apos;s data.
-              We&apos;re proud to offer our most advanced tools that make data
-              quality simple. Starting today, you can clean and validate
-              Australian addresses with phone, email validation, and geocoding
-              coming soon.
+              Seltaris brings together a powerful suite of services designed to
+              clean and enrich your organisation&apos;s data. We&apos;re proud
+              to offer our most advanced tools that make data quality simple.
+              Starting today, you can clean and validate Australian addresses
+              with phone, email validation, and geocoding coming soon.
             </Text>
             <Link
               href="#learn-more"
@@ -41,12 +40,13 @@ export function ServicesSection() {
           </div>
         </div>
 
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-radius-lg sm:aspect-auto sm:h-services-visual">
+        <div className="w-full overflow-hidden rounded-radius-lg">
           <Image
             src={assets.servicesHero}
             alt="Data validation workflow"
-            fill
-            className="object-contain object-top sm:object-cover"
+            width={1200}
+            height={378}
+            className="h-auto w-full"
             sizes="(max-width: 640px) 100vw, 1200px"
           />
         </div>

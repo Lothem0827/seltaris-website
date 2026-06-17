@@ -41,7 +41,7 @@ export type HumanTouchSplitRow = {
 export const humanTouchSmallDetailRows: HumanTouchSplitRow[] = [
   {
     id: "location-awareness",
-    imageKey: "geographicUi",
+    imageKey: "fuzzyLogic",
     imagePosition: "right",
     content: (
       <>
@@ -68,7 +68,7 @@ export const humanTouchSmallDetailRows: HumanTouchSplitRow[] = [
   },
   {
     id: "fuzzy-logic",
-    imageKey: "fuzzyLogic",
+    imageKey: "phoneticMatching",
     imagePosition: "left",
     content: (
       <>
@@ -88,7 +88,7 @@ export const humanTouchSmallDetailRows: HumanTouchSplitRow[] = [
   },
   {
     id: "phonetic-matching",
-    imageKey: "phoneticMatching",
+    imageKey: "intelligentUi",
     imagePosition: "right",
     content: (
       <>
@@ -245,13 +245,16 @@ export const humanTouchFinestDatasets = {
 
 export const humanTouchIntuition = {
   bannerKey: "intuitionBanner",
-  uiKey: "intuitionUi",
+  uiKey: "poorDataUi",
   heading: "Human-like intuition",
   subheading:
     "Algorithms that make sense of information in the same intuitive way a human would.",
   body: (
     <>
-      Incorrect or poorly entered data. Let&apos;s look at an example of an
+      <strong className="font-semibold text-text">
+        Incorrect or poorly entered data.
+      </strong>{" "}
+      Let&apos;s look at an example of an
       address that users have entered manually. Here you can see an address that
       has been typed in with no care for format and missing details. Instead of
       just accepting this address, which would likely cause problems downstream,
@@ -289,7 +292,7 @@ export const humanTouchGeographic = {
 } as const;
 
 export const humanTouchUnverified = {
-  bannerKey: "detailsBanner",
+  bannerKey: "beautyDetailsBanner",
   heading: (
     <>
       The beauty is in the <span className="text-brand">details.</span>

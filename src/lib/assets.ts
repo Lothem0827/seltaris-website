@@ -1,4 +1,4 @@
-/** Site-wide image paths (homepage assets live under /images/home). */
+/** Homepage raster assets — export from Figma at 0 radius; clip via CSS `rounded-radius-*`. */
 
 export const assets = {
   logo: "/seltaris-full-logo.svg",
@@ -30,7 +30,6 @@ export const assets = {
   health1: "/images/home/health-1.png",
   health2: "/images/home/health-2.png",
   health3: "/images/home/health-3.png",
-  analyticsShowcase: "/images/home/workflow-showcase.png",
   chevronDown: "/icons/chevron.svg",
   arrowUp: "/icons/arrow.svg",
   learnMoreArrow: "/images/home/learn-more-arrow.png",
@@ -188,16 +187,16 @@ export const assets = {
     humanTouchLogo: "/images/human-touch/human-touch-logo.png",
     coreDiagram: "/images/human-touch/core-diagram.png",
     intuitionBanner: "/images/human-touch/intuition-banner.png",
-    intuitionPhoto: "/images/human-touch/intuition-photo.png",
-    intuitionUi: "/images/human-touch/intuition-ui.png",
+    poorDataUi: "/images/human-touch/poor-data-ui.png",
     fuzzyLogic: "/images/human-touch/fuzzy-logic.png",
     phoneticMatching: "/images/human-touch/phonetic-matching.png",
-    geographicPhoto: "/images/human-touch/geographic-photo.png",
-    geographicUi: "/images/human-touch/geographic-ui.png",
+    geographicPhoto: "/images/human-touch/geographic-banner.png",
+    intelligentUi: "/images/human-touch/intelligent-ui.png",
     borderingLocalities: "/images/human-touch/bordering-localities.png",
     rangeInterpretation: "/images/human-touch/range-interpretation.png",
     contextualLogic: "/images/human-touch/contextual-logic.png",
-    detailsBanner: "/images/human-touch/details-banner.png",
+    detailsBanner: "/images/human-touch/small-differences-banner.png",
+    beautyDetailsBanner: "/images/human-touch/beauty-details-banner.png",
     standardisation: "/images/human-touch/standardisation.png",
     fieldCorrections: "/images/human-touch/field-corrections.png",
     optisourceDiagram: "/images/human-touch/optisource-diagram.png",

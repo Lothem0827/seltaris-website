@@ -40,11 +40,6 @@ export const servicesPageHero = {
   heading: "Seltaris Services",
 } as const;
 
-export const servicesPagePlusPromo = {
-  body: "Enjoy free Health Check Reports and volume discounts with Seltaris+.",
-  cta: { label: "Start with Seltaris+ today.", href: "/seltaris-plus" },
-} as const;
-
 export const servicesPageCategories: ServiceCategory[] = [
   {
     id: "address-data",

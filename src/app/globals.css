@@ -232,6 +232,11 @@
   }
 }
 
+html {
+  /* Clears the sticky main nav when using anchor / Lenis scroll targets */
+  scroll-padding-top: 4.5rem;
+}
+
 body {
   background: var(--color-white);
   color: var(--color-paragraph);

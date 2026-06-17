@@ -21,7 +21,7 @@ export function ImageTextCard({
           src={imageSrc}
           alt=""
           fill
-          className="object-cover"
+          className="object-contain"
           sizes="425px"
         />
       </div>

@@ -46,7 +46,7 @@ export const humanTouchTabPanels = [
         imageKey: "humanTouch3" as const,
         body: (
           <>
-            <strong>Vanity Suburbs.</strong> Swapping a suburb for a more
+            <strong>Vanity Suburbs. </strong>Swapping a suburb for a more
             &ldquo;prestigious&rdquo; one sounds harmless, until customer
             address return invalid. Human Touch™ spots these vanity suburbs, and
             correctly fixes them to the official suburb of the address.
@@ -268,93 +268,3 @@ export const healthCheckSlides: SlideItem[] = [
     width: "wide",
   },
 ];
-
-export const valuePropSlides = [
-  {
-    id: "speed",
-    title: "Unmatched speed",
-    description:
-      "Process up to 1,000,000 records in 2 minutes with industry-leading batch addressing performance.",
-  },
-  {
-    id: "accuracy",
-    title: "100% accuracy",
-    description:
-      "Format, clean, repair and verify Australian addresses with complete confidence in every result.",
-  },
-  {
-    id: "security",
-    title: "Enterprise security",
-    description:
-      "Private keys, encrypted cloud computing, and ISO27001-certified processes keep your data yours.",
-  },
-  {
-    id: "support",
-    title: "Expert support",
-    description:
-      "Our team helps you get the most from every feature — from onboarding to advanced workflows.",
-  },
-] as const;
-
-export const testimonialSlides = [
-  {
-    id: "marek-b",
-    author: "Marek B",
-    quote:
-      "The Support Agent was great to work with and replied with great knowledge of the system. They were able to point us to the type of function we should use and how to best use the results being returned to validate the address entered by the users",
-  },
-  {
-    id: "enterprise-lead",
-    author: "Enterprise Customer",
-    quote:
-      "Seltaris delivered the capacity we needed for a large-scale migration. The speed and security credentials gave our team absolute confidence.",
-  },
-  {
-    id: "data-manager",
-    author: "Data Quality Manager",
-    quote:
-      "Health Check Reports made it incredibly simple to see where our address data needed work. Repairs were faster than we expected.",
-  },
-] as const;
-
-export const caseStudySlides = [
-  {
-    id: "retail",
-    company: "Leading online retailer",
-    logoKey: "case1" as const,
-    description:
-      "Australia's leading pure-play online retailer for furniture and homewares.",
-    category: "Enterprise",
-    stats: [
-      { value: "12", label: "Active products" },
-      { value: "2.4M", label: "Customer orders in FY24" },
-      { value: "$890M", label: "Revenue in FY24" },
-    ],
-  },
-  {
-    id: "media",
-    company: "Magazine publisher",
-    logoKey: "case2" as const,
-    description:
-      "Australia's leading magazine publisher across entertainment, lifestyle and more.",
-    category: "Enterprise",
-    stats: [
-      { value: "3", label: "Verification methods" },
-      { value: "100%", label: "Full deployment" },
-      { value: "API", label: "API-driven integration" },
-    ],
-  },
-  {
-    id: "government",
-    company: "State police service",
-    logoKey: "case3" as const,
-    description:
-      "Australia's state police service achieving digital transformation at scale.",
-    category: "Government",
-    stats: [
-      { value: "4", label: "Validation methods" },
-      { value: "85%", label: "Digital adoption rate" },
-      { value: "40%", label: "Increase in mobile users" },
-    ],
-  },
-] as const;

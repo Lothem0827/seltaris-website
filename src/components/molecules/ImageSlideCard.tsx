@@ -8,8 +8,8 @@ type SlideCardWidth = "default" | "wide" | "narrow";
 
 const widthClasses: Record<SlideCardWidth, string> = {
   default: "w-slide-card",
-  wide: "w-slide-card-wide",
-  narrow: "w-slide-card-narrow",
+  wide: "w-slide-card sm:w-slide-card-wide",
+  narrow: "w-slide-card sm:w-slide-card-narrow",
 };
 
 type ImageSlideCardProps = {
@@ -33,7 +33,7 @@ export function ImageSlideCard({
     >
       <div
         className={cn(
-          "relative aspect-[4/3] w-full overflow-hidden rounded-radius-lg sm:aspect-auto sm:h-card-slide",
+          "relative h-[300px] w-full overflow-hidden rounded-radius-lg sm:h-card-slide",
           imageVariant === "light" && "border border-border",
         )}
       >
@@ -41,7 +41,7 @@ export function ImageSlideCard({
           src={imageSrc}
           alt=""
           fill
-          className="object-contain sm:object-cover"
+          className="object-cover sm:object-contain"
           sizes="(max-width: 640px) 88vw, 604px"
         />
       </div>

@@ -1,4 +1,3 @@
-import { AltraserviceShowcaseSection } from "@/components/organisms/AltraserviceShowcaseSection";
 import { AltraserviceSliderSection } from "@/components/organisms/AltraserviceSliderSection";
 import { DataProtectionShowcaseSection } from "@/components/organisms/DataProtectionShowcaseSection";
 import { FeatureSliderSection } from "@/components/organisms/FeatureSliderSection";
@@ -25,7 +24,6 @@ export function HomePage() {
         <FeatureSliderSection />
         <HumanTouchShowcaseSection />
         <HumanTouchDetailSection />
-        {/* <AltraserviceShowcaseSection /> */}
         <AltraserviceSliderSection />
         <DataProtectionShowcaseSection />
         <SecuritySliderSection />

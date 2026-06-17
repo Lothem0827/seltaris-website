@@ -44,7 +44,7 @@ export function CenteredShowcase({
       </div>
       <div
         className={cn(
-          "relative w-full max-w-container",
+          "relative w-full max-w-container overflow-hidden rounded-radius-lg",
           showcaseHeights[imageSize],
         )}
       >

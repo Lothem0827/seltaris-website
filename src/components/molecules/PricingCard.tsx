@@ -91,7 +91,7 @@ export function PricingCard({
 
         <div className="flex flex-1 flex-col gap-6">
           <div className="space-y-2">
-            <Heading as="h3" level="h2">
+            <Heading as="h3" level="panel" className="w-[80%]">
               {title}
             </Heading>
             <Text>{description}</Text>
@@ -140,12 +140,8 @@ export function PricingCard({
               <p className="font-display text-xl font-bold text-text">
                 {price.amount}
               </p>
-              {price.gst ? (
-                <Text variant="body-sm">{price.gst}</Text>
-              ) : null}
-              {price.note ? (
-                <Text variant="body-sm">{price.note}</Text>
-              ) : null}
+              {price.gst ? <Text variant="body-sm">{price.gst}</Text> : null}
+              {price.note ? <Text variant="body-sm">{price.note}</Text> : null}
             </div>
           ) : null}
           <Button
@@ -153,7 +149,8 @@ export function PricingCard({
             variant={cta.variant === "secondary" ? "secondary" : "primary"}
             className={cn(
               "w-full",
-              cta.variant === "secondary" && "bg-text text-white hover:bg-text/90",
+              cta.variant === "secondary" &&
+                "bg-text text-white hover:bg-text/90",
             )}
           >
             {cta.label}

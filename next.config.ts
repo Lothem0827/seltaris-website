@@ -1,5 +1,11 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
+const devNoCacheHeaders = [
+  { key: "Cache-Control", value: "no-store, must-revalidate" },
+];
+
 const nextConfig: NextConfig = {
   async redirects() {
     return [
@@ -40,7 +46,23 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    if (!isDev) return [];
+
+    return [
+      { source: "/images/:path*", headers: devNoCacheHeaders },
+      { source: "/icons/:path*", headers: devNoCacheHeaders },
+      {
+        source: "/:file(.*\\.(?:svg|png|webp|jpg|jpeg|gif|ico))",
+        headers: devNoCacheHeaders,
+      },
+      { source: "/_next/image", headers: devNoCacheHeaders },
+    ];
+  },
   images: {
+    // Dev: skip the image optimizer so /public swaps preview instantly.
+    unoptimized: isDev,
+    minimumCacheTTL: isDev ? 0 : 14400,
     remotePatterns: [
       {
         protocol: "https",

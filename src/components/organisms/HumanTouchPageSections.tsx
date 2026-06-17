@@ -38,14 +38,19 @@ function BannerImage({
   className?: string;
 }) {
   return (
-    <div className={cn("relative w-full", className)}>
-      <div className="relative mx-auto aspect-[4/3] w-full max-w-visual-hero overflow-hidden md:aspect-auto md:h-visual-hero">
+    <div
+      className={cn(
+        "relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2",
+        className,
+      )}
+    >
+      <div className="relative aspect-[4/3] w-full overflow-hidden md:aspect-auto md:h-visual-hero">
         <Image
           src={src}
           alt={alt}
           fill
-          className="object-contain md:object-cover"
-          sizes="(max-width: 768px) 100vw, 1600px"
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white" />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-white via-white/90 to-transparent px-6 pb-8 pt-24">
@@ -133,7 +138,7 @@ export function HumanTouchPageHero() {
   return (
     <section className="px-container-padding pt-16 pb-section">
       <Container className="flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-10 text-center">
+        <div className="flex flex-col items-center gap-2 text-center">
           <div className="relative size-20">
             <Image
               src={assets.humanTouchPage.humanTouchLogo}
