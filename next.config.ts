@@ -36,7 +36,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/seltaris-services",
-        destination: "/services",
+        destination: "/seltaris-services",
         permanent: true,
       },
       {
