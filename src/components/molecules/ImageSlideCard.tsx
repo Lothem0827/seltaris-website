@@ -29,12 +29,12 @@ export function ImageSlideCard({
     <article
       className={cn("flex shrink-0 flex-col gap-4", widthClasses[width])}
     >
-      <div className="relative h-[300px] w-full overflow-hidden rounded-radius-lg sm:h-card-slide">
+      <div className="relative isolate aspect-[4/3] w-full overflow-hidden rounded-radius-lg sm:aspect-auto sm:h-card-slide">
         <Image
           src={imageSrc}
           alt=""
           fill
-          className="object-cover sm:object-contain"
+          className="rounded-radius-lg object-cover"
           sizes="(max-width: 640px) 88vw, 604px"
         />
       </div>

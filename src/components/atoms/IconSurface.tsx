@@ -19,11 +19,11 @@ type IconSurfaceSizeConfig = {
 const iconSurfaceSizes = {
   feature: {
     containerClass: "size-18",
-    image: { width: 48, height: 48 },
+    image: { width: 42, height: 42 },
   },
   hero: {
     containerClass: "size-20",
-    image: { width: 40, height: 40 },
+    image: { width: 48, height: 48 },
   },
   nav: {
     containerClass: "size-14",

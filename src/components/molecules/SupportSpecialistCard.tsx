@@ -19,7 +19,7 @@ export function SupportSpecialistCard({
   return (
     <div
       className={cn(
-        "group w-fit shrink-0 rounded-radius-lg border border-border bg-white p-4",
+        "group shrink-0 rounded-radius-lg border border-border bg-white p-4",
         className,
       )}
     >
@@ -33,8 +33,8 @@ export function SupportSpecialistCard({
             sizes="46px"
           />
         </div>
-        <div className="flex flex-col gap-.5">
-          <p className="font-body text-body font-semibold text-text">
+        <div className="shrink-0 space-y-0.5">
+          <p className="whitespace-nowrap font-body text-body font-semibold text-text">
             {heading}
           </p>
           <Link

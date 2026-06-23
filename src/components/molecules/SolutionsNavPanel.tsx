@@ -73,7 +73,7 @@ function SolutionsNavItemRow({
   return (
     <div
       className={cn(
-        "flex flex-col gap-2",
+        "flex flex-col 0",
         bordered && "border-l-2 border-border py-0 pl-6",
       )}
     >

@@ -44,32 +44,35 @@ export const altraserviceSpeedIntro = {
 } as const;
 
 export const altraserviceEngineering = {
-  eyebrow: "Powered by Altraservice™",
+  poweredByHeading: (
+    <>
+      Powered by
+      <br />
+      DataTools Altraservice™
+    </>
+  ),
   leftHeading: "A truly remarkable feat of software engineering.",
   leftBody: (
     <>
-      Our Cloud Performance blasts forward with Altraservice™. Built on the
-      latest server technology, the all-new microservice architecture is able to
-      perform at outrageous speeds and game-changing performance for processing
-      batch files. This is truly one of the most powerful and capable file
-      processing technologies we have ever created.
+      DataTools Cloud Performance blasts forward with DataTools Altraservice™.
+      Built on the latest server technology, the all-new microservice architecture
+      is able to perform at outrageous speeds and game-changing performance for
+      processing batch files. This is truly one of the most powerful and capable
+      file processing technologies we have ever created.
     </>
   ),
   rightBody: (
     <>
       <p>
-        Altraservice™, directly integrated into our cloud infrastructure,
-        enables us to correct each line of address data within fractions of a
-        millisecond, this has enabled it to achieve a staggering{" "}
-        <strong className="font-semibold text-text">
-          1 million records in just 1 minute
-        </strong>
-        .
+        DataTools Altraservice™, directly integrated into our cloud
+        infrastructure, enables us to correct each line of address data within
+        fractions of a millisecond, this has enabled it to achieve a staggering
+        1 million records in just 2 minutes.
       </p>
-      <p className="mt-6">
+      <p>
         To put that into perspective, validating Australia&apos;s 15.6 million
-        deliverable addresses from start to finish with Seltaris would only take
-        a total of 16 minutes. Now that&apos;s ultra fast.
+        deliverable addresses from start to finish with DataTools Seltaris would
+        only take a total of 32 minutes. Now that&apos;s ultra fast.
       </p>
     </>
   ),
@@ -170,5 +173,5 @@ export const altraserviceBuiltForSpeed = {
     </>
   ),
   subheading:
-    "Explore the advanced processing techniques that power Seltaris to industry leading performance.",
+    "Explore the advanced processing techniques that power DataTools Seltaris to industry leading performance.",
 } as const;

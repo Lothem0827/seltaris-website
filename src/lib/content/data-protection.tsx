@@ -30,6 +30,11 @@ export const dataProtectionEncryptedCloudCard = {
   body: "Our most advanced cloud security architecture specifically built with enterprise in mind.",
 } as const;
 
+export const dataProtectionPrivateKeysCard = {
+  heading: "Private Keys",
+  subtitle: "The single key to your encrypted result file.",
+} as const;
+
 export const dataProtectionCloudIntro = {
   eyebrow: "Encrypted Cloud Computing™",
   heading: (
@@ -192,7 +197,6 @@ export const dataProtectionWorkflowSteps: DataProtectionWorkflowStep[] = [
 
 export const dataProtectionPrivateKeys = {
   eyebrow: "Private Keys",
-  subheading: "The single key to your encrypted result file.",
   heading: (
     <>
       Own private keys.
@@ -200,24 +204,23 @@ export const dataProtectionPrivateKeys = {
       Control who sees.
     </>
   ),
-  intro: (
-    <>
-      A private key is your unique security credential, issued only to you, and
-      it&apos;s the one and only way to unlock your final result file.
-    </>
-  ),
-  body: (
+  leftBody: (
     <>
       <p>
-        When you begin a batch job, we generate a client secret key that is never
-        shared, stored, or accessible by anyone else. From that point forward,
-        every stage of your job relies on temporary, ephemeral keys managed
-        through our secure identity servers. These working keys are used solely
-        for in-memory processing and are destroyed the moment the job is complete.
-        What remains is your encrypted result file, locked and waiting. Only your
-        private key can decrypt it.
+        A private key is your unique security credential, issued only to you,
+        and it&apos;s the one and only way to unlock your final result file.
       </p>
-      <p className="mt-6">
+      <p>
+        When you begin a batch job, DataTools generates a client secret key that
+        is never shared, stored, or accessible by anyone else — not even
+        DataTools staff. From that point forward, every stage of your job relies
+        on temporary, ephemeral keys managed through our secure identity
+        servers. These working keys are used solely for in-memory processing and
+        are destroyed the moment the job is complete. What remains is your
+        encrypted result file, locked and waiting.{" "}
+        <strong>Only your private key can decrypt it.</strong>
+      </p>
+      <p>
         This design eliminates one of the biggest risks in traditional cloud
         environments: server-side access. On conventional servers, decrypted data
         can exist at rest, meaning administrators or third parties could
@@ -225,14 +228,34 @@ export const dataProtectionPrivateKeys = {
       </p>
     </>
   ),
-  guaranteesHeading: "By giving you sole control of your private key, Advanced Data Protection guarantees:",
-  guarantees: [
-    "Absolute ownership — You decide who can access your results.",
-    "Enterprise grade security — Protections and security credentials specifically designed for the strictest compliance environments.",
-    "Retention period — Once the retention period expires, the encrypted file is permanently erased from our servers.",
-  ],
-  closing:
-    "There are no backdoors, no hidden access points, and no way for anyone else to step between you and your data. Even under force, we cannot hand over what it cannot see.",
+  rightBody: (
+    <>
+      <p>
+        By giving you sole control of your private key, Advanced data protection
+        guarantees:
+      </p>
+      <ul className="list-disc space-y-0 pl-5">
+        <li>
+          <strong>Absolute ownership</strong> — You decide who can access your
+          results.
+        </li>
+        <li>
+          <strong>Enterprise grade security</strong> — Protections and security
+          credentials specifically designed for the strictest compliance
+          environments.
+        </li>
+        <li>
+          <strong>Retention period</strong> — Once the retention period expires,
+          the encrypted file is permanently erased from our servers.
+        </li>
+      </ul>
+      <p>
+        With DataTools, there are no backdoors, no hidden access points, and no
+        way for anyone else to step between you and your data. Even under force,
+        DataTools cannot hand over what it cannot see.
+      </p>
+    </>
+  ),
 } as const;
 
 export const dataProtectionDesignTeaser = {

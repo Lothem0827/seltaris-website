@@ -15,6 +15,7 @@ import {
   dataProtectionHowItWorks,
   dataProtectionPageHero,
   dataProtectionPrivateKeys,
+  dataProtectionPrivateKeysCard,
   dataProtectionWhyBuilt,
 } from "@/lib/content/data-protection";
 import { cn } from "@/lib/utils";
@@ -29,13 +30,8 @@ function FeatureImage({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "banner-media",
-        className,
-      )}
-    >
-      <Image src={src} alt={alt} fill className="object-contain p-4" sizes="512px" />
+    <div className={cn("banner-media", className)}>
+      <Image src={src} alt={alt} fill className="object-cover" sizes="512px" />
     </div>
   );
 }
@@ -74,7 +70,7 @@ export function DataProtectionEncryptedCloudCardSection() {
   return (
     <section className="px-container-padding pb-section">
       <Container>
-        <div className="grid-split-content">
+        <div className="flex items-center justify-between overflow-hidden rounded-radius-panel bg-brand-surface">
           <div className="flex flex-col justify-between gap-8 p-12">
             <div className="space-y-6">
               <div className="relative size-icon-feature">
@@ -94,6 +90,47 @@ export function DataProtectionEncryptedCloudCardSection() {
           </div>
           <FeatureImage
             src={assets.dataProtectionPage.encryptedCloud}
+            className="min-h-split-content rounded-radius-panel lg:min-h-split-content-lg"
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function DataProtectionPrivateKeysCardSection() {
+  const content = dataProtectionPrivateKeysCard;
+  return (
+    <section className="px-container-padding pb-section">
+      <Container>
+        <div className="flex items-center justify-between bg-brand-surface rounded-radius-panel">
+          <div className="flex flex-col justify-between gap-8 p-12">
+            <div className="space-y-6">
+              <div className="relative size-icon-feature">
+                <Image
+                  src={assets.dataProtectionPage.bulletproofIcon}
+                  alt=""
+                  fill
+                  className="object-contain"
+                  sizes="60px"
+                />
+              </div>
+              <div className="space-y-2">
+                <FeaturePageHeading as="h2" variant="cardTitle">
+                  {content.heading}
+                </FeaturePageHeading>
+                <FeaturePageHeading
+                  as="p"
+                  variant="bannerSubtitle"
+                  className="text-left"
+                >
+                  {content.subtitle}
+                </FeaturePageHeading>
+              </div>
+            </div>
+          </div>
+          <FeatureImage
+            src={assets.dataProtectionPage.privateKeysCard}
             className="min-h-split-content rounded-none lg:min-h-split-content-lg"
           />
         </div>
@@ -104,30 +141,34 @@ export function DataProtectionEncryptedCloudCardSection() {
 
 export function DataProtectionCloudIntroSection() {
   const intro = dataProtectionCloudIntro;
+  const content = dataProtectionHowItWorks;
+
   const whyBuilt = dataProtectionWhyBuilt;
   return (
     <section className="px-container-padding pb-section">
-      <Container className="flex flex-col gap-16">
-        <div className="grid-aside-layout">
-          <div className="space-y-6 px-8">
-            <Eyebrow label={intro.eyebrow} />
-            <FeaturePageHeading as="h2" variant="sectionTitle">
-              {intro.heading}
-            </FeaturePageHeading>
+      <Container className="flex flex-col gap-12">
+        <div className="flex flex-col gap-8">
+          <div className="grid-aside-layout">
+            <div className="space-y-6 px-8">
+              <Eyebrow label={intro.eyebrow} />
+              <FeaturePageHeading as="h2" variant="sectionTitle">
+                {intro.heading}
+              </FeaturePageHeading>
+            </div>
+            <IconSurface
+              src={assets.featureIcons.advancedDataProtection}
+              className="mx-8 shrink-0 lg:mx-0"
+            />
           </div>
-          <IconSurface
-            src={assets.featureIcons.advancedDataProtection}
-            className="mx-8 shrink-0 lg:mx-0"
-          />
-        </div>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <Text as="div" className="prose-stack px-8">
-            {intro.leftBody}
-          </Text>
-          <Text as="div" className="prose-stack px-8">
-            {intro.rightBody}
-          </Text>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
+            <Text as="div" className="prose-stack px-8">
+              {intro.leftBody}
+            </Text>
+            <Text as="div" className="prose-stack px-8">
+              {intro.rightBody}
+            </Text>
+          </div>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
@@ -139,16 +180,7 @@ export function DataProtectionCloudIntroSection() {
             <Text>{whyBuilt.rightBody}</Text>
           </div>
         </div>
-      </Container>
-    </section>
-  );
-}
 
-export function DataProtectionHowItWorksSection() {
-  const content = dataProtectionHowItWorks;
-  return (
-    <section className="px-container-padding pb-section">
-      <Container className="flex flex-col gap-16">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <FeaturePageHeading as="h2" variant="sectionTitle" className="px-8">
             {content.heading}
@@ -158,6 +190,15 @@ export function DataProtectionHowItWorksSection() {
             <Text>{content.rightBody}</Text>
           </div>
         </div>
+      </Container>
+    </section>
+  );
+}
+
+export function DataProtectionHowItWorksSection() {
+  return (
+    <section className="px-container-padding pb-section">
+      <Container className="flex flex-col gap-16">
         <DataProtectionWorkflowSliderSection />
       </Container>
     </section>
@@ -168,54 +209,32 @@ export function DataProtectionPrivateKeysSection() {
   const content = dataProtectionPrivateKeys;
   return (
     <section className="px-container-padding pb-section">
-      <Container className="flex flex-col gap-16">
-        <div className="grid-split-content">
-          <div className="flex flex-col gap-8 p-12">
-            <div className="relative size-icon-feature">
-              <Image
-                src={assets.dataProtectionPage.bulletproofIcon}
-                alt=""
-                fill
-                className="object-contain"
-                sizes="60px"
-              />
-            </div>
-            <div className="space-y-4">
-              <Eyebrow label={content.eyebrow} />
-              <FeaturePageHeading as="p" variant="bannerSubtitle" className="text-left">
-                {content.subheading}
-              </FeaturePageHeading>
-              <FeaturePageHeading as="h2" variant="sectionTitleLg">
-                {content.heading}
-              </FeaturePageHeading>
-            </div>
+      <Container className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 px-8 lg:flex-row lg:items-start lg:justify-between">
+          <div className="flex max-w-3xl flex-col gap-5">
+            <Eyebrow label={content.eyebrow} />
+            <FeaturePageHeading as="h2" variant="sectionTitle">
+              {content.heading}
+            </FeaturePageHeading>
           </div>
-          <FeatureImage
-            src={assets.dataProtectionPage.privateKeys}
-            className="min-h-split-content rounded-none lg:min-h-split-content-lg"
-          />
+          <div className="relative h-20 w-[7.5rem] shrink-0">
+            <Image
+              src={assets.dataProtectionPage.privateKeysIllustration}
+              alt=""
+              fill
+              className="object-contain"
+              sizes="120px"
+            />
+          </div>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div className="space-y-6 px-8">
-            <Text className="font-semibold text-text">{content.intro}</Text>
-            <Text as="div" className="prose-stack">
-              {content.body}
-            </Text>
-          </div>
-          <div className="space-y-6 px-8">
-            <Text className="font-semibold text-text">
-              {content.guaranteesHeading}
-            </Text>
-            <Text as="div">
-              <ul className="list-disc space-y-3 pl-5">
-                {content.guarantees.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </Text>
-            <Text>{content.closing}</Text>
-          </div>
+          <Text as="div" className="prose-stack px-8">
+            {content.leftBody}
+          </Text>
+          <Text as="div" className="prose-stack px-8">
+            {content.rightBody}
+          </Text>
         </div>
       </Container>
     </section>

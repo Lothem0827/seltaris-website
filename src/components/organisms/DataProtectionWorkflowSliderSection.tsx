@@ -7,7 +7,10 @@ import {
   ContentSlider,
   type SliderSlide,
 } from "@/components/organisms/ContentSlider";
-import { SliderNavButtons, useSliderNav } from "@/components/molecules/SliderNavButtons";
+import {
+  SliderNavButtons,
+  useSliderNav,
+} from "@/components/molecules/SliderNavButtons";
 import { dataProtectionWorkflowSteps } from "@/lib/content/data-protection";
 import { getDataProtectionPageImage } from "@/lib/data-protection-images";
 
@@ -23,22 +26,24 @@ function WorkflowStepCard({
   imageSrc: string;
 }) {
   return (
-    <article className="flex w-slide-card shrink-0 flex-col gap-6">
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-radius-lg border border-border sm:aspect-auto sm:h-card-slide">
-        <Image
-          src={imageSrc}
-          alt=""
-          fill
-          className="object-contain sm:object-cover"
-          sizes="(max-width: 640px) 88vw, 572px"
-        />
-      </div>
-      <div className="flex flex-col gap-4 px-4 py-2">
-        <div className="flex size-20 items-center justify-center rounded-radius-xl border border-border bg-white">
+    <article className="flex w-slide-card shrink-0 flex-col">
+      <div className="relative">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-radius-lg border border-border sm:aspect-auto sm:h-card-slide">
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            className="object-contain sm:object-cover"
+            sizes="(max-width: 640px) 88vw, 572px"
+          />
+        </div>
+        <div className="absolute bottom-0 left-4 z-10 flex size-16 translate-y-1/2 items-center justify-center rounded-full border border-border bg-white">
           <FeaturePageHeading as="p" variant="workflowStepNumber">
             {step}
           </FeaturePageHeading>
         </div>
+      </div>
+      <div className="flex flex-col gap-4 px-4 pt-16">
         <FeaturePageHeading as="h3" variant="workflowStepTitle">
           {title}
         </FeaturePageHeading>

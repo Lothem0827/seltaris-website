@@ -4,6 +4,7 @@ import {
   DataProtectionEncryptedCloudCardSection,
   DataProtectionHowItWorksSection,
   DataProtectionPageHero,
+  DataProtectionPrivateKeysCardSection,
   DataProtectionPrivateKeysSection,
 } from "@/components/organisms/DataProtectionPageSections";
 import { CoreFeaturesSection } from "@/components/organisms/CoreFeaturesSection";
@@ -19,6 +20,7 @@ export function DataProtectionPage() {
         <DataProtectionEncryptedCloudCardSection />
         <DataProtectionCloudIntroSection />
         <DataProtectionHowItWorksSection />
+        <DataProtectionPrivateKeysCardSection />
         <DataProtectionPrivateKeysSection />
         <CoreFeaturesSection />
         <DataProtectionDesignTeaserSection />

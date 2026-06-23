@@ -21,8 +21,8 @@ import { getSeltarisPlusPageImage } from "@/lib/seltaris-plus-images";
 import { cn } from "@/lib/utils";
 
 const offeringIcons = {
-  healthCheckIcon: assets.pricingIcons.health,
-  dataProtectionIcon: assets.dataProtectionPage.bulletproofIcon,
+  healthCheckIcon: assets.seltarisPlusPage.healthCheckIcon,
+  dataProtectionIcon: assets.seltarisPlusPage.dataProtectionIcon,
   sharedLicensingIcon: assets.seltarisPlusPage.sharedLicensingIcon,
   volumeDiscountsIcon: assets.seltarisPlusPage.volumeDiscountsIcon,
 } as const;
@@ -39,7 +39,7 @@ export function SeltarisPlusPageHero() {
     <section className="px-container-padding pt-16 pb-section">
       <Container className="flex flex-col items-center gap-16">
         <FeaturePageHeadingContainer
-          logoSrc={assets.seltarisPlusPage.logo}
+          logoSrc={assets.featureIcons.seltaris}
           logoAlt="Seltaris+"
           eyebrow={seltarisPlusPageHero.eyebrow}
           heading={seltarisPlusPageHero.heading}
@@ -80,20 +80,24 @@ function OfferingCard({
     >
       <div className="flex min-h-offering-panel flex-col justify-between p-12">
         <div className="space-y-8">
-          <div className="relative size-icon-feature overflow-hidden rounded-radius-md bg-white">
-            <Image
-              src={iconSrc}
-              alt=""
-              fill
-              className="object-contain p-3"
-              sizes="60px"
-            />
-          </div>
+          <Image
+            src={iconSrc}
+            alt=""
+            width={60}
+            height={60}
+            className="object-contain"
+            style={{ width: 60, height: 60 }}
+            sizes="60px"
+          />
           <div className="space-y-2">
             <FeaturePageHeading as="h2" variant="cardTitle">
               {heading}
             </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="bannerSubtitle" className="text-left">
+            <FeaturePageHeading
+              as="p"
+              variant="bannerSubtitle"
+              className="text-left"
+            >
               {body}
             </FeaturePageHeading>
           </div>

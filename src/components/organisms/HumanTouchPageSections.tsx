@@ -7,6 +7,7 @@ import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
 import { FeaturePageHeadingContainer } from "@/components/molecules/FeaturePageHeadingContainer";
+import { HumanTouchAnimated } from "@/components/svg-animations/HumanTouchAnimated";
 import { assets } from "@/lib/assets";
 import {
   humanTouchAltraserviceTeaser,
@@ -149,16 +150,7 @@ export function HumanTouchPageHero() {
         />
 
         <div className="relative w-full max-w-container">
-          <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
-            <Image
-              src={assets.humanTouchPage.heroMockup}
-              alt="Human Touch dashboard"
-              fill
-              className="object-contain"
-              sizes="1200px"
-              priority
-            />
-          </div>
+          <HumanTouchAnimated />
         </div>
 
         <div className="grid w-full max-w-container gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
@@ -269,9 +261,13 @@ export function HumanTouchUnverifiedSection() {
         </BannerImage>
 
         <div className="flex flex-col gap-10">
-          <div className="space-y-6 px-8">
+          <div className="space-y-2 px-8">
             <Badge className="w-fit px-2 py-1">{standardisation.badge}</Badge>
-            <FeaturePageHeading as="h3" variant="headingSplitMint">
+            <FeaturePageHeading
+              as="h3"
+              variant="headingSplitMint"
+              className="w-[40%]"
+            >
               {standardisation.title}
             </FeaturePageHeading>
           </div>
@@ -333,19 +329,28 @@ export function HumanTouchOptiSourceSection() {
         />
 
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <div className="space-y-6 px-8">
-            <Eyebrow label={content.premium.eyebrow} />
-            <div className="rounded-radius-xl border border-border bg-white p-8">
-              <FeaturePageHeading as="p" variant="statLabel">
-                {content.premium.statLabel}
+          <div className="flex flex-col gap-8 p-8">
+            <div className="space-y-3">
+              <FeaturePageHeading as="h3" variant="headingSmall">
+                {content.premium.heading}
               </FeaturePageHeading>
-              <FeaturePageHeading as="p" variant="statValue" className="mt-2">
+              <Text>{content.premium.intro}</Text>
+            </div>
+            <div className="w-full rounded-radius-lg border border-brand bg-brand-muted p-6 shadow-sm">
+              <Text>{content.premium.statLabel}</Text>
+              <FeaturePageHeading
+                as="p"
+                variant="featureCardTitle"
+                className="mt-2 text-brand"
+              >
                 {content.premium.statValue}
               </FeaturePageHeading>
             </div>
           </div>
-          <div className="px-8">
-            <Text>{content.premium.body}</Text>
+          <div className="flex items-center p-8">
+            <Text as="div" className="prose-stack">
+              {content.premium.body}
+            </Text>
           </div>
         </div>
       </Container>

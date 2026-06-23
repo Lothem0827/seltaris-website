@@ -692,6 +692,14 @@ body {
     }
   }
 
+  /* Aligns slider track with container content; allows cards to bleed past max-width */
+  .slider-track-bleed {
+    padding-left: max(
+      var(--container-padding),
+      calc((100vw - min(100vw, var(--container-max))) / 2 + var(--container-padding))
+    );
+  }
+
   .grid-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);

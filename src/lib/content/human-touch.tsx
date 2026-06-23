@@ -306,28 +306,30 @@ export const humanTouchOptiSource = {
   eyebrow: "OptiSource System™",
   heading: "Quality datasets mean more accurate results",
   premium: {
-    eyebrow: "Premium dataset options",
+    heading: "Premium dataset options",
+    intro:
+      "While most solutions rely solely on the standard government datasets available in Australia and New Zealand, DataTools Seltaris goes further.",
     statLabel: "Australian Postal Data",
     statValue: "99% accuracy",
     body: (
       <>
-        While most solutions rely solely on the standard government datasets
-        available in Australia and New Zealand, Seltaris goes further.
-        <br />
-        <br />
-        OptiSource System™ includes an expansive semantic index that organises
-        and surfaces information from a variety of trusted data sources,
-        including the Australian PAF, renowned for its 99% accuracy in postal
-        data.
-        <br />
-        <br />
-        When a file request is made, Seltaris processes the data through its
-        Human Touch™ algorithms to verify validity. It then searches its
-        semantic index and feeds the results to Human Touch™ generative models,
-        delivering optimal context to accurately format, cleanse, repair,
-        verify, and standardise addresses. This entire process happens in
-        milliseconds, giving you the fastest and most precise results, every
-        time.
+        <p>
+          DataTools OptiSource System™ includes an expansive semantic index that
+          organises and surfaces information from a variety of trusted data
+          sources, including the Australian PAF, renowned for its 99% accuracy
+          in postal data.
+        </p>
+        <p>
+          When a file request is made, DataTools Seltaris processes the data
+          through its Human Touch™ algorithms to verify validity. It then
+          searches its semantic index and feeds the results to Human Touch™
+          generative models, delivering optimal context to accurately format,
+          cleanse, repair, verify, and standardise addresses.
+        </p>
+        <p>
+          This entire process happens in milliseconds, giving you the fastest
+          and most precise results, every time.
+        </p>
       </>
     ),
   },

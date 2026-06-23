@@ -11,7 +11,7 @@ export function Eyebrow({ label, badge, className }: EyebrowProps) {
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-3.5 rounded-radius-xs border border-border px-3 py-2",
+        "inline-flex w-fit items-center gap-3.5 rounded-radius-xs border border-border px-3 py-2",
         className,
       )}
     >

@@ -6,7 +6,6 @@ import { FeaturePageHeadingContainer } from "@/components/molecules/FeaturePageH
 import { AltraservicePerformanceSliderSection } from "@/components/organisms/AltraservicePerformanceSliderSection";
 import { assets } from "@/lib/assets";
 import {
-  altraserviceBuiltForSpeed,
   altraserviceEngineering,
   altraserviceMicroservice,
   altraservicePageHero,
@@ -24,13 +23,14 @@ function FeatureImage({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "banner-media",
-        className,
-      )}
-    >
-      <Image src={src} alt={alt} fill className="object-contain p-4" sizes="512px" />
+    <div className={cn("banner-media", className)}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-contain p-4"
+        sizes="512px"
+      />
     </div>
   );
 }
@@ -82,33 +82,37 @@ export function AltraserviceEngineeringSection() {
   const content = altraserviceEngineering;
   return (
     <section className="px-container-padding pb-section">
-      <Container className="flex flex-col gap-16">
-        <div className="flex flex-col items-center gap-6 text-center">
-          <div className="relative h-12 w-logo-strip">
+      <Container className="flex flex-col gap-12">
+        <div className="flex items-center justify-between gap-8 px-8">
+          <FeaturePageHeading
+            as="h2"
+            variant="sectionTitleLg"
+            className="text-brand"
+          >
+            {content.poweredByHeading}
+          </FeaturePageHeading>
+          <div className="relative h-20 w-[4.375rem] shrink-0">
             <Image
-              src={assets.altraservicePage.poweredBy}
-              alt="Powered by GBG Altraservice"
+              src={assets.altraservicePage.altraserviceCube}
+              alt=""
               fill
               className="object-contain"
-              sizes="320px"
+              sizes="80px"
             />
           </div>
-          <FeaturePageHeading as="h2" variant="headingMedium" className="max-w-3xl">
-            {content.leftHeading}
-          </FeaturePageHeading>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
-          <Text className="px-8">{content.leftBody}</Text>
-            <Text as="div" className="prose-stack prose-strong px-8">
+          <div className="flex flex-col gap-8 px-8">
+            <FeaturePageHeading as="h3" variant="headingSmall">
+              {content.leftHeading}
+            </FeaturePageHeading>
+            <Text>{content.leftBody}</Text>
+          </div>
+          <Text as="div" className="prose-stack px-8">
             {content.rightBody}
           </Text>
         </div>
-
-        <FeatureImage
-          src={assets.altraservicePage.gbgAltraservice}
-          className="min-h-content-block lg:min-h-content-block-md"
-        />
       </Container>
     </section>
   );
@@ -138,33 +142,20 @@ export function AltraserviceMicroserviceSection() {
           </FeaturePageHeading>
         </div>
 
-        <FeatureImage
-          src={assets.altraservicePage.macbook}
-          className="min-h-content-block lg:min-h-content-block-md"
-        />
-
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <Text className="px-8">{content.leftBody}</Text>
           <Text className="px-8">{content.rightBody}</Text>
         </div>
+
+        <FeatureImage
+          src={assets.altraservicePage.macbook}
+          className="min-h-content-block lg:min-h-content-block-md"
+        />
       </Container>
     </section>
   );
 }
 
 export function AltraserviceBuiltForSpeedSection() {
-  const content = altraserviceBuiltForSpeed;
-  return (
-    <section className="px-container-padding pb-section">
-      <Container className="flex flex-col gap-12">
-        <div className="mx-auto max-w-3xl space-y-4">
-          <FeaturePageHeading as="h2" variant="sectionTitleLg">
-            {content.heading}
-          </FeaturePageHeading>
-          <Text className="text-paragraph">{content.subheading}</Text>
-        </div>
-        <AltraservicePerformanceSliderSection />
-      </Container>
-    </section>
-  );
+  return <AltraservicePerformanceSliderSection />;
 }

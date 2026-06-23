@@ -1,9 +1,9 @@
 import { AppImage as Image } from "@/components/atoms/AppImage";
-import Link from "next/link";
 import { Button } from "@/components/atoms/Button";
 import { Badge } from "@/components/atoms/Badge";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
+import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
 import { assets } from "@/lib/assets";
 import {
   seltarisPlusSupportCard,
@@ -11,29 +11,22 @@ import {
 } from "@/lib/content/seltaris-plus";
 import { cn } from "@/lib/utils";
 
-const tierIconStyles = {
-  standard: "bg-gradient-tier-standard",
-  premium: "bg-gradient-tier-premium",
-  premier: "bg-gradient-tier-premier",
+const tierIcons = {
+  standard: assets.seltarisPlusPage.standardIcon,
+  premium: assets.seltarisPlusPage.premiumIcon,
+  premier: assets.seltarisPlusPage.premierIcon,
 } as const;
 
 function PlanTierIcon({ tier }: { tier: SeltarisPlusPlan["tier"] }) {
   return (
-    <div
-      className={cn(
-        "relative size-12 shrink-0 overflow-hidden rounded-radius-md border border-white/50 shadow-icon-inset",
-        tierIconStyles[tier],
-      )}
-    >
-      <div className="absolute inset-1/5">
-        <Image
-          src="/seltaris-logo.svg"
-          alt=""
-          fill
-          className="object-contain brightness-0 invert"
-          sizes="28px"
-        />
-      </div>
+    <div className="relative size-12 shrink-0">
+      <Image
+        src={tierIcons[tier]}
+        alt=""
+        fill
+        className="object-contain"
+        sizes="48px"
+      />
     </div>
   );
 }
@@ -190,42 +183,19 @@ export function SeltarisPlusSupportCard() {
   const content = seltarisPlusSupportCard;
 
   return (
-    <div className="mx-auto flex w-full max-w-support-card flex-col gap-8 rounded-radius-xl border border-border bg-white px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
+    <div className="mx-auto flex w-full max-w-support-card flex-col gap-8 rounded-radius-lg border border-border bg-white px-6 py-5 lg:flex-row lg:items-center lg:justify-between">
       <div className="space-y-2">
         <p className="font-body text-xl font-semibold tracking-tight text-text">
           {content.heading}
         </p>
         <Text>{content.body}</Text>
       </div>
-      <div className="flex items-center gap-3">
-        <div className="relative size-icon-support overflow-hidden rounded-full border border-border bg-white">
-          <Image
-            src={assets.seltarisPlusPage.supportSpecialist}
-            alt=""
-            fill
-            className="object-cover object-top"
-            sizes="52px"
-          />
-        </div>
-        <div className="space-y-0.5">
-          <p className="font-body text-lg font-semibold text-text">
-            {content.supportHeading}
-          </p>
-          <Link
-            href={content.cta.href}
-            className="inline-flex items-center gap-1.5 font-body text-body font-medium text-brand"
-          >
-            {content.cta.label}
-            <Image
-              src={assets.learnMoreArrow}
-              alt=""
-              width={10}
-              height={8}
-              aria-hidden
-            />
-          </Link>
-        </div>
-      </div>
+      <SupportSpecialistCard
+        heading={content.supportHeading}
+        linkText={content.cta.label}
+        href={content.cta.href}
+        className="shrink-0 border-0"
+      />
     </div>
   );
 }
