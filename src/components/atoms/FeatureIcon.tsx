@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 
 type FeatureIconProps = {
   src: string;

@@ -1,8 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
+import { AppImage as Image } from "@/components/atoms/AppImage";
+import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
+import { FeaturePageHeadingContainer } from "@/components/molecules/FeaturePageHeadingContainer";
 import {
   SeltarisPlusPlanCard,
   SeltarisPlusSupportCard,
@@ -37,29 +38,16 @@ export function SeltarisPlusPageHero() {
   return (
     <section className="px-container-padding pt-16 pb-section">
       <Container className="flex flex-col items-center gap-16">
-        <div className="flex flex-col items-center gap-10 text-center">
-          <div className="relative size-20">
-            <Image
-              src={assets.seltarisPlusPage.logo}
-              alt="Seltaris+"
-              fill
-              className="object-contain"
-              sizes="80px"
-              priority
-            />
-          </div>
-          <div className="mx-auto max-w-3xl space-y-5">
-            <FeaturePageHeading as="p" variant="pageEyebrow">
-              {seltarisPlusPageHero.eyebrow}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="h1" variant="heroTitle">
-              {seltarisPlusPageHero.heading}
-            </FeaturePageHeading>
-            <Text className="mx-auto max-w-hero-body text-paragraph">
-              {seltarisPlusPageHero.body}
-            </Text>
-          </div>
-        </div>
+        <FeaturePageHeadingContainer
+          logoSrc={assets.seltarisPlusPage.logo}
+          logoAlt="Seltaris+"
+          eyebrow={seltarisPlusPageHero.eyebrow}
+          heading={seltarisPlusPageHero.heading}
+        >
+          <Text className="mx-auto max-w-hero-body text-paragraph">
+            {seltarisPlusPageHero.body}
+          </Text>
+        </FeaturePageHeadingContainer>
 
         <div className="flex w-full flex-col items-center gap-16">
           <div className="grid w-full max-w-plans-grid gap-6 lg:grid-cols-3 lg:items-start">
@@ -110,19 +98,9 @@ function OfferingCard({
             </FeaturePageHeading>
           </div>
         </div>
-        <Link
-          href={href}
-          className="inline-flex w-fit items-center gap-3 font-body text-body-sm font-medium text-brand"
-        >
+        <Button href={href} variant="ghost" size="small">
           Learn more
-          <Image
-            src={assets.learnMoreArrow}
-            alt=""
-            width={10}
-            height={8}
-            aria-hidden
-          />
-        </Link>
+        </Button>
       </div>
       <div className="relative min-h-offering-image lg:min-h-offering-panel">
         <Image

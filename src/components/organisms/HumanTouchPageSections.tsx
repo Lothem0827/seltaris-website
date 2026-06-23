@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import type { ReactNode } from "react";
 import { Badge } from "@/components/atoms/Badge";
 import { Button } from "@/components/atoms/Button";
@@ -6,6 +6,7 @@ import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
+import { FeaturePageHeadingContainer } from "@/components/molecules/FeaturePageHeadingContainer";
 import { assets } from "@/lib/assets";
 import {
   humanTouchAltraserviceTeaser,
@@ -138,29 +139,14 @@ export function HumanTouchPageHero() {
   return (
     <section className="px-container-padding pt-16 pb-section">
       <Container className="flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-2 text-center">
-          <div className="relative size-20">
-            <Image
-              src={assets.humanTouchPage.humanTouchLogo}
-              alt="Human Touch"
-              fill
-              className="object-contain"
-              sizes="80px"
-              priority
-            />
-          </div>
-          <div className="mx-auto max-w-3xl space-y-5">
-            <FeaturePageHeading as="p" variant="pageEyebrow">
-              {humanTouchPageHero.eyebrow}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="h1" variant="heroTitle">
-              {humanTouchPageHero.heading}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="heroSubtitle">
-              {humanTouchPageHero.subtitle}
-            </FeaturePageHeading>
-          </div>
-        </div>
+        <FeaturePageHeadingContainer
+          className="gap-2"
+          logoSrc={assets.featureIcons.humanTouch}
+          logoAlt="Human Touch"
+          eyebrow={humanTouchPageHero.eyebrow}
+          heading={humanTouchPageHero.heading}
+          subtitle={humanTouchPageHero.subtitle}
+        />
 
         <div className="relative w-full max-w-container">
           <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
@@ -372,27 +358,17 @@ export function HumanTouchAltraserviceTeaserSection() {
   return (
     <section className="relative overflow-hidden px-container-padding py-section">
       <Container className="relative z-10 flex flex-col items-center gap-10 text-center">
-        <div className="relative size-20">
-          <Image
-            src={assets.humanTouchPage.featureAltraservice}
-            alt=""
-            fill
-            className="object-contain"
-            sizes="80px"
-          />
-        </div>
-        <div className="mx-auto max-w-3xl space-y-4">
-          <FeaturePageHeading as="p" variant="pageEyebrow">
-            {teaser.eyebrow}
-          </FeaturePageHeading>
-          <FeaturePageHeading as="h2" variant="teaserTitle">
-            {teaser.heading}
-          </FeaturePageHeading>
-          <FeaturePageHeading as="p" variant="bannerSubtitle">
-            {teaser.subheading}
-          </FeaturePageHeading>
-        </div>
-        <Button href={teaser.cta.href} variant="secondary">
+        <FeaturePageHeadingContainer
+          logoSrc={assets.featureIcons.altraService}
+          eyebrow={teaser.eyebrow}
+          heading={teaser.heading}
+          subtitle={teaser.subheading}
+          titleAs="h2"
+          titleVariant="teaserTitle"
+          subtitleVariant="bannerSubtitle"
+          contentSpacing="compact"
+        />
+        <Button href={teaser.cta.href} variant="ghost" size="small">
           {teaser.cta.label}
         </Button>
       </Container>

@@ -62,13 +62,6 @@ function renderSlide(slide: SliderSlide) {
           title={slide.item.title}
           description={slide.item.description}
           width={slide.item.width}
-          imageVariant={
-            slide.item.id.includes("refinement") ||
-            slide.item.id.includes("accuracy") ||
-            slide.item.id.includes("preview")
-              ? "light"
-              : "dark"
-          }
         />
       );
     case "custom":

@@ -2,7 +2,6 @@ import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { HumanTouchTabPanels } from "@/components/molecules/HumanTouchTabPanels";
 import { SplitIntro } from "@/components/molecules/SplitIntro";
-import { assets } from "@/lib/assets";
 
 export function HumanTouchDetailSection() {
   return (
@@ -26,8 +25,8 @@ export function HumanTouchDetailSection() {
               accurate data possible.
             </>
           }
-          imageSrc={assets.humanTouchSide}
-          imageAlt="Human Touch"
+          logoKey="human-touch"
+          logoAlt="Human Touch"
           className="mb-16"
         />
 

@@ -1,4 +1,3 @@
-import { assets } from "@/lib/assets";
 import { altraservicePerformanceSlides } from "@/lib/content/sections";
 import { SliderSection } from "@/components/organisms/SliderSection";
 import type { SliderSlide } from "@/components/organisms/ContentSlider";
@@ -33,7 +32,8 @@ export function AltraserviceSliderSection() {
             processing needs.
           </>
         ),
-        imageSrc: assets.altraserviceSide,
+        logoKey: "altra-service",
+        logoAlt: "Altraservice",
       }}
       navAlign="end"
       slides={slides}

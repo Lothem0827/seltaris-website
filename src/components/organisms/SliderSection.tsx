@@ -5,7 +5,10 @@ import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Heading } from "@/components/atoms/Heading";
 import { SplitIntro } from "@/components/molecules/SplitIntro";
-import { SliderNavButtons, useSliderNav } from "@/components/molecules/SliderNavButtons";
+import {
+  SliderNavButtons,
+  useSliderNav,
+} from "@/components/molecules/SliderNavButtons";
 import {
   ContentSlider,
   type SliderSlide,
@@ -41,7 +44,11 @@ export function SliderSection({
   return (
     <section
       id={id}
-      className={cn("overflow-hidden py-section", backgroundClassName, className)}
+      className={cn(
+        "overflow-hidden py-section",
+        backgroundClassName,
+        className,
+      )}
     >
       <Container className="flex flex-col gap-12">
         {intro ? <SplitIntro {...intro} /> : null}

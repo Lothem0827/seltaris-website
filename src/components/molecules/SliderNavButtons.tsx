@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { assets } from "@/lib/assets";
 import { cn } from "@/lib/utils";
 import { useRef, useState, type RefObject } from "react";

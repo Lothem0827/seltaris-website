@@ -34,7 +34,7 @@ export function DesignSystemNav() {
   return (
     <nav
       aria-label="Design system sections"
-      className="sticky top-6 hidden shrink-0 lg:block"
+      className="hidden shrink-0 lg:block"
     >
       <p className="mb-4 font-label text-label uppercase tracking-wider text-muted">
         On this page

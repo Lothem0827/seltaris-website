@@ -61,11 +61,7 @@ export const coreFeaturesSection = {
       logoKey: "featureDesign",
       visualKey: "designVisual",
       eyebrow: "Design made simple",
-      heading: (
-        <>
-          Innovation <span className="text-brand">for all.</span>
-        </>
-      ),
+      heading: "Innovation for all.",
       body: "The best innovations are built for everyone. We have always believed that data quality software should be simple.",
       href: "/design-made-simple",
       cta: "Learn more",

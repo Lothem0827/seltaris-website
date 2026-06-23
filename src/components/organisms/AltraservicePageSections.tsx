@@ -1,7 +1,8 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { Container } from "@/components/atoms/Container";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
+import { FeaturePageHeadingContainer } from "@/components/molecules/FeaturePageHeadingContainer";
 import { AltraservicePerformanceSliderSection } from "@/components/organisms/AltraservicePerformanceSliderSection";
 import { assets } from "@/lib/assets";
 import {
@@ -38,29 +39,13 @@ export function AltraservicePageHero() {
   return (
     <section className="px-container-padding pt-16 pb-section">
       <Container className="flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-10 text-center">
-          <div className="relative size-20">
-            <Image
-              src={assets.altraservicePage.altraserviceLogo}
-              alt="Altraservice"
-              fill
-              className="object-contain"
-              sizes="80px"
-              priority
-            />
-          </div>
-          <div className="mx-auto max-w-3xl space-y-5">
-            <FeaturePageHeading as="p" variant="pageEyebrow">
-              {altraservicePageHero.eyebrow}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="h1" variant="heroTitle">
-              {altraservicePageHero.heading}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="heroSubtitle">
-              {altraservicePageHero.subtitle}
-            </FeaturePageHeading>
-          </div>
-        </div>
+        <FeaturePageHeadingContainer
+          logoSrc={assets.featureIcons.altraService}
+          logoAlt="Altraservice"
+          eyebrow={altraservicePageHero.eyebrow}
+          heading={altraservicePageHero.heading}
+          subtitle={altraservicePageHero.subtitle}
+        />
 
         <div className="relative w-full max-w-container">
           <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">

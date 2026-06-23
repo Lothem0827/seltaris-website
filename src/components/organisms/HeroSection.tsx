@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
@@ -11,19 +11,16 @@ import { assets } from "@/lib/assets";
 export function HeroSection() {
   return (
     <section className="relative w-full ">
-      {/* Full-bleed page background */}
-      <div className="relative flex h-hero w-full flex-col items-center justify-center overflow-hidden px-container-padding ">
-        <Image
-          src={assets.heroBackground}
-          alt=""
-          fill
-          className="object-cover object-center "
-          priority
-          sizes="100vw"
-        />
-
-        <Container className="relative z-10 flex flex-col items-center gap-28  text-center ">
-          <div className="flex flex-col items-center gap-10">
+      <Image
+        src={assets.heroBackground}
+        alt=""
+        fill
+        className="object-contain object-top  "
+        sizes="100vw"
+      />
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden px-container-padding py-[100px]">
+        <Container className="relative z-10 flex flex-col items-center gap-56  text-center ">
+          <div className="flex flex-col items-center gap-8">
             <div className="flex flex-col items-center gap-2.5 ">
               <Eyebrow
                 label="Bulk Data Enhancement Tool"
@@ -45,7 +42,7 @@ export function HeroSection() {
         </Container>
       </div>
 
-      <Container className="relative z-10 bg-white pb-section">
+      <Container className="relative z-10 pb-section">
         <TrustedBy />
       </Container>
     </section>
@@ -54,7 +51,7 @@ export function HeroSection() {
 
 function TrustedBy() {
   return (
-    <div className="flex flex-col items-center gap-12 py-12">
+    <div className="flex flex-col items-center gap-12 py-12 pt-40">
       <div className="text-center">
         <Heading level="subheading" className="mb-3">
           Trusted by leading companies worldwide

@@ -2,6 +2,12 @@ import type { ReactNode } from "react";
 
 export type AddressServicePageFlagKey = "australia" | "nz" | "international";
 
+export type AddressServicePageDataset = {
+  id: string;
+  label: string;
+  flagKey: AddressServicePageFlagKey;
+};
+
 export type AddressServicePageIconKey =
   | "humanTouchLogo"
   | "altraserviceLogo"
@@ -22,6 +28,40 @@ export type AddressServicePageGridPanel = {
   imageKeys: string[];
 };
 
+export type AddressServicePageRefinementCodesPanel = {
+  id: string;
+  label: string;
+  layout: "refinementCodes";
+  verifiedImageKey: string;
+  unverifiedImageKey: string;
+  verifiedBody: ReactNode;
+  unverifiedBody: ReactNode;
+};
+
+export type AddressServicePageDataAccuracyCodesPanel = {
+  id: string;
+  label: string;
+  layout: "dataAccuracyCodes";
+  imageKey: string;
+  body: ReactNode;
+};
+
+export type AddressServicePageSampleExamplesPanel = {
+  id: string;
+  label: string;
+  layout: "sampleExamples";
+  imageKey: string;
+  body: ReactNode;
+};
+
+export type AddressServicePageResultFilePanel = {
+  id: string;
+  label: string;
+  layout: "resultFile";
+  imageKey: string;
+  body: ReactNode;
+};
+
 export type AddressServicePageSplitIntroPanel = {
   id: string;
   label: string;
@@ -29,6 +69,7 @@ export type AddressServicePageSplitIntroPanel = {
   iconKey: AddressServicePageIconKey;
   leftHeading: ReactNode;
   leftSubtitle?: ReactNode;
+  datasets?: ReadonlyArray<AddressServicePageDataset>;
   rightBody: ReactNode;
   learnMoreHref?: string;
   heroImageKey: string;
@@ -57,10 +98,15 @@ export type AddressServicePageSecurityStandardPanel = {
   priceLabel: string;
   rightBody: ReactNode;
   learnMoreHref?: string;
+  heroImageKey: string;
 };
 
 export type AddressServicePageTabPanel =
   | AddressServicePageGridPanel
+  | AddressServicePageRefinementCodesPanel
+  | AddressServicePageDataAccuracyCodesPanel
+  | AddressServicePageSampleExamplesPanel
+  | AddressServicePageResultFilePanel
   | AddressServicePageSplitIntroPanel
   | AddressServicePageSecurityAdvancedPanel
   | AddressServicePageSecurityStandardPanel;
@@ -83,7 +129,12 @@ export type AddressServicePagePricingCard = {
   features: string[];
   footerNote?: string;
   price?: { amount: string; gst?: string; note?: string };
-  cta: { label: string; href: string; variant?: "primary" | "secondary" };
+  cta: {
+    label: string;
+    href: string;
+    variant?: "primary" | "secondary";
+    disabled?: boolean;
+  };
   showAustralia?: boolean;
   showNewZealand?: boolean;
   showInternational?: boolean;
@@ -104,15 +155,15 @@ export type AddressServicePageContent = {
     }>;
     logoSrc: string;
   };
-  sectionNav: ReadonlyArray<{ id: string; label: string }>;
-  sectionNavIconSrc: string;
+  sectionNav: ReadonlyArray<{ id: string; label: string; iconSrc: string }>;
   overview: {
     eyebrow: string;
     heading: ReactNode;
     leftBody: ReactNode;
     rightBody: ReactNode;
-    heroMockupSrc: string;
-    heroMockupAlt: string;
+    heroMockupKey?: "addressValidateAnimation";
+    heroMockupSrc?: string;
+    heroMockupAlt?: string;
   };
   whatsIncludedSection: AddressServicePageTabSection;
   dataQualitySection: AddressServicePageTabSection;

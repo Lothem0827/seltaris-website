@@ -15,6 +15,11 @@
   --color-offering-licensing: #f4f2ff;
   --color-offering-volume: #fff3f3;
 
+  --color-refinement-verified-surface: #cfffd2;
+  --color-refinement-verified-heading: #2e8c4d;
+  --color-refinement-unverified-surface: #ffe0dd;
+  --color-refinement-unverified-heading: #c74a4a;
+
   --color-gradient-popular-from: #3a7cfb;
   --color-gradient-popular-via: #d03afb;
   --color-gradient-popular-to: #ffa04b;
@@ -116,7 +121,7 @@
   --weight-fp-body-lead: 700;
   /* ─── Layout widths ─── */
   --width-logo: 9.375rem;
-  --height-logo: 2.625rem;
+  --height-logo: 2.625rem; /* Seltaris header logo display height — width follows SVG ratio */
   --height-gbg-logo: 1.5625rem;
   --size-icon-feature: 3.75rem;
   --size-icon-support: 3.25rem;
@@ -139,8 +144,8 @@
   --width-slide-card-narrow: min(27.5625rem, 80vw);
   --width-value-prop-card: min(26.5625rem, 85vw);
   --width-testimonial-card: min(36.75rem, 90vw);
-  --width-core-feature-slide: min(40rem, 88vw);
-  --h-core-feature-slide: 36rem;
+  --width-core-feature-slide: 28rem;
+  --h-core-feature-slide: 24rem;
   --min-h-core-feature-visual: 15rem;
   --text-core-feature-eyebrow: 1.125rem; /* 18px — Figma card eyebrow */
   --leading-core-feature-eyebrow: 1.5;
@@ -148,7 +153,7 @@
   --leading-core-feature-title: 3rem;
 
   /* ─── Layout heights ─── */
-  --min-h-pricing-card: 43.75rem;
+  --min-h-pricing-card: 40rem;
   --min-h-plan-popular: 46rem;
   --min-h-offering-panel: 30.25rem;
   --min-h-offering-image: 18.75rem;

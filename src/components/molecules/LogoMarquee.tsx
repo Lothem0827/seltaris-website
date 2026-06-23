@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { cn } from "@/lib/utils";
 
 const ROW_COUNT = 3;
@@ -46,7 +46,7 @@ function LogoMarqueeRow({ logos, reverse, rowIndex }: LogoMarqueeRowProps) {
               src={src}
               alt=""
               fill
-              className="object-contain invert opacity-50"
+              className="object-contain invert opacity-35 transition-opacity duration-200 hover:opacity-60"
               sizes="128px"
             />
           </div>

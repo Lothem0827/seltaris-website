@@ -23,7 +23,12 @@ export type ServiceOffering = {
   features: string[];
   footerNote?: string;
   learnMoreHref?: string;
-  cta: { label: string; href: string; variant?: "primary" | "secondary" };
+  cta: {
+    label: string;
+    href: string;
+    variant?: "primary" | "secondary";
+    disabled?: boolean;
+  };
   showAustralia?: boolean;
   showNewZealand?: boolean;
   showInternational?: boolean;
@@ -84,6 +89,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
       {
@@ -105,6 +111,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
       {
@@ -128,6 +135,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
       {
@@ -149,6 +157,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
     ],
@@ -176,6 +185,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
     ],
@@ -203,6 +213,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
     ],
@@ -230,6 +241,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
       {
@@ -249,6 +261,7 @@ export const servicesPageCategories: ServiceCategory[] = [
           label: "Coming soon",
           href: "#contact",
           variant: "secondary",
+          disabled: true,
         },
       },
     ],
@@ -259,7 +272,7 @@ export const servicesPageCategoryCards = [
   {
     id: "address-data",
     title: "Address data",
-    description: "Format, clean, repair and verify addresses with 100% accuracy.",
+    description: "Format, clean, repair and verify addresses.",
     iconKey: "address" as const,
     comingSoon: false,
   },
@@ -279,7 +292,7 @@ export const servicesPageCategoryCards = [
   },
   {
     id: "geocode-data",
-    title: "Appending geocode data",
+    title: "Appending geocode",
     description: "Add coordinates to every validated address.",
     iconKey: "geocode" as const,
     comingSoon: true,

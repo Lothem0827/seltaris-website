@@ -1,4 +1,3 @@
-import { Container } from "@/components/atoms/Container";
 import {
   DesignSystemNav,
   DesignSystemNavMobile,
@@ -7,33 +6,39 @@ import {
   DesignSystemColorsSection,
   DesignSystemComponentsSection,
   DesignSystemOverviewSection,
+  DesignSystemPagesSection,
   DesignSystemSpacingSection,
+  DesignSystemSvgAnimationsSection,
   DesignSystemTypographySection,
 } from "@/components/organisms/design-system/DesignSystemSections";
 import { DesignSystemTopBar } from "@/components/organisms/design-system/DesignSystemPrimitives";
 
 export function DesignSystemPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="flex h-screen flex-col overflow-hidden bg-white">
       <DesignSystemTopBar />
 
-      <Container className="py-8 lg:py-12">
-        <DesignSystemNavMobile />
+      <div className="flex min-h-0 flex-1 overflow-hidden">
+        <aside className="hidden w-56 shrink-0 overflow-y-auto border-r border-border px-container-padding py-8 lg:block">
+          <DesignSystemNav />
+        </aside>
 
-        <div className="mt-8 flex gap-16 lg:mt-12">
-          <aside className="w-48">
-            <DesignSystemNav />
-          </aside>
+        <main className="min-w-0 flex-1 overflow-y-auto">
+          <div className="px-container-padding py-8 lg:py-10">
+            <DesignSystemNavMobile />
 
-          <div className="min-w-0 flex-1">
-            <DesignSystemOverviewSection />
-            <DesignSystemColorsSection />
-            <DesignSystemTypographySection />
-            <DesignSystemSpacingSection />
-            <DesignSystemComponentsSection />
+            <div className="mt-8 lg:mt-0">
+              <DesignSystemOverviewSection />
+              <DesignSystemPagesSection />
+              <DesignSystemColorsSection />
+              <DesignSystemTypographySection />
+              <DesignSystemSpacingSection />
+              <DesignSystemSvgAnimationsSection />
+              <DesignSystemComponentsSection />
+            </div>
           </div>
-        </div>
-      </Container>
+        </main>
+      </div>
     </div>
   );
 }

@@ -24,6 +24,7 @@ import {
 } from "@/components/molecules/SeltarisPlusPlanCard";
 import { SliderNavButtons } from "@/components/molecules/SliderNavButtons";
 import { SplitIntro } from "@/components/molecules/SplitIntro";
+import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
 import { TabGroup } from "@/components/molecules/TabGroup";
 import { TestimonialCard } from "@/components/molecules/TestimonialCard";
 import { ValuePropCard } from "@/components/molecules/ValuePropCard";
@@ -79,7 +80,7 @@ export function DesignSystemMoleculesShowroom() {
               title="Human Touch™"
               description="Intelligent address correction"
               href="/human-touch"
-              iconSrc={assets.humanTouchPage.featureHumanTouch}
+              iconSrc={assets.featureIcons.humanTouch}
             />
           </ComponentDemo>
 
@@ -129,6 +130,7 @@ export function DesignSystemMoleculesShowroom() {
                     label: "Coming soon",
                     href: "#components",
                     variant: "secondary",
+                    disabled: true,
                   }}
                 />
               </div>
@@ -248,6 +250,13 @@ export function DesignSystemMoleculesShowroom() {
           >
             <SeltarisPlusSupportCard />
           </ComponentDemo>
+
+          <ComponentDemo
+            name="SupportSpecialistCard"
+            path="src/components/molecules/SupportSpecialistCard.tsx"
+          >
+            <SupportSpecialistCard />
+          </ComponentDemo>
         </div>
       </div>
 
@@ -262,7 +271,8 @@ export function DesignSystemMoleculesShowroom() {
               eyebrow="Performance"
               heading="Built for speed at scale"
               body="Process millions of records with confidence."
-              imageSrc={assets.humanTouchSide}
+              logoKey="human-touch"
+              logoAlt="Human Touch"
             />
           </ComponentDemo>
 

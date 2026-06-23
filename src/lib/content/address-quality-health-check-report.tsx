@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
 import { assets } from "@/lib/assets";
-import type { AddressServicePageContent } from "@/lib/types/address-service-page";
+import type { AddressServicePageContent, AddressServicePageDataAccuracyCodesPanel, AddressServicePageRefinementCodesPanel, AddressServicePageSampleExamplesPanel } from "@/lib/types/address-service-page";
+import { addressDataAccuracyCodesPanel } from "@/lib/content/address-data-accuracy-codes-panel";
+import { addressRefinementCodesPanel } from "@/lib/content/address-refinement-codes-panel";
+import { addressSampleExamplesPanel } from "@/lib/content/address-sample-examples-panel";
+import { addressServiceSectionNav } from "@/lib/content/address-service-section-nav";
 
 export const addressQualityHealthCheckReportPageMeta = {
   title: "Address Quality Health Check Report | Seltaris",
@@ -25,14 +29,19 @@ export const addressQualityHealthCheckReportPageHero = {
   ],
 } as const;
 
-export const addressQualitySectionNav = [
-  { id: "overview", label: "Overview" },
-  { id: "whats-included", label: "What's included" },
-  { id: "data-quality", label: "Data quality" },
-  { id: "performance", label: "Performance" },
-  { id: "security", label: "Security" },
-  { id: "pricing", label: "Pricing" },
-] as const;
+const { featureIcons } = assets;
+
+const sectionIconOverrides: Record<string, string> = {
+  "data-quality": featureIcons.humanTouch,
+  performance: featureIcons.altraService,
+  security: featureIcons.advancedDataProtection,
+};
+
+export const addressQualitySectionNav = addressServiceSectionNav.map((item) =>
+  sectionIconOverrides[item.id]
+    ? { ...item, iconSrc: sectionIconOverrides[item.id] }
+    : item,
+);
 
 export const addressQualityOverview = {
   eyebrow: "Overview",
@@ -47,7 +56,9 @@ export const addressQualityOverview = {
     <>
       <p>
         This Health Check Report delivers a{" "}
-        <strong>clear and comprehensive assessment of your submitted address data</strong>{" "}
+        <strong>
+          clear and comprehensive assessment of your submitted address data
+        </strong>{" "}
         delivered in an easy to read PDF, analysed through the Seltaris service.
       </p>
       <p className="mt-6">
@@ -89,6 +100,11 @@ export type AddressQualitySplitIntroPanel = {
   iconKey: AddressQualityIconKey;
   leftHeading: ReactNode;
   leftSubtitle?: ReactNode;
+  datasets?: ReadonlyArray<{
+    id: string;
+    label: string;
+    flagKey: "australia" | "nz" | "international";
+  }>;
   rightBody: ReactNode;
   learnMoreHref?: string;
   heroImageKey: string;
@@ -117,10 +133,14 @@ export type AddressQualitySecurityStandardPanel = {
   priceLabel: string;
   rightBody: ReactNode;
   learnMoreHref?: string;
+  heroImageKey: string;
 };
 
 export type AddressQualityTabPanel =
   | AddressQualityGridPanel
+  | AddressServicePageRefinementCodesPanel
+  | AddressServicePageDataAccuracyCodesPanel
+  | AddressServicePageSampleExamplesPanel
   | AddressQualitySplitIntroPanel
   | AddressQualitySecurityAdvancedPanel
   | AddressQualitySecurityStandardPanel;
@@ -149,78 +169,18 @@ export const addressQualityWhatsIncludedSection: AddressQualityTabSection = {
       body: (
         <>
           <p>
-            <strong>Summary view.</strong> The introductory section of the Health
-            Check Report provides an overall breakdown of your file&apos;s
-            performance. It includes a clear assessment of the current state of
-            your data quality, followed by the improvements made possible with
-            Seltaris.
+            <strong>Summary view.</strong> The introductory section of the
+            Health Check Report provides an overall breakdown of your
+            file&apos;s performance. It includes a clear assessment of the
+            current state of your data quality, followed by the improvements
+            made possible with Seltaris.
           </p>
         </>
       ),
     },
-    {
-      id: "address-refinement-codes",
-      label: "Address refinement codes",
-      layout: "grid",
-      imageKeys: ["refinementVerified", "refinementUnverified"],
-      body: (
-        <>
-          <p>
-            <strong>Verified (V) address codes.</strong> These represent the
-            addresses that Seltaris has successfully confirmed as valid. Codes
-            V2–V4 show the progressive refinements applied, ensuring each address
-            is fully standardised, accurate, and aligned with postal standards.
-          </p>
-          <p className="mt-6">
-            <strong>Unverified (U) address codes.</strong> These addresses could
-            not be fully confirmed as valid, but they were still processed with
-            partial corrections, structural adjustments, and formatting
-            improvements. Codes U2–U5 show the enhancements applied to unverified
-            data. These improvements ensure that if additional information
-            becomes available in the future, each address has the best possible
-            chance of being validated.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "data-accuracy-codes",
-      label: "Data accuracy codes",
-      layout: "grid",
-      imageKeys: ["transformationChanges"],
-      body: (
-        <>
-          <p>
-            In addition to Refinement Codes, Seltaris also appends Data Accuracy
-            Codes to each address. These codes indicate the level of precision at
-            which each address has been matched and validated during processing.
-          </p>
-          <p className="mt-6">
-            Understanding the accuracy level helps assess the reliability and
-            usability of each address for business operations, logistics, or
-            compliance.
-          </p>
-        </>
-      ),
-    },
-    {
-      id: "sample-examples",
-      label: "Sample examples",
-      layout: "grid",
-      imageKeys: ["sampleExamples"],
-      body: (
-        <>
-          <p>
-            <strong>Repair examples from your dataset.</strong> Here you&apos;ll
-            see a sample list of your existing addresses and how they&apos;ve been
-            refined to their best state. This preview gives you a clear insight
-            into how Seltaris processes your file and provides confidence in
-            knowing exactly how your data will look before you receive the
-            complete file.
-          </p>
-        </>
-      ),
-    },
+    addressRefinementCodesPanel,
+    addressDataAccuracyCodesPanel,
+    addressSampleExamplesPanel,
   ],
 };
 
@@ -259,7 +219,7 @@ export const addressQualityDataQualitySection: AddressQualityTabSection = {
         </>
       ),
       learnMoreHref: "/human-touch",
-      heroImageKey: "dataQualityAddressingIntelligence",
+      heroImageKey: "humanTouchAnimated",
     },
     {
       id: "data-sources",
@@ -275,24 +235,21 @@ export const addressQualityDataQualitySection: AddressQualityTabSection = {
       ),
       leftSubtitle:
         "Sources the best datasets available from multiple suppliers in one system to give you the very best, utmost accurate results.",
+      datasets: [
+        { id: "au", label: "Australia", flagKey: "australia" },
+        { id: "nz", label: "New Zealand", flagKey: "nz" },
+        { id: "intl", label: "International", flagKey: "international" },
+      ],
       rightBody: (
         <>
-          <p className="font-label text-body-sm uppercase tracking-wide text-muted">
-            Included datasets
-          </p>
-          <ul className="mt-2 space-y-1">
-            <li>Australia</li>
-            <li>New Zealand</li>
-            <li>International</li>
-          </ul>
-          <p className="mt-6">
+          <p>
             While most solutions rely solely on the standard government datasets
             available in Australia and New Zealand, DataTools goes further.
-            OptiSource System™ includes an expansive semantic index that organises
-            and surfaces information from a variety of trusted data sources,
-            including the Australian PAF, renowned for its 99% accuracy in postal
-            data. This entire process happens in milliseconds, giving you the
-            fastest and most precise results, every time.
+            OptiSource System™ includes an expansive semantic index that
+            organises and surfaces information from a variety of trusted data
+            sources, including the Australian PAF, renowned for its 99% accuracy
+            in postal data. This entire process happens in milliseconds, giving
+            you the fastest and most precise results, every time.
           </p>
         </>
       ),
@@ -355,20 +312,20 @@ export const addressQualityPerformanceSection: AddressQualityTabSection = {
       rightBody: (
         <>
           <p>
-            GBG Altraservice™, directly integrated into our cloud infrastructure,
-            enables users to correct each line of address data within fractions
-            of a millisecond — processing a staggering{" "}
+            GBG Altraservice™, directly integrated into our cloud
+            infrastructure, enables users to correct each line of address data
+            within fractions of a millisecond — processing a staggering{" "}
             <strong>1 million records in just 1 minute</strong>.
           </p>
           <p className="mt-6">
-            To put that into perspective, validating Australia&apos;s 15.6 million
-            deliverable addresses from start to finish with Seltaris would only
-            take a total of 16 minutes. Now that&apos;s ultra fast.
+            To put that into perspective, validating Australia&apos;s 15.6
+            million deliverable addresses from start to finish with Seltaris
+            would only take a total of 16 minutes. Now that&apos;s ultra fast.
           </p>
         </>
       ),
       learnMoreHref: "/altraservice",
-      heroImageKey: "performanceComposite",
+      heroImageKey: "performanceSpeeds",
     },
   ],
 };
@@ -401,14 +358,14 @@ export const addressQualitySecuritySection: AddressQualityTabSection = {
       rightBody: (
         <>
           <p>
-            Our most advanced cloud security architecture specifically built with
-            enterprise in mind.
+            Our most advanced cloud security architecture specifically built
+            with enterprise in mind.
           </p>
           <p className="mt-6">
             With private keys and our all-new Encrypted Cloud Computing
-            architecture, DataTools takes its industry-leading security to a whole
-            new level. Ensuring your data remains strictly confidential, heavily
-            encrypted, and completely inaccessible.
+            architecture, DataTools takes its industry-leading security to a
+            whole new level. Ensuring your data remains strictly confidential,
+            heavily encrypted, and completely inaccessible.
           </p>
         </>
       ),
@@ -444,7 +401,8 @@ export const addressQualitySecuritySection: AddressQualityTabSection = {
             <>
               <strong>ISO27001 certified.</strong> Have peace of mind knowing
               that DataTools doesn&apos;t just claim to prioritise security; its
-              practices have been thoroughly vetted by independent third parties.
+              practices have been thoroughly vetted by independent third
+              parties.
             </>
           ),
           learnMoreHref: "/advanced-data-protection",
@@ -472,6 +430,7 @@ export const addressQualitySecuritySection: AddressQualityTabSection = {
         </p>
       ),
       learnMoreHref: "/advanced-data-protection",
+      heroImageKey: "securityStandardDataProtection",
     },
   ],
 };
@@ -498,9 +457,15 @@ export type AddressQualityPricingCard = {
   features: string[];
   footerNote?: string;
   price?: { amount: string; gst?: string; note?: string };
-  cta: { label: string; href: string; variant?: "primary" | "secondary" };
+  cta: {
+    label: string;
+    href: string;
+    variant?: "primary" | "secondary";
+    disabled?: boolean;
+  };
   showAustralia?: boolean;
   showNewZealand?: boolean;
+  learnMoreHref?: string;
 };
 
 export const addressQualityPricingCards: AddressQualityPricingCard[] = [
@@ -518,7 +483,13 @@ export const addressQualityPricingCards: AddressQualityPricingCard[] = [
       "1x Repaired File Available for Purchase",
     ],
     price: { amount: "$500.00", gst: "Excludes GST of $50.00" },
-    cta: { label: "Free with Seltaris+. Get it now", href: "/seltaris-plus" },
+    learnMoreHref: "/address-quality-health-check-report",
+    cta: {
+      label: "Coming soon",
+      href: "#contact",
+      variant: "secondary",
+      disabled: true,
+    },
     showNewZealand: true,
   },
   {
@@ -535,7 +506,8 @@ export const addressQualityPricingCards: AddressQualityPricingCard[] = [
       "1x Repaired File Available for Purchase",
     ],
     price: { amount: "$500.00", gst: "Excludes GST of $50.00" },
-    cta: { label: "Free with Seltaris+. Get it now", href: "/seltaris-plus" },
+    learnMoreHref: "/address-quality-health-check-report",
+    cta: { label: "Get started", href: "#contact" },
     showAustralia: true,
   },
   {
@@ -558,70 +530,6 @@ export const addressQualityPricingCards: AddressQualityPricingCard[] = [
     },
     cta: { label: "Explore plans", href: "/seltaris-plus" },
   },
-  {
-    id: "repaired-intl",
-    label: "Repaired file only",
-    tone: "default",
-    regionLabel: "International",
-    iconKey: "repaired",
-    title: "Address Validation",
-    description:
-      "Validate, Repair and Standardise. Improve the quality of your International address data.",
-    features: [
-      "Validate & Repair addresses",
-      "Standardisation of all addresses",
-      "1x Repaired File Available for Download",
-    ],
-    cta: {
-      label: "Coming Soon",
-      href: "#contact",
-      variant: "secondary",
-    },
-  },
-  {
-    id: "repaired-au",
-    label: "Repaired file only",
-    tone: "default",
-    regionLabel: "Australia",
-    iconKey: "repaired",
-    title: "Address Validation",
-    description:
-      "Validate, Repair and Standardise. Improve the quality of your Australian address data.",
-    features: [
-      "Validate & Repair addresses",
-      "Standardisation of all addresses",
-      "1x Repaired File Available for Download",
-    ],
-    footerNote:
-      "Only accessible after completing your Address Quality Health Check Report – Australia.",
-    showAustralia: true,
-    cta: {
-      label: "Coming Soon",
-      href: "#contact",
-      variant: "secondary",
-    },
-  },
-  {
-    id: "repaired-nz",
-    label: "Repaired file only",
-    tone: "default",
-    regionLabel: "New Zealand",
-    iconKey: "repaired",
-    title: "Address Validation",
-    description:
-      "Validate, Repair and Standardise. Improve the quality of your New Zealand address data.",
-    features: [
-      "Validate & Repair addresses",
-      "Standardisation of all addresses",
-      "1x Repaired File Available for Download",
-    ],
-    showNewZealand: true,
-    cta: {
-      label: "Coming Soon",
-      href: "#contact",
-      variant: "secondary",
-    },
-  },
 ];
 
 export const addressQualityHealthCheckReportPageContent: AddressServicePageContent =
@@ -629,10 +537,9 @@ export const addressQualityHealthCheckReportPageContent: AddressServicePageConte
     meta: addressQualityHealthCheckReportPageMeta,
     hero: {
       ...addressQualityHealthCheckReportPageHero,
-      logoSrc: assets.addressQualityHealthCheckReportPage.logo,
+      logoSrc: assets.featureIcons.healthCheck,
     },
     sectionNav: addressQualitySectionNav,
-    sectionNavIconSrc: assets.addressQualityHealthCheckReportPage.logo,
     overview: {
       ...addressQualityOverview,
       heroMockupSrc: assets.addressQualityHealthCheckReportPage.heroMockup,

@@ -1,4 +1,3 @@
-import { assets } from "@/lib/assets";
 import { healthCheckSlides } from "@/lib/content/sections";
 import { SliderSection } from "@/components/organisms/SliderSection";
 import type { SliderSlide } from "@/components/organisms/ContentSlider";
@@ -23,7 +22,8 @@ export function HealthCheckSliderSection() {
         ),
         body:
           "To help you better understand your current datasets, the Health Check Report in Seltaris assesses each record in your dataset for completeness, accuracy, and compliance with official postal standards. It highlights issues and provides clear recommendations, corrections, and enhancements—helping you improve the quality, deliverability, and reliability of your address data so it\u2019s ready for use across mailing, logistics, and compliance systems.",
-        imageSrc: assets.healthSide,
+        logoKey: "health-check",
+        logoAlt: "Health Check Report",
       }}
       navAlign="end"
       slides={slides}

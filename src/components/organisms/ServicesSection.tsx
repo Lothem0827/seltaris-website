@@ -1,9 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import { AppImage as Image } from "@/components/atoms/AppImage";
+import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
 import { ServiceCard } from "@/components/molecules/ServiceCard";
+import { AddressValidateAnimation } from "@/components/svg-animations/AddressValidateAnimation";
 import { assets } from "@/lib/assets";
 import { services } from "@/lib/content/home";
 
@@ -24,32 +25,13 @@ export function ServicesSection() {
               Starting today, you can clean and validate Australian addresses
               with phone, email validation, and geocoding coming soon.
             </Text>
-            <Link
-              href="#learn-more"
-              className="inline-flex items-center gap-3 font-label text-body-sm text-brand"
-            >
+            <Button href="#learn-more" variant="ghost" size="small">
               Learn more
-              <Image
-                src={assets.learnMoreArrow}
-                alt=""
-                width={10}
-                height={8}
-                aria-hidden
-              />
-            </Link>
+            </Button>
           </div>
         </div>
 
-        <div className="w-full overflow-hidden rounded-radius-lg">
-          <Image
-            src={assets.servicesHero}
-            alt="Data validation workflow"
-            width={1200}
-            height={378}
-            className="h-auto w-full"
-            sizes="(max-width: 640px) 100vw, 1200px"
-          />
-        </div>
+        <AddressValidateAnimation />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {services.map((service) => (

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import Link from "next/link";
 import { Container } from "@/components/atoms/Container";
 import { Text } from "@/components/atoms/Text";

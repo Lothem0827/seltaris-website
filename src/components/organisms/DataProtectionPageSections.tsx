@@ -1,9 +1,11 @@
-import Image from "next/image";
+import { IconSurface } from "@/components/atoms/IconSurface";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
+import { FeaturePageHeadingContainer } from "@/components/molecules/FeaturePageHeadingContainer";
 import { DataProtectionWorkflowSliderSection } from "@/components/organisms/DataProtectionWorkflowSliderSection";
 import { assets } from "@/lib/assets";
 import {
@@ -42,29 +44,13 @@ export function DataProtectionPageHero() {
   return (
     <section className="px-container-padding pt-16 pb-section">
       <Container className="flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-10 text-center">
-          <div className="relative size-20">
-            <Image
-              src={assets.dataProtectionPage.logo}
-              alt="Advanced Data Protection"
-              fill
-              className="object-contain"
-              sizes="80px"
-              priority
-            />
-          </div>
-          <div className="mx-auto max-w-3xl space-y-5">
-            <FeaturePageHeading as="p" variant="pageEyebrow">
-              {dataProtectionPageHero.eyebrow}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="h1" variant="heroTitle">
-              {dataProtectionPageHero.heading}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="heroSubtitle">
-              {dataProtectionPageHero.subtitle}
-            </FeaturePageHeading>
-          </div>
-        </div>
+        <FeaturePageHeadingContainer
+          logoSrc={assets.featureIcons.advancedDataProtection}
+          logoAlt="Advanced Data Protection"
+          eyebrow={dataProtectionPageHero.eyebrow}
+          heading={dataProtectionPageHero.heading}
+          subtitle={dataProtectionPageHero.subtitle}
+        />
 
         <div className="relative w-full max-w-content-wide">
           <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-auto lg:h-visual-data">
@@ -129,15 +115,10 @@ export function DataProtectionCloudIntroSection() {
               {intro.heading}
             </FeaturePageHeading>
           </div>
-          <div className="relative mx-8 size-20 shrink-0 lg:mx-0">
-            <Image
-              src={assets.dataProtectionPage.logo}
-              alt=""
-              fill
-              className="object-contain"
-              sizes="80px"
-            />
-          </div>
+          <IconSurface
+            src={assets.featureIcons.advancedDataProtection}
+            className="mx-8 shrink-0 lg:mx-0"
+          />
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
@@ -246,27 +227,17 @@ export function DataProtectionDesignTeaserSection() {
   return (
     <section className="relative overflow-hidden px-container-padding py-section">
       <Container className="relative z-10 flex flex-col items-center gap-10 text-center">
-        <div className="relative size-20">
-          <Image
-            src={assets.humanTouchPage.featureDesign}
-            alt=""
-            fill
-            className="object-contain"
-            sizes="80px"
-          />
-        </div>
-        <div className="mx-auto max-w-3xl space-y-4">
-          <FeaturePageHeading as="p" variant="pageEyebrow">
-            {teaser.eyebrow}
-          </FeaturePageHeading>
-          <FeaturePageHeading as="h2" variant="teaserTitle">
-            {teaser.heading}
-          </FeaturePageHeading>
-          <FeaturePageHeading as="p" variant="bannerSubtitle">
-            {teaser.subheading}
-          </FeaturePageHeading>
-        </div>
-        <Button href={teaser.cta.href} variant="secondary">
+        <FeaturePageHeadingContainer
+          logoSrc={assets.featureIcons.designMadeSimple}
+          eyebrow={teaser.eyebrow}
+          heading={teaser.heading}
+          subtitle={teaser.subheading}
+          titleAs="h2"
+          titleVariant="teaserTitle"
+          subtitleVariant="bannerSubtitle"
+          contentSpacing="compact"
+        />
+        <Button href={teaser.cta.href} variant="ghost" size="small">
           {teaser.cta.label}
         </Button>
       </Container>

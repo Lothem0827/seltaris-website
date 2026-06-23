@@ -4,7 +4,10 @@ import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { CoreFeatureSlideCard } from "@/components/molecules/CoreFeatureSlideCard";
-import { SliderNavButtons, useSliderNav } from "@/components/molecules/SliderNavButtons";
+import {
+  SliderNavButtons,
+  useSliderNav,
+} from "@/components/molecules/SliderNavButtons";
 import {
   ContentSlider,
   type SliderSlide,

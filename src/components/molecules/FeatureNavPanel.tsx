@@ -4,10 +4,10 @@ import { assets } from "@/lib/assets";
 import { featureNavItems } from "@/lib/content/feature-nav";
 
 const featureIcons = {
-  featureHumanTouch: assets.humanTouchPage.featureHumanTouch,
-  featureAltraservice: assets.humanTouchPage.featureAltraservice,
-  featureDataProtection: assets.humanTouchPage.featureDataProtection,
-  featureDesign: assets.humanTouchPage.featureDesign,
+  featureHumanTouch: assets.featureIcons.humanTouch,
+  featureAltraservice: assets.featureIcons.altraService,
+  featureDataProtection: assets.featureIcons.advancedDataProtection,
+  featureDesign: assets.featureIcons.designMadeSimple,
 } as const;
 
 export function FeatureNavPanel() {

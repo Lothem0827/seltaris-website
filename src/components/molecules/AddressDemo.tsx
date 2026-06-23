@@ -22,7 +22,12 @@ const ANIMATION_SEQUENCES: SegmentDef[][] = [
     { text: " ", type: "plain" },
     { initial: "st,", correct: "St,", type: "correction", id: "c2" },
     { text: " ", type: "plain" },
-    { initial: "marylands", correct: "MERRYLANDS", type: "correction", id: "c3" },
+    {
+      initial: "marylands",
+      correct: "MERRYLANDS",
+      type: "correction",
+      id: "c3",
+    },
     { text: " ", type: "plain" },
     { initial: "nsw", correct: "NSW", type: "correction", id: "c4" },
     { text: " 2160", type: "plain" },
@@ -30,11 +35,26 @@ const ANIMATION_SEQUENCES: SegmentDef[][] = [
   [
     { text: "02", type: "plain" },
     { text: " ", type: "plain" },
-    { initial: "9687 4665", correct: "9687 4666", type: "correction", id: "c5" },
+    {
+      initial: "9687 4665",
+      correct: "9687 4666",
+      type: "correction",
+      id: "c5",
+    },
   ],
   [
-    { initial: "jane-ff1x", correct: "jane.ferry", type: "correction", id: "c6" },
-    { initial: "@htmil.com", correct: "@hotmail.com", type: "correction", id: "c7" },
+    {
+      initial: "jane-ff1x",
+      correct: "jane.ferry",
+      type: "correction",
+      id: "c6",
+    },
+    {
+      initial: "@htmil.com",
+      correct: "@hotmail.com",
+      type: "correction",
+      id: "c7",
+    },
   ],
   [
     { text: "2 Prospect St, ", type: "plain" },
@@ -43,11 +63,26 @@ const ANIMATION_SEQUENCES: SegmentDef[][] = [
   ],
   [
     { text: "+61 ", type: "plain" },
-    { initial: "402 899 466", correct: "490 315 358", type: "correction", id: "c11" },
+    {
+      initial: "402 899 466",
+      correct: "490 315 358",
+      type: "correction",
+      id: "c11",
+    },
   ],
   [
-    { initial: "johnmelon", correct: "john.smith", type: "correction", id: "c12" },
-    { initial: "@icloud.co", correct: "@icloud.com", type: "correction", id: "c13" },
+    {
+      initial: "johnmelon",
+      correct: "john.smith",
+      type: "correction",
+      id: "c12",
+    },
+    {
+      initial: "@icloud.co",
+      correct: "@icloud.com",
+      type: "correction",
+      id: "c13",
+    },
   ],
 ];
 
@@ -245,15 +280,17 @@ export function AddressDemo() {
 
   return (
     <div
-      className="w-address-demo max-w-full rounded-radius-lg border-2 border-brand bg-white px-5 py-4"
+      className="w-address-demo max-w-full rounded-radius-md bg-gradient-to-r from-[#4D4DFF] to-[#FE9C72] p-0.5 text-left"
       aria-live="polite"
       aria-label="Data correction demonstration"
     >
-      <div
-        ref={displayRef}
-        id="address-display"
-        className="flex h-address-input w-full items-center overflow-hidden whitespace-nowrap font-label text-body font-semibold text-brand"
-      />
+      <div className="rounded-[calc(var(--radius-md)-2px)] bg-white px-4 py-3">
+        <div
+          ref={displayRef}
+          id="address-display"
+          className="flex h-address-input w-full items-center justify-start overflow-hidden whitespace-nowrap text-left font-label text-body font-semibold text-brand"
+        />
+      </div>
     </div>
   );
 }

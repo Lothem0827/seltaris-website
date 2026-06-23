@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/atoms/Button";
+import { Button, HoverArrowContent } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Logo } from "@/components/molecules/Logo";
 import { MainNav } from "@/components/molecules/MainNav";
@@ -56,10 +56,9 @@ export function SiteHeader() {
               <Image
                 src="/gbg-logo.svg"
                 alt="GBG"
-                width={45}
-                height={12}
-                className="h-4 w-auto"
-                priority
+                width={60}
+                height={16}
+                style={{ height: 16, width: "auto" }}
               />
             </Link>
             <nav className="hidden items-center gap-6 font-label text-label uppercase tracking-wide text-text md:flex">
@@ -111,10 +110,10 @@ export function SiteHeader() {
             </Text>{" "}
             <Link
               href="/seltaris-plus"
-              className="font-label text-label text-brand underline"
+              className="group inline-flex items-center font-label text-label text-brand underline"
               tabIndex={isAtTop ? undefined : -1}
             >
-              Start with Seltaris+ today.
+              <HoverArrowContent>Start with Seltaris+ today.</HoverArrowContent>
             </Link>
           </Container>
         </div>

@@ -1,15 +1,25 @@
 "use client";
 
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
+import { IconSurface } from "@/components/atoms/IconSurface";
 import { Text } from "@/components/atoms/Text";
 import { useAddressServicePage } from "@/components/organisms/AddressServicePageContext";
+import { AddressDataAccuracyCodesPanel } from "@/components/molecules/AddressDataAccuracyCodesPanel";
+import { AddressRefinementCodesPanel } from "@/components/molecules/AddressRefinementCodesPanel";
+import { AddressResultFilePanel } from "@/components/molecules/AddressResultFilePanel";
+import { AddressSampleExamplesPanel } from "@/components/molecules/AddressSampleExamplesPanel";
 import { PricingCard } from "@/components/molecules/PricingCard";
+import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
+import { SupportedDatasetsBar } from "@/components/molecules/SupportedDatasetsBar";
 import { TabGroup } from "@/components/molecules/TabGroup";
+import { AddressValidateAnimation } from "@/components/svg-animations/AddressValidateAnimation";
+import { HumanTouchAnimated } from "@/components/svg-animations/HumanTouchAnimated";
 import { assets } from "@/lib/assets";
 import { getAddressQualityHealthCheckReportImage } from "@/lib/address-quality-health-check-report-images";
 import type {
@@ -24,12 +34,6 @@ import type {
 } from "@/lib/types/address-service-page";
 import { cn } from "@/lib/utils";
 
-const flagAssets = {
-  australia: assets.australiaFlag,
-  nz: assets.nzFlag,
-  international: assets.internationalFlag,
-} as const;
-
 const pricingIcons = {
   health: assets.pricingIcons.health,
   repaired: assets.pricingIcons.repaired,
@@ -37,88 +41,71 @@ const pricingIcons = {
 } as const;
 
 const sectionIcons: Record<AddressServicePageIconKey, string> = {
-  humanTouchLogo: assets.addressQualityHealthCheckReportPage.humanTouchLogo,
-  altraserviceLogo: assets.addressQualityHealthCheckReportPage.altraserviceLogo,
-  dataProtectionLogo:
-    assets.addressQualityHealthCheckReportPage.dataProtectionLogo,
+  humanTouchLogo: assets.featureIcons.humanTouch,
+  altraserviceLogo: assets.featureIcons.altraService,
+  dataProtectionLogo: assets.featureIcons.advancedDataProtection,
 };
 
 function LearnMoreLink({ href }: { href: string }) {
   return (
-    <Link
-      href={href}
-      className="inline-flex items-center gap-1.5 font-body text-body-sm font-semibold text-brand"
-    >
+    <Button href={href} variant="ghost" size="small">
       Learn more
-      <Image
-        src={assets.learnMoreArrow}
-        alt=""
-        width={10}
-        height={8}
-        aria-hidden
-      />
-    </Link>
+    </Button>
   );
 }
 
 function PanelImage({
   imageKey,
   className,
-  objectFit = "contain",
 }: {
   imageKey: string;
   className?: string;
-  objectFit?: "contain" | "cover";
 }) {
   return (
     <div
-      className={cn("relative overflow-hidden rounded-radius-lg", className)}
+      className={cn("relative overflow-hidden rounded-radius-lg ", className)}
     >
       <Image
         src={getAddressQualityHealthCheckReportImage(imageKey)}
         alt=""
         fill
-        className={cn(
-          objectFit === "cover" ? "object-cover" : "object-contain",
-          objectFit === "contain" && "p-4",
-        )}
+        className="object-cover"
         sizes="578px"
       />
     </div>
   );
 }
 
-function FeatureIcon({ iconKey }: { iconKey: AddressServicePageIconKey }) {
-  return (
-    <div className="relative size-icon-feature overflow-hidden rounded-radius-md border border-[#230356] bg-[rgba(17,6,37,0.9)] shadow-sm">
-      <Image
-        src={sectionIcons[iconKey]}
-        alt=""
-        fill
-        className="object-contain p-3"
-        sizes="60px"
-      />
-    </div>
-  );
-}
-
-function GridTabPanelContent({ panel }: { panel: AddressServicePageGridPanel }) {
+function GridTabPanelContent({
+  panel,
+}: {
+  panel: AddressServicePageGridPanel;
+}) {
   const images = panel.imageKeys;
 
   if (images.length >= 3) {
     return (
-      <div className="grid gap-4 lg:grid-cols-2">
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-1 items-center rounded-radius-md border border-border bg-white p-8">
+      <div className="grid gap-2 lg:grid-cols-2">
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-1 items-center rounded-radius-md p-8">
             <Text as="div" className="prose-strong">
               {panel.body}
             </Text>
           </div>
-          <PanelImage imageKey={images[0]} className="aspect-[578/351] w-full" />
+          <PanelImage
+            imageKey={images[0]}
+            className="aspect-[578/351] w-full"
+          />
         </div>
-        <div className="flex flex-col gap-4">
-          <PanelImage imageKey={images[1]} className="aspect-[578/351] w-full" />
-          <PanelImage imageKey={images[2]} className="aspect-[578/351] w-full" />
+        <div className="flex flex-col gap-2">
+          <PanelImage
+            imageKey={images[1]}
+            className="aspect-[578/351] w-full"
+          />
+          <PanelImage
+            imageKey={images[2]}
+            className="aspect-[578/351] w-full"
+          />
         </div>
       </div>
     );
@@ -126,11 +113,11 @@ function GridTabPanelContent({ panel }: { panel: AddressServicePageGridPanel }) 
 
   if (images.length === 2) {
     return (
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+      <div className="grid gap-2 lg:grid-cols-2 lg:items-start">
         <Text as="div" className="prose-strong px-2">
           {panel.body}
         </Text>
-        <div className="grid gap-4">
+        <div className="grid gap-2">
           <PanelImage imageKey={images[0]} className="aspect-[4/3] w-full" />
           <PanelImage imageKey={images[1]} className="aspect-[4/3] w-full" />
         </div>
@@ -140,7 +127,7 @@ function GridTabPanelContent({ panel }: { panel: AddressServicePageGridPanel }) 
 
   if (images.length === 1) {
     return (
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div className="grid gap-2 lg:grid-cols-2 lg:items-center">
         <Text as="div" className="prose-strong px-2">
           {panel.body}
         </Text>
@@ -165,12 +152,18 @@ function SplitIntroTabPanelContent({
     <div className="flex flex-col gap-16 lg:gap-20">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-end lg:gap-20">
         <div className="flex flex-col gap-8">
-          <FeatureIcon iconKey={panel.iconKey} />
-          <div className="space-y-4">
+          <IconSurface src={sectionIcons[panel.iconKey]} size="feature" />
+          <div className="flex flex-col gap-6">
             <FeaturePageHeading as="h3" variant="sectionTitleLg">
               {panel.leftHeading}
             </FeaturePageHeading>
             {panel.leftSubtitle ? <Text>{panel.leftSubtitle}</Text> : null}
+            {panel.datasets ? (
+              <SupportedDatasetsBar
+                datasets={panel.datasets}
+                label="Included datasets:"
+              />
+            ) : null}
           </div>
         </div>
 
@@ -185,15 +178,19 @@ function SplitIntroTabPanelContent({
       </div>
 
       <div className="relative mx-auto w-full max-w-content-wide">
-        <div className="relative aspect-[1200/673] w-full">
-          <Image
-            src={getAddressQualityHealthCheckReportImage(panel.heroImageKey)}
-            alt=""
-            fill
-            className="object-contain"
-            sizes="1200px"
-          />
-        </div>
+        {panel.heroImageKey === "humanTouchAnimated" ? (
+          <HumanTouchAnimated />
+        ) : (
+          <div className="relative aspect-[1200/673] w-full">
+            <Image
+              src={getAddressQualityHealthCheckReportImage(panel.heroImageKey)}
+              alt=""
+              fill
+              className="object-contain"
+              sizes="1200px"
+            />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -234,7 +231,7 @@ function SecurityAdvancedTabPanelContent({
     <div className="flex flex-col gap-16 lg:gap-20">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-20">
         <div className="flex flex-col gap-8">
-          <FeatureIcon iconKey={panel.iconKey} />
+          <IconSurface src={sectionIcons[panel.iconKey]} />
           <div className="space-y-4">
             <FeaturePageHeading as="h3" variant="sectionTitleLg">
               {panel.leftHeading}
@@ -281,26 +278,40 @@ function SecurityStandardTabPanelContent({
   panel: AddressServicePageSecurityStandardPanel;
 }) {
   return (
-    <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-20">
-      <div className="flex flex-col gap-8">
-        <FeatureIcon iconKey={panel.iconKey} />
-        <div className="space-y-4">
-          <FeaturePageHeading as="h3" variant="sectionTitleLg">
-            {panel.leftHeading}
-          </FeaturePageHeading>
-          <p className="font-body text-body-lg font-medium text-text">
-            {panel.priceLabel}
-          </p>
+    <div className="flex flex-col gap-16 lg:gap-20">
+      <div className="grid gap-12 lg:grid-cols-2 lg:items-start lg:gap-20">
+        <div className="flex flex-col gap-8">
+          <IconSurface src={sectionIcons[panel.iconKey]} />
+          <div className="space-y-4">
+            <FeaturePageHeading as="h3" variant="sectionTitleLg">
+              {panel.leftHeading}
+            </FeaturePageHeading>
+            <p className="font-body text-body-lg font-medium text-brand">
+              {panel.priceLabel}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-5">
+          <Text as="div" className="prose-strong">
+            {panel.rightBody}
+          </Text>
+          {panel.learnMoreHref ? (
+            <LearnMoreLink href={panel.learnMoreHref} />
+          ) : null}
         </div>
       </div>
 
-      <div className="flex flex-col gap-5">
-        <Text as="div" className="prose-strong">
-          {panel.rightBody}
-        </Text>
-        {panel.learnMoreHref ? (
-          <LearnMoreLink href={panel.learnMoreHref} />
-        ) : null}
+      <div className="relative mx-auto w-full max-w-content-wide">
+        <div className="relative aspect-[994/497] w-full ">
+          <Image
+            src={getAddressQualityHealthCheckReportImage(panel.heroImageKey)}
+            alt=""
+            fill
+            className="object-contain rounded-radius-lg"
+            sizes="994px"
+          />
+        </div>
       </div>
     </div>
   );
@@ -310,6 +321,14 @@ function TabPanelRenderer({ panel }: { panel: AddressServicePageTabPanel }) {
   switch (panel.layout) {
     case "grid":
       return <GridTabPanelContent panel={panel} />;
+    case "refinementCodes":
+      return <AddressRefinementCodesPanel panel={panel} />;
+    case "dataAccuracyCodes":
+      return <AddressDataAccuracyCodesPanel panel={panel} />;
+    case "sampleExamples":
+      return <AddressSampleExamplesPanel panel={panel} />;
+    case "resultFile":
+      return <AddressResultFilePanel panel={panel} />;
     case "splitIntro":
       return <SplitIntroTabPanelContent panel={panel} />;
     case "securityAdvanced":
@@ -321,7 +340,11 @@ function TabPanelRenderer({ panel }: { panel: AddressServicePageTabPanel }) {
   }
 }
 
-function TabFeatureSection({ section }: { section: AddressServicePageTabSection }) {
+function TabFeatureSection({
+  section,
+}: {
+  section: AddressServicePageTabSection;
+}) {
   const [activeTab, setActiveTab] = useState(0);
   const panel = section.panels[activeTab];
   const tabLabels = section.panels.map((item) => item.label);
@@ -332,19 +355,21 @@ function TabFeatureSection({ section }: { section: AddressServicePageTabSection 
       id={section.sectionId}
       className="scroll-mt-24 px-container-padding pb-section"
     >
-      <Container className="mx-auto flex max-w-content-wide flex-col gap-10">
-        <FeaturePageHeading as="h2" variant="sectionTitle">
-          {section.heading}
-        </FeaturePageHeading>
+      <Container className="mx-auto flex max-w-content-wide flex-col gap-12 ">
+        <div className="flex flex-col items-start justify-between gap-4">
+          <FeaturePageHeading as="h2" variant="sectionTitle">
+            {section.heading}
+          </FeaturePageHeading>
 
-        <TabGroup
-          tabs={tabLabels}
-          activeIndex={activeTab}
-          onChange={setActiveTab}
-        />
+          <TabGroup
+            tabs={tabLabels}
+            activeIndex={activeTab}
+            onChange={setActiveTab}
+          />
+        </div>
 
         {contentVariant === "grid" ? (
-          <div className="rounded-radius-panel border border-border bg-white p-4 sm:p-6">
+          <div className="rounded-radius-panel ">
             <TabPanelRenderer panel={panel} />
           </div>
         ) : (
@@ -359,23 +384,21 @@ export function AddressServicePageHero() {
   const { hero } = useAddressServicePage();
 
   return (
-    <section className="bg-brand-light px-container-padding py-section">
+    <section className="bg-brand-surface px-container-padding py-section-sm">
       <Container className="flex flex-col gap-12">
         <Link
           href={hero.breadcrumb.href}
-          className="inline-flex w-fit items-center gap-3"
+          className="inline-flex w-fit items-center gap-2.5"
         >
-          <span className="flex size-6 items-center justify-center rounded-radius-xs border border-[#230356] bg-[linear-gradient(180deg,#2d134a_0%,#110625_100%)]">
-            <Image
-              src={assets.chevronDown}
-              alt=""
-              width={12}
-              height={12}
-              className="rotate-90 brightness-0 invert"
-              aria-hidden
-            />
-          </span>
-          <span className="font-body text-xl font-medium text-text">
+          <Image
+            src={assets.arrowLeftWrap}
+            alt=""
+            width={24}
+            height={24}
+            className="shrink-0"
+            aria-hidden
+          />
+          <span className="font-body text-lg font-medium text-text">
             {hero.breadcrumb.label}
           </span>
         </Link>
@@ -383,16 +406,7 @@ export function AddressServicePageHero() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex max-w-2xl flex-col gap-6">
             <div className="flex items-center gap-7">
-              <div className="flex size-[100px] shrink-0 items-center justify-center rounded-radius-lg bg-[#e1f4f4]">
-                <Image
-                  src={hero.logoSrc}
-                  alt=""
-                  width={57}
-                  height={57}
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              <IconSurface src={hero.logoSrc} size="hero" />
               <FeaturePageHeading
                 as="h1"
                 variant="heroTitle"
@@ -402,61 +416,14 @@ export function AddressServicePageHero() {
               </FeaturePageHeading>
             </div>
 
-            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <p className="font-body text-xs font-semibold uppercase tracking-widest text-text">
-                Supported datasets:
-              </p>
-              <div className="flex flex-wrap gap-2.5">
-                {hero.datasets.map((dataset) => (
-                  <span
-                    key={dataset.id}
-                    className="inline-flex items-center gap-1.5 rounded-radius-full border border-border bg-white px-3.5 py-1.5 font-body text-body-sm font-medium text-text"
-                  >
-                    <Image
-                      src={flagAssets[dataset.flagKey]}
-                      alt=""
-                      width={20}
-                      height={20}
-                      aria-hidden
-                    />
-                    {dataset.label}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <SupportedDatasetsBar datasets={hero.datasets} />
           </div>
 
-          <div className="w-fit shrink-0 rounded-radius-xl bg-white p-5">
-            <div className="flex items-center gap-3">
-              <div className="relative size-[46px] shrink-0 overflow-hidden rounded-full border border-[#e2e8f0] bg-white">
-                <Image
-                  src={assets.seltarisPlusPage.supportSpecialist}
-                  alt=""
-                  fill
-                  className="object-cover object-top"
-                  sizes="46px"
-                />
-              </div>
-              <div className="space-y-0.5">
-                <p className="font-body text-body font-semibold text-text">
-                  {hero.supportHeading}
-                </p>
-                <Link
-                  href={hero.supportCta.href}
-                  className="inline-flex items-center gap-3 font-body text-body-sm font-semibold text-brand"
-                >
-                  {hero.supportCta.label}
-                  <Image
-                    src={assets.learnMoreArrow}
-                    alt=""
-                    width={10}
-                    height={8}
-                    aria-hidden
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
+          <SupportSpecialistCard
+            heading={hero.supportHeading}
+            linkText={hero.supportCta.label}
+            href={hero.supportCta.href}
+          />
         </div>
       </Container>
     </section>
@@ -464,30 +431,27 @@ export function AddressServicePageHero() {
 }
 
 export function AddressServicePageSectionNav() {
-  const { sectionNav, sectionNavIconSrc } = useAddressServicePage();
+  const { sectionNav } = useAddressServicePage();
 
   return (
-    <section className="bg-white px-container-padding py-10">
+    <section className="bg-white px-container-padding py-section-sm">
       <Container>
         <nav
           aria-label="Page sections"
-          className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6"
+          className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6 "
         >
           {sectionNav.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className="group flex flex-col items-center gap-3 text-center"
+              className="group flex flex-col items-center gap-3 text-center border-border border rounded-radius-md p-6 hover:border-brand/30 hover:bg-brand-light/30"
             >
-              <span className="flex size-14 items-center justify-center rounded-radius-md bg-brand-surface transition-colors group-hover:bg-brand-light">
-                <Image
-                  src={sectionNavIconSrc}
-                  alt=""
-                  width={28}
-                  height={28}
-                  className="object-contain"
-                />
-              </span>
+              <IconSurface
+                src={item.iconSrc}
+                size="nav"
+                variant="custom"
+                backgroundClassName="bg-brand-surface"
+              />
               <FeaturePageHeading
                 as="span"
                 variant="featureCardEyebrow"
@@ -512,30 +476,36 @@ export function AddressServicePageOverviewSection() {
       className="scroll-mt-24 px-container-padding pb-section"
     >
       <Container className="mx-auto flex max-w-content-wide flex-col gap-16">
-        <div className="space-y-5">
-          <Eyebrow label={overview.eyebrow} />
-          <FeaturePageHeading as="h2" variant="sectionTitle">
-            {overview.heading}
-          </FeaturePageHeading>
-        </div>
+        <div className="flex flex-col gap-8">
+          <div className="space-y-5">
+            <Eyebrow label={overview.eyebrow} />
+            <FeaturePageHeading as="h2" variant="sectionTitle">
+              {overview.heading}
+            </FeaturePageHeading>
+          </div>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <Text as="div" className="prose-stack">
-            {overview.leftBody}
-          </Text>
-          <Text>{overview.rightBody}</Text>
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+            <Text as="div" className="prose-stack">
+              {overview.leftBody}
+            </Text>
+            <Text>{overview.rightBody}</Text>
+          </div>
         </div>
 
         <div className="relative mx-auto w-full max-w-content-wide">
-          <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
-            <Image
-              src={overview.heroMockupSrc}
-              alt={overview.heroMockupAlt}
-              fill
-              className="object-contain"
-              sizes="(max-width: 640px) 100vw, 1200px"
-            />
-          </div>
+          {overview.heroMockupKey === "addressValidateAnimation" ? (
+            <AddressValidateAnimation />
+          ) : (
+            <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
+              <Image
+                src={overview.heroMockupSrc!}
+                alt={overview.heroMockupAlt ?? ""}
+                fill
+                className="object-contain"
+                sizes="(max-width: 640px) 100vw, 1200px"
+              />
+            </div>
+          )}
         </div>
       </Container>
     </section>
@@ -572,9 +542,6 @@ export function AddressServicePagePricingSection() {
     >
       <Container className="flex flex-col gap-12">
         <div className="mx-auto max-w-3xl space-y-5 text-center">
-          <FeaturePageHeading as="p" variant="pageEyebrow">
-            {pricingIntro.eyebrow}
-          </FeaturePageHeading>
           <FeaturePageHeading as="h2" variant="sectionTitle">
             {pricingIntro.heading}
           </FeaturePageHeading>
@@ -584,11 +551,7 @@ export function AddressServicePagePricingSection() {
           {pricingCards.map((card) => (
             <PricingCard
               key={card.id}
-              label={
-                card.regionLabel
-                  ? `${card.label} · ${card.regionLabel}`
-                  : card.label
-              }
+              label={card.label}
               tone={card.tone}
               iconSrc={pricingIcons[card.iconKey]}
               title={card.title}

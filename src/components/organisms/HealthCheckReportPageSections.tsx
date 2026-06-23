@@ -1,8 +1,10 @@
-import Image from "next/image";
+import { IconSurface } from "@/components/atoms/IconSurface";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
+import { FeaturePageHeadingContainer } from "@/components/molecules/FeaturePageHeadingContainer";
 import { assets } from "@/lib/assets";
 import {
   healthCheckReportNextSteps,
@@ -15,29 +17,13 @@ export function HealthCheckReportPageHero() {
   return (
     <section className="px-container-padding pt-16 pb-section">
       <Container className="flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-10 text-center">
-          <div className="relative flex size-20 items-center justify-center rounded-radius-sm bg-brand-light">
-            <Image
-              src={assets.healthCheckReportPage.logo}
-              alt="Health Check Report"
-              width={48}
-              height={48}
-              className="object-contain"
-              priority
-            />
-          </div>
-          <div className="mx-auto max-w-3xl space-y-5">
-            <FeaturePageHeading as="p" variant="pageEyebrow">
-              {healthCheckReportPageHero.eyebrow}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="h1" variant="heroTitle">
-              {healthCheckReportPageHero.heading}
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="heroSubtitle">
-              {healthCheckReportPageHero.subtitle}
-            </FeaturePageHeading>
-          </div>
-        </div>
+        <FeaturePageHeadingContainer
+          logoSrc={assets.featureIcons.healthCheck}
+          logoAlt="Health Check Report"
+          eyebrow={healthCheckReportPageHero.eyebrow}
+          heading={healthCheckReportPageHero.heading}
+          subtitle={healthCheckReportPageHero.subtitle}
+        />
 
         <div className="relative w-full max-w-content-wide">
           <div className="relative aspect-[4/3] w-full sm:aspect-[3/2] lg:aspect-[1200/673]">
@@ -61,7 +47,7 @@ export function HealthCheckReportOverviewSection() {
 
   return (
     <section className="px-container-padding pb-section">
-      <Container className="flex flex-col gap-20">
+      <Container className="flex flex-col gap-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-3xl space-y-5 px-8">
             <Eyebrow label={content.eyebrow} />
@@ -69,15 +55,11 @@ export function HealthCheckReportOverviewSection() {
               {content.heading}
             </FeaturePageHeading>
           </div>
-          <div className="relative hidden size-14 shrink-0 lg:block">
-            <Image
-              src={assets.healthCheckReportPage.logo}
-              alt=""
-              fill
-              className="object-contain"
-              sizes="56px"
-            />
-          </div>
+          <IconSurface
+            src={assets.featureIcons.healthCheck}
+            size="nav"
+            className="hidden shrink-0 lg:flex"
+          />
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">

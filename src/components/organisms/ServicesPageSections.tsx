@@ -6,7 +6,10 @@ import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
 import { PricingCard } from "@/components/molecules/PricingCard";
 import { ServiceCard } from "@/components/molecules/ServiceCard";
-import { SliderNavButtons, useSliderNav } from "@/components/molecules/SliderNavButtons";
+import {
+  SliderNavButtons,
+  useSliderNav,
+} from "@/components/molecules/SliderNavButtons";
 import {
   ContentSlider,
   type SliderSlide,
@@ -29,7 +32,8 @@ const offeringIcons: Record<ServiceOfferingIconKey, string> = {
   geocode: assets.serviceIcons.geocode,
 };
 
-const pricingSlideClass = "w-[min(calc(100vw-3rem),24rem)] shrink-0";
+const pricingSlideClass =
+  "w-[min(calc(100vw-3rem),24rem)] shrink-0 transition-transform duration-300 ease-out hover:scale-[1.03] motion-reduce:transition-none motion-reduce:hover:scale-100";
 
 function buildOfferingSlides(offerings: ServiceOffering[]): SliderSlide[] {
   return offerings.map((offering) => ({
@@ -59,14 +63,18 @@ function buildOfferingSlides(offerings: ServiceOffering[]): SliderSlide[] {
 export function ServicesPageHero() {
   return (
     <section className="bg-brand-light py-section">
-      <Container className="flex flex-col gap-12">
-        <FeaturePageHeading as="h1" variant="sectionTitle">
+      <Container className="flex flex-col gap-12 items-center">
+        <FeaturePageHeading as="h1" variant="sectionTitleLg">
           {servicesPageHero.heading}
         </FeaturePageHeading>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {servicesPageCategoryCards.map((category) => (
-            <Link key={category.id} href={`#${category.id}`} className="block h-full">
+            <Link
+              key={category.id}
+              href={`#${category.id}`}
+              className="block h-full"
+            >
               <ServiceCard
                 title={category.title}
                 description={category.description}

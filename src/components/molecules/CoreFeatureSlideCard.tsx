@@ -1,8 +1,10 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import type { ReactNode } from "react";
 import { Button } from "@/components/atoms/Button";
+import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
 import { cn } from "@/lib/utils";
+import { Eyebrow } from "../atoms/Eyebrow";
 
 type CoreFeatureSlideCardProps = {
   visualSrc: string;
@@ -30,28 +32,29 @@ export function CoreFeatureSlideCard({
         className,
       )}
     >
-      <div className="flex min-h-0 flex-1 flex-col gap-12 p-12">
-        <div className="flex shrink-0 flex-col gap-7">
-          <div className="flex flex-col gap-3">
-            <p className="core-feature-card-eyebrow">{eyebrow}</p>
-            <h3 className="core-feature-card-title">{heading}</h3>
-          </div>
+      <div className="flex shrink-0 flex-col gap-4 p-8 h-full justify-between">
+        <div className="flex flex-col gap-3">
+          <p className="core-feature-card-eyebrow">{eyebrow}</p>
+          <Heading level="subheading">{heading}</Heading>
           <Text>{body}</Text>
-          <Button href={href} variant="secondary" className="w-fit">
-            {cta}
-          </Button>
         </div>
 
-        <div className="relative aspect-[4/3] w-full sm:aspect-auto sm:min-h-0 sm:flex-1">
-          <Image
-            src={visualSrc}
-            alt=""
-            fill
-            className="object-contain object-bottom"
-            sizes="(max-width: 640px) 88vw, 640px"
-          />
-        </div>
+        <Button href={href} variant="ghost" size="small">
+          {cta}
+        </Button>
       </div>
+
+      {/* <div className="mt-auto w-full">
+        <Image
+          src={visualSrc}
+          alt=""
+          width={448}
+          height={336}
+          className="block w-full"
+          style={{ width: "100%", height: "auto" }}
+          sizes="448px"
+        />
+      </div> */}
     </article>
   );
 }

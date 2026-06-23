@@ -1,9 +1,17 @@
-import Image from "next/image";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
-import type { SplitIntroContent } from "@/lib/types/slider";
+import { SplitIntroPulsingLogo } from "@/components/molecules/SplitIntroPulsingLogo";
+import { assets } from "@/lib/assets";
+import type { SplitIntroContent, SplitIntroLogoKey } from "@/lib/types/slider";
 import { cn } from "@/lib/utils";
+
+const splitIntroLogos: Record<SplitIntroLogoKey, string> = {
+  "human-touch": assets.featureIcons.humanTouch,
+  "altra-service": assets.featureIcons.altraService,
+  "advanced-data-protection": assets.featureIcons.advancedDataProtection,
+  "health-check": assets.featureIcons.healthCheck,
+};
 
 type SplitIntroProps = SplitIntroContent & {
   className?: string;
@@ -13,8 +21,8 @@ export function SplitIntro({
   eyebrow,
   heading,
   body,
-  imageSrc,
-  imageAlt = "",
+  logoKey,
+  logoAlt = "",
   className,
 }: SplitIntroProps) {
   return (
@@ -29,15 +37,11 @@ export function SplitIntro({
         <Heading level="h1">{heading}</Heading>
         <Text>{body}</Text>
       </div>
-      <div className="relative size-split-intro shrink-0 self-center overflow-hidden rounded-radius-lg">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          className="object-contain"
-          sizes="315px"
-        />
-      </div>
+      <SplitIntroPulsingLogo
+        logoSrc={splitIntroLogos[logoKey]}
+        logoAlt={logoAlt}
+        className="self-center"
+      />
     </div>
   );
 }

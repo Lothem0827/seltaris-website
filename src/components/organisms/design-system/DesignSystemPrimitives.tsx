@@ -20,7 +20,10 @@ export function GuideSection({
   return (
     <section
       id={id}
-      className={cn("scroll-mt-28 border-b border-border py-section", className)}
+      className={cn(
+        "scroll-mt-28 border-b border-border py-section",
+        className,
+      )}
     >
       <div className="mb-10 space-y-3">
         <h2 className="font-display text-h1 leading-h1 font-bold tracking-h1 text-text">
@@ -138,8 +141,8 @@ export function TokenCode({
 
 export function DesignSystemTopBar() {
   return (
-    <div className="border-b border-border bg-white">
-      <div className="mx-auto flex max-w-container items-center justify-between gap-4 px-container-padding py-4">
+    <header className="shrink-0 border-b border-border bg-white">
+      <div className="flex w-full items-center justify-between gap-4 px-container-padding py-4">
         <div className="space-y-1">
           <p className="font-label text-label uppercase tracking-wider text-brand">
             Seltaris
@@ -155,6 +158,6 @@ export function DesignSystemTopBar() {
           ← Back to site
         </Link>
       </div>
-    </div>
+    </header>
   );
 }

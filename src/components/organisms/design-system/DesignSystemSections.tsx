@@ -6,17 +6,24 @@ import {
   LAYOUT_TOKENS,
   RADIUS_TOKENS,
   SPACING_TOKENS,
+  SVG_ANIMATION_INVENTORY,
   TOKEN_SOURCE_FILES,
   type ColorGroup,
   type ComponentLayer,
 } from "@/lib/design-system/catalog";
 import { cn } from "@/lib/utils";
+import { SITE_PAGES } from "@/lib/design-system/site-pages";
+import {
+  AddressValidateAnimation,
+  HumanTouchAnimated,
+} from "@/components/svg-animations";
 import { DesignSystemAtomsShowroom } from "./DesignSystemAtomsShowroom";
 import { DesignSystemComponentShowroom } from "./DesignSystemComponentShowroom";
 import { DesignSystemMoleculesShowroom } from "./DesignSystemMoleculesShowroom";
 import { DesignSystemTypographyScale } from "./DesignSystemTypographyScale";
 import { DesignSystemTypographyTable } from "./DesignSystemTypographyTable";
 import {
+  ComponentDemo,
   DemoPanel,
   GuideSection,
   GuideSubheading,
@@ -135,6 +142,53 @@ export function DesignSystemOverviewSection() {
           ))}
         </ol>
       </DemoPanel>
+    </GuideSection>
+  );
+}
+
+export function DesignSystemPagesSection() {
+  return (
+    <GuideSection
+      id="pages"
+      title="Site pages"
+      description={`All ${SITE_PAGES.length} routes in this build. Each row links to the live page and lists the template component and App Router entry file.`}
+    >
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[40rem] border-collapse text-left font-body text-body-sm">
+          <thead>
+            <tr className="border-b border-border text-label uppercase tracking-wider text-muted">
+              <th className="py-2 pr-4 font-label">Route</th>
+              <th className="py-2 pr-4 font-label">Page title</th>
+              <th className="py-2 pr-4 font-label">Template</th>
+              <th className="py-2 font-label">Route file</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SITE_PAGES.map((page) => (
+              <tr
+                key={page.path}
+                className="border-b border-border last:border-0"
+              >
+                <td className="py-2.5 pr-4 font-medium">
+                  <a
+                    href={page.path}
+                    className="text-text underline-offset-2 hover:text-brand hover:underline"
+                  >
+                    {page.path}
+                  </a>
+                </td>
+                <td className="py-2.5 pr-4 text-paragraph">{page.title}</td>
+                <td className="py-2.5 pr-4">
+                  <TokenCode>{page.template}</TokenCode>
+                </td>
+                <td className="py-2.5">
+                  <TokenCode>{page.routeFile}</TokenCode>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </GuideSection>
   );
 }
@@ -324,6 +378,74 @@ export function DesignSystemSpacingSection() {
           ))}
         </div>
       </div>
+    </GuideSection>
+  );
+}
+
+export function DesignSystemSvgAnimationsSection() {
+  return (
+    <GuideSection
+      id="svg-animations"
+      title="SVG Animations"
+      description="Animated SVG and motion components in src/components/svg-animations. Built from Figma frames — used for marketing demos and workflow illustrations."
+    >
+      <GuideSubheading>Animation inventory</GuideSubheading>
+      <div className="mb-10 overflow-x-auto">
+        <table className="w-full min-w-[36rem] border-collapse text-left font-body text-body-sm">
+          <thead>
+            <tr className="border-b border-border text-label uppercase tracking-wider text-muted">
+              <th className="py-2 pr-4 font-label">Component</th>
+              <th className="py-2 pr-4 font-label">Path</th>
+              <th className="py-2 pr-4 font-label">Figma node</th>
+              <th className="py-2 font-label">Used on</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SVG_ANIMATION_INVENTORY.map((entry) => (
+              <tr
+                key={entry.path}
+                className="border-b border-border last:border-0"
+              >
+                <td className="py-2.5 pr-4 font-medium">
+                  <a
+                    href={`#${getComponentDemoId(entry.name)}`}
+                    className="text-text underline-offset-2 hover:text-brand hover:underline"
+                  >
+                    {entry.name}
+                  </a>
+                </td>
+                <td className="py-2.5 pr-4">
+                  <TokenCode>{entry.path}</TokenCode>
+                </td>
+                <td className="py-2.5 pr-4">
+                  <TokenCode>{entry.figmaNode}</TokenCode>
+                </td>
+                <td className="py-2.5 text-paragraph">{entry.usedOn}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <ComponentDemo
+        name="AddressValidateAnimation"
+        path="src/components/svg-animations/AddressValidateAnimation.tsx"
+        note="Address validation workflow — dirty inputs flow through Seltaris to a validated table. Figma frame address-validate-animation (4579:9069)."
+      >
+        <div className="overflow-x-auto rounded-radius-md bg-white p-6 lg:p-10">
+          <AddressValidateAnimation />
+        </div>
+      </ComponentDemo>
+
+      <ComponentDemo
+        name="HumanTouchAnimated"
+        path="src/components/svg-animations/HumanTouchAnimated.tsx"
+        note="Human Touch address repair — invalid input with suggestions repairs rows in a customer table. Figma frame human-touch-animated (4592:10201)."
+      >
+        <div className="overflow-x-auto rounded-radius-md p-6 lg:p-10">
+          <HumanTouchAnimated />
+        </div>
+      </ComponentDemo>
     </GuideSection>
   );
 }

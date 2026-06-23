@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { Badge } from "@/components/atoms/Badge";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
@@ -20,8 +20,8 @@ export function ServiceCard({
   return (
     <article
       className={cn(
-        "relative flex h-full flex-1 items-start gap-5 rounded-radius-md border border-border bg-white p-4",
-        comingSoon && "opacity-50",
+        "relative flex h-full flex-1 items-center justify-center gap-4 rounded-radius-md border border-border bg-white p-4",
+        comingSoon && "opacity-70",
       )}
     >
       {comingSoon ? (

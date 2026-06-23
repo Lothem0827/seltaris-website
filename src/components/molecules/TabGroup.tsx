@@ -19,7 +19,7 @@ export function TabGroup({
   return (
     <div
       className={cn(
-        "w-full rounded-radius-full border border-border bg-white p-1.5",
+        "w-full rounded-radius-full border border-border  p-1.5 bg-[#F7F7F8]",
         className,
       )}
       data-name="THIS IS A TAB"

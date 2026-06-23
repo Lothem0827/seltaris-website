@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { FeaturePageHeading } from "@/components/atoms/FeaturePageHeading";
 import { Text } from "@/components/atoms/Text";
 import { cn } from "@/lib/utils";
@@ -17,7 +17,6 @@ type ImageSlideCardProps = {
   title?: string;
   description: ReactNode;
   width?: SlideCardWidth;
-  imageVariant?: "dark" | "light";
 };
 
 export function ImageSlideCard({
@@ -25,18 +24,12 @@ export function ImageSlideCard({
   title,
   description,
   width = "default",
-  imageVariant = "dark",
 }: ImageSlideCardProps) {
   return (
     <article
       className={cn("flex shrink-0 flex-col gap-4", widthClasses[width])}
     >
-      <div
-        className={cn(
-          "relative h-[300px] w-full overflow-hidden rounded-radius-lg sm:h-card-slide",
-          imageVariant === "light" && "border border-border",
-        )}
-      >
+      <div className="relative h-[300px] w-full overflow-hidden rounded-radius-lg sm:h-card-slide">
         <Image
           src={imageSrc}
           alt=""

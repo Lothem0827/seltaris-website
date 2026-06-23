@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { AppImage as Image } from "@/components/atoms/AppImage";
 import { Button } from "@/components/atoms/Button";
 import { Heading } from "@/components/atoms/Heading";
 import { Text } from "@/components/atoms/Text";
@@ -18,7 +17,12 @@ type PricingCardProps = {
   features: string[];
   footerNote?: string;
   price?: { amount: string; gst?: string; note?: string };
-  cta: { label: string; href: string; variant?: "primary" | "secondary" };
+  cta: {
+    label: string;
+    href: string;
+    variant?: "primary" | "secondary";
+    disabled?: boolean;
+  };
   learnMoreHref?: string;
   showAustralia?: boolean;
   showNewZealand?: boolean;
@@ -63,10 +67,10 @@ export function PricingCard({
         borderClass,
       )}
     >
-      <p className="py-3 text-center font-body text-body font-extrabold uppercase tracking-wide text-white">
+      <p className="py-3 text-center font-body text-sm font-extrabold uppercase tracking-widest text-white">
         {label}
       </p>
-      <div className="flex flex-1 flex-col rounded-radius-md bg-white p-8 shadow-sm">
+      <div className="flex flex-1 flex-col rounded-radius-md bg-white p-6 shadow-sm">
         <div className="mb-6 flex items-center justify-between">
           {iconSrc ? (
             <div className="relative size-12">
@@ -76,7 +80,7 @@ export function PricingCard({
             <span />
           )}
           {regionChip ? (
-            <span className="inline-flex items-center gap-1 rounded-radius-full border border-border px-3 py-1.5 text-xs font-medium">
+            <span className="inline-flex items-center gap-1.5 rounded-radius-full border border-border px-3 py-1.5 text-sm font-medium">
               <Image
                 src={regionChip.flag}
                 alt=""
@@ -95,20 +99,10 @@ export function PricingCard({
               {title}
             </Heading>
             <Text>{description}</Text>
-            {(learnMoreHref ?? "#learn-more") ? (
-              <Link
-                href={learnMoreHref ?? "#learn-more"}
-                className="inline-flex items-center gap-2 font-label text-body-sm text-brand"
-              >
+            {learnMoreHref ? (
+              <Button href={learnMoreHref} variant="ghost" size="small">
                 Learn more
-                <Image
-                  src={assets.learnMoreArrow}
-                  alt=""
-                  width={10}
-                  height={8}
-                  aria-hidden
-                />
-              </Link>
+              </Button>
             ) : null}
           </div>
 
@@ -147,6 +141,7 @@ export function PricingCard({
           <Button
             href={cta.href}
             variant={cta.variant === "secondary" ? "secondary" : "primary"}
+            disabled={cta.disabled}
             className={cn(
               "w-full",
               cta.variant === "secondary" &&

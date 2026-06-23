@@ -42,10 +42,27 @@ export type LayoutToken = {
 
 export const DESIGN_SYSTEM_NAV = [
   { id: "overview", label: "Overview" },
+  { id: "pages", label: "Site pages" },
   { id: "colors", label: "Colors" },
   { id: "typography", label: "Typography" },
   { id: "spacing", label: "Spacing & Layout" },
+  { id: "svg-animations", label: "SVG animations" },
   { id: "components", label: "Components" },
+] as const;
+
+export const SVG_ANIMATION_INVENTORY = [
+  {
+    name: "AddressValidateAnimation",
+    path: "svg-animations/AddressValidateAnimation.tsx",
+    figmaNode: "4579:9069",
+    usedOn: "Services section — address validation workflow demo",
+  },
+  {
+    name: "HumanTouchAnimated",
+    path: "svg-animations/HumanTouchAnimated.tsx",
+    figmaNode: "4592:10201",
+    usedOn: "Homepage Human Touch showcase",
+  },
 ] as const;
 
 export type DesignSystemSectionId =
@@ -195,6 +212,12 @@ export const SPACING_TOKENS: SpacingToken[] = [
     rem: "7.5rem",
     px: "120px",
   },
+  {
+    name: "section-sm",
+    cssVar: "--space-section-sm",
+    rem: "5rem",
+    px: "80px",
+  },
 ];
 
 export const LAYOUT_TOKENS: LayoutToken[] = [
@@ -221,6 +244,12 @@ export const LAYOUT_TOKENS: LayoutToken[] = [
     cssVar: "--space-section",
     tailwind: "py-section",
     value: "7.5rem (120px)",
+  },
+  {
+    name: "Section vertical rhythm (sm)",
+    cssVar: "--space-section-sm",
+    tailwind: "py-section-sm",
+    value: "5rem (80px)",
   },
 ];
 
@@ -305,9 +334,14 @@ export const COMPONENT_INVENTORY: ComponentInventoryEntry[] = [
   { name: "Container", layer: "atom", path: "atoms/Container.tsx", usedOn: "All page sections" },
   { name: "Eyebrow", layer: "atom", path: "atoms/Eyebrow.tsx", usedOn: "Homepage, feature pages, sliders" },
   { name: "FeatureIcon", layer: "atom", path: "atoms/FeatureIcon.tsx", usedOn: "Feature nav dropdown" },
+  { name: "IconSurface", layer: "atom", path: "atoms/IconSurface.tsx", usedOn: "Address service pages" },
   { name: "FeaturePageHeading", layer: "atom", path: "atoms/FeaturePageHeading.tsx", usedOn: "All feature pages" },
   { name: "Heading", layer: "atom", path: "atoms/Heading.tsx", usedOn: "Marketing sections & cards" },
   { name: "Text", layer: "atom", path: "atoms/Text.tsx", usedOn: "Body copy across site" },
+  { name: "AddressResultFilePanel", layer: "molecule", path: "molecules/AddressResultFilePanel.tsx", usedOn: "Address validation — What's included" },
+  { name: "AddressSampleExamplesPanel", layer: "molecule", path: "molecules/AddressSampleExamplesPanel.tsx", usedOn: "Address service pages — What's included" },
+  { name: "AddressDataAccuracyCodesPanel", layer: "molecule", path: "molecules/AddressDataAccuracyCodesPanel.tsx", usedOn: "Address service pages — What's included" },
+  { name: "AddressRefinementCodesPanel", layer: "molecule", path: "molecules/AddressRefinementCodesPanel.tsx", usedOn: "Address service pages — What's included" },
   { name: "AddressDemo", layer: "molecule", path: "molecules/AddressDemo.tsx", usedOn: "Homepage hero" },
   { name: "CenteredShowcase", layer: "molecule", path: "molecules/CenteredShowcase.tsx", usedOn: "Feature page showcase sections" },
   { name: "CoreFeatureSlideCard", layer: "molecule", path: "molecules/CoreFeatureSlideCard.tsx", usedOn: "Homepage & Health Check core features" },
@@ -328,6 +362,8 @@ export const COMPONENT_INVENTORY: ComponentInventoryEntry[] = [
   { name: "SeltarisPlusPlanCard", layer: "molecule", path: "molecules/SeltarisPlusPlanCard.tsx", usedOn: "/seltaris-plus" },
   { name: "SliderNavButtons", layer: "molecule", path: "molecules/SliderNavButtons.tsx", usedOn: "All carousels" },
   { name: "SplitIntro", layer: "molecule", path: "molecules/SplitIntro.tsx", usedOn: "Slider sections, Human Touch" },
+  { name: "SupportedDatasetsBar", layer: "molecule", path: "molecules/SupportedDatasetsBar.tsx", usedOn: "Address service pages — hero & OptiSource panel" },
+  { name: "SupportSpecialistCard", layer: "molecule", path: "molecules/SupportSpecialistCard.tsx", usedOn: "Address service pages" },
   { name: "TabGroup", layer: "molecule", path: "molecules/TabGroup.tsx", usedOn: "Human Touch tabs, Services filters" },
   { name: "TestimonialCard", layer: "molecule", path: "molecules/TestimonialCard.tsx", usedOn: "Social proof slider" },
   { name: "ValuePropCard", layer: "molecule", path: "molecules/ValuePropCard.tsx", usedOn: "Social proof slider" },

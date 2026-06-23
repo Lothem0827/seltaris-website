@@ -3,6 +3,7 @@ import { Button } from "@/components/atoms/Button";
 import { Container } from "@/components/atoms/Container";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { FeatureIcon } from "@/components/atoms/FeatureIcon";
+import { IconSurface } from "@/components/atoms/IconSurface";
 import { Text } from "@/components/atoms/Text";
 import { assets } from "@/lib/assets";
 import {
@@ -34,6 +35,9 @@ export function DesignSystemAtomsShowroom() {
               </Button>
               <Button variant="secondary">Secondary</Button>
               <Button variant="ghost">Ghost link</Button>
+              <Button href="#components" variant="ghost" size="small">
+                Learn more
+              </Button>
             </div>
           </ComponentDemo>
         </div>
@@ -73,6 +77,20 @@ export function DesignSystemAtomsShowroom() {
 
           <ComponentDemo name="FeatureIcon" path="src/components/atoms/FeatureIcon.tsx">
             <FeatureIcon src={assets.humanTouchPage.featureHumanTouch} />
+          </ComponentDemo>
+
+          <ComponentDemo name="IconSurface" path="src/components/atoms/IconSurface.tsx">
+            <div className="flex flex-wrap items-end gap-6">
+              <IconSurface src={assets.serviceSectionNavIcons.overview} />
+              <IconSurface src={assets.serviceSectionNavIcons.overview} size="hero" />
+              <IconSurface src={assets.serviceSectionNavIcons.overview} size="nav" />
+              <IconSurface
+                src={assets.featureIcons.healthCheck}
+                size="hero"
+                variant="custom"
+                backgroundClassName="bg-[#def0ff]"
+              />
+            </div>
           </ComponentDemo>
         </div>
       </div>

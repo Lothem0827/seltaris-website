@@ -12,10 +12,16 @@ export type SlideItem = {
   width?: "default" | "wide" | "narrow";
 };
 
+export type SplitIntroLogoKey =
+  | "human-touch"
+  | "altra-service"
+  | "advanced-data-protection"
+  | "health-check";
+
 export type SplitIntroContent = {
   eyebrow: string;
   heading: ReactNode;
   body: ReactNode;
-  imageSrc: string;
-  imageAlt?: string;
+  logoKey: SplitIntroLogoKey;
+  logoAlt?: string;
 };

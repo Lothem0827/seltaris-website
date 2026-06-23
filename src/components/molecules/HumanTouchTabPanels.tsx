@@ -4,10 +4,7 @@ import { useState } from "react";
 import { ImageTextCard } from "@/components/molecules/ImageTextCard";
 import { TabGroup } from "@/components/molecules/TabGroup";
 import { getAsset } from "@/lib/assets";
-import {
-  humanTouchTabPanels,
-  humanTouchTabs,
-} from "@/lib/content/sections";
+import { humanTouchTabPanels, humanTouchTabs } from "@/lib/content/sections";
 import { cn } from "@/lib/utils";
 
 type HumanTouchTabPanelsProps = {
@@ -27,7 +24,7 @@ export function HumanTouchTabPanels({ className }: HumanTouchTabPanelsProps) {
         className="mb-12"
       />
 
-      <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-start">
+      <div className="mb-12 grid grid-cols-1 gap-6 lg:grid-cols-3 lg:items-start">
         {panel.cards.map((card) => (
           <ImageTextCard
             key={card.id}

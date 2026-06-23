@@ -15,9 +15,7 @@ $files = @{
   "feature-slide-3.png" = "https://www.figma.com/api/mcp/asset/71d80e36-fb63-40ec-8a6c-aa58fbaeddc1"        # 4305:5818
   "human-touch-showcase.png" = "https://www.figma.com/api/mcp/asset/fc865138-d559-4241-9f7f-b3956c54004e"     # 4304:14555
   "human-touch-side.png" = "https://www.figma.com/api/mcp/asset/d60de6ff-f188-4157-a6b0-995765e7e0b7"        # 4305:5790
-  "human-touch-1.png" = "https://www.figma.com/api/mcp/asset/6edf9d0d-2a4a-4f12-b9aa-c8edd3b90200"            # 4305:6425
-  "human-touch-2.png" = "https://www.figma.com/api/mcp/asset/8e1c0cf3-ace3-4098-8ac8-c362b77fbe9c"            # 4305:6428
-  "human-touch-3.png" = "https://www.figma.com/api/mcp/asset/35efc95f-7bc6-413d-bca3-da0355910980"            # 4305:6431
+  # Tab card images (enhance-existing-data, quality-dataset, unverified-address-enhancement) are SVGs in repo
   "altraservice-hero.png" = "https://www.figma.com/api/mcp/asset/fffc72a8-8edb-4383-abf2-bd3cf28e3f8f"        # 4305:5632
   "altraservice-side.png" = "https://www.figma.com/api/mcp/asset/0aaa0166-1ea1-46b7-b71f-b9dafc79e38e"        # 4305:6772
   "altraservice-1.png" = "https://www.figma.com/api/mcp/asset/c909d181-f486-417e-b110-015163d9d63a"           # 4305:6787
@@ -30,9 +28,7 @@ $files = @{
   "security-3.png" = "https://www.figma.com/api/mcp/asset/d3bf3fb5-a349-4b81-a624-9f8aebf4ef32"             # 4305:9103
   "workflow-showcase.png" = "https://www.figma.com/api/mcp/asset/490c334c-f878-41e1-a6a8-65b0754e5b34"       # 4305:8433
   "health-side.png" = "https://www.figma.com/api/mcp/asset/8d2cb782-07a2-44f5-8084-dafba8038df8"            # 4305:8673
-  "health-1.png" = "https://www.figma.com/api/mcp/asset/738160e8-36ba-4ae0-b47d-f2c6bfe6dd06"                # 4503:8711
-  "health-2.png" = "https://www.figma.com/api/mcp/asset/0669b9a5-e34d-4504-8794-97ecc5406a40"                # 4503:8778
-  "health-3.png" = "https://www.figma.com/api/mcp/asset/dd35d3b3-2a3b-494e-8af3-a1adef8f5a8b"                # 4503:8854
+  # health-1/2/3 tab card images are SVGs in repo
   "pricing-icon-repaired.png" = "https://www.figma.com/api/mcp/asset/de984d0d-2e5f-44c7-82e8-a274c182db0e"   # 4306:9697
   "pricing-icon-health.png" = "https://www.figma.com/api/mcp/asset/6ef6c1c2-6857-44bd-bfaa-0865d56fcbd7"     # 4306:9700
   "learn-more-arrow.png" = "https://www.figma.com/api/mcp/asset/54e572d5-9a0b-4735-bfbd-89a648a2bf14"       # 4295:16367

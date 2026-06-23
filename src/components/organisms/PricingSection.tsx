@@ -34,6 +34,7 @@ export function PricingSection() {
               label: "Coming soon",
               href: "#contact",
               variant: "secondary",
+              disabled: true,
             }}
           />
           <PricingCard
