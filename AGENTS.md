@@ -13,3 +13,23 @@ When adding or changing **tokens**, **sizing**, **atoms**, or **molecules**, upd
 1. `src/styles/tokens.css` / `component-tokens.css` and `globals.css` `@theme`
 2. `src/lib/design-system/catalog.ts`
 3. A live demo in `src/components/organisms/design-system/` when introducing a new component or variant
+
+## Responsive design (desktop-first)
+
+Tailwind breakpoints are configured **desktop-first** in `src/app/globals.css`:
+
+- Unprefixed utilities target the **desktop** layout (design at 1200px+ first).
+- `2xl` / `xl` / `lg` / `md` / `sm` are **max-width** overrides for progressively smaller viewports.
+- Do not use removed min-width breakpoint semantics or `max-lg:` range variants.
+
+Breakpoint thresholds (max-width):
+
+| Prefix | Viewport |
+|--------|----------|
+| `2xl:` | ≤1535px |
+| `xl:` | ≤1279px |
+| `lg:` | ≤1023px |
+| `md:` | ≤767px |
+| `sm:` | ≤639px |
+
+Reference: [Tailwind v4 desktop-first breakpoints](https://stackoverflow.com/questions/79607461/how-to-make-tailwindcss-v4-desktop-first-breakpoints).

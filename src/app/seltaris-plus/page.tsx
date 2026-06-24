@@ -1,10 +1,10 @@
-import { SeltarisPlusPage } from "@/components/templates/SeltarisPlusPage";
-import { seltarisPlusPageMeta } from "@/lib/content/seltaris-plus";
+import { SeltarisPlusPage } from "@/features/seltaris-plus/SeltarisPlusPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: seltarisPlusPageMeta.title,
-  description: seltarisPlusPageMeta.description,
+  title: "Seltaris+ | Seltaris",
+  description:
+    "Seltaris+ brings together the best of Seltaris in one powerful subscription — Health Check Reports, Advanced Data Protection, volume discounts, and shared licences.",
 };
 
 export default function SeltarisPlusRoutePage() {

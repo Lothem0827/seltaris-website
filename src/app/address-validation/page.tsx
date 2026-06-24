@@ -1,8 +1,7 @@
-import { AddressServicePage } from "@/components/templates/AddressServicePage";
 import {
-  addressValidationPageContent,
+  AddressValidationPage,
   addressValidationPageMeta,
-} from "@/lib/content/address-validation";
+} from "@/features/address-service/AddressValidationPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <AddressServicePage content={addressValidationPageContent} />;
+  return <AddressValidationPage />;
 }

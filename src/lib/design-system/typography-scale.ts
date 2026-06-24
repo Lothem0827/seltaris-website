@@ -1,4 +1,4 @@
-import type { FeaturePageHeadingVariant } from "@/components/atoms/FeaturePageHeading";
+import type { FeaturePageHeadingVariant } from "@/components/ui/FeaturePageHeading";
 
 type HeadingLevel =
   | "display"

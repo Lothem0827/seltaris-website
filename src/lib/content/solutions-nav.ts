@@ -1,3 +1,6 @@
+import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
+import { serviceCategoryPath } from "@/lib/content/service-categories";
+
 export type SolutionsNavItem = {
   id: string;
   title: string;
@@ -28,7 +31,8 @@ export const solutionsNavColumns: SolutionsNavColumn[] = [
         id: "bulk-geocode",
         title: "Bulk Geocode Data",
         description: "Add coordinates to every validated address.",
-        href: "/services#geocode-data",
+        href: serviceCategoryPath("geocode-data"),
+        comingSoon: true,
       },
     ],
   },
@@ -39,13 +43,15 @@ export const solutionsNavColumns: SolutionsNavColumn[] = [
         id: "bulk-phone",
         title: "Bulk Phone Data",
         description: "Check and validate landline or mobile numbers.",
-        href: "/services#phone-data",
+        href: serviceCategoryPath("phone-data"),
+        comingSoon: true,
       },
       {
         id: "bulk-email",
         title: "Bulk Email Data",
         description: "Check and validate email addresses.",
-        href: "/services#email-data",
+        href: serviceCategoryPath("email-data"),
+        comingSoon: true,
       },
     ],
   },
@@ -56,7 +62,7 @@ export const solutionsNavColumns: SolutionsNavColumn[] = [
         id: "get-started",
         title: "Get Started with Seltaris",
         description: "There's never been a better time to get started.",
-        href: "#get-started",
+        href: SELTARIS_LOGIN_URL,
       },
       {
         id: "loqate",

@@ -2,6 +2,16 @@
 @import "../styles/tokens.css";
 @import "swiper/css";
 
+@theme {
+  --breakpoint-*: initial;
+}
+
+@custom-variant 2xl (@media (max-width: 1535px));
+@custom-variant xl (@media (max-width: 1279px));
+@custom-variant lg (@media (max-width: 1023px));
+@custom-variant md (@media (max-width: 767px));
+@custom-variant sm (@media (max-width: 639px));
+
 @theme inline {
   /* Colors */
   --color-brand: var(--color-brand);
@@ -104,6 +114,7 @@
 
   --min-height-pricing-card: var(--min-h-pricing-card);
   --min-height-plan-popular: var(--min-h-plan-popular);
+  --min-height-plan-standard: var(--min-h-plan-standard);
   --min-height-offering-panel: var(--min-h-offering-panel);
   --min-height-offering-image: var(--min-h-offering-image);
   --min-height-footer-sidebar: var(--min-h-footer-sidebar);
@@ -619,38 +630,13 @@ body {
     color: var(--color-text);
   }
 
-  /* Gradients */
-  .bg-gradient-popular {
-    background-image: linear-gradient(
-      to right,
-      var(--color-gradient-popular-from),
-      var(--color-gradient-popular-via),
-      var(--color-gradient-popular-to)
-    );
-  }
-  .bg-gradient-tier-standard {
-    background-image: linear-gradient(
-      to bottom right,
-      var(--color-tier-standard-from),
-      var(--color-tier-standard-via),
-      var(--color-tier-standard-to)
-    );
-  }
-  .bg-gradient-tier-premium {
-    background-image: linear-gradient(
-      to bottom right,
-      var(--color-tier-premium-from),
-      var(--color-tier-premium-via),
-      var(--color-tier-premium-to)
-    );
-  }
+  /* Brand accents (formerly multi-stop gradients) */
+  .bg-gradient-popular,
+  .bg-gradient-tier-standard,
+  .bg-gradient-tier-premium,
   .bg-gradient-tier-premier {
-    background-image: linear-gradient(
-      to bottom right,
-      var(--color-tier-premier-from),
-      var(--color-tier-premier-via),
-      var(--color-tier-premier-to)
-    );
+    background-color: var(--color-brand);
+    background-image: none;
   }
 
   /* Layout grids */
@@ -660,10 +646,11 @@ body {
     border-radius: var(--radius-xl);
     border-width: 4px;
     border-color: var(--color-white);
+    grid-template-columns: var(--width-offering-content) 1fr;
   }
-  @media (min-width: 1024px) {
+  @media (max-width: 1023px) {
     .grid-offering {
-      grid-template-columns: var(--width-offering-content) 1fr;
+      grid-template-columns: 1fr;
     }
   }
   .grid-split-content {
@@ -672,23 +659,24 @@ body {
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
     background: var(--color-white);
+    grid-template-columns: var(--width-split-content) 1fr;
   }
-  @media (min-width: 1024px) {
+  @media (max-width: 1023px) {
     .grid-split-content {
-      grid-template-columns: var(--width-split-content) 1fr;
+      grid-template-columns: 1fr;
     }
   }
 
   .banner-media {
     position: relative;
-    min-height: var(--min-h-banner);
+    min-height: var(--min-h-banner-lg);
     width: 100%;
     overflow: hidden;
     border-radius: var(--radius-xl);
   }
-  @media (min-width: 1024px) {
+  @media (max-width: 1023px) {
     .banner-media {
-      min-height: var(--min-h-banner-lg);
+      min-height: var(--min-h-banner);
     }
   }
 
@@ -708,11 +696,13 @@ body {
   .grid-aside-layout {
     display: grid;
     gap: 2rem;
+    grid-template-columns: 1fr auto;
+    align-items: start;
   }
-  @media (min-width: 1024px) {
+  @media (max-width: 1023px) {
     .grid-aside-layout {
-      grid-template-columns: 1fr auto;
-      align-items: start;
+      grid-template-columns: 1fr;
+      align-items: stretch;
     }
   }
 

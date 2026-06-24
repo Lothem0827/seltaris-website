@@ -1,10 +1,10 @@
-import { HealthCheckReportPage } from "@/components/templates/HealthCheckReportPage";
-import { healthCheckReportPageMeta } from "@/lib/content/health-check-report";
+import { HealthCheckReportPage } from "@/features/health-check-report/HealthCheckReportPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: healthCheckReportPageMeta.title,
-  description: healthCheckReportPageMeta.description,
+  title: "Health Check Report | Seltaris",
+  description:
+    "Data quality at its finest detail. Get a comprehensive Health Check Report assessing the completeness, accuracy, and compliance of your address data.",
 };
 
 export default function SeltarisHealthCheckReportPage() {

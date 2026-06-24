@@ -1,11 +1,11 @@
 "use client";
 
-import { AppImage as Image } from "@/components/atoms/AppImage";
+import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { assets } from "@/lib/assets";
+import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
-const ANIMATION_ASSETS = assets.humanTouchAnimation;
+const ANIMATION_ASSETS = siteAssets.humanTouchAnimation;
 
 const DESIGN_WIDTH = 1200;
 const DESIGN_HEIGHT = 492;

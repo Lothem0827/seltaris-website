@@ -1,4 +1,4 @@
-import { DesignSystemPage } from "@/components/templates/DesignSystemPage";
+import { DesignSystemPage } from "@/features/design-system/DesignSystemPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

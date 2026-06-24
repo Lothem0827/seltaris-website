@@ -1,5 +1,6 @@
 "use client";
 
+import { parseServiceSectionFromPath } from "@/lib/content/service-categories";
 import { useLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
@@ -11,10 +12,12 @@ export function ScrollToHash() {
   const pathname = usePathname();
 
   useEffect(() => {
+    const sectionFromPath = parseServiceSectionFromPath(pathname);
     const hash = window.location.hash;
-    if (!hash) return;
+    const id =
+      sectionFromPath ?? (hash ? decodeURIComponent(hash.slice(1)) : null);
 
-    const id = decodeURIComponent(hash.slice(1));
+    if (!id) return;
 
     const scrollToTarget = () => {
       const target = document.getElementById(id);

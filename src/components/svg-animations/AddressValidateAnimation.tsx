@@ -1,6 +1,6 @@
 "use client";
 
-import { AppImage as Image } from "@/components/atoms/AppImage";
+import Image from "next/image";
 import {
   useCallback,
   useEffect,
@@ -9,10 +9,10 @@ import {
   useState,
   type CSSProperties,
 } from "react";
-import { assets } from "@/lib/assets";
+import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
-const ANIMATION_ASSETS = assets.addressValidateAnimation;
+const ANIMATION_ASSETS = siteAssets.addressValidateAnimation;
 
 type TextPart = { text: string; highlight?: "error" | "success" };
 

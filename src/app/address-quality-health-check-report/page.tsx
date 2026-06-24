@@ -1,5 +1,7 @@
-import { AddressQualityHealthCheckReportPage } from "@/components/templates/AddressQualityHealthCheckReportPage";
-import { addressQualityHealthCheckReportPageMeta } from "@/lib/content/address-quality-health-check-report";
+import {
+  AddressQualityHealthCheckReportPage,
+  addressQualityHealthCheckReportPageMeta,
+} from "@/features/address-service/AddressQualityHealthCheckReportPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

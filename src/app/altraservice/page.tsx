@@ -1,10 +1,10 @@
-import { AltraservicePage } from "@/components/templates/AltraservicePage";
-import { altraservicePageMeta } from "@/lib/content/altraservice";
+import { AltraservicePage } from "@/features/altraservice/AltraservicePage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: altraservicePageMeta.title,
-  description: altraservicePageMeta.description,
+  title: "Altraservice™ | Seltaris",
+  description:
+    "Groundbreaking performance. The fastest addressing batch processor we've ever created.",
 };
 
 export default function SeltarisAltraservicePage() {

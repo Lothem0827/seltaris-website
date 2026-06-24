@@ -1,13 +1,3 @@
-import { addressQualityHealthCheckReportPageMeta } from "@/lib/content/address-quality-health-check-report";
-import { addressValidationPageMeta } from "@/lib/content/address-validation";
-import { altraservicePageMeta } from "@/lib/content/altraservice";
-import { dataProtectionPageMeta } from "@/lib/content/data-protection";
-import { designMadeSimplePageMeta } from "@/lib/content/design-made-simple";
-import { healthCheckReportPageMeta } from "@/lib/content/health-check-report";
-import { humanTouchPageMeta } from "@/lib/content/human-touch";
-import { servicesPageMeta } from "@/lib/content/services";
-import { seltarisPlusPageMeta } from "@/lib/content/seltaris-plus";
-
 export type SitePageEntry = {
   path: string;
   title: string;
@@ -25,55 +15,55 @@ export const SITE_PAGES: SitePageEntry[] = [
   },
   {
     path: "/services",
-    title: servicesPageMeta.title,
+    title: "Services | Seltaris",
     template: "ServicesPage",
     routeFile: "src/app/services/page.tsx",
   },
   {
     path: "/address-validation",
-    title: addressValidationPageMeta.title,
-    template: "AddressServicePage",
+    title: "Address Validation | Seltaris",
+    template: "AddressValidationPage",
     routeFile: "src/app/address-validation/page.tsx",
   },
   {
     path: "/address-quality-health-check-report",
-    title: addressQualityHealthCheckReportPageMeta.title,
+    title: "Address Quality Health Check Report | Seltaris",
     template: "AddressQualityHealthCheckReportPage",
     routeFile: "src/app/address-quality-health-check-report/page.tsx",
   },
   {
     path: "/health-check-report",
-    title: healthCheckReportPageMeta.title,
+    title: "Health Check Report | Seltaris",
     template: "HealthCheckReportPage",
     routeFile: "src/app/health-check-report/page.tsx",
   },
   {
     path: "/advanced-data-protection",
-    title: dataProtectionPageMeta.title,
+    title: "Advanced Data Protection | Seltaris",
     template: "DataProtectionPage",
     routeFile: "src/app/advanced-data-protection/page.tsx",
   },
   {
     path: "/human-touch",
-    title: humanTouchPageMeta.title,
+    title: "Human Touch™ | Seltaris",
     template: "HumanTouchPage",
     routeFile: "src/app/human-touch/page.tsx",
   },
   {
     path: "/altraservice",
-    title: altraservicePageMeta.title,
+    title: "Altraservice™ | Seltaris",
     template: "AltraservicePage",
     routeFile: "src/app/altraservice/page.tsx",
   },
   {
     path: "/design-made-simple",
-    title: designMadeSimplePageMeta.title,
+    title: "Design Made Simple | Seltaris",
     template: "DesignMadeSimplePage",
     routeFile: "src/app/design-made-simple/page.tsx",
   },
   {
     path: "/seltaris-plus",
-    title: seltarisPlusPageMeta.title,
+    title: "Seltaris+ | Seltaris",
     template: "SeltarisPlusPage",
     routeFile: "src/app/seltaris-plus/page.tsx",
   },

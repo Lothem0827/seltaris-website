@@ -1,6 +1,5 @@
-import { AppImage as Image } from "@/components/atoms/AppImage";
-import Link from "next/link";
-import { assets } from "@/lib/assets";
+import Image from "next/image";
+import { GBG_CUSTOMER_SUPPORT_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
 type SupportSpecialistCardProps = {
@@ -13,20 +12,21 @@ type SupportSpecialistCardProps = {
 export function SupportSpecialistCard({
   heading = "Need more licenses?",
   linkText = "Ask a Support Specialist",
-  href = "#contact",
+  href = GBG_CUSTOMER_SUPPORT_URL,
   className,
 }: SupportSpecialistCardProps) {
   return (
-    <div
+    <a
+      href={href}
       className={cn(
-        "group shrink-0 rounded-radius-lg border border-border bg-white p-4",
+        "group block shrink-0 rounded-radius-lg border border-border bg-white p-4 transition-colors hover:border-brand/30",
         className,
       )}
     >
       <div className="flex items-center gap-2.5">
         <div className="relative size-[46px] shrink-0 overflow-hidden rounded-full border border-border bg-white">
           <Image
-            src={assets.seltarisPlusPage.supportSpecialist}
+            src={siteAssets.supportSpecialist}
             alt=""
             fill
             className="object-cover object-top"
@@ -37,10 +37,7 @@ export function SupportSpecialistCard({
           <p className="whitespace-nowrap font-body text-body font-semibold text-text">
             {heading}
           </p>
-          <Link
-            href={href}
-            className="inline-flex items-center font-body text-body-sm font-semibold text-brand"
-          >
+          <span className="inline-flex items-center font-body text-body-sm font-semibold text-brand">
             {linkText}
             <span
               aria-hidden
@@ -48,7 +45,7 @@ export function SupportSpecialistCard({
             >
               <span className="min-w-0 overflow-hidden">
                 <Image
-                  src={assets.learnMoreArrow}
+                  src={siteAssets.learnMoreArrow}
                   alt=""
                   width={10}
                   height={8}
@@ -56,9 +53,9 @@ export function SupportSpecialistCard({
                 />
               </span>
             </span>
-          </Link>
+          </span>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
