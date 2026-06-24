@@ -92,8 +92,15 @@ function FeatureStatusIcon({ feature }: { feature: SeltarisPlusPlanFeature }) {
 }
 
 function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
+  const isPopular = Boolean(plan.popular);
+
   return (
-    <div className="flex flex-col gap-4 border-t border-pricing-border py-6">
+    <div
+      className={cn(
+        "flex flex-col gap-4 border-t border-pricing-border",
+        isPopular ? "py-6" : "py-5",
+      )}
+    >
       {plan.features.map((feature) => (
         <div key={feature.label} className="flex flex-col gap-2">
           <div className="flex flex-col gap-0.5">
@@ -136,9 +143,7 @@ export function SeltarisPlusPlanCard({ plan }: { plan: SeltarisPlusPlan }) {
     <article
       className={cn(
         "flex flex-col justify-between rounded-radius-lg bg-white p-8",
-        isPopular
-          ? "min-h-plan-popular"
-          : "min-h-plan-standard border-2 border-border",
+        !isPopular && "border-2 border-border",
       )}
     >
       <div className="flex flex-col gap-6">

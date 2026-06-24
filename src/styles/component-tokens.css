@@ -155,8 +155,6 @@
   /* ─── Layout heights ─── */
   --min-h-pricing-card: 40rem;
   --min-h-plan-popular: 46rem;
-  /* Non-popular: popular outer height (pt-14 + article) minus 8px */
-  --min-h-plan-standard: calc(var(--min-h-plan-popular) + 3.5rem - 0.5rem);
   --min-h-offering-panel: 30.25rem;
   --min-h-offering-image: 18.75rem;
   --min-h-footer-sidebar: 21.6875rem;
