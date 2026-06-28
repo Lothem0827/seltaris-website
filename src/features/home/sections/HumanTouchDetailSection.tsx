@@ -5,7 +5,7 @@ import { SplitIntro } from "@/components/shared/SplitIntro";
 
 export function HumanTouchDetailSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container>
         <SplitIntro
           eyebrow="Human Touch™"

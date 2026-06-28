@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export function PrivateKeysCardSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container>
         <div className="flex items-center justify-between rounded-radius-panel bg-brand-surface">
           <div className="flex flex-col justify-between gap-8 p-12">

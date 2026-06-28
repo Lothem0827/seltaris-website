@@ -18,7 +18,7 @@ export function SplitIntroPulsingLogo({
   return (
     <div
       className={cn(
-        "relative size-split-intro shrink-0 overflow-visible",
+        "relative size-split-intro shrink-0 overflow-visible sm:hidden",
         className,
       )}
       aria-hidden={logoAlt ? undefined : true}

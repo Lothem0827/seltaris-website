@@ -26,7 +26,7 @@ const NEXT_STEPS = [
 
 export function NextStepsSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container>
         <div className="rounded-radius-panel bg-brand-surface px-12 py-24 sm:px-6 lg:py-16">
           <div className="mx-auto flex max-w-content-wide flex-col gap-12">

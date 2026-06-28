@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { MobileEnterpriseNav } from "@/components/layout/MobileEnterpriseNav";
 import { MobileFeaturesNav } from "@/components/layout/MobileFeaturesNav";
 import { MobileSolutionsNav } from "@/components/layout/MobileSolutionsNav";
 import { Logo } from "@/components/layout/Logo";
@@ -12,7 +13,7 @@ import { mainNavLinks } from "@/lib/content/main-nav-links";
 import { SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
-type ExpandedSection = "solutions" | "features" | null;
+type ExpandedSection = "solutions" | "features" | "enterprise" | null;
 
 type MobileNavDrawerProps = {
   isOpen: boolean;
@@ -163,6 +164,19 @@ export function MobileNavDrawer({
                 />
                 {expandedSection === "features" ? (
                   <MobileFeaturesNav onNavigate={handleNavigate} />
+                ) : null}
+              </div>
+            )}
+
+            {(expandedSection === null || expandedSection === "enterprise") && (
+              <div className="flex flex-col gap-3">
+                <AccordionTrigger
+                  label="Enterprise"
+                  isOpen={expandedSection === "enterprise"}
+                  onToggle={() => toggleSection("enterprise")}
+                />
+                {expandedSection === "enterprise" ? (
+                  <MobileEnterpriseNav onNavigate={handleNavigate} />
                 ) : null}
               </div>
             )}

@@ -128,7 +128,7 @@ export function WorkflowSliderSection() {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex justify-end">
+      <div className="flex justify-start">
         <SliderNavButtons {...navButtonProps} />
       </div>
       <ContentSlider {...sliderProps} slides={slides} />

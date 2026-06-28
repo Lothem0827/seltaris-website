@@ -4,7 +4,7 @@ import { Text } from "@/components/ui/Text";
 
 export function InnovationSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container>
         <div className="grid grid-cols-2 items-start gap-16 lg:grid-cols-1 lg:gap-12">
           <div className="space-y-6 px-8">

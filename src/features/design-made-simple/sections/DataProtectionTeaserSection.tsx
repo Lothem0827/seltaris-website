@@ -5,7 +5,7 @@ import { IconSurface } from "@/components/ui/IconSurface";
 
 export function DataProtectionTeaserSection() {
   return (
-    <section className="px-container-padding py-section">
+    <section className="py-section">
       <Container className="flex flex-col items-center gap-10 text-center">
         <div className="flex flex-col items-center gap-8 text-center">
           <IconSurface

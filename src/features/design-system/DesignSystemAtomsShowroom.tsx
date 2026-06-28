@@ -34,6 +34,7 @@ export function DesignSystemAtomsShowroom() {
                 Primary small
               </Button>
               <Button variant="secondary">Secondary</Button>
+              <Button variant="outline">Outline</Button>
               <Button variant="ghost">Ghost link</Button>
               <Button href="#components" variant="ghost" size="small">
                 Learn more

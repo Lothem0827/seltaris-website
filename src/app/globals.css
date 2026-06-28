@@ -87,6 +87,7 @@
   --spacing-container-padding: var(--container-padding);
   --spacing-section: var(--space-section);
   --spacing-section-sm: var(--space-section-sm);
+  --spacing-section-mobile: var(--space-section-mobile);
 
   --max-width-container: var(--container-max);
   --max-width-footer-logo: var(--max-w-footer-logo);
@@ -724,5 +725,33 @@ body {
   }
   .prose-list strong {
     font-weight: 600;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 1023px) {
+    .py-section {
+      padding-block: var(--space-section-mobile);
+    }
+
+    .pt-section {
+      padding-top: var(--space-section-mobile);
+    }
+
+    .pb-section {
+      padding-bottom: var(--space-section-mobile);
+    }
+
+    .py-section-sm {
+      padding-block: var(--space-section-mobile);
+    }
+
+    .pt-section-sm {
+      padding-top: var(--space-section-mobile);
+    }
+
+    .pb-section-sm {
+      padding-bottom: var(--space-section-mobile);
+    }
   }
 }

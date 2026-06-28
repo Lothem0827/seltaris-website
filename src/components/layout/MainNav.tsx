@@ -1,4 +1,5 @@
 import { NavLink } from "@/components/layout/NavLink";
+import { EnterpriseNavDropdown } from "@/components/layout/EnterpriseNavDropdown";
 import { FeatureNavDropdown } from "@/components/layout/FeatureNavDropdown";
 import { SolutionsNavDropdown } from "@/components/layout/SolutionsNavDropdown";
 import { mainNavLinks } from "@/lib/content/main-nav-links";
@@ -12,6 +13,9 @@ export function MainNav() {
         }
         if (link.hasDropdown && link.dropdown === "features") {
           return <FeatureNavDropdown key={link.label} />;
+        }
+        if (link.hasDropdown && link.dropdown === "enterprise") {
+          return <EnterpriseNavDropdown key={link.label} />;
         }
         return <NavLink key={link.label} label={link.label} href={link.href} />;
       })}

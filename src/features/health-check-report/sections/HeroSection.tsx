@@ -5,7 +5,7 @@ import { IconSurface } from "@/components/ui/IconSurface";
 
 export function HeroSection() {
   return (
-    <section className="px-container-padding pt-16 pb-section">
+    <section className="pt-16 pb-section">
       <Container className="flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-8 text-center">
           <IconSurface

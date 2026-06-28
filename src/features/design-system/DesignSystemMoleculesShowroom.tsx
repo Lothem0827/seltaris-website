@@ -23,7 +23,12 @@ import {
 import { SliderNavButtons } from "@/components/shared/SliderNavButtons";
 import { SplitIntro } from "@/components/shared/SplitIntro";
 import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
+import { RegionBadge } from "@/components/shared/RegionBadge";
 import { TabGroup } from "@/components/shared/TabGroup";
+import { FeatureAccordion } from "@/components/shared/FeatureAccordion";
+import { GetStartedHeader } from "@/components/layout/GetStartedHeader";
+import { GetStartedTabSwitch } from "@/features/get-started/components/GetStartedTabSwitch";
+import { GET_STARTED_TAB_LABELS } from "@/lib/content/get-started-tabs";
 import { FooterNavColumn } from "@/components/layout/FooterNavColumn";
 import { ImageSlideCard } from "@/components/shared/ImageSlideCard";
 import { Logo } from "@/components/layout/Logo";
@@ -331,6 +336,55 @@ export function DesignSystemMoleculesShowroom() {
               activeIndex={demoTab}
               onChange={setDemoTab}
             />
+          </ComponentDemo>
+
+          <ComponentDemo name="RegionBadge" path="src/components/shared/RegionBadge.tsx">
+            <div className="flex flex-wrap items-center gap-3">
+              <RegionBadge region="australia" />
+              <RegionBadge region="nz" comingSoon />
+              <RegionBadge region="international" comingSoon />
+              <RegionBadge region="australia" size="sm" />
+            </div>
+          </ComponentDemo>
+
+          <ComponentDemo
+            name="GetStartedTabSwitch"
+            path="src/features/get-started/components/GetStartedTabSwitch.tsx"
+          >
+            <GetStartedTabSwitch
+              tabs={GET_STARTED_TAB_LABELS}
+              activeIndex={demoTab}
+              onChange={setDemoTab}
+            />
+          </ComponentDemo>
+
+          <ComponentDemo
+            name="FeatureAccordion"
+            path="src/components/shared/FeatureAccordion.tsx"
+          >
+            <FeatureAccordion
+              items={[
+                {
+                  id: "compare",
+                  title: "Compare before & after",
+                  body: "Each record is reviewed for completeness, accuracy, and compliance with official postal standards.",
+                },
+                {
+                  id: "pricing",
+                  title: "Clear pricing model",
+                  body: "Know exactly what you pay before you commit.",
+                },
+              ]}
+              defaultOpenId="compare"
+            />
+          </ComponentDemo>
+
+          <ComponentDemo
+            name="GetStartedHeader"
+            path="src/components/layout/GetStartedHeader.tsx"
+            note="Dedicated header for /get-started — not used on other pages."
+          >
+            <GetStartedHeader />
           </ComponentDemo>
 
           <ComponentDemo

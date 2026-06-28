@@ -6,7 +6,7 @@ import { Text } from "@/components/ui/Text";
 
 export function CloudIntroSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-8">
           <div className="grid-aside-layout">
@@ -20,7 +20,7 @@ export function CloudIntroSection() {
             </div>
             <IconSurface
               src="/icons/features/advanced-data-protection.svg"
-              className="mx-0 shrink-0 lg:mx-8"
+              className="mx-0 shrink-0 lg:mx-auto"
             />
           </div>
 

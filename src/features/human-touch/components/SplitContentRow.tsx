@@ -13,7 +13,7 @@ export function SplitContentRow({
 }) {
   const image = <FeatureImage src={imageSrc} />;
   const text = (
-    <div className="flex flex-col justify-center px-8 py-4 lg:px-8">
+    <div className="flex flex-col justify-center px-8 py-4 lg:px-6">
       <Text as="div" className="prose-list space-y-4">
         {children}
       </Text>

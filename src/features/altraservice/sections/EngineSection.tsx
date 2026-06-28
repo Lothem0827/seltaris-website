@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export function EngineSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container>
         <div
           className={cn(

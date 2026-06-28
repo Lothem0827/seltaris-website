@@ -7,7 +7,7 @@ import { SplitContentRow } from "../components/SplitContentRow";
 
 export function UnverifiedSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container className="flex flex-col gap-20">
         <BannerImage src="/images/human-touch/beauty-details-banner.png">
           <div className="mx-auto max-w-3xl space-y-4 text-center">

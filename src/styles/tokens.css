@@ -79,6 +79,7 @@
   --space-24: 6rem; /* 96px */
   --space-section: 7.5rem; /* 120px — between major sections */
   --space-section-sm: 5rem; /* 80px — compact section rhythm */
+  --space-section-mobile: 2.5rem; /* 40px — section rhythm on mobile */
   --container-max: 75rem; /* 1200px */
   --container-padding: 1.5rem; /* 24px */
 

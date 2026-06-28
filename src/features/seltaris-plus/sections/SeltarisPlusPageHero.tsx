@@ -118,7 +118,7 @@ const seltarisPlusPlans: SeltarisPlusPlan[] = [
 
 export function SeltarisPlusPageHero() {
   return (
-    <section className="px-container-padding pt-16 pb-section">
+    <section className="pt-16 pb-section">
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col items-center gap-4 text-center">
           <IconSurface

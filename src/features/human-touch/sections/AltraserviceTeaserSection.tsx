@@ -5,7 +5,7 @@ import { IconSurface } from "@/components/ui/IconSurface";
 
 export function AltraserviceTeaserSection() {
   return (
-    <section className="relative overflow-hidden px-container-padding py-section">
+    <section className="relative overflow-hidden py-section">
       <Container className="relative z-10 flex flex-col items-center gap-10 text-center">
         <div className="flex flex-col items-center gap-8 text-center">
           <IconSurface

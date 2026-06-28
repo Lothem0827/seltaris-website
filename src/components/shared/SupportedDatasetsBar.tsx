@@ -1,17 +1,16 @@
 import Image from "next/image";
-import { siteAssets } from "@/lib/site-assets";
+import {
+  RegionBadge,
+  type RegionKey,
+} from "@/components/shared/RegionBadge";
 import { cn } from "@/lib/utils";
 
-const flagAssets = {
-  australia: siteAssets.australiaFlag,
-  nz: siteAssets.nzFlag,
-  international: siteAssets.internationalFlag,
-} as const;
+export type { RegionKey };
 
-type SupportedDataset = {
+export type SupportedDataset = {
   id: string;
-  label: string;
-  flagKey: keyof typeof flagAssets;
+  region: RegionKey;
+  comingSoon?: boolean;
 };
 
 export function SupportedDatasetsBar({
@@ -35,19 +34,11 @@ export function SupportedDatasetsBar({
       </p>
       <div className="flex flex-wrap gap-2.5">
         {datasets.map((dataset) => (
-          <span
+          <RegionBadge
             key={dataset.id}
-            className="inline-flex items-center gap-1.5 rounded-radius-full border border-border bg-white px-3.5 py-1.5 font-body text-body-sm font-medium text-text"
-          >
-            <Image
-              src={flagAssets[dataset.flagKey]}
-              alt=""
-              width={20}
-              height={20}
-              aria-hidden
-            />
-            {dataset.label}
-          </span>
+            region={dataset.region}
+            comingSoon={dataset.comingSoon}
+          />
         ))}
       </div>
     </div>

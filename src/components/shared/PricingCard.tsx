@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { RegionBadge } from "@/components/shared/RegionBadge";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
@@ -51,12 +52,12 @@ export function PricingCard({
   showNewZealand,
   showInternational,
 }: PricingCardProps) {
-  const regionChip = showAustralia
-    ? { flag: siteAssets.australiaFlag, label: "Australia" }
+  const region = showAustralia
+    ? ("australia" as const)
     : showNewZealand
-      ? { flag: siteAssets.nzFlag, label: "New Zealand" }
+      ? ("nz" as const)
       : showInternational
-        ? { flag: siteAssets.internationalFlag, label: "International" }
+        ? ("international" as const)
         : null;
 
   return (
@@ -79,18 +80,7 @@ export function PricingCard({
           ) : (
             <span />
           )}
-          {regionChip ? (
-            <span className="inline-flex items-center gap-1.5 rounded-radius-full border border-border px-3 py-1.5 text-sm font-medium">
-              <Image
-                src={regionChip.flag}
-                alt=""
-                width={16}
-                height={16}
-                aria-hidden
-              />
-              {regionChip.label}
-            </span>
-          ) : null}
+          {region ? <RegionBadge region={region} size="sm" /> : null}
         </div>
 
         <div className="flex flex-1 flex-col gap-6">

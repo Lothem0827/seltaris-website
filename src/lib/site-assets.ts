@@ -52,8 +52,27 @@ export const siteAssets = {
     cursor: "/images/svg-animations/human-touch/cursor.png",
   },
   supportSpecialist: "/images/seltaris-plus/support-specialist.png",
+  getStarted: {
+    heroLaptop: "/images/get-started/hero-laptop.png",
+    healthCheckReportPreview: "/images/get-started/health-check-report-preview.png",
+    addressValidationVisual: "/images/get-started/address-validation-visual.png",
+    clearPricingVisual: "/images/get-started/clear-pricing-visual.png",
+    reliableVisual: "/images/get-started/reliable-visual.png",
+    millionRecordsVisual: "/images/get-started/million-records-visual.png",
+    enterpriseGradeSecurityVisual:
+      "/images/get-started/enterprise-grade-security-visual.png",
+    healthCheckIcon: "/images/get-started/health-check-icon.svg",
+    accordionPlus: "/images/get-started/accordion-plus.svg",
+    accordionMinus: "/images/get-started/accordion-minus.svg",
+  },
 } as const;
 
 export const SELTARIS_LOGIN_URL = "https://seltaris.gbg.com/login";
+export const SELTARIS_DEMO_URL = "/demo";
+export const SELTARIS_GET_STARTED_PLAN_URLS = {
+  free: "https://seltaris.gbg.com/plan/slt-free-zx4k",
+  premium: "https://seltaris.gbg.com/plan/slt-prm-vx7r",
+  premier: "https://seltaris.gbg.com/plan/slt-pmr-jt3p",
+} as const;
 export const GBG_CUSTOMER_SUPPORT_URL =
   "https://www.gbg.com/en/contact/customer-support/";

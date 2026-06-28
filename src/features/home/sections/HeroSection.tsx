@@ -10,7 +10,7 @@ import { LogoMarquee } from "../components/LogoMarquee";
 
 const HERO_BACKGROUND = "/images/home/hero-background.png";
 
-const TRUSTED_LOGOS = [
+export const TRUSTED_LOGOS = [
   "/images/company-icons/boq-logo-6511cbd6c366f.webp",
   "/images/company-icons/leukaemia-foundation-logo-6511cbd8dbed6.webp",
   "/images/company-icons/apra-amcos-logo-6511cbd57b7db.webp",
@@ -45,7 +45,7 @@ export function HeroSection() {
         className="object-contain object-top  "
         sizes="100vw"
       />
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden px-container-padding py-[100px]">
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-[100px]">
         <Container className="relative z-10 flex flex-col items-center gap-56  text-center ">
           <div className="flex flex-col items-center gap-8">
             <div className="flex flex-col items-center gap-2.5 ">

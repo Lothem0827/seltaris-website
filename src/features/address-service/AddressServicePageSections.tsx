@@ -208,26 +208,26 @@ function SecurityAdvancedTabPanelContent({
   return (
     <div className="flex flex-col gap-20 lg:gap-16">
       <div className="grid grid-cols-2 items-start gap-20 lg:grid-cols-1 lg:gap-12">
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
           <IconSurface src={sectionIcons[panel.iconKey]} />
-          <div className="space-y-4">
+          <div className="space-y-2 ">
             <FeaturePageHeading as="h3" variant="sectionTitleLg">
               {panel.leftHeading}
             </FeaturePageHeading>
             <Link
               href="/seltaris-plus"
-              className="inline-block font-body text-body-lg font-medium text-brand"
+              className="inline-block font-body text-body-lg font-medium text-brand py-2 px-4 bg-brand-light/50 rounded-radius-sm"
             >
               {panel.seltarisPlusNote}
             </Link>
-            <div className="space-y-1">
+            {/* <div className="space-y-1">
               <p className="font-body text-body-lg font-medium text-text">
                 {panel.price}
               </p>
               <Text variant="body-sm" className="text-muted">
                 {panel.gstNote}
               </Text>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -331,7 +331,7 @@ function TabFeatureSection({
   return (
     <section
       id={section.sectionId}
-      className="scroll-mt-24 px-container-padding pb-section"
+      className="scroll-mt-24 pb-section"
     >
       <Container className="mx-auto flex max-w-content-wide flex-col gap-12 ">
         <div className="flex flex-col items-start justify-between gap-4">
@@ -362,7 +362,7 @@ export function AddressServicePageHero() {
   const { hero } = useAddressServicePage();
 
   return (
-    <section className="bg-brand-surface px-container-padding py-section-sm">
+    <section className="bg-brand-surface py-section-sm">
       <Container className="flex flex-col gap-12">
         <Link
           href={hero.breadcrumb.href}
@@ -412,7 +412,7 @@ export function AddressServicePageSectionNav() {
   const { sectionNav } = useAddressServicePage();
 
   return (
-    <section className="bg-white px-container-padding py-section-sm">
+    <section className="bg-white py-section-sm">
       <Container>
         <nav
           aria-label="Page sections"
@@ -451,7 +451,7 @@ export function AddressServicePageOverviewSection() {
   return (
     <section
       id="overview"
-      className="scroll-mt-24 px-container-padding pb-section"
+      className="scroll-mt-24 pb-section"
     >
       <Container className="mx-auto flex max-w-content-wide flex-col gap-16">
         <div className="flex flex-col gap-8">
@@ -516,7 +516,7 @@ export function AddressServicePagePricingSection() {
   return (
     <section
       id="pricing"
-      className="scroll-mt-24 px-container-padding pb-section"
+      className="scroll-mt-24 pb-section"
     >
       <Container className="flex flex-col gap-12">
         <div className="mx-auto max-w-3xl space-y-5 text-center">

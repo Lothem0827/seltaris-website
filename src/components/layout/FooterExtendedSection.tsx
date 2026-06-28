@@ -70,7 +70,7 @@ function FooterSiteNav() {
   return (
     <div className="bg-white py-14 md:py-12">
       <Container>
-        <div className="flex flex-row gap-10 lg:flex-col lg:gap-12">
+        <div className="flex flex-row gap-10 lg:flex-col lg:gap-8">
           <div className="flex min-h-footer-sidebar w-footer-sidebar shrink-0 flex-col justify-between gap-10 lg:min-h-0 lg:w-auto">
             <Link
               href="https://www.gbg.com"

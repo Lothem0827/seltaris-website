@@ -243,13 +243,19 @@ export const LAYOUT_TOKENS: LayoutToken[] = [
     name: "Section vertical rhythm",
     cssVar: "--space-section",
     tailwind: "py-section",
-    value: "7.5rem (120px)",
+    value: "7.5rem (120px); 2.5rem (40px) at max-width 1023px",
   },
   {
     name: "Section vertical rhythm (sm)",
     cssVar: "--space-section-sm",
     tailwind: "py-section-sm",
-    value: "5rem (80px)",
+    value: "5rem (80px); 2.5rem (40px) at max-width 1023px",
+  },
+  {
+    name: "Section vertical rhythm (mobile)",
+    cssVar: "--space-section-mobile",
+    tailwind: "py-section / pt-section / pb-section",
+    value: "2.5rem (40px) at max-width 1023px",
   },
 ];
 
@@ -345,7 +351,10 @@ export const COMPONENT_INVENTORY: ComponentInventoryEntry[] = [
   { name: "AddressDemo", layer: "molecule", path: "molecules/AddressDemo.tsx", usedOn: "Homepage hero" },
   { name: "CenteredShowcase", layer: "molecule", path: "molecules/CenteredShowcase.tsx", usedOn: "Feature page showcase sections" },
   { name: "CoreFeatureSlideCard", layer: "molecule", path: "molecules/CoreFeatureSlideCard.tsx", usedOn: "Homepage & Health Check core features" },
-  { name: "FeatureNavCard", layer: "molecule", path: "molecules/FeatureNavCard.tsx", usedOn: "Site header Features menu" },
+  { name: "RegionBadge", layer: "molecule", path: "shared/RegionBadge.tsx", usedOn: "Region pills — homepage, pricing cards, datasets bar, get-started" },
+  { name: "FeatureAccordion", layer: "molecule", path: "shared/FeatureAccordion.tsx", usedOn: "/get-started tab panels" },
+  { name: "GetStartedHeader", layer: "molecule", path: "layout/GetStartedHeader.tsx", usedOn: "/get-started" },
+  { name: "GetStartedTabSwitch", layer: "molecule", path: "features/get-started/components/GetStartedTabSwitch.tsx", usedOn: "/get-started" },
   { name: "FeatureNavDropdown", layer: "molecule", path: "molecules/FeatureNavDropdown.tsx", usedOn: "Site header" },
   { name: "FeatureNavPanel", layer: "molecule", path: "molecules/FeatureNavPanel.tsx", usedOn: "Site header Features menu" },
   { name: "FeatureSlideCard", layer: "molecule", path: "molecules/FeatureSlideCard.tsx", usedOn: "Feature page sliders (wraps ImageSlideCard)" },

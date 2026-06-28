@@ -1,11 +1,10 @@
 import type { ReactNode } from "react";
-
-export type AddressServicePageFlagKey = "australia" | "nz" | "international";
+import type { RegionKey } from "@/components/shared/RegionBadge";
 
 export type AddressServicePageDataset = {
   id: string;
-  label: string;
-  flagKey: AddressServicePageFlagKey;
+  region: RegionKey;
+  comingSoon?: boolean;
 };
 
 export type AddressServicePageIconKey =
@@ -150,8 +149,8 @@ export type AddressServicePageContent = {
     supportCta: { label: string; href: string };
     datasets: ReadonlyArray<{
       id: string;
-      label: string;
-      flagKey: AddressServicePageFlagKey;
+      region: RegionKey;
+      comingSoon?: boolean;
     }>;
     logoSrc: string;
   };

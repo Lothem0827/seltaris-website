@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
+import { RegionBadge } from "@/components/shared/RegionBadge";
 import { ServiceCard } from "@/components/shared/ServiceCard";
 import { AddressValidateAnimation } from "@/components/svg-animations/AddressValidateAnimation";
 
@@ -81,46 +81,13 @@ export function ServicesSection() {
 }
 
 function AvailableFor() {
-  const regions = [
-    { label: "Australia", flag: "/icons/australiaFlag.svg" },
-    {
-      label: "New Zealand",
-      flag: "/icons/nzFlag.svg",
-      comingSoon: true,
-    },
-    {
-      label: "International",
-      flag: "/icons/internationalFlag.svg",
-      comingSoon: true,
-    },
-  ];
-
   return (
     <div className="flex flex-wrap items-center justify-center gap-6">
       <Text variant="utility">Available for:</Text>
       <div className="flex flex-wrap items-center gap-3">
-        {regions.map((region) => (
-          <span
-            key={region.label}
-            className={`inline-flex items-center gap-2 rounded-radius-full border border-border px-3.5 py-1.5 text-sm font-medium ${
-              region.comingSoon ? "opacity-50" : ""
-            }`}
-          >
-            <Image
-              src={region.flag}
-              alt=""
-              width={20}
-              height={20}
-              aria-hidden
-            />
-            {region.label}
-            {region.comingSoon ? (
-              <span className="rounded-radius-xs bg-brand-light px-1 py-0.5 font-label text-badge font-semibold uppercase tracking-widest text-brand-dark">
-                Coming soon
-              </span>
-            ) : null}
-          </span>
-        ))}
+        <RegionBadge region="australia" />
+        <RegionBadge region="nz" comingSoon />
+        <RegionBadge region="international" comingSoon />
       </div>
     </div>
   );

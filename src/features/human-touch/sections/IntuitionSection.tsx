@@ -5,7 +5,7 @@ import { BannerImage, FeatureImage } from "../components/MediaBlocks";
 
 export function IntuitionSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container className="flex flex-col gap-16">
         <BannerImage src="/images/human-touch/intuition-banner.png">
           <div className="mx-auto max-w-3xl space-y-4 text-center">

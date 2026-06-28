@@ -6,7 +6,7 @@ import { HumanTouchAnimated } from "@/components/svg-animations/HumanTouchAnimat
 
 export function HeroSection() {
   return (
-    <section className="px-container-padding pt-24 pb-section">
+    <section className="pt-24 pb-section">
       <Container className="flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-4 text-center">
           <IconSurface

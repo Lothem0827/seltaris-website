@@ -153,7 +153,7 @@ export function HumanTouchTabPanels({ className }: HumanTouchTabPanelsProps) {
         tabs={humanTouchTabs}
         activeIndex={activeTab}
         onChange={setActiveTab}
-        className="mb-12"
+        className="mb-12 sm:order-last"
       />
 
       <div className="mb-12 grid grid-cols-3 items-start gap-6 lg:grid-cols-1">

@@ -3,7 +3,7 @@ import { WorkflowSliderSection } from "./WorkflowSliderSection";
 
 export function HowItWorksSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container className="flex flex-col gap-16">
         <WorkflowSliderSection />
       </Container>

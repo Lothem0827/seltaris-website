@@ -21,9 +21,9 @@ const addressValidationPageContent: AddressServicePageContent = {
       href: GBG_CUSTOMER_SUPPORT_URL,
     },
     datasets: [
-      { id: "au", label: "Australia", flagKey: "australia" },
-      { id: "nz", label: "New Zealand", flagKey: "nz" },
-      { id: "intl", label: "International", flagKey: "international" },
+      { id: "au", region: "australia" },
+      { id: "nz", region: "nz" },
+      { id: "intl", region: "international" },
     ],
     logoSrc: siteAssets.serviceSectionNavIcons.addressVerify,
   },
@@ -174,9 +174,9 @@ const addressValidationPageContent: AddressServicePageContent = {
         leftSubtitle:
           "Sources the best datasets available from multiple suppliers in one system to give you the very best, utmost accurate results.",
         datasets: [
-          { id: "au", label: "Australia", flagKey: "australia" },
-          { id: "nz", label: "New Zealand", flagKey: "nz" },
-          { id: "intl", label: "International", flagKey: "international" },
+          { id: "au", region: "australia" },
+          { id: "nz", region: "nz" },
+          { id: "intl", region: "international" },
         ],
         rightBody: (
           <>

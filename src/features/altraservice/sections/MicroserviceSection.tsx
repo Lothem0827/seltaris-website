@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export function MicroserviceSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container className="flex flex-col gap-16">
         <div className="mx-auto max-w-3xl space-y-4 px-8 text-center">
           <FeaturePageHeading as="h2" variant="sectionTitleXl">

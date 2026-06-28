@@ -14,7 +14,7 @@ export function FeatureNavPanel() {
   return (
     <div className="w-full max-w-container">
       <div className="rounded-radius-panel bg-white p-5 shadow-panel">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
           <Heading level="panel">Features</Heading>
           <div className="grid grid-cols-4 gap-6 xl:grid-cols-2 sm:grid-cols-1">
             {featureNavItems.map((item) => (

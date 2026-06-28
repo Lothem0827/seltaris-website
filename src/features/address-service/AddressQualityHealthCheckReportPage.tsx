@@ -31,8 +31,8 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
     supportHeading: "Need more licenses?",
     supportCta: { label: "Ask a Support Specialist", href: GBG_CUSTOMER_SUPPORT_URL },
     datasets: [
-      { id: "au", label: "Australia", flagKey: "australia" },
-      { id: "nz", label: "New Zealand", flagKey: "nz" },
+      { id: "au", region: "australia" },
+      { id: "nz", region: "nz" },
     ],
     logoSrc: siteAssets.featureIcons.healthCheck,
   },
@@ -249,9 +249,9 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         leftSubtitle:
           "Sources the best datasets available from multiple suppliers in one system to give you the very best, utmost accurate results.",
         datasets: [
-          { id: "au", label: "Australia", flagKey: "australia" },
-          { id: "nz", label: "New Zealand", flagKey: "nz" },
-          { id: "intl", label: "International", flagKey: "international" },
+          { id: "au", region: "australia" },
+          { id: "nz", region: "nz" },
+          { id: "intl", region: "international" },
         ],
         rightBody: (
           <>

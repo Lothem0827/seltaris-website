@@ -6,7 +6,7 @@ import { FeatureImage } from "../components/MediaBlocks";
 
 export function OptiSourceSection() {
   return (
-    <section className="px-container-padding py-section">
+    <section className="py-section">
       <Container className="flex flex-col gap-16">
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <Eyebrow label="OptiSource System™" />

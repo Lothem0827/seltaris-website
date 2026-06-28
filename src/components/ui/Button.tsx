@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 type ButtonSize = "default" | "small";
 
 type ButtonProps = {
@@ -29,6 +29,13 @@ function variantClasses(variant: ButtonVariant, size: ButtonSize): string {
 
   if (variant === "secondary") {
     return secondaryClasses;
+  }
+
+  if (variant === "outline") {
+    return cn(
+      "border border-border bg-white text-text hover:bg-brand-surface rounded-radius-sm font-medium",
+      size === "small" ? "px-3 py-1.5 text-body-sm" : "px-4 py-2.5 text-body",
+    );
   }
 
   return cn(
@@ -106,7 +113,11 @@ export function Button({
   type = "button",
   disabled = false,
 }: ButtonProps) {
-  const showArrow = variant !== "ghost" || size === "small";
+  const showArrow =
+    variant === "primary" ||
+    variant === "secondary" ||
+    variant === "outline" ||
+    (variant === "ghost" && size === "small");
   const classes = cn(
     "group inline-flex w-fit items-center justify-center transition-colors duration-200",
     variantClasses(variant, size),

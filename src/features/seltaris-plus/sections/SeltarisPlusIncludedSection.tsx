@@ -55,7 +55,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
   },
   {
     id: "shared-licensing",
-    iconSrc: "/images/seltaris-plus/shared-licensingn.svg",
+    iconSrc: "/images/seltaris-plus/shared-licensing.svg",
     imageSrc: "/images/seltaris-plus/shared-licensing-visual.png",
     backgroundTone: "licensing",
     heading: "Shared licensing",
@@ -64,7 +64,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
   },
   {
     id: "volume-discounts",
-    iconSrc: "/images/seltaris-plus/shield.svg",
+    iconSrc: "/images/seltaris-plus/volume-discounts.svg",
     imageSrc: "/images/seltaris-plus/volume-discounts-visual.png",
     backgroundTone: "volume",
     heading: "Volume discounts",
@@ -118,7 +118,7 @@ function OfferingCard({
           src={imageSrc}
           alt=""
           fill
-          className="object-cover object-left-top"
+          className="object-cover"
           sizes="681px"
         />
       </div>
@@ -128,7 +128,7 @@ function OfferingCard({
 
 export function SeltarisPlusIncludedSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container className="flex flex-col gap-16">
         <div className="mx-auto max-w-3xl space-y-5 text-center">
           <FeaturePageHeading

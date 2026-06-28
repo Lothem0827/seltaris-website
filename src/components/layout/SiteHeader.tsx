@@ -65,7 +65,7 @@ export function SiteHeader() {
                 style={{ height: 14, width: "auto" }}
               />
             </Link>
-            <nav className="flex items-center gap-6 font-label text-label uppercase tracking-wide text-text md:hidden">
+            <nav className="flex items-center gap-6 font-label text-label uppercase tracking-wide text-text lg:hidden">
               <Link href="#about" tabIndex={isAtTop ? undefined : -1}>
                 About us
               </Link>

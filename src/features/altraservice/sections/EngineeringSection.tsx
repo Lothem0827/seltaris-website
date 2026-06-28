@@ -5,7 +5,7 @@ import { Text } from "@/components/ui/Text";
 
 export function EngineeringSection() {
   return (
-    <section className="px-container-padding pb-section">
+    <section className="pb-section">
       <Container className="flex flex-col gap-12">
         <div className="flex items-center justify-between gap-8 px-8">
           <FeaturePageHeading

@@ -18,7 +18,7 @@ export type SeltarisPlusPlanFeature = {
 
 export type SeltarisPlusPlan = {
   id: string;
-  tier: "standard" | "premium" | "premier";
+  tier: "free" | "standard" | "premium" | "premier";
   name: string;
   tagline: string;
   price: string;
@@ -26,9 +26,11 @@ export type SeltarisPlusPlan = {
   features: SeltarisPlusPlanFeature[];
   cta: { label: string; href: string };
   popular?: boolean;
+  popularLabel?: string;
 };
 
 const tierIcons = {
+  free: "/images/seltaris-plus/standard.svg",
   standard: "/images/seltaris-plus/standard.svg",
   premium: "/images/seltaris-plus/premium.svg",
   premier: "/images/seltaris-plus/premier.svg",
@@ -54,6 +56,7 @@ function getFeatureIconSrc(feature: SeltarisPlusPlanFeature): string {
         ? planFeatureIcons.dataProtection
         : planFeatureIcons.notIncluded;
     case "Volume discounts":
+    case "Volume Discounts":
       return feature.included
         ? planFeatureIcons.database
         : planFeatureIcons.notIncluded;
@@ -97,7 +100,7 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 border-t border-pricing-border",
+        "flex flex-col gap-4 border-t border-border",
         isPopular ? "py-6" : "py-5",
       )}
     >
@@ -155,17 +158,19 @@ export function SeltarisPlusPlanCard({ plan }: { plan: SeltarisPlusPlan }) {
             </Heading>
             <Text className="font-medium text-paragraph">{plan.tagline}</Text>
           </div>
-          <div className="flex items-end gap-1.5">
-            <span className="font-body text-2xl font-medium text-text">
-              {plan.price}
-            </span>
-            <span className="pb-1 font-body text-body font-medium text-paragraph">
-              /month
-            </span>
+          <div className="flex flex-col gap-1">
+            <div className="flex items-end gap-1.5">
+              <span className="font-body text-2xl font-medium text-text">
+                {plan.price}
+              </span>
+              <span className="pb-1 font-body text-body font-medium text-paragraph">
+                /month
+              </span>
+            </div>
+            <Text variant="body-sm" className="text-paragraph">
+              {plan.gstNote}
+            </Text>
           </div>
-          <Text variant="body-sm" className="text-paragraph">
-            {plan.gstNote}
-          </Text>
         </div>
         <PlanFeatureList plan={plan} />
       </div>
@@ -191,7 +196,7 @@ export function SeltarisPlusPlanCard({ plan }: { plan: SeltarisPlusPlan }) {
     <div className="relative">
       <div className="absolute inset-x-0 top-0 z-10 rounded-t-radius-lg bg-brand px-6 py-4 text-center">
         <p className="font-body text-body font-semibold uppercase tracking-wide text-white">
-          Most Popular Plan
+          {plan.popularLabel ?? "Most Popular Plan"}
         </p>
       </div>
       <div className="rounded-[20px] bg-brand p-1 pt-14">{card}</div>
