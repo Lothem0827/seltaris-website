@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Text } from "@/components/ui/Text";
-import { featureNavItems } from "@/lib/content/feature-nav";
+import { featureNavItems } from "@/components/layout/feature-nav.content";
 import { siteAssets } from "@/lib/site-assets";
 
 const itemClass =

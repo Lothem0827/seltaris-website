@@ -1,4 +1,4 @@
-import { serviceCategoryPath } from "@/lib/content/service-categories";
+import { serviceCategoryPath } from "@/features/services/service-routes";
 import { siteAssets } from "@/lib/site-assets";
 
 export type GetStartedAccordionItem = {

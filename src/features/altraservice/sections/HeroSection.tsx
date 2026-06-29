@@ -42,8 +42,8 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="grid w-full max-w-container grid-cols-2 items-start gap-16 lg:grid-cols-1 lg:gap-12">
-          <div className="space-y-6 px-8">
+        <div className="grid w-full max-w-container grid-cols-2 items-start gap-16 lg:grid-cols-1 lg:gap-12 sm:gap-6">
+          <div className="space-y-6 px-8 sm:px-0">
             <FeaturePageHeading as="h2" variant="headingSmall">
               Feel the need.
               <br />
@@ -54,8 +54,8 @@ export function HeroSection() {
               data, this time in the direction of fast processing speeds.
             </Text>
           </div>
-          <div className="px-8 pt-2 lg:pt-0">
-            <Text as="div" className="prose-stack px-8">
+          <div className="px-8 pt-2 lg:pt-0 sm:px-0">
+            <Text as="div" className="prose-stack px-8 sm:px-0">
               <p>
                 Over the past few years, we have dedicated substantial effort to
                 optimising efficiency at every layer of our cloud technology

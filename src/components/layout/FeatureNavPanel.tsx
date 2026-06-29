@@ -1,7 +1,7 @@
 import { Heading } from "@/components/ui/Heading";
 import { FeatureNavCard } from "@/components/layout/FeatureNavCard";
 import { siteAssets } from "@/lib/site-assets";
-import { featureNavItems } from "@/lib/content/feature-nav";
+import { featureNavItems } from "@/components/layout/feature-nav.content";
 
 const featureIcons = {
   featureHumanTouch: siteAssets.featureIcons.humanTouch,

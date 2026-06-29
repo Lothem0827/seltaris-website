@@ -28,12 +28,12 @@ import { TabGroup } from "@/components/shared/TabGroup";
 import { FeatureAccordion } from "@/components/shared/FeatureAccordion";
 import { GetStartedHeader } from "@/components/layout/GetStartedHeader";
 import { GetStartedTabSwitch } from "@/features/get-started/components/GetStartedTabSwitch";
-import { GET_STARTED_TAB_LABELS } from "@/lib/content/get-started-tabs";
+import { GET_STARTED_TAB_LABELS } from "@/features/get-started/sections/GetStartedTabSection.content";
 import { FooterNavColumn } from "@/components/layout/FooterNavColumn";
 import { ImageSlideCard } from "@/components/shared/ImageSlideCard";
 import { Logo } from "@/components/layout/Logo";
 import { siteAssets } from "@/lib/site-assets";
-import { footerNavGroups } from "@/lib/content/footer";
+import { footerNavGroups } from "@/components/layout/footer.content";
 import { useState } from "react";
 import {
   ComponentDemo,

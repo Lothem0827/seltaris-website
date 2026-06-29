@@ -2,7 +2,7 @@ import { NavLink } from "@/components/layout/NavLink";
 import { EnterpriseNavDropdown } from "@/components/layout/EnterpriseNavDropdown";
 import { FeatureNavDropdown } from "@/components/layout/FeatureNavDropdown";
 import { SolutionsNavDropdown } from "@/components/layout/SolutionsNavDropdown";
-import { mainNavLinks } from "@/lib/content/main-nav-links";
+import { mainNavLinks } from "@/components/layout/main-nav.content";
 
 export function MainNav() {
   return (

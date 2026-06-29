@@ -119,10 +119,16 @@
   --leading-fp-body-lead: var(--text-h1-line);
   --tracking-fp-body-lead: var(--text-h1-tracking);
   --weight-fp-body-lead: 700;
+
+  /* Feature page heading — mobile (≤639px) */
+  --text-fp-display-mobile: 2.25rem; /* 36px — desktop 48px group */
+  --text-fp-h1-mobile: 1.75rem; /* 28px — desktop 32px group */
+  --text-fp-subheading-mobile: 1.25rem; /* 20px — desktop 24px group */
   /* ─── Layout widths ─── */
   --width-logo: 9.375rem;
   --height-logo: 2.625rem; /* Seltaris header logo display height — width follows SVG ratio */
   --height-gbg-logo: 1.5625rem;
+  --site-header-height: 4.5rem; /* live-synced from SiteHeader; fallback = collapsed main nav */
   --size-icon-feature: 3.75rem;
   --size-icon-support: 3.25rem;
   --size-service-icon: 3.8125rem;

@@ -5,7 +5,7 @@ import { ServiceCard } from "@/components/shared/ServiceCard";
 import {
   serviceCategoryPath,
   type ServiceCategoryId,
-} from "@/lib/content/service-categories";
+} from "@/features/services/service-routes";
 
 const CATEGORY_CARDS: {
   id: ServiceCategoryId;

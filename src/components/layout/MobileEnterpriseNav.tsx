@@ -5,7 +5,7 @@ import { Text } from "@/components/ui/Text";
 import {
   enterpriseIndustries,
   enterpriseStories,
-} from "@/lib/content/enterprise-nav";
+} from "@/components/layout/enterprise-nav.content";
 
 type MobileEnterpriseNavProps = {
   onNavigate?: () => void;

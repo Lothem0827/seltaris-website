@@ -6,6 +6,7 @@ import { FeatureSliderSection } from "./sections/FeatureSliderSection";
 import { HealthCheckSliderSection } from "./sections/HealthCheckSliderSection";
 import { HealthCheckWorkflowSection } from "./sections/HealthCheckWorkflowSection";
 import { HeroSection } from "./sections/HeroSection";
+import { HomeTrustedSection } from "./sections/HomeTrustedSection";
 import { HumanTouchDetailSection } from "./sections/HumanTouchDetailSection";
 import { HumanTouchShowcaseSection } from "./sections/HumanTouchShowcaseSection";
 import { PricingSection } from "./sections/PricingSection";
@@ -19,6 +20,7 @@ export function HomePage() {
       <SiteHeader />
       <main>
         <HeroSection />
+        <HomeTrustedSection />
         <WhatIsSection />
         <ServicesSection />
         <FeatureSliderSection />

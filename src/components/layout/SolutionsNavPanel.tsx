@@ -7,7 +7,7 @@ import { siteAssets } from "@/lib/site-assets";
 import {
   solutionsNavColumns,
   type SolutionsNavItem,
-} from "@/lib/content/solutions-nav";
+} from "@/components/layout/solutions-nav.content";
 
 const itemClass =
   "group flex flex-col gap-2 border-l-2 border-border py-0 pl-6 transition-colors hover:border-brand";

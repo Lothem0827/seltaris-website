@@ -6,7 +6,7 @@ import {
   enterpriseStories,
   type EnterpriseIndustry,
   type EnterpriseStory,
-} from "@/lib/content/enterprise-nav";
+} from "@/components/layout/enterprise-nav.content";
 
 const cardClass =
   "flex min-w-0 flex-1 flex-col rounded-radius-lg border border-border px-6 py-8 transition-colors hover:border-brand/30 hover:bg-brand-light/30";

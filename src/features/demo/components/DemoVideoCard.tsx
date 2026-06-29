@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { DemoVideo } from "@/lib/content/demo-videos";
+import type { DemoVideo } from "@/features/demo/sections/DemoVideosSection";
 import { cn } from "@/lib/utils";
 
 function YouTubePlayIcon({ className }: { className?: string }) {

@@ -85,7 +85,7 @@ function OfferingCard({
     <article
       className={cn("grid-offering", offeringBackgrounds[backgroundTone])}
     >
-      <div className="flex min-h-offering-panel flex-col justify-between p-12">
+      <div className="flex min-h-offering-panel flex-col justify-between p-12 sm:min-h-fit ">
         <div className="space-y-8">
           <Image
             src={iconSrc}
@@ -109,7 +109,7 @@ function OfferingCard({
             </FeaturePageHeading>
           </div>
         </div>
-        <Button href={href} variant="ghost" size="small">
+        <Button href={href} variant="ghost" size="small" className="sm:mt-6">
           Learn more
         </Button>
       </div>

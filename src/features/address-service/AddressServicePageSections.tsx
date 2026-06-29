@@ -329,10 +329,7 @@ function TabFeatureSection({
   const contentVariant = section.contentVariant ?? "grid";
 
   return (
-    <section
-      id={section.sectionId}
-      className="scroll-mt-24 pb-section"
-    >
+    <section id={section.sectionId} className="scroll-mt-24 pb-section">
       <Container className="mx-auto flex max-w-content-wide flex-col gap-12 ">
         <div className="flex flex-col items-start justify-between gap-4">
           <FeaturePageHeading as="h2" variant="sectionTitle">
@@ -381,9 +378,9 @@ export function AddressServicePageHero() {
           </span>
         </Link>
 
-        <div className="flex flex-row items-end justify-between gap-10 lg:flex-col">
+        <div className="flex flex-row items-end justify-between gap-10 lg:flex-col sm:justify-start sm:items-start">
           <div className="flex max-w-2xl flex-col gap-6">
-            <div className="flex items-center gap-7">
+            <div className="flex items-center gap-7 sm:flex-col sm:items-start sm:gap-4">
               <IconSurface src={hero.logoSrc} size="hero" />
               <FeaturePageHeading
                 as="h1"
@@ -394,13 +391,17 @@ export function AddressServicePageHero() {
               </FeaturePageHeading>
             </div>
 
-            <SupportedDatasetsBar datasets={hero.datasets} />
+            <SupportedDatasetsBar
+              datasets={hero.datasets}
+              className=" sm:items-start"
+            />
           </div>
 
           <SupportSpecialistCard
             heading={hero.supportHeading}
             linkText={hero.supportCta.label}
             href={hero.supportCta.href}
+            className="sm:w-full"
           />
         </div>
       </Container>
@@ -449,10 +450,7 @@ export function AddressServicePageOverviewSection() {
   const { overview } = useAddressServicePage();
 
   return (
-    <section
-      id="overview"
-      className="scroll-mt-24 pb-section"
-    >
+    <section id="overview" className="scroll-mt-24 pb-section">
       <Container className="mx-auto flex max-w-content-wide flex-col gap-16">
         <div className="flex flex-col gap-8">
           <div className="space-y-5">
@@ -514,10 +512,7 @@ export function AddressServicePagePricingSection() {
   const { pricingIntro, pricingCards } = useAddressServicePage();
 
   return (
-    <section
-      id="pricing"
-      className="scroll-mt-24 pb-section"
-    >
+    <section id="pricing" className="scroll-mt-24 pb-section">
       <Container className="flex flex-col gap-12">
         <div className="mx-auto max-w-3xl space-y-5 text-center">
           <FeaturePageHeading as="h2" variant="sectionTitle">

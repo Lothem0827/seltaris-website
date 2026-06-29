@@ -7,7 +7,7 @@ export function EngineeringSection() {
   return (
     <section className="pb-section">
       <Container className="flex flex-col gap-12">
-        <div className="flex items-center justify-between gap-8 px-8">
+        <div className="flex items-center justify-between gap-8 px-8 sm:px-0">
           <FeaturePageHeading
             as="h2"
             variant="sectionTitleLg"
@@ -28,8 +28,8 @@ export function EngineeringSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1">
-          <div className="flex flex-col gap-8 px-8">
+        <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1 sm:gap-6">
+          <div className="flex flex-col gap-8 px-8 sm:px-0">
             <FeaturePageHeading as="h3" variant="headingSmall">
               A truly remarkable feat of software engineering.
             </FeaturePageHeading>
@@ -42,7 +42,7 @@ export function EngineeringSection() {
               technologies we have ever created.
             </Text>
           </div>
-          <Text as="div" className="prose-stack px-8">
+          <Text as="div" className="prose-stack px-8 sm:px-0">
             <p>
               DataTools Altraservice™, directly integrated into our cloud
               infrastructure, enables us to correct each line of address data

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { FooterNavGroup } from "@/lib/content/footer";
+import type { FooterNavGroup } from "@/components/layout/footer.content";
 
 type FooterNavColumnProps = {
   group: FooterNavGroup;

@@ -47,12 +47,12 @@ export function FeatureImage({
   className?: string;
 }) {
   return (
-    <div className={cn("banner-media", className)}>
+    <div className={cn("banner-media sm:h-fit", className)}>
       <Image
         src={src}
         alt={alt}
         fill
-        className="object-contain p-4"
+        className="object-contain"
         sizes="512px"
       />
     </div>

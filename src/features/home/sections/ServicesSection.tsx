@@ -10,7 +10,8 @@ const services = [
   {
     id: "address",
     title: "Address data",
-    description: "Format, clean, repair and verify addresses with 100% accuracy.",
+    description:
+      "Format, clean, repair and verify addresses with 100% accuracy.",
     comingSoon: false,
     iconSrc: "/images/home/service-icon-address.png",
   },
@@ -30,7 +31,7 @@ const services = [
   },
   {
     id: "geocode",
-    title: "Appending geocode data",
+    title: "Geocode data",
     description: "Add coordinates to every validated address.",
     comingSoon: true,
     iconSrc: "/images/home/service-icon-geocode.png",
@@ -82,12 +83,12 @@ export function ServicesSection() {
 
 function AvailableFor() {
   return (
-    <div className="flex flex-wrap items-center justify-center gap-6">
+    <div className="flex flex-wrap  gap-6 sm:flex-col sm:gap-4">
       <Text variant="utility">Available for:</Text>
-      <div className="flex flex-wrap items-center gap-3">
-        <RegionBadge region="australia" />
-        <RegionBadge region="nz" comingSoon />
-        <RegionBadge region="international" comingSoon />
+      <div className="flex flex-wrap items-center gap-3 ">
+        <RegionBadge region="australia" className="sm:w-full" />
+        <RegionBadge region="nz" comingSoon className="sm:w-full" />
+        <RegionBadge region="international" comingSoon className="sm:w-full" />
       </div>
     </div>
   );

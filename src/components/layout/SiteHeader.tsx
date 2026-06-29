@@ -19,6 +19,7 @@ export function SiteHeader() {
   const [isAtTop, setIsAtTop] = useState(true);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
   const lenis = useLenis();
 
   useLenis((instance) => {
@@ -40,8 +41,28 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [lenis]);
 
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) {
+      return;
+    }
+
+    const syncHeaderHeight = () => {
+      document.documentElement.style.setProperty(
+        "--site-header-height",
+        `${header.offsetHeight}px`,
+      );
+    };
+
+    syncHeaderHeight();
+    const observer = new ResizeObserver(syncHeaderHeight);
+    observer.observe(header);
+
+    return () => observer.disconnect();
+  }, [isAtTop]);
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-white">
+    <header ref={headerRef} className="sticky top-0 z-50 w-full bg-white">
       <div
         className={cn(
           "overflow-hidden bg-brand-light transition-[max-height,opacity] duration-300 ease-in-out",

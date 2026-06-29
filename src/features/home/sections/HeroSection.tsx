@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -6,9 +5,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import { AddressDemo } from "@/components/shared/AddressDemo";
-import { LogoMarquee } from "../components/LogoMarquee";
-
-const HERO_BACKGROUND = "/images/home/hero-background.png";
 
 export const TRUSTED_LOGOS = [
   "/images/company-icons/boq-logo-6511cbd6c366f.webp",
@@ -37,58 +33,26 @@ export const TRUSTED_LOGOS = [
 
 export function HeroSection() {
   return (
-    <section className="relative w-full ">
-      <Image
-        src={HERO_BACKGROUND}
-        alt=""
-        fill
-        className="object-contain object-top  "
-        sizes="100vw"
-      />
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-[100px]">
-        <Container className="relative z-10 flex flex-col items-center gap-56  text-center ">
-          <div className="flex flex-col items-center gap-8">
-            <div className="flex flex-col items-center gap-2.5 ">
-              <Eyebrow
-                label="Bulk Data Enhancement Tool"
-                badge="AVAILABLE NOW"
-              />
-              <Heading level="display" className="max-w-4xl">
-                Seltaris
-              </Heading>
-              <Text className="max-w-3xl text-xl font-medium">
-                High quality results. Unbelievable performance. Incredibly
-                secure.
-              </Text>
-            </div>
-
-            <Button href={SELTARIS_LOGIN_URL}>Get started with Seltaris</Button>
+    <section className="flex min-h-[calc(100dvh-var(--site-header-height))] flex-col bg-[url('/images/home/hero-background.png')] bg-size-[100%_auto] bg-top bg-no-repeat py-[100px] sm:bg-[url('/images/home/hero-background-mobile.png')]  sm:bg-bottom sm:min-h-[60vh] sm:py-[80px]">
+      <Container className="z-10 flex flex-col items-center gap-40 text-center ">
+        <div className="flex flex-col items-center gap-8 ">
+          <div className="flex flex-col items-center gap-2.5 ">
+            <Eyebrow label="Bulk Data Enhancement Tool" badge="AVAILABLE NOW" />
+            <Heading level="display" className="max-w-4xl">
+              Seltaris
+            </Heading>
+            <Text className="max-w-3xl text-xl font-medium">
+              High quality results. Unbelievable performance. Incredibly secure.
+            </Text>
           </div>
 
-          <AddressDemo />
-        </Container>
-      </div>
+          <Button href={SELTARIS_LOGIN_URL}>Get started with Seltaris</Button>
+        </div>
 
-      <Container className="relative z-10 pb-section">
-        <TrustedBy />
+        <div className="mt-16 sm:mt-0">
+          <AddressDemo />
+        </div>
       </Container>
     </section>
-  );
-}
-
-function TrustedBy() {
-  return (
-    <div className="flex flex-col items-center gap-12 py-12 pt-40">
-      <div className="text-center">
-        <Heading level="subheading" className="mb-3">
-          Trusted by leading companies worldwide
-        </Heading>
-        <Text className="mx-auto max-w-md">
-          Join the many innovative companies that have securely improved the
-          quality of their data.
-        </Text>
-      </div>
-      <LogoMarquee logos={TRUSTED_LOGOS} />
-    </div>
   );
 }

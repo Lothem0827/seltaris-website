@@ -1,5 +1,5 @@
+import { serviceCategoryPath } from "@/features/services/service-routes";
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
-import { serviceCategoryPath } from "@/lib/content/service-categories";
 
 export type SolutionsNavItem = {
   id: string;

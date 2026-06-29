@@ -20,7 +20,7 @@ export function IntuitionSection() {
         </BannerImage>
 
         <div className="grid grid-cols-2 items-center gap-12 lg:grid-cols-1">
-          <div className="px-8">
+          <div className="px-8 sm:px-0">
             <Text>
               <strong className="font-semibold text-text">
                 Incorrect or poorly entered data.
@@ -34,13 +34,13 @@ export function IntuitionSection() {
               <br />
               <br />
               And like magic, you can see that the address has not only been
-              formatted correctly, but it has also had misspellings repaired
-              and missing information added.
+              formatted correctly, but it has also had misspellings repaired and
+              missing information added.
               <br />
               <br />
               Let&apos;s take a closer look at how Human Touch™ tackles the most
-              common scenarios, where an address looks right at first glance, but
-              quietly hides errors and inconsistencies.
+              common scenarios, where an address looks right at first glance,
+              but quietly hides errors and inconsistencies.
             </Text>
           </div>
           <FeatureImage src="/images/human-touch/poor-data-ui.png" />

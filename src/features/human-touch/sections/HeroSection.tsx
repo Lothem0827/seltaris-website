@@ -34,8 +34,8 @@ export function HeroSection() {
           <HumanTouchAnimated />
         </div>
 
-        <div className="grid w-full max-w-container grid-cols-2 items-start gap-16 lg:grid-cols-1 lg:gap-12">
-          <div className="space-y-6 px-8">
+        <div className="grid w-full max-w-container grid-cols-2 items-start gap-16 lg:grid-cols-1 lg:gap-12 sm:gap-6">
+          <div className="space-y-6 px-8 sm:px-0">
             <FeaturePageHeading as="h2" variant="headingSmall">
               At the core lies our most advanced Human Touch™ technology.
             </FeaturePageHeading>
@@ -45,7 +45,7 @@ export function HeroSection() {
               efficiently as humans do.
             </Text>
           </div>
-          <div className="px-8 pt-2 lg:pt-0">
+          <div className="px-8 pt-2 sm:pt-0 lg:pt-0 sm:px-0">
             <Text>
               The Human Touch™ logic intelligently interprets the full address,
               making sense of the information in the same intuitive way a human

@@ -1,6 +1,6 @@
 "use client";
 
-import { parseServiceSectionFromPath } from "@/lib/content/service-categories";
+import { parseServiceSectionFromPath } from "@/features/services/service-routes";
 import { useLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";

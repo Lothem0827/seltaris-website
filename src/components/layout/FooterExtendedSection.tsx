@@ -9,7 +9,7 @@ import {
   footerNavGroups,
   footerSocialLinks,
   footerTagline,
-} from "@/lib/content/footer";
+} from "@/components/layout/footer.content";
 
 function FooterLegalDisclosures() {
   return (

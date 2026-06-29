@@ -1,7 +1,7 @@
 "use client";
 
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
-import type { ServiceCategoryId } from "@/lib/content/service-categories";
+import type { ServiceCategoryId } from "@/features/services/service-routes";
 import type { PricingCardTone } from "@/components/shared/PricingCard";
 import { PricingCard } from "@/components/shared/PricingCard";
 import { Container } from "@/components/ui/Container";

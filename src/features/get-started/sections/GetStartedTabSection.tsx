@@ -11,7 +11,7 @@ import {
   GET_STARTED_TAB_LABELS,
   getStartedOfferingCards,
   getStartedTabs,
-} from "@/lib/content/get-started-tabs";
+} from "./GetStartedTabSection.content";
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 import { GetStartedServiceHeader } from "../components/GetStartedServicePanel";

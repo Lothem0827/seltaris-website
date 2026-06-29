@@ -2,7 +2,7 @@ import { ServicesPage } from "@/features/services/ServicesPage";
 import {
   isServiceCategoryId,
   SERVICE_CATEGORY_IDS,
-} from "@/lib/content/service-categories";
+} from "@/features/services/service-routes";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 

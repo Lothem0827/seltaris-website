@@ -8,7 +8,7 @@ export function PrivateKeysSection() {
   return (
     <section className="pb-section">
       <Container className="flex flex-col gap-8">
-        <div className="flex flex-row items-start justify-between gap-8 px-8 lg:flex-col">
+        <div className="flex flex-row items-start justify-between gap-8 px-8 lg:flex-col sm:gap-6 sm:px-0">
           <div className="flex max-w-3xl flex-col gap-5">
             <Eyebrow label="Private Keys" />
             <FeaturePageHeading as="h2" variant="sectionTitle">
@@ -17,19 +17,19 @@ export function PrivateKeysSection() {
               Control who sees.
             </FeaturePageHeading>
           </div>
-          <div className="relative h-20 w-[7.5rem] shrink-0">
+          <div className="relative h-20 w-[7.5rem] shrink-0 sm:hidden">
             <Image
               src="/images/data-protection/private-keys-illustration.png"
               alt=""
               fill
-              className="object-contain"
+              className="object-contain "
               sizes="120px"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1">
-          <Text as="div" className="prose-stack px-8">
+        <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1 sm:gap-6">
+          <Text as="div" className="prose-stack px-8 sm:px-0">
             <p>
               A private key is your unique security credential, issued only to
               you, and it&apos;s the one and only way to unlock your final
@@ -52,7 +52,7 @@ export function PrivateKeysSection() {
               parties could potentially access your information.
             </p>
           </Text>
-          <Text as="div" className="prose-stack px-8">
+          <Text as="div" className="prose-stack px-8 sm:px-0">
             <p>
               By giving you sole control of your private key, Advanced data
               protection guarantees:
@@ -75,8 +75,8 @@ export function PrivateKeysSection() {
             </ul>
             <p>
               With DataTools, there are no backdoors, no hidden access points,
-              and no way for anyone else to step between you and your data.
-              Even under force, DataTools cannot hand over what it cannot see.
+              and no way for anyone else to step between you and your data. Even
+              under force, DataTools cannot hand over what it cannot see.
             </p>
           </Text>
         </div>

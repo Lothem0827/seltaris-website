@@ -21,7 +21,7 @@ export function OptiSourceSection() {
         />
 
         <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1">
-          <div className="flex flex-col gap-8 p-8">
+          <div className="flex flex-col gap-8 p-8 sm:px-0">
             <div className="space-y-3">
               <FeaturePageHeading as="h3" variant="headingSmall">
                 Premium dataset options
@@ -43,13 +43,13 @@ export function OptiSourceSection() {
               </FeaturePageHeading>
             </div>
           </div>
-          <div className="flex items-center p-8">
+          <div className="flex items-center p-8 sm:px-0">
             <Text as="div" className="prose-stack">
               <p>
                 DataTools OptiSource System™ includes an expansive semantic
                 index that organises and surfaces information from a variety of
-                trusted data sources, including the Australian PAF, renowned
-                for its 99% accuracy in postal data.
+                trusted data sources, including the Australian PAF, renowned for
+                its 99% accuracy in postal data.
               </p>
               <p>
                 When a file request is made, DataTools Seltaris processes the

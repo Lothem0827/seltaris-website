@@ -66,6 +66,9 @@
   --text-label: var(--text-label-size);
   --text-nav-title: var(--text-nav-title-size);
   --text-section-display: var(--text-section-display-size);
+  --text-section-display-mobile: var(--text-fp-display-mobile);
+  --text-h1-mobile: var(--text-fp-h1-mobile);
+  --text-subheading-mobile: var(--text-fp-subheading-mobile);
   --text-micro: var(--text-micro-size);
   --text-badge: var(--text-badge-size);
   --text-link-nav: var(--text-link-nav-size);
@@ -423,7 +426,7 @@
 
 html {
   /* Clears the sticky main nav when using anchor / Lenis scroll targets */
-  scroll-padding-top: 4.5rem;
+  scroll-padding-top: var(--site-header-height);
 }
 
 body {
@@ -610,6 +613,36 @@ body {
     line-height: var(--leading-fp-slide-title);
     font-weight: var(--weight-fp-slide-title);
     color: var(--color-text);
+  }
+
+  @media (max-width: 639px) {
+    .fp-hero-title,
+    .fp-banner-title,
+    .fp-banner-title-wide,
+    .fp-section-title-lg,
+    .fp-section-title-xl,
+    .fp-teaser-title {
+      font-size: var(--text-fp-display-mobile);
+    }
+
+    .fp-section-title,
+    .fp-heading-sm,
+    .fp-heading-md,
+    .fp-heading-split-mint,
+    .fp-heading-split-dm,
+    .fp-card-title,
+    .fp-feature-title,
+    .fp-workflow-num,
+    .fp-stat-value,
+    .fp-body-lead {
+      font-size: var(--text-fp-h1-mobile);
+    }
+
+    .fp-page-eyebrow,
+    .fp-workflow-title,
+    .fp-slide-title {
+      font-size: var(--text-fp-subheading-mobile);
+    }
   }
 
   .core-feature-slide {

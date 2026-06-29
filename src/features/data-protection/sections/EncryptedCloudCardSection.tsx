@@ -33,7 +33,7 @@ export function EncryptedCloudCardSection() {
           </div>
           <div
             className={cn(
-              "banner-media min-h-split-content-lg rounded-radius-panel lg:min-h-split-content",
+              "banner-media min-h-split-content-lg rounded-radius-panel lg:min-h-split-content sm:hidden",
             )}
           >
             <Image

@@ -9,7 +9,7 @@ import { MobileSolutionsNav } from "@/components/layout/MobileSolutionsNav";
 import { Logo } from "@/components/layout/Logo";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
-import { mainNavLinks } from "@/lib/content/main-nav-links";
+import { mainNavLinks } from "@/components/layout/main-nav.content";
 import { SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 

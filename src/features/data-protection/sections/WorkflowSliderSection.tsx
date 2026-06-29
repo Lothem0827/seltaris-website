@@ -90,7 +90,7 @@ function WorkflowStepCard({
             src={imageSrc}
             alt=""
             fill
-            className="object-cover sm:object-contain"
+            className="object-cover "
             sizes="(max-width: 640px) 88vw, 572px"
           />
         </div>

@@ -20,9 +20,8 @@ export function ServiceCard({
   return (
     <article
       className={cn(
-        "relative flex h-full flex-1 gap-4 rounded-radius-md border border-border bg-white p-4",
-        comingSoon ? "items-start" : "items-center justify-center",
-        comingSoon && "opacity-70",
+        "relative flex h-full flex-1 items-center justify-center gap-4 rounded-radius-md border border-border bg-white p-4 sm:justify-start",
+        comingSoon && "opacity-50",
       )}
     >
       {comingSoon ? (
