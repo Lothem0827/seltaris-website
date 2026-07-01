@@ -18,7 +18,7 @@ type SeltarisPlusOffering = {
   backgroundTone: SeltarisPlusOfferingTone;
   heading: ReactNode;
   body: string;
-  href: string;
+  cta?: { href: string; label?: string };
 };
 
 const offeringBackgrounds: Record<SeltarisPlusOfferingTone, string> = {
@@ -36,7 +36,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
     backgroundTone: "health",
     heading: "Health Check Report",
     body: "Get the full picture of your existing data.",
-    href: "/health-check-report",
+    cta: { href: "/health-check-report" },
   },
   {
     id: "data-protection",
@@ -51,7 +51,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
       </>
     ),
     body: "Enterprise grade security. Built from the ground up.",
-    href: "/advanced-data-protection",
+    cta: { href: "/advanced-data-protection" },
   },
   {
     id: "shared-licensing",
@@ -60,7 +60,6 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
     backgroundTone: "licensing",
     heading: "Shared licensing",
     body: "Sharing is caring. So everyone can start repairing.",
-    href: "#contact",
   },
   {
     id: "volume-discounts",
@@ -69,7 +68,6 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
     backgroundTone: "volume",
     heading: "Volume discounts",
     body: "Buying big volumes of clean data? You deserve some credit.",
-    href: "#contact",
   },
 ];
 
@@ -79,7 +77,7 @@ function OfferingCard({
   imageSrc,
   heading,
   body,
-  href,
+  cta,
 }: SeltarisPlusOffering) {
   return (
     <article
@@ -109,9 +107,16 @@ function OfferingCard({
             </FeaturePageHeading>
           </div>
         </div>
-        <Button href={href} variant="ghost" size="small" className="sm:mt-6">
-          Learn more
-        </Button>
+        {cta ? (
+          <Button
+            href={cta.href}
+            variant="ghost"
+            size="small"
+            className="sm:mt-6"
+          >
+            {cta.label ?? "Learn more"}
+          </Button>
+        ) : null}
       </div>
       <div className="relative min-h-offering-panel lg:min-h-offering-image">
         <Image

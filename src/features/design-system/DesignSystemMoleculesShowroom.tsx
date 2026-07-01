@@ -198,7 +198,6 @@ export function DesignSystemMoleculesShowroom() {
                   showAustralia
                   cta={{
                     label: "Coming soon",
-                    href: "#components",
                     variant: "secondary",
                     disabled: true,
                   }}

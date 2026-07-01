@@ -1,16 +1,8 @@
 "use client";
 
-import {
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { useRevealOnView } from "@/hooks/useRevealVisibility";
+import { useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
-
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
 
 type RevealOnViewProps = {
   children: ReactNode;
@@ -27,30 +19,7 @@ export function RevealOnView({
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    if (prefersReducedMotion()) {
-      setVisible(true);
-      return;
-    }
-
-    const element = ref.current;
-    if (!element) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
+  useRevealOnView(ref, setVisible);
 
   const delayClass =
     visible && staggerIndex > 0

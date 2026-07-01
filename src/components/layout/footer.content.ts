@@ -68,37 +68,74 @@ export type FooterNavGroup = {
   links: { label: string; href: string }[];
 };
 
+/** Link columns aligned with seltaris.com production footer (GBG global nav). */
 export const footerNavGroups: FooterNavGroup[] = [
   {
     title: "Products",
     links: [
-      { label: "Identity data verification", href: "https://www.gbg.com/en/products/" },
-      { label: "Documents & biometrics", href: "https://www.gbg.com/en/products/" },
-      { label: "Document authentication", href: "https://www.gbg.com/en/products/" },
-      { label: "Biometric verification", href: "https://www.gbg.com/en/products/" },
-      { label: "Identity fraud", href: "https://www.gbg.com/en/products/" },
-      { label: "Know your customer", href: "https://www.gbg.com/en/products/" },
-      { label: "Know your business", href: "https://www.gbg.com/en/products/" },
-      { label: "GBG Trust", href: "https://www.gbg.com/en/products/" },
-      { label: "Roadmap", href: "https://www.gbg.com/en/products/" },
+      {
+        label: "Identity data verification",
+        href: "https://www.gbg.com/en/verify-identity/data-verification/",
+      },
+      {
+        label: "Documents & biometrics",
+        href: "https://www.gbg.com/en/verify-identity/document-verification/",
+      },
+      {
+        label: "Document authentication",
+        href: "https://www.gbg.com/en/verify-identity/document-authentication/",
+      },
+      {
+        label: "Biometric verification",
+        href: "https://www.gbg.com/en/verify-identity/biometric-verification/",
+      },
+      {
+        label: "Identity fraud",
+        href: "https://www.gbg.com/en/fraud-protection/synthetic-ID-fraud/",
+      },
+      {
+        label: "Know your customer",
+        href: "https://www.gbg.com/en/assess-risk/know-your-customer/",
+      },
+      {
+        label: "Know your business",
+        href: "https://www.gbg.com/en/assess-risk/know-your-business-kyb/",
+      },
+      {
+        label: "GBG Trust",
+        href: "https://www.gbg.com/en/fraud-protection/gbg-trust/",
+      },
+      { label: "Roadmap", href: "https://www.gbg.com/en/roadmap/" },
     ],
   },
   {
     title: "Platform",
-    links: [{ label: "GBG Go", href: "https://www.gbg.com/en/platform/" }],
+    links: [{ label: "GBG Go", href: "https://www.gbg.com/en/platform/gbg-go/" }],
   },
   {
     title: "Solutions",
     links: [
-      { label: "Financial services", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Retail", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Gaming", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Events", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Crypto & FX", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Pensions", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Public sector", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Insurance", href: "https://www.gbg.com/en/solutions/" },
-      { label: "Marketplace", href: "https://www.gbg.com/en/solutions/" },
+      {
+        label: "Financial services",
+        href: "https://www.gbg.com/en/industry/financial-services/",
+      },
+      { label: "Retail", href: "https://www.gbg.com/en/industry/retail/" },
+      { label: "Gaming", href: "https://www.gbg.com/en/industry/gaming/" },
+      { label: "Events", href: "https://www.gbg.com/en/industry/events/" },
+      { label: "Crypto & FX", href: "https://www.gbg.com/en/industry/crypto-fx/" },
+      {
+        label: "Pensions",
+        href: "https://www.gbg.com/en/industry/wealth-and-pensions/",
+      },
+      {
+        label: "Public sector",
+        href: "https://www.gbg.com/en/industry/public-sector/",
+      },
+      { label: "Insurance", href: "https://www.gbg.com/en/industry/insurance/" },
+      {
+        label: "Marketplace",
+        href: "https://www.gbg.com/en/industry/marketplace/",
+      },
     ],
   },
   {
@@ -108,51 +145,100 @@ export const footerNavGroups: FooterNavGroup[] = [
       { label: "Blog", href: "https://www.gbg.com/en/blog/" },
       { label: "Events", href: "https://www.gbg.com/en/events/" },
       { label: "News", href: "https://www.gbg.com/en/news/" },
-      { label: "GBG Trust Centre", href: "https://www.gbg.com/en/trust-centre/" },
-      { label: "Our customers", href: "https://www.gbg.com/en/customers/" },
-      { label: "AI at GBG", href: "https://www.gbg.com/en/" },
+      {
+        label: "GBG Trust Centre",
+        href: "https://secureandtrusted.gbgplc.com/",
+      },
+      { label: "Our customers", href: "https://www.gbg.com/en/our-customers/" },
+      {
+        label: "AI at GBG",
+        href: "https://www.gbg.com/en/ai-powered-customer-intelligence/",
+      },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Legal and regulatory centre", href: "https://www.gbg.com/en/legal/" },
-      { label: "Privacy policy", href: "https://www.gbg.com/en/legal/privacy-policy/" },
-      { label: "Products and services privacy policy", href: "https://www.gbg.com/en/legal/" },
-      { label: "Cookie policy", href: "https://www.gbg.com/en/legal/cookie-policy/" },
-      { label: "Accessibility", href: "https://www.gbg.com/en/legal/accessibility/" },
-      { label: "Terms of use", href: "https://www.gbg.com/en/legal/terms-of-use/" },
-      { label: "Modern Slavery Statement", href: "https://www.gbg.com/en/legal/" },
+      {
+        label: "Legal and regulatory centre",
+        href: "https://gbgplc.com/en/legal-and-regulatory/",
+      },
+      { label: "Privacy policy", href: "https://datatools.com.au/privacy-policy/" },
+      {
+        label: "Products and services privacy policy",
+        href: "https://www.gbg.com/en/products-and-services-privacy-policy/",
+      },
+      { label: "Cookie policy", href: "https://datatools.com.au/cookie-policy/" },
+      {
+        label: "Accessibility",
+        href: "https://www.gbg.com/en/accessibility-statement/",
+      },
+      {
+        label: "Terms of use",
+        href: "https://datatools.com.au/resources/legal/terms-of-use-datatools-legal/",
+      },
+      {
+        label: "Modern Slavery Statement",
+        href: "https://datatools.com.au/datatools-modern-slavery-statement-and-policy/",
+      },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "Investors", href: "https://www.gbg.com/en/investors/" },
-      { label: "Careers", href: "https://www.gbg.com/en/careers/" },
-      { label: "About us", href: "https://www.gbg.com/en/about-us/" },
+      { label: "Investors", href: "https://www.gbgplc.com/investors/" },
+      { label: "Careers", href: "https://www.gbgplc.com/careers/" },
+      { label: "About us", href: "https://www.gbgplc.com/about/" },
       { label: "Partners", href: "https://www.gbg.com/en/partners/" },
-      { label: "ESG", href: "https://www.gbg.com/en/esg/" },
+      {
+        label: "ESG",
+        href: "https://www.gbgplc.com/investors/environmental-social-and-governance/",
+      },
       { label: "Loqate.com", href: "https://www.loqate.com/" },
     ],
   },
   {
     title: "Contact us",
     links: [
-      { label: "Sales enquiries", href: "https://www.gbg.com/en/contact-us/" },
-      { label: "Customer support", href: "https://www.gbg.com/en/contact-us/" },
-      { label: "Individual data requests", href: "https://www.gbg.com/en/contact-us/" },
-      { label: "Login", href: "https://www.gbg.com/en/login/" },
+      {
+        label: "Sales enquiries",
+        href: "https://www.gbg.com/en/contact/sales-enquiry/",
+      },
+      {
+        label: "Customer support",
+        href: "https://www.gbg.com/en/contact/customer-support-enquiry/",
+      },
+      {
+        label: "Individual data requests",
+        href: "https://www.gbg.com/en/contact/general-enquiry/individual-data-enquiry/",
+      },
+      { label: "Login", href: "https://seltaris.gbg.com/login" },
     ],
   },
 ];
 
 export const footerSocialLinks = [
-  { label: "Facebook", href: "https://www.facebook.com/GBGplc", iconKey: "facebook" as const },
-  { label: "YouTube", href: "https://www.youtube.com/@GBGplc", iconKey: "youtube" as const },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/gbgplc/",
+    iconKey: "facebook" as const,
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@gbgplc",
+    iconKey: "youtube" as const,
+  },
   { label: "X", href: "https://x.com/GBGplc", iconKey: "x" as const },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/gbgplc", iconKey: "linkedin" as const },
-  { label: "GBG Trust Centre", href: "https://www.gbg.com/en/trust-centre/", iconKey: "trust" as const },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/gb-group/",
+    iconKey: "linkedin" as const,
+  },
+  {
+    label: "GBG security report on UpGuard",
+    href: "https://www.upguard.com/security-report/gbg",
+    iconKey: "trust" as const,
+  },
 ];
 
 export const footerTagline =

@@ -95,7 +95,7 @@ export function TabGroup({
                 "shrink-0 rounded-radius-full px-4 py-1.5 font-body text-body leading-body transition-colors sm:w-full sm:rounded-radius-md",
                 stackOnLg && "lg:w-full lg:rounded-radius-md",
                 isActive
-                  ? "bg-text text-white"
+                  ? "bg-brand text-white"
                   : "text-tab-inactive hover:text-text",
               )}
             >

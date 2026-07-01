@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { DevInspector } from "@/components/dev/DevInspector";
 import { ScrollToHash } from "@/components/providers/ScrollToHash";
+import { BfcacheRevealRestore } from "@/components/providers/BfcacheRevealRestore";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   description:
     "High quality, secure, and powerful data quality platform for formatting, cleansing, repairing, and verifying your datasets.",
   icons: {
-    icon: "/seltaris-logo-fav.svg",
+    icon: "/seltaris-logo.svg",
   },
   alternates: {
     canonical: "/",
@@ -48,6 +49,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen antialiased" suppressHydrationWarning>
         <SmoothScroll>
+          <BfcacheRevealRestore />
           <ScrollToHash />
           {process.env.NODE_ENV === "development" ? <DevInspector /> : null}
           {children}

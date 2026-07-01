@@ -23,6 +23,7 @@ export const siteAssets = {
   nzFlag: "/icons/nzFlag.svg",
   internationalFlag: "/icons/internationalFlag.svg",
   footerLargeLogo: "/seltaris-full-logo.svg",
+  footerGbgLogo: "/gbg-logo-footer.png",
   footerSocial: {
     facebook: "/icons/fb-logo.svg",
     youtube: "/icons/youtube-logo.svg",
@@ -84,6 +85,8 @@ export const siteAssets = {
 } as const;
 
 export const SELTARIS_LOGIN_URL = "https://seltaris.gbg.com/login";
+export const GBG_ABOUT_URL = "https://www.gbg.com/en/about-us/";
+export const LOQATE_CONTACT_URL = "https://www.loqate.com/anz/contact/#form";
 export const SELTARIS_DEMO_URL = "/demo";
 export const SELTARIS_GET_STARTED_PLAN_URLS = {
   free: "https://seltaris.gbg.com/plan/slt-free-zx4k",

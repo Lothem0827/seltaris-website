@@ -95,6 +95,7 @@
 
   --max-width-container: var(--container-max);
   --max-width-footer-logo: var(--max-w-footer-logo);
+  --max-width-gbg-footer-logo: var(--max-w-gbg-footer-logo);
   --max-width-support-card: var(--max-w-support-card);
   --max-width-plans-grid: var(--max-w-plans-grid);
   --max-width-hero-body: var(--max-w-hero-body);
@@ -277,12 +278,11 @@
 }
 
 @keyframes address-validate-flow-arrow {
-  0%,
-  99.9% {
-    opacity: 0;
+  from {
+    clip-path: inset(0 100% 0 0);
   }
-  100% {
-    opacity: 1;
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -313,9 +313,10 @@
 }
 
 .address-validate-flow-arrow-active {
-  opacity: 0;
-  animation: address-validate-flow-arrow var(--flow-fill-duration, 1380ms)
-    linear forwards;
+  clip-path: inset(0 100% 0 0);
+  animation: address-validate-flow-arrow var(--flow-arrow-fill-duration, 220ms)
+    ease-out forwards;
+  animation-delay: var(--flow-fill-duration, 1380ms);
 }
 
 .split-intro-hub-ring {
@@ -602,6 +603,12 @@
   animation-delay: 480ms;
 }
 
+html.reveal-bfcache-restored .reveal-up,
+html.reveal-bfcache-restored .hero-load-in .hero-load-in-item {
+  opacity: 1;
+  transform: none;
+}
+
 .hero-load-in .hero-load-in-item {
   opacity: 0;
   transform: translateY(var(--motion-reveal-distance));
@@ -657,6 +664,8 @@
     animation: none;
     opacity: 1;
     transform: none;
+    clip-path: inset(0 0 0 0);
+    stroke-dashoffset: 0;
   }
 }
 

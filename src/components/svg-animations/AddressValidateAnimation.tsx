@@ -537,8 +537,15 @@ const FLOW_TOP_PATH =
 const FLOW_CENTER_PATH = "M0 108.678H229.652";
 const FLOW_BOTTOM_PATH =
   "M7.49497e-06 216.456H130.672C150.229 216.456 166.083 200.602 166.083 181.045V123.909C166.083 115.497 172.902 108.678 181.314 108.678";
+const FLOW_TRUNK_SUFFIX = "H229.652";
 const FLOW_ARROW_PATH =
   "M236.652 109.314C237.003 108.963 237.003 108.393 236.652 108.041L230.924 102.314C230.573 101.962 230.003 101.962 229.652 102.314C229.3 102.665 229.3 103.235 229.652 103.587L234.743 108.678L229.652 113.769C229.3 114.12 229.3 114.69 229.652 115.042C230.003 115.393 230.573 115.393 230.924 115.042L236.652 109.314Z";
+
+const FLOW_ACTIVE_PATHS = [
+  `${FLOW_TOP_PATH}${FLOW_TRUNK_SUFFIX}`,
+  FLOW_CENTER_PATH,
+  `${FLOW_BOTTOM_PATH}${FLOW_TRUNK_SUFFIX}`,
+] as const;
 
 function FlowStrokePath({
   d,
@@ -603,7 +610,8 @@ function FlowConnectorsGraphic({
     <svg
       viewBox="0 0 236.916 217.356"
       fill="none"
-      className="h-[216px] w-[236px] shrink-0"
+      overflow="visible"
+      className="h-[216px] w-[236px] shrink-0 overflow-visible"
       style={
         {
           "--flow-fill-duration": `${fillDurationMs}ms`,
@@ -611,22 +619,16 @@ function FlowConnectorsGraphic({
       }
       aria-hidden
     >
+      <path d={FLOW_TOP_PATH} stroke="#FFDADA" strokeWidth="1.8" />
+      <path d={FLOW_CENTER_PATH} stroke="#FFDADA" strokeWidth="1.8" />
+      <path d={FLOW_BOTTOM_PATH} stroke="#FFDADA" strokeWidth="1.8" />
+      <path d={FLOW_ARROW_PATH} fill="#FFDADA" />
       <FlowStrokePath
-        d={FLOW_TOP_PATH}
-        active={activeRow === 0}
-        resetKey={`${cycleId}-0`}
+        d={FLOW_ACTIVE_PATHS[activeRow]}
+        active
+        resetKey={`${cycleId}-${activeRow}`}
       />
-      <FlowStrokePath
-        d={FLOW_CENTER_PATH}
-        active={activeRow === 1}
-        resetKey={`${cycleId}-1`}
-      />
-      <FlowArrow active={activeRow === 1} resetKey={`${cycleId}-arrow`} />
-      <FlowStrokePath
-        d={FLOW_BOTTOM_PATH}
-        active={activeRow === 2}
-        resetKey={`${cycleId}-2`}
-      />
+      <FlowArrow active resetKey={`${cycleId}-arrow-${activeRow}`} />
     </svg>
   );
 }

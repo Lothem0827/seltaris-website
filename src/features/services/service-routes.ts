@@ -11,6 +11,11 @@ export function serviceCategoryPath(id: ServiceCategoryId) {
   return `/services/${id}`;
 }
 
+/** In-page anchor on /services — scrolls to the category section via ScrollToHash */
+export function serviceCategoryAnchor(id: ServiceCategoryId) {
+  return `/services#${id}`;
+}
+
 export function isServiceCategoryId(value: string): value is ServiceCategoryId {
   return SERVICE_CATEGORY_IDS.includes(value as ServiceCategoryId);
 }

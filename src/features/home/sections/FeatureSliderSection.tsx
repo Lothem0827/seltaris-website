@@ -51,7 +51,8 @@ export function FeatureSliderSection() {
     <SliderSection
       heading={
         <>
-          From fast-growing <span className="text-brand">businesses</span> to{" "}
+          From fast-growing <br></br>
+          <span className="text-brand">businesses</span> to{" "}
           <span className="text-brand">enterprise.</span>
         </>
       }

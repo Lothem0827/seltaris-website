@@ -17,7 +17,12 @@ export function MainNav() {
         if (link.hasDropdown && link.dropdown === "enterprise") {
           return <EnterpriseNavDropdown key={link.label} />;
         }
-        return <NavLink key={link.label} label={link.label} href={link.href} />;
+        if (!link.hasDropdown) {
+          return (
+            <NavLink key={link.label} label={link.label} href={link.href} />
+          );
+        }
+        return null;
       })}
     </nav>
   );

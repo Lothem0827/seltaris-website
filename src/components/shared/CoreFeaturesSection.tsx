@@ -82,7 +82,7 @@ const features = [
     eyebrow: "Health Check Report",
     heading: "Data quality at its finest detail.",
     body: "This Health Check Report delivers a clear and comprehensive assessment of your submitted address data delivered in an easy to read PDF, analysed through the Seltaris service.",
-    href: "/address-quality-health-check-report",
+    href: "/health-check-report",
     cta: "Learn more about Health Check Report",
   },
 ] as const;

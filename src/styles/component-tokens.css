@@ -128,6 +128,7 @@
   --width-logo: 9.375rem;
   --height-logo: 2.625rem; /* Seltaris header logo display height — width follows SVG ratio */
   --height-gbg-logo: 1.5625rem;
+  --max-w-gbg-footer-logo: 24.8125rem; /* 397px — production footer GBG mark */
   --site-header-height: 4.5rem; /* live-synced from SiteHeader; fallback = collapsed main nav */
   --size-icon-feature: 3.75rem;
   --size-icon-support: 3.25rem;

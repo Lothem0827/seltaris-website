@@ -130,7 +130,7 @@ export type AddressServicePagePricingCard = {
   price?: { amount: string; gst?: string; note?: string };
   cta: {
     label: string;
-    href: string;
+    href?: string;
     variant?: "primary" | "secondary";
     disabled?: boolean;
   };

@@ -1,6 +1,10 @@
 "use client";
 
 import {
+  useRevealBackForwardRestore,
+  prefersReducedMotion,
+} from "@/hooks/useRevealVisibility";
+import {
   Children,
   useEffect,
   useRef,
@@ -8,10 +12,6 @@ import {
   type ReactNode,
 } from "react";
 import { cn } from "@/lib/utils";
-
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
 
 type RevealGroupProps = {
   children: ReactNode;
@@ -21,6 +21,8 @@ type RevealGroupProps = {
 export function RevealGroup({ children, className }: RevealGroupProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+
+  useRevealBackForwardRestore(setVisible);
 
   useEffect(() => {
     if (prefersReducedMotion()) {
@@ -40,10 +42,19 @@ export function RevealGroup({ children, className }: RevealGroupProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0, rootMargin: "0px 0px -8% 0px" },
     );
 
     observer.observe(element);
+
+    const rect = element.getBoundingClientRect();
+    const inView =
+      rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
+    if (inView) {
+      setVisible(true);
+      observer.disconnect();
+    }
+
     return () => observer.disconnect();
   }, []);
 

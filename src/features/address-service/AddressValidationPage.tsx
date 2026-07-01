@@ -396,7 +396,6 @@ const addressValidationPageContent: AddressServicePageContent = {
       learnMoreHref: "/address-validation",
       cta: {
         label: "Coming soon",
-        href: "#contact",
         variant: "secondary",
         disabled: true,
       },
@@ -443,7 +442,6 @@ const addressValidationPageContent: AddressServicePageContent = {
       showNewZealand: true,
       cta: {
         label: "Coming soon",
-        href: "#contact",
         variant: "secondary",
         disabled: true,
       },

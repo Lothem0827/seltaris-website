@@ -1,7 +1,8 @@
 import { FooterSection } from "@/components/layout/FooterSection";
 import { MainContent } from "@/components/layout/MainContent";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { CategoriesSection } from "./sections/CategoriesSection";
+import { CategorySection } from "./sections/CategoriesSection";
+import { SERVICE_CATEGORIES } from "./service-categories.content";
 import { HeroSection } from "./sections/HeroSection";
 
 export function ServicesPage() {
@@ -10,7 +11,9 @@ export function ServicesPage() {
       <SiteHeader />
       <MainContent>
         <HeroSection />
-        <CategoriesSection />
+        {SERVICE_CATEGORIES.map((category) => (
+          <CategorySection key={category.id} category={category} />
+        ))}
       </MainContent>
       <FooterSection />
     </>

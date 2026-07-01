@@ -477,7 +477,6 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
       learnMoreHref: "/address-quality-health-check-report",
       cta: {
         label: "Coming soon",
-        href: "#contact",
         variant: "secondary",
         disabled: true,
       },

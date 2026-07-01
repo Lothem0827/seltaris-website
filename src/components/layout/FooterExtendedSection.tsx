@@ -65,7 +65,8 @@ function FooterLargeLogo() {
 }
 
 function FooterSiteNav() {
-  const [products, platform, ...rest] = footerNavGroups;
+  const [products, platform, solutions, resources, legal, company, contact] =
+    footerNavGroups;
 
   return (
     <nav aria-label="Site" className="bg-white py-14 md:py-12">
@@ -73,16 +74,19 @@ function FooterSiteNav() {
         <div className="flex flex-row gap-10 lg:flex-col lg:gap-8">
           <div className="flex min-h-footer-sidebar w-footer-sidebar shrink-0 flex-col justify-between gap-10 lg:min-h-0 lg:w-auto">
             <Link
-              href="https://www.gbg.com"
+              href="https://gbg.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex shrink-0"
               aria-label="GBG"
             >
               <Image
-                src="/gbg-logo.svg"
+                src={siteAssets.footerGbgLogo}
                 alt="GBG"
                 width={100}
-                height={25}
-                style={{ height: "var(--height-gbg-logo)", width: "auto" }}
+                height={24}
+                className="max-w-gbg-footer-logo"
+                sizes="100px, 24px"
               />
             </Link>
             <div className="flex flex-wrap items-center gap-6">
@@ -110,9 +114,13 @@ function FooterSiteNav() {
               <FooterNavColumn group={products} />
               <FooterNavColumn group={platform} />
             </div>
-            {rest.map((group) => (
-              <FooterNavColumn key={group.title} group={group} />
-            ))}
+            <FooterNavColumn group={solutions} />
+            <FooterNavColumn group={resources} />
+            <FooterNavColumn group={legal} />
+            <div className="space-y-10">
+              <FooterNavColumn group={company} />
+              <FooterNavColumn group={contact} />
+            </div>
           </div>
         </div>
       </Container>
@@ -124,14 +132,14 @@ function FooterBottomBar() {
   return (
     <div className="bg-surface-muted py-10">
       <Container>
-        <div className="flex flex-row items-end justify-between gap-6 lg:flex-col lg:gap-6">
-          <Text as="p" variant="body-sm" className="max-w-xl">
-            {footerTagline}
-          </Text>
-          <Text as="p" variant="body-sm" className="shrink-0 text-right lg:text-left">
+        <div className="flex flex-row items-end justify-between gap-6 lg:flex-col lg:items-start lg:gap-6">
+          <Text as="p" variant="body-sm" className="shrink-0">
             © {new Date().getFullYear()} GB Group plc (&apos;GBG&apos;).
             <br />
             GBG is the trading name and a trademark of GB Group plc.
+          </Text>
+          <Text as="p" variant="body-sm" className="max-w-xl lg:max-w-none">
+            {footerTagline}
           </Text>
         </div>
       </Container>

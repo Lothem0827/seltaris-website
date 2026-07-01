@@ -34,7 +34,6 @@ export function PricingSection() {
             showAustralia
             cta={{
               label: "Coming soon",
-              href: "#contact",
               variant: "secondary",
               disabled: true,
             }}

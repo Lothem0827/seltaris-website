@@ -11,7 +11,12 @@ import { MainNav } from "@/components/layout/MainNav";
 import { MobileNavDrawer } from "@/components/layout/MobileNavDrawer";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { Text } from "@/components/ui/Text";
-import { SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
+import {
+  GBG_ABOUT_URL,
+  LOQATE_CONTACT_URL,
+  SELTARIS_LOGIN_URL,
+  siteAssets,
+} from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
 const SCROLL_TOP_THRESHOLD = 12;
@@ -92,15 +97,30 @@ export function SiteHeader() {
               aria-label="GBG corporate"
               className="flex items-center gap-6 font-label text-label uppercase tracking-wide text-text lg:hidden"
             >
-              <Link href="#about" tabIndex={isAtTop ? undefined : -1}>
+              <a
+                href={GBG_ABOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={isAtTop ? undefined : -1}
+              >
                 About us
-              </Link>
-              <Link href="#contact" tabIndex={isAtTop ? undefined : -1}>
+              </a>
+              <a
+                href={LOQATE_CONTACT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={isAtTop ? undefined : -1}
+              >
                 Contact us
-              </Link>
-              <Link href="#login" tabIndex={isAtTop ? undefined : -1}>
+              </a>
+              <a
+                href={SELTARIS_LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={isAtTop ? undefined : -1}
+              >
                 Log in / Sign up
-              </Link>
+              </a>
             </nav>
           </Container>
         </div>

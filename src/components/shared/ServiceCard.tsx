@@ -58,7 +58,7 @@ export function ServiceCard({
     return (
       <article
         className={cn(
-          "relative flex h-full flex-1 items-center justify-center gap-4 rounded-radius-md border border-border/70  p-4 sm:justify-start",
+          "bg-white relative flex h-full flex-1 items-center justify-center gap-4 rounded-radius-md border border-border/70  p-4 sm:justify-start",
         )}
       >
         <div className="absolute -top-4 right-6">

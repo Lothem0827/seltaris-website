@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { ServiceCard } from "@/components/shared/ServiceCard";
 import {
-  serviceCategoryPath,
+  serviceCategoryAnchor,
   type ServiceCategoryId,
 } from "@/features/services/service-routes";
 
@@ -46,7 +46,7 @@ const CATEGORY_CARDS: {
 
 export function HeroSection() {
   return (
-    <section className="bg-brand-light py-section">
+    <section className="bg-brand-surface py-section">
       <Container className="flex flex-col items-center gap-12">
         <FeaturePageHeading as="h1" variant="sectionTitleLg">
           Seltaris Services
@@ -56,8 +56,9 @@ export function HeroSection() {
           {CATEGORY_CARDS.map((category) => (
             <Link
               key={category.id}
-              href={serviceCategoryPath(category.id)}
+              href={serviceCategoryAnchor(category.id)}
               className="block h-full"
+              scroll={false}
             >
               <ServiceCard
                 title={category.title}

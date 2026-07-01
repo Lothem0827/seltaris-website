@@ -1,11 +1,11 @@
 "use client";
 
+import {
+  prefersReducedMotion,
+  useRevealBackForwardRestore,
+} from "@/hooks/useRevealVisibility";
 import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
-
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
 
 type HeroLoadInProps = {
   children: ReactNode;
@@ -14,6 +14,8 @@ type HeroLoadInProps = {
 
 export function HeroLoadIn({ children, className }: HeroLoadInProps) {
   const [visible, setVisible] = useState(false);
+
+  useRevealBackForwardRestore(setVisible);
 
   useEffect(() => {
     if (prefersReducedMotion()) {

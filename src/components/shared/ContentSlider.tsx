@@ -6,6 +6,7 @@ import type { Swiper as SwiperInstance } from "swiper";
 import { ImageSlideCard } from "@/components/shared/ImageSlideCard";
 import type { SlideItem } from "@/lib/types/slider";
 import { cn } from "@/lib/utils";
+import { useRevealOnView } from "@/hooks/useRevealVisibility";
 import {
   useEffect,
   useRef,
@@ -31,10 +32,6 @@ type ContentSliderProps = {
   /** Stagger reveal each slide when the slider enters the viewport. */
   staggerSlides?: boolean;
 };
-
-function prefersReducedMotion() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
 
 function resolveImageSrc(item: SlideItem): string {
   return item.imageSrc ?? "";
@@ -93,34 +90,12 @@ function useSlideStagger(enabled: boolean) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(!enabled);
 
+  useRevealOnView(ref, setVisible);
+
   useEffect(() => {
     if (!enabled) {
       setVisible(true);
-      return;
     }
-
-    if (prefersReducedMotion()) {
-      setVisible(true);
-      return;
-    }
-
-    const element = ref.current;
-    if (!element) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-    );
-
-    observer.observe(element);
-    return () => observer.disconnect();
   }, [enabled]);
 
   return { ref, visible };

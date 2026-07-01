@@ -11,7 +11,8 @@ const slides: SliderSlide[] = [
       description: (
         <>
           <strong>
-            The fastest addressing Batch processing tool we&apos;ve ever created.
+            The fastest addressing Batch processing tool we&apos;ve ever
+            created.
           </strong>{" "}
           By leveraging advanced computing techniques, we developed innovative
           methodologies for processing files more efficiently, resulting in
@@ -30,8 +31,8 @@ const slides: SliderSlide[] = [
       description: (
         <>
           <strong>Designed to scale.</strong> On demand dynamic computational
-          capacity designed to draw on even larger server clusters for even faster
-          performance.
+          capacity designed to draw on even larger server clusters for even
+          faster performance.
         </>
       ),
       width: "narrow",
@@ -86,7 +87,7 @@ export function AltraserviceSliderSection() {
       slides={slides}
       cta={{
         label: "Explore all features",
-        href: "#features",
+        href: "/altraservice",
         variant: "secondary",
       }}
     />

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
@@ -6,10 +7,22 @@ import { RegionBadge } from "@/components/shared/RegionBadge";
 import { RevealOnView } from "@/components/shared/RevealOnView";
 import { ServiceCard } from "@/components/shared/ServiceCard";
 import { ServicesDeferredAnimation } from "@/features/home/components/ServicesDeferredAnimation";
+import {
+  serviceCategoryAnchor,
+  type ServiceCategoryId,
+} from "@/features/services/service-routes";
 
-const services = [
+const services: {
+  id: string;
+  categoryId: ServiceCategoryId;
+  title: string;
+  description: string;
+  comingSoon: boolean;
+  iconSrc: string;
+}[] = [
   {
     id: "address",
+    categoryId: "address-data",
     title: "Address data",
     description:
       "Format, clean, repair and verify addresses with 100% accuracy.",
@@ -18,6 +31,7 @@ const services = [
   },
   {
     id: "email",
+    categoryId: "email-data",
     title: "Email address data",
     description: "Check and validate email addresses.",
     comingSoon: true,
@@ -25,6 +39,7 @@ const services = [
   },
   {
     id: "phone",
+    categoryId: "phone-data",
     title: "Phone number data",
     description: "Check and validate landline or mobile numbers.",
     comingSoon: true,
@@ -32,12 +47,13 @@ const services = [
   },
   {
     id: "geocode",
+    categoryId: "geocode-data",
     title: "Geocode data",
     description: "Add coordinates to every validated address.",
     comingSoon: true,
     iconSrc: "/images/home/service-icon-geocode.png",
   },
-] as const;
+];
 
 export function ServicesSection() {
   return (
@@ -58,7 +74,7 @@ export function ServicesSection() {
               Starting today, you can clean and validate Australian addresses
               with phone, email validation, and geocoding coming soon.
             </Text>
-            <Button href="#learn-more" variant="ghost" size="small">
+            <Button href="/services" variant="ghost" size="small">
               Learn more
             </Button>
           </RevealOnView>
@@ -71,13 +87,19 @@ export function ServicesSection() {
         <RevealOnView staggerIndex={3}>
           <div className="grid grid-cols-4 gap-4 xl:grid-cols-2 md:grid-cols-1">
             {services.map((service) => (
-              <ServiceCard
+              <Link
                 key={service.id}
-                title={service.title}
-                description={service.description}
-                iconSrc={service.iconSrc}
-                comingSoon={service.comingSoon}
-              />
+                href={serviceCategoryAnchor(service.categoryId)}
+                className="block h-full"
+                scroll={false}
+              >
+                <ServiceCard
+                  title={service.title}
+                  description={service.description}
+                  iconSrc={service.iconSrc}
+                  comingSoon={service.comingSoon}
+                />
+              </Link>
             ))}
           </div>
         </RevealOnView>
@@ -92,7 +114,7 @@ export function ServicesSection() {
 
 function AvailableFor() {
   return (
-    <div className="flex flex-wrap  gap-6 sm:flex-col sm:gap-4 items-center">
+    <div className="flex flex-wrap  justify-center gap-6 sm:flex-col sm:gap-4 items-center">
       <Text variant="utility">Available for:</Text>
       <div className="flex flex-wrap items-center gap-3 ">
         <RegionBadge region="australia" className="sm:w-full" />

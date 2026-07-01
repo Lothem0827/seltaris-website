@@ -37,7 +37,7 @@ export function HumanTouchDetailSection() {
 
         <RevealOnView staggerIndex={1}>
           <div className="flex justify-center">
-            <Button href="#features" variant="secondary">
+            <Button href="/human-touch" variant="secondary">
               Explore all features
             </Button>
           </div>

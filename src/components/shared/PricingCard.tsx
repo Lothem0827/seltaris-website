@@ -20,7 +20,7 @@ type PricingCardProps = {
   price?: { amount: string; gst?: string; note?: string };
   cta: {
     label: string;
-    href: string;
+    href?: string;
     variant?: "primary" | "secondary";
     disabled?: boolean;
   };
@@ -129,7 +129,7 @@ export function PricingCard({
             </div>
           ) : null}
           <Button
-            href={cta.href}
+            href={cta.disabled ? undefined : cta.href}
             variant={cta.variant === "secondary" ? "secondary" : "primary"}
             disabled={cta.disabled}
             className={cn(

@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { IconSurface } from "@/components/ui/IconSurface";
 import { Text } from "@/components/ui/Text";
+import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import {
   SeltarisPlusPlanCard,
   SeltarisPlusSupportCard,
@@ -17,7 +18,7 @@ const seltarisPlusPlans: SeltarisPlusPlan[] = [
     tagline: "For small businesses.",
     price: "$99",
     gstNote: "(Ex. GST)",
-    cta: { label: "Join now for $99", href: "#get-started" },
+    cta: { label: "Join now for $99", href: SELTARIS_LOGIN_URL },
     features: [
       {
         label: "Health Check Reports",
@@ -51,7 +52,7 @@ const seltarisPlusPlans: SeltarisPlusPlan[] = [
     price: "$139",
     gstNote: "(Ex. GST)",
     popular: true,
-    cta: { label: "Join now for $139", href: "#get-started" },
+    cta: { label: "Join now for $139", href: SELTARIS_LOGIN_URL },
     features: [
       {
         label: "Health Check Reports",
@@ -86,7 +87,7 @@ const seltarisPlusPlans: SeltarisPlusPlan[] = [
     tagline: "Ideal for large enterprises.",
     price: "$389",
     gstNote: "(Ex. GST)",
-    cta: { label: "Join now for $389", href: "#get-started" },
+    cta: { label: "Join now for $389", href: SELTARIS_LOGIN_URL },
     features: [
       {
         label: "Health Check Reports",

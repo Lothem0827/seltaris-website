@@ -167,7 +167,6 @@ export function GetStartedTabSection() {
                     showInternational={card.showInternational}
                     cta={{
                       label: "Coming soon",
-                      href: "#",
                       variant: "secondary",
                       disabled: true,
                     }}

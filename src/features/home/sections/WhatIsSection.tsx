@@ -5,7 +5,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 
-const WHAT_IS_IMAGE = "/images/home/laptop.png";
+const WHAT_IS_IMAGE = "/images/home/laptop.svg";
 
 export function WhatIsSection() {
   return (
@@ -32,7 +32,7 @@ export function WhatIsSection() {
             alt="Seltaris dashboard on laptop"
             width={581}
             height={354}
-            className="h-auto w-full"
+            className="h-auto"
           />
         </RevealOnView>
       </Container>
