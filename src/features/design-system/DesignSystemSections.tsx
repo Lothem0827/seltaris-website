@@ -15,8 +15,11 @@ import { cn } from "@/lib/utils";
 import { SITE_PAGES } from "@/lib/design-system/site-pages";
 import {
   AddressValidateAnimation,
+  AltraserviceAnimation,
+  DesignMadeSimpleAnimation,
   HumanTouchAnimated,
 } from "@/components/svg-animations";
+import { DesignSystemAccessibilityShowroom } from "./DesignSystemAccessibilityShowroom";
 import { DesignSystemAtomsShowroom } from "./DesignSystemAtomsShowroom";
 import { DesignSystemComponentShowroom } from "./DesignSystemComponentShowroom";
 import { DesignSystemMoleculesShowroom } from "./DesignSystemMoleculesShowroom";
@@ -382,6 +385,18 @@ export function DesignSystemSpacingSection() {
   );
 }
 
+export function DesignSystemAccessibilitySection() {
+  return (
+    <GuideSection id="accessibility" title="Accessibility">
+      <p className="mb-8 max-w-3xl font-body text-body text-paragraph">
+        WCAG 2.2 AA patterns used across the marketing site — focus states, skip
+        links, tabs, accordions, and contrast-safe tokens.
+      </p>
+      <DesignSystemAccessibilityShowroom />
+    </GuideSection>
+  );
+}
+
 export function DesignSystemSvgAnimationsSection() {
   return (
     <GuideSection
@@ -444,6 +459,26 @@ export function DesignSystemSvgAnimationsSection() {
       >
         <div className="overflow-x-auto rounded-radius-md p-10 lg:p-6">
           <HumanTouchAnimated />
+        </div>
+      </ComponentDemo>
+
+      <ComponentDemo
+        name="AltraserviceAnimation"
+        path="src/components/svg-animations/AltraserviceAnimation.tsx"
+        note="Altraservice performance demo — streaming addresses, lot repair, speed gauge, and Charlie Wilson address correction. Figma frame altraservice-animated (4593:10209)."
+      >
+        <div className="overflow-x-auto rounded-radius-md bg-white p-10 lg:p-6">
+          <AltraserviceAnimation />
+        </div>
+      </ComponentDemo>
+
+      <ComponentDemo
+        name="DesignMadeSimpleAnimation"
+        path="src/components/svg-animations/DesignMadeSimpleAnimation.tsx"
+        note="Design made simple workflow — skeleton loading, field mapping UI, floating selectors, and job progress. Figma frame design-made-simple-animation (4659:9015)."
+      >
+        <div className="overflow-x-auto rounded-radius-md bg-white p-10 lg:p-6">
+          <DesignMadeSimpleAnimation />
         </div>
       </ComponentDemo>
     </GuideSection>

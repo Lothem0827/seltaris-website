@@ -51,16 +51,32 @@ export const siteAssets = {
     toastSuccess: "/images/svg-animations/human-touch/toast-success.png",
     cursor: "/images/svg-animations/human-touch/cursor.png",
   },
-  supportSpecialist: "/images/seltaris-plus/support-specialist.png",
+  altraserviceAnimation: {
+    wholeUi: "/images/svg-animations/altraservice/whole-ui.svg",
+    addresses: "/images/svg-animations/altraservice/addresses.svg",
+    cubes: "/images/svg-animations/altraservice/cubes.svg",
+    gauge: "/images/svg-animations/altraservice/gauge.svg",
+    rocket: "/images/svg-animations/altraservice/rocket.svg",
+    avatarCharlie: "/images/svg-animations/altraservice/avatar-charlie.png",
+  },
+  designMadeSimpleAnimation: {
+    wholeUi: "/images/svg-animations/design-made-simple/whole-ui.svg",
+    jobLogo: "/images/svg-animations/design-made-simple/job-logo.svg",
+    foregroundFloating:
+      "/images/svg-animations/design-made-simple/foreground-floating.svg",
+  },
+  supportSpecialist: "/images/seltaris-plus/support-specialist.webp",
   getStarted: {
     heroLaptop: "/images/get-started/hero-laptop.png",
-    healthCheckReportPreview: "/images/get-started/health-check-report-preview.png",
-    addressValidationVisual: "/images/get-started/address-validation-visual.png",
-    clearPricingVisual: "/images/get-started/clear-pricing-visual.png",
-    reliableVisual: "/images/get-started/reliable-visual.png",
-    millionRecordsVisual: "/images/get-started/million-records-visual.png",
+    healthCheckReportPreview:
+      "/images/get-started/health-check-report-preview.png",
+    addressValidationVisual:
+      "/images/get-started/address-validation-visual.webp",
+    clearPricingVisual: "/images/get-started/clear-pricing-visual.webp",
+    reliableVisual: "/images/get-started/reliable-visual.webp",
+    millionRecordsVisual: "/images/get-started/million-records-visual.webp",
     enterpriseGradeSecurityVisual:
-      "/images/get-started/enterprise-grade-security-visual.png",
+      "/images/get-started/enterprise-grade-security-visual.webp",
     healthCheckIcon: "/images/get-started/health-check-icon.svg",
     accordionPlus: "/images/get-started/accordion-plus.svg",
     accordionMinus: "/images/get-started/accordion-minus.svg",

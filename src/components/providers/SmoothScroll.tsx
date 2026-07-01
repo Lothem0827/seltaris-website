@@ -1,29 +1,57 @@
 "use client";
 
-import { ReactLenis } from "lenis/react";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ComponentType, type ReactNode } from "react";
 import { LENIS_OPTIONS } from "@/lib/lenis-config";
 
 type SmoothScrollProps = {
   children: ReactNode;
 };
 
+type LenisWrapperProps = {
+  children: ReactNode;
+};
+
 export function SmoothScroll({ children }: SmoothScrollProps) {
-  const [enabled, setEnabled] = useState(false);
+  const [LenisWrapper, setLenisWrapper] =
+    useState<ComponentType<LenisWrapperProps> | null>(null);
 
   useEffect(() => {
-    setEnabled(
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    );
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    let cancelled = false;
+
+    const loadLenis = () => {
+      void import("lenis/react").then(({ ReactLenis }) => {
+        if (cancelled) return;
+
+        const Wrapper = ({ children: inner }: LenisWrapperProps) => (
+          <ReactLenis root options={LENIS_OPTIONS}>
+            {inner}
+          </ReactLenis>
+        );
+
+        setLenisWrapper(() => Wrapper);
+      });
+    };
+
+    const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1));
+    const idleId = idle(loadLenis);
+
+    return () => {
+      cancelled = true;
+      if (window.cancelIdleCallback) {
+        window.cancelIdleCallback(idleId as number);
+      } else {
+        window.clearTimeout(idleId as number);
+      }
+    };
   }, []);
 
-  if (!enabled) {
+  if (!LenisWrapper) {
     return children;
   }
 
-  return (
-    <ReactLenis root options={LENIS_OPTIONS}>
-      {children}
-    </ReactLenis>
-  );
+  return <LenisWrapper>{children}</LenisWrapper>;
 }

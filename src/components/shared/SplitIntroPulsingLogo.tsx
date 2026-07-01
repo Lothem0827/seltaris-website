@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { cn } from "@/lib/utils";
 
 const FRAME_SIZE = 315.103;

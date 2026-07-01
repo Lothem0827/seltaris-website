@@ -46,6 +46,7 @@ export const DESIGN_SYSTEM_NAV = [
   { id: "colors", label: "Colors" },
   { id: "typography", label: "Typography" },
   { id: "spacing", label: "Spacing & Layout" },
+  { id: "accessibility", label: "Accessibility" },
   { id: "svg-animations", label: "SVG animations" },
   { id: "components", label: "Components" },
 ] as const;
@@ -62,6 +63,18 @@ export const SVG_ANIMATION_INVENTORY = [
     path: "svg-animations/HumanTouchAnimated.tsx",
     figmaNode: "4592:10201",
     usedOn: "Homepage Human Touch showcase",
+  },
+  {
+    name: "AltraserviceAnimation",
+    path: "svg-animations/AltraserviceAnimation.tsx",
+    figmaNode: "4593:10209",
+    usedOn: "Altraservice hero; address service Performance → Processing technology tab",
+  },
+  {
+    name: "DesignMadeSimpleAnimation",
+    path: "svg-animations/DesignMadeSimpleAnimation.tsx",
+    figmaNode: "4659:9015",
+    usedOn: "Design made simple hero — field mapping workflow demo",
   },
 ] as const;
 
@@ -138,6 +151,23 @@ export const COLOR_TOKENS: ColorToken[] = [
     cssVar: "--color-muted",
     tailwind: "border-muted",
     hex: "#ACACB7",
+    description: "Decorative UI only — not for essential text on white",
+  },
+  {
+    name: "Tab Inactive",
+    group: "Text & Neutrals",
+    cssVar: "--color-tab-inactive",
+    tailwind: "text-tab-inactive",
+    hex: "#5C5C68",
+    description: "Inactive tab labels — meets 4.5:1 on tab surface",
+  },
+  {
+    name: "Focus Ring",
+    group: "Brand",
+    cssVar: "--color-focus-ring",
+    tailwind: "outline-focus-ring",
+    hex: "#4D4DFF",
+    description: "Keyboard focus indicator for interactive elements",
   },
   {
     name: "Border",
@@ -259,6 +289,27 @@ export const LAYOUT_TOKENS: LayoutToken[] = [
   },
 ];
 
+export const MOTION_TOKENS: LayoutToken[] = [
+  {
+    name: "Reveal distance",
+    cssVar: "--motion-reveal-distance",
+    tailwind: ".reveal-up",
+    value: "12px",
+  },
+  {
+    name: "Reveal duration",
+    cssVar: "--motion-reveal-duration",
+    tailwind: ".reveal-up-visible",
+    value: "0.5s",
+  },
+  {
+    name: "Slider image hover scale",
+    cssVar: "--slider-image-hover-scale",
+    tailwind: ".slider-slide-image (group hover)",
+    value: "1.01 (~3px per side on default slide width)",
+  },
+];
+
 export const RADIUS_TOKENS: RadiusToken[] = [
   {
     name: "XS",
@@ -340,6 +391,7 @@ export const COMPONENT_INVENTORY: ComponentInventoryEntry[] = [
   { name: "Container", layer: "atom", path: "atoms/Container.tsx", usedOn: "All page sections" },
   { name: "Eyebrow", layer: "atom", path: "atoms/Eyebrow.tsx", usedOn: "Homepage, feature pages, sliders" },
   { name: "FeatureIcon", layer: "atom", path: "atoms/FeatureIcon.tsx", usedOn: "Feature nav dropdown" },
+  { name: "Image", layer: "atom", path: "atoms/Image.tsx", usedOn: "Site-wide next/image wrapper — preserves aspect ratio when CSS resizes one axis" },
   { name: "IconSurface", layer: "atom", path: "atoms/IconSurface.tsx", usedOn: "Address service pages" },
   { name: "FeaturePageHeading", layer: "atom", path: "atoms/FeaturePageHeading.tsx", usedOn: "All feature pages" },
   { name: "Heading", layer: "atom", path: "atoms/Heading.tsx", usedOn: "Marketing sections & cards" },
@@ -350,8 +402,12 @@ export const COMPONENT_INVENTORY: ComponentInventoryEntry[] = [
   { name: "AddressRefinementCodesPanel", layer: "molecule", path: "features/address-service/components/AddressRefinementCodesPanel.tsx", usedOn: "Address service pages — What's included" },
   { name: "AddressDemo", layer: "molecule", path: "molecules/AddressDemo.tsx", usedOn: "Homepage hero" },
   { name: "CenteredShowcase", layer: "molecule", path: "molecules/CenteredShowcase.tsx", usedOn: "Feature page showcase sections" },
-  { name: "CoreFeatureSlideCard", layer: "molecule", path: "molecules/CoreFeatureSlideCard.tsx", usedOn: "Homepage & Health Check core features" },
+  { name: "CoreFeatureSlideCard", layer: "molecule", path: "molecules/CoreFeatureSlideCard.tsx", usedOn: "Homepage & feature pages core features slider; links to feature pages" },
+  { name: "CursorGlowCard", layer: "molecule", path: "molecules/CursorGlowCard.tsx", usedOn: "ServiceCard, FeatureNavCard, Enterprise nav cards, address service section nav; gradient #3A7CFB → #D03AFB → #FFA04B" },
   { name: "RegionBadge", layer: "molecule", path: "shared/RegionBadge.tsx", usedOn: "Region pills — homepage, pricing cards, datasets bar, get-started" },
+  { name: "RevealOnView", layer: "molecule", path: "shared/RevealOnView.tsx", usedOn: "Homepage scroll reveals, shared layout sections" },
+  { name: "SectionRevealEnhancer", layer: "molecule", path: "shared/SectionRevealEnhancer.tsx", usedOn: "MainContent — site-wide section scroll reveal" },
+  { name: "RevealGroup", layer: "molecule", path: "shared/RevealGroup.tsx", usedOn: "Homepage pricing cards — staggered on-view reveal" },
   { name: "FeatureAccordion", layer: "molecule", path: "shared/FeatureAccordion.tsx", usedOn: "/get-started tab panels" },
   { name: "GetStartedHeader", layer: "molecule", path: "layout/GetStartedHeader.tsx", usedOn: "/get-started" },
   { name: "GetStartedTabSwitch", layer: "molecule", path: "features/get-started/components/GetStartedTabSwitch.tsx", usedOn: "/get-started" },

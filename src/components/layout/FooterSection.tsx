@@ -14,7 +14,7 @@ export function FooterSection() {
           <div className="flex flex-col items-center gap-10">
             <div className="flex flex-col items-center gap-2.5">
               <Eyebrow label="Bulk Data Enhancement Tool" badge="AVAILABLE NOW" />
-              <Heading level="display" className="max-w-4xl">
+              <Heading as="h2" level="display" className="max-w-4xl">
                 Seltaris
               </Heading>
               <Text className="max-w-3xl text-xl font-medium">

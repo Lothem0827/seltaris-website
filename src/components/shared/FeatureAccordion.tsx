@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { useState } from "react";
 import { Text } from "@/components/ui/Text";
 import { siteAssets } from "@/lib/site-assets";
@@ -36,18 +36,27 @@ export function FeatureAccordion({
     <div className={cn("flex w-full flex-col gap-4", className)}>
       {items.map((item) => {
         const isOpen = openId === item.id;
+        const headingId = `accordion-heading-${item.id}`;
+        const panelId = `accordion-panel-${item.id}`;
+
         return (
-          <button
+          <div
             key={item.id}
-            type="button"
-            className="w-full rounded-radius-lg bg-white/80 p-6 text-left backdrop-blur-sm"
-            aria-expanded={isOpen}
-            onClick={() => handleOpenChange(isOpen ? "" : item.id)}
+            className="w-full rounded-radius-lg bg-white/80 p-6 backdrop-blur-sm"
           >
-            <div className="flex w-full items-center justify-between gap-4">
-              <span className="font-display text-xl leading-subheading font-bold text-text">
+            <button
+              type="button"
+              className="flex w-full items-center justify-between gap-4 text-left"
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+              onClick={() => handleOpenChange(isOpen ? "" : item.id)}
+            >
+              <h3
+                id={headingId}
+                className="font-display text-xl leading-subheading font-bold text-text"
+              >
                 {item.title}
-              </span>
+              </h3>
               <Image
                 src={
                   isOpen
@@ -60,13 +69,20 @@ export function FeatureAccordion({
                 className="shrink-0"
                 aria-hidden
               />
+              <span className="sr-only">
+                {isOpen ? "Collapse section" : "Expand section"}
+              </span>
+            </button>
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={headingId}
+              hidden={!isOpen}
+              className="pt-4"
+            >
+              <Text className="text-paragraph">{item.body}</Text>
             </div>
-            {isOpen ? (
-              <Text className="mt-4 whitespace-pre-line text-paragraph">
-                {item.body}
-              </Text>
-            ) : null}
-          </button>
+          </div>
         );
       })}
     </div>

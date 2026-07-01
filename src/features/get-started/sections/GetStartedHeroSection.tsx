@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import {
   SELTARIS_DEMO_URL,
   SELTARIS_LOGIN_URL,

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { MobileEnterpriseNav } from "@/components/layout/MobileEnterpriseNav";
@@ -9,6 +9,7 @@ import { MobileSolutionsNav } from "@/components/layout/MobileSolutionsNav";
 import { Logo } from "@/components/layout/Logo";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
+import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { mainNavLinks } from "@/components/layout/main-nav.content";
 import { SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
@@ -62,7 +63,10 @@ export function MobileNavDrawer({
 }: MobileNavDrawerProps) {
   const [expandedSection, setExpandedSection] = useState<ExpandedSection>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
   const wasOpenRef = useRef(false);
+
+  useFocusTrap(drawerRef, isOpen);
 
   useEffect(() => {
     if (!isOpen) {
@@ -114,6 +118,7 @@ export function MobileNavDrawer({
 
   return (
     <div
+      ref={drawerRef}
       id="mobile-nav-drawer"
       role="dialog"
       aria-modal="true"
@@ -141,7 +146,7 @@ export function MobileNavDrawer({
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto">
-          <nav className="flex flex-col gap-3">
+          <nav aria-label="Mobile" className="flex flex-col gap-3">
             {(expandedSection === null || expandedSection === "solutions") && (
               <div className="flex flex-col gap-3">
                 <AccordionTrigger

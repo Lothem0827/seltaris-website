@@ -30,7 +30,8 @@ const ANIMATION_SEQUENCES: SegmentDef[][] = [
     },
     { text: " ", type: "plain" },
     { initial: "nsw", correct: "NSW", type: "correction", id: "c4" },
-    { text: " 2160", type: "plain" },
+    { text: " ", type: "plain" },
+    { text: "2160", type: "plain" },
   ],
   [
     { text: "02", type: "plain" },
@@ -59,7 +60,8 @@ const ANIMATION_SEQUENCES: SegmentDef[][] = [
   [
     { text: "2 Prospect St, ", type: "plain" },
     { initial: "Bronte", correct: "WAVERLEY", type: "correction", id: "c10" },
-    { text: " NSW 2024", type: "plain" },
+    { text: " ", type: "plain" },
+    { text: "NSW 2024", type: "plain" },
   ],
   [
     { text: "+61 ", type: "plain" },
@@ -134,9 +136,11 @@ function typeInitialText(
       const seg = sequence[segIndex];
       const text = seg.type === "plain" ? seg.text : seg.initial;
       let i = 0;
+      let plainNode: Text | null = null;
 
       function typeChar() {
         if (i >= text.length) {
+          plainNode = null;
           segIndex++;
           nextSeg();
           return;
@@ -152,7 +156,12 @@ function typeInitialText(
           }
           seg.element.textContent = (seg.element.textContent ?? "") + ch;
         } else {
-          display.insertBefore(document.createTextNode(ch), cursor);
+          if (!plainNode) {
+            plainNode = document.createTextNode(ch);
+            display.insertBefore(plainNode, cursor);
+          } else {
+            plainNode.textContent += ch;
+          }
         }
 
         i++;
@@ -280,16 +289,18 @@ export function AddressDemo() {
 
   return (
     <div
-      className="w-address-demo max-w-full rounded-radius-md bg-brand p-0.5 text-left"
+      className="w-address-demo max-w-full text-left"
       aria-live="polite"
       aria-label="Data correction demonstration"
     >
-      <div className="rounded-[calc(var(--radius-md)-2px)] bg-white px-4 py-3">
-        <div
-          ref={displayRef}
-          id="address-display"
-          className="flex h-address-input w-full items-center justify-start overflow-hidden whitespace-nowrap text-left font-label text-body font-semibold text-brand"
-        />
+      <div className="address-demo-input px-5 py-4">
+        <div className="flex h-address-input w-full items-center overflow-hidden">
+          <div
+            ref={displayRef}
+            id="address-display"
+            className="min-w-0 w-full overflow-hidden whitespace-nowrap text-left font-label text-body font-semibold text-brand"
+          />
+        </div>
       </div>
     </div>
   );

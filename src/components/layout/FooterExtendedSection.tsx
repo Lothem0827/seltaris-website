@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Text } from "@/components/ui/Text";
@@ -28,7 +28,7 @@ function FooterLegalDisclosures() {
                       {item.text}
                       <Link
                         href={item.linkHref}
-                        className="text-brand hover:underline"
+                        className="text-brand underline hover:text-brand-dark"
                       >
                         {item.linkLabel}
                       </Link>
@@ -68,7 +68,7 @@ function FooterSiteNav() {
   const [products, platform, ...rest] = footerNavGroups;
 
   return (
-    <div className="bg-white py-14 md:py-12">
+    <nav aria-label="Site" className="bg-white py-14 md:py-12">
       <Container>
         <div className="flex flex-row gap-10 lg:flex-col lg:gap-8">
           <div className="flex min-h-footer-sidebar w-footer-sidebar shrink-0 flex-col justify-between gap-10 lg:min-h-0 lg:w-auto">
@@ -82,7 +82,7 @@ function FooterSiteNav() {
                 alt="GBG"
                 width={100}
                 height={25}
-                className="h-gbg-logo w-auto"
+                style={{ height: "var(--height-gbg-logo)", width: "auto" }}
               />
             </Link>
             <div className="flex flex-wrap items-center gap-6">
@@ -116,7 +116,7 @@ function FooterSiteNav() {
           </div>
         </div>
       </Container>
-    </div>
+    </nav>
   );
 }
 

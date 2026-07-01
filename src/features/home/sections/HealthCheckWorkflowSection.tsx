@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { CenteredShowcase } from "@/components/shared/CenteredShowcase";
 
-const WORKFLOW_SHOWCASE = "/images/home/workflow-showcase.png";
+const WORKFLOW_SHOWCASE = "/images/home/workflow-showcase.webp";
 
 export function HealthCheckWorkflowSection() {
   return (

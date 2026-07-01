@@ -1,16 +1,19 @@
 import { FooterSection } from "@/components/layout/FooterSection";
+import { MainContent } from "@/components/layout/MainContent";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { AltraserviceSliderSection } from "./sections/AltraserviceSliderSection";
-import { DataProtectionShowcaseSection } from "./sections/DataProtectionShowcaseSection";
-import { FeatureSliderSection } from "./sections/FeatureSliderSection";
-import { HealthCheckSliderSection } from "./sections/HealthCheckSliderSection";
-import { HealthCheckWorkflowSection } from "./sections/HealthCheckWorkflowSection";
+import {
+  AltraserviceSliderSection,
+  DataProtectionShowcaseSection,
+  FeatureSliderSection,
+  HealthCheckSliderSection,
+  HealthCheckWorkflowSection,
+  HumanTouchDetailSection,
+  HumanTouchShowcaseSection,
+  PricingSection,
+  SecuritySliderSection,
+} from "./lazy-sections";
 import { HeroSection } from "./sections/HeroSection";
 import { HomeTrustedSection } from "./sections/HomeTrustedSection";
-import { HumanTouchDetailSection } from "./sections/HumanTouchDetailSection";
-import { HumanTouchShowcaseSection } from "./sections/HumanTouchShowcaseSection";
-import { PricingSection } from "./sections/PricingSection";
-import { SecuritySliderSection } from "./sections/SecuritySliderSection";
 import { ServicesSection } from "./sections/ServicesSection";
 import { WhatIsSection } from "./sections/WhatIsSection";
 
@@ -18,7 +21,7 @@ export function HomePage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <MainContent sectionReveal={false}>
         <HeroSection />
         <HomeTrustedSection />
         <WhatIsSection />
@@ -32,7 +35,7 @@ export function HomePage() {
         <HealthCheckWorkflowSection />
         <HealthCheckSliderSection />
         <PricingSection />
-      </main>
+      </MainContent>
       <FooterSection />
     </>
   );

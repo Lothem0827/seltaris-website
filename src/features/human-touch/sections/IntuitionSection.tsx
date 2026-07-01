@@ -7,7 +7,7 @@ export function IntuitionSection() {
   return (
     <section className="pb-section">
       <Container className="flex flex-col gap-16">
-        <BannerImage src="/images/human-touch/intuition-banner.png">
+        <BannerImage src="/images/human-touch/intuition-banner.webp">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
             <FeaturePageHeading as="h2" variant="bannerTitle">
               Human-like intuition

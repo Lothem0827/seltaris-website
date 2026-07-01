@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { GBG_CUSTOMER_SUPPORT_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 

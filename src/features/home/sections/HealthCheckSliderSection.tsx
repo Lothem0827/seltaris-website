@@ -7,7 +7,7 @@ const slides: SliderSlide[] = [
     id: "refinement-codes",
     item: {
       id: "refinement-codes",
-      imageSrc: "/images/home/health-1.svg",
+      imageSrc: "/images/home/health-1.webp",
       description: (
         <>
           <strong>Address refinement codes.</strong> Each code is designed to make
@@ -25,7 +25,7 @@ const slides: SliderSlide[] = [
     id: "accuracy-codes",
     item: {
       id: "accuracy-codes",
-      imageSrc: "/images/home/health-2.svg",
+      imageSrc: "/images/home/health-2.webp",
       description: (
         <>
           <strong>Data accuracy codes.</strong> Seltaris assigns an accuracy code

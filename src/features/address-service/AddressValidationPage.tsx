@@ -84,9 +84,9 @@ const addressValidationPageContent: AddressServicePageContent = {
         label: "Address refinement codes",
         layout: "refinementCodes",
         verifiedImageKey:
-          "/images/health-check-report/verified-address-codes.svg",
+          "/images/health-check-report/verified-address-codes.webp",
         unverifiedImageKey:
-          "/images/health-check-report/unverified-address-codes.svg",
+          "/images/health-check-report/unverified-address-codes.webp",
         verifiedBody: (
           <>
             <p>
@@ -121,7 +121,7 @@ const addressValidationPageContent: AddressServicePageContent = {
         id: "result-file",
         label: "Result file",
         layout: "resultFile",
-        imageKey: "/images/address-validation/result-file-mockup.png",
+        imageKey: "/images/address-validation/result-file-mockup.webp",
         body: (
           <p>
             Once your order is confirmed, an .xlsx file will be available for
@@ -193,7 +193,7 @@ const addressValidationPageContent: AddressServicePageContent = {
           </>
         ),
         learnMoreHref: "/human-touch",
-        heroImageKey: "/images/human-touch/optisource-diagram.svg",
+        heroImageKey: "/images/human-touch/optisource-diagram.webp",
       },
     ],
   },
@@ -225,8 +225,7 @@ const addressValidationPageContent: AddressServicePageContent = {
           </>
         ),
         learnMoreHref: "/altraservice",
-        heroImageKey:
-          "/images/address-quality-health-check-report/performance-composite.png",
+        heroImageKey: "altraserviceAnimated",
       },
       {
         id: "performance-speeds",
@@ -300,7 +299,7 @@ const addressValidationPageContent: AddressServicePageContent = {
           {
             id: "private-keys",
             imageKey:
-              "/images/address-quality-health-check-report/security-private-keys-card.png",
+              "/images/address-quality-health-check-report/security-private-keys-card.webp",
             body: (
               <>
                 <strong>Private Keys.</strong> Your very own unique security key
@@ -314,7 +313,7 @@ const addressValidationPageContent: AddressServicePageContent = {
           {
             id: "encrypted-cloud",
             imageKey:
-              "/images/address-quality-health-check-report/security-encrypted-cloud-card.png",
+              "/images/address-quality-health-check-report/security-encrypted-cloud-card.webp",
             body: (
               <>
                 <strong>Encrypted Cloud Computing.</strong> An exclusive cloud
@@ -365,7 +364,7 @@ const addressValidationPageContent: AddressServicePageContent = {
           </p>
         ),
         learnMoreHref: "/advanced-data-protection",
-        heroImageKey: "/images/health-check-report/standard-data-protection.png",
+        heroImageKey: "/images/health-check-report/standard-data-protection.webp",
       },
     ],
   },

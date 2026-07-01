@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
@@ -293,8 +293,8 @@ function WholeUiStatic() {
         alt=""
         width={975}
         height={492}
+        loading="lazy"
         className="size-full object-cover object-top"
-        priority
       />
     </div>
   );
@@ -494,8 +494,8 @@ function CorrectAddressAnimation({
           <span
             key={segment.id}
             className={cn(
-              showRed && "text-[#ed1c24]",
-              showGreen && "text-[#27a963]",
+              showRed && "text-error",
+              showGreen && "text-[#1a7a45]",
             )}
           >
             {displayText}
@@ -539,11 +539,11 @@ function AnimatedForeground({
               aria-hidden
             />
 
-            <p className="font-body text-[14px] font-medium leading-normal text-[#f03837]">
+            <p className="font-body text-[14px] font-medium leading-normal text-[#b42318]">
               Invalid address!
             </p>
           </div>
-          <ToastCloseIcon className="text-[#f03837]" />
+          <ToastCloseIcon className="text-[#b42318]" />
         </div>
 
         <div className="rounded-md border border-[#e2e2e6] bg-white h-fit p-4">
@@ -598,11 +598,11 @@ function AnimatedForeground({
               aria-hidden
             />
 
-            <p className="font-body text-[14px] font-medium leading-normal text-[#2470de]">
+            <p className="font-body text-[14px] font-medium leading-normal text-[#1a56b4]">
               Repaired address!
             </p>
           </div>
-          <ToastCloseIcon className="text-[#2470de]" />
+          <ToastCloseIcon className="text-[#1a56b4]" />
         </div>
 
         <div className="flex flex-col gap-3">
@@ -625,7 +625,7 @@ function AnimatedForeground({
                         );
                       }
                       return (
-                        <span key={segment.id} className="text-[#27a963]">
+                        <span key={segment.id} className="text-[#1a7a45]">
                           {segment.correct}
                         </span>
                       );

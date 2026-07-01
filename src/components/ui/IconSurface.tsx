@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { cn } from "@/lib/utils";
 
 export type IconSurfaceSize = "feature" | "hero" | "nav";

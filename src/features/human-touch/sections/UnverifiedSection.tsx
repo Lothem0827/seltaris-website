@@ -9,7 +9,7 @@ export function UnverifiedSection() {
   return (
     <section className="pb-section">
       <Container className="flex flex-col gap-20">
-        <BannerImage src="/images/human-touch/beauty-details-banner.png">
+        <BannerImage src="/images/human-touch/beauty-details-banner.webp">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
             <FeaturePageHeading as="h2" variant="bannerTitle">
               The beauty is in the <span className="text-brand">details.</span>

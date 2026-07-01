@@ -3,8 +3,9 @@ import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import { RegionBadge } from "@/components/shared/RegionBadge";
+import { RevealOnView } from "@/components/shared/RevealOnView";
 import { ServiceCard } from "@/components/shared/ServiceCard";
-import { AddressValidateAnimation } from "@/components/svg-animations/AddressValidateAnimation";
+import { ServicesDeferredAnimation } from "@/features/home/components/ServicesDeferredAnimation";
 
 const services = [
   {
@@ -43,11 +44,13 @@ export function ServicesSection() {
     <section className="py-section" id="features">
       <Container className="flex flex-col gap-12">
         <div className="flex flex-row justify-between gap-10 lg:flex-col">
-          <Heading level="h1" className="max-w-md">
-            Services designed to get you cleaning,{" "}
-            <span className="text-brand">fast.</span>
-          </Heading>
-          <div className="max-w-md space-y-2.5">
+          <RevealOnView staggerIndex={0} className="max-w-md">
+            <Heading as="h2" level="h1">
+              Services designed to get you cleaning,{" "}
+              <span className="text-brand">fast.</span>
+            </Heading>
+          </RevealOnView>
+          <RevealOnView staggerIndex={1} className="max-w-md space-y-2.5">
             <Text>
               Seltaris brings together a powerful suite of services designed to
               clean and enrich your organisation&apos;s data. We&apos;re proud
@@ -58,24 +61,30 @@ export function ServicesSection() {
             <Button href="#learn-more" variant="ghost" size="small">
               Learn more
             </Button>
+          </RevealOnView>
+        </div>
+
+        <RevealOnView staggerIndex={2}>
+          <ServicesDeferredAnimation />
+        </RevealOnView>
+
+        <RevealOnView staggerIndex={3}>
+          <div className="grid grid-cols-4 gap-4 xl:grid-cols-2 md:grid-cols-1">
+            {services.map((service) => (
+              <ServiceCard
+                key={service.id}
+                title={service.title}
+                description={service.description}
+                iconSrc={service.iconSrc}
+                comingSoon={service.comingSoon}
+              />
+            ))}
           </div>
-        </div>
+        </RevealOnView>
 
-        <AddressValidateAnimation />
-
-        <div className="grid grid-cols-4 gap-4 xl:grid-cols-2 md:grid-cols-1">
-          {services.map((service) => (
-            <ServiceCard
-              key={service.id}
-              title={service.title}
-              description={service.description}
-              iconSrc={service.iconSrc}
-              comingSoon={service.comingSoon}
-            />
-          ))}
-        </div>
-
-        <AvailableFor />
+        <RevealOnView staggerIndex={4}>
+          <AvailableFor />
+        </RevealOnView>
       </Container>
     </section>
   );
@@ -83,7 +92,7 @@ export function ServicesSection() {
 
 function AvailableFor() {
   return (
-    <div className="flex flex-wrap  gap-6 sm:flex-col sm:gap-4">
+    <div className="flex flex-wrap  gap-6 sm:flex-col sm:gap-4 items-center">
       <Text variant="utility">Available for:</Text>
       <div className="flex flex-wrap items-center gap-3 ">
         <RegionBadge region="australia" className="sm:w-full" />

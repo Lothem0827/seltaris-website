@@ -1,5 +1,6 @@
 import { CoreFeaturesSection } from "@/components/shared/CoreFeaturesSection";
 import { FooterSection } from "@/components/layout/FooterSection";
+import { MainContent } from "@/components/layout/MainContent";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import type { AddressServicePageContent } from "./types";
 import { AddressServicePageProvider } from "./AddressServicePageContext";
@@ -22,7 +23,7 @@ export function AddressServicePage({
   return (
     <AddressServicePageProvider content={content}>
       <SiteHeader />
-      <main>
+      <MainContent>
         <AddressServicePageHero />
         <AddressServicePageSectionNav />
         <AddressServicePageOverviewSection />
@@ -32,7 +33,7 @@ export function AddressServicePage({
         <AddressServicePageSecuritySection />
         <AddressServicePagePricingSection />
         <CoreFeaturesSection />
-      </main>
+      </MainContent>
       <FooterSection />
     </AddressServicePageProvider>
   );

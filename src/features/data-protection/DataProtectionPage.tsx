@@ -1,8 +1,8 @@
 import { CoreFeaturesSection } from "@/components/shared/CoreFeaturesSection";
 import { FooterSection } from "@/components/layout/FooterSection";
+import { MainContent } from "@/components/layout/MainContent";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { CloudIntroSection } from "./sections/CloudIntroSection";
-import { DesignTeaserSection } from "./sections/DesignTeaserSection";
 import { EncryptedCloudCardSection } from "./sections/EncryptedCloudCardSection";
 import { HeroSection } from "./sections/HeroSection";
 import { HowItWorksSection } from "./sections/HowItWorksSection";
@@ -13,7 +13,7 @@ export function DataProtectionPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <MainContent>
         <HeroSection />
         <EncryptedCloudCardSection />
         <CloudIntroSection />
@@ -21,8 +21,7 @@ export function DataProtectionPage() {
         <PrivateKeysCardSection />
         <PrivateKeysSection />
         <CoreFeaturesSection />
-        <DesignTeaserSection />
-      </main>
+      </MainContent>
       <FooterSection />
     </>
   );

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 
 type LogoGridProps = {
   rows: readonly (readonly string[])[];
@@ -6,7 +6,7 @@ type LogoGridProps = {
 
 export function LogoGrid({ rows }: LogoGridProps) {
   return (
-    <div
+    <section
       className="flex w-full max-w-5xl flex-col gap-12 md:gap-10"
       aria-label="Trusted company logos"
     >
@@ -25,12 +25,12 @@ export function LogoGrid({ rows }: LogoGridProps) {
                 alt=""
                 fill
                 className="object-contain invert opacity-35"
-                sizes="128px"
+                sizes="(max-width: 640px) 112px, 128px"
               />
             </div>
           ))}
         </div>
       ))}
-    </div>
+    </section>
   );
 }

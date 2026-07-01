@@ -1,6 +1,7 @@
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
+import { RevealOnView } from "@/components/shared/RevealOnView";
 import { SplitIntroPulsingLogo } from "@/components/shared/SplitIntroPulsingLogo";
 import { siteAssets } from "@/lib/site-assets";
 import type { SplitIntroContent, SplitIntroLogoKey } from "@/lib/types/slider";
@@ -33,15 +34,22 @@ export function SplitIntro({
       )}
     >
       <div className="max-w-xl shrink-0 space-y-6">
-        <Eyebrow label={eyebrow} />
-        <Heading level="h1">{heading}</Heading>
-        <Text>{body}</Text>
+        <RevealOnView staggerIndex={0}>
+          <Eyebrow label={eyebrow} />
+        </RevealOnView>
+        <RevealOnView staggerIndex={1}>
+          <Heading as="h2" level="h1">{heading}</Heading>
+        </RevealOnView>
+        <RevealOnView staggerIndex={2}>
+          <Text>{body}</Text>
+        </RevealOnView>
       </div>
-      <SplitIntroPulsingLogo
-        logoSrc={splitIntroLogos[logoKey]}
-        logoAlt={logoAlt}
-        className="self-center"
-      />
+      <RevealOnView staggerIndex={3} className="self-center">
+        <SplitIntroPulsingLogo
+          logoSrc={splitIntroLogos[logoKey]}
+          logoAlt={logoAlt}
+        />
+      </RevealOnView>
     </div>
   );
 }

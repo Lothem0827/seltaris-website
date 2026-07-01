@@ -7,7 +7,7 @@ const slides: SliderSlide[] = [
     id: "private-keys",
     item: {
       id: "private-keys",
-      imageSrc: "/images/home/security-1.png",
+      imageSrc: "/images/home/security-1.webp",
       description: (
         <>
           <strong>Private Keys.</strong> Your very own unique security key —
@@ -24,7 +24,7 @@ const slides: SliderSlide[] = [
     id: "encrypted-cloud",
     item: {
       id: "encrypted-cloud",
-      imageSrc: "/images/home/security-2.png",
+      imageSrc: "/images/home/security-2.webp",
       description: (
         <>
           <strong>Encrypted Cloud Computing.</strong> An exclusive cloud security

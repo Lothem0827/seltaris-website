@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { IconSurface } from "@/components/ui/IconSurface";
+import { DesignMadeSimpleAnimation } from "@/components/svg-animations/DesignMadeSimpleAnimation";
 
 export function HeroSection() {
   return (
@@ -27,16 +27,7 @@ export function HeroSection() {
         </div>
 
         <div className="relative w-full max-w-content-wide">
-          <div className="relative aspect-[1200/673] w-full lg:aspect-[3/2] sm:aspect-[4/3]">
-            <Image
-              src="/images/design-made-simple/hero-mockup.png"
-              alt="Seltaris interface"
-              fill
-              className="object-contain"
-              sizes="1200px"
-              priority
-            />
-          </div>
+          <DesignMadeSimpleAnimation />
         </div>
       </Container>
     </section>

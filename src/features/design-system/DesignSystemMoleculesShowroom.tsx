@@ -236,7 +236,7 @@ export function DesignSystemMoleculesShowroom() {
             path="src/components/molecules/ImageSlideCard.tsx"
           >
             <ImageSlideCard
-              imageSrc="/images/home/enhance-existing-data-1.svg"
+              imageSrc="/images/home/enhance-existing-data-1.webp"
               title="Slide title"
               description="Supporting copy for carousel slides across feature pages."
             />
@@ -247,7 +247,7 @@ export function DesignSystemMoleculesShowroom() {
             path="src/features/home/components/ImageTextCard.tsx"
           >
             <ImageTextCard
-              imageSrc="/images/home/quality-dataset-1.svg"
+              imageSrc="/images/home/quality-dataset-1.webp"
               badge="Quality codes"
             >
               Explains transformation breakdown with badge and image.
@@ -319,7 +319,7 @@ export function DesignSystemMoleculesShowroom() {
             <CenteredShowcase
               title="Showcase headline"
               subtitle="Optional subtitle for feature page hero sections"
-              imageSrc="/images/home/platform-showcase.png"
+              imageSrc="/images/home/platform-showcase.webp"
             />
           </ComponentDemo>
 
@@ -399,7 +399,9 @@ export function DesignSystemMoleculesShowroom() {
             name="SliderNavButtons"
             path="src/components/shared/SliderNavButtons.tsx"
           >
-            <SliderNavButtons prevRef={prevRef} nextRef={nextRef} />
+            <div className="flex w-full">
+              <SliderNavButtons prevRef={prevRef} nextRef={nextRef} />
+            </div>
           </ComponentDemo>
 
           <ComponentDemo

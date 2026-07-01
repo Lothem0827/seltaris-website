@@ -2,7 +2,9 @@ import {
   DesignSystemNav,
   DesignSystemNavMobile,
 } from "./DesignSystemNav";
+import { MainContent } from "@/components/layout/MainContent";
 import {
+  DesignSystemAccessibilitySection,
   DesignSystemColorsSection,
   DesignSystemComponentsSection,
   DesignSystemOverviewSection,
@@ -23,7 +25,7 @@ export function DesignSystemPage() {
           <DesignSystemNav />
         </aside>
 
-        <main className="min-w-0 flex-1 overflow-y-auto">
+        <MainContent className="min-w-0 flex-1 overflow-y-auto" sectionReveal={false}>
           <div className="px-container-padding py-10 lg:py-8">
             <DesignSystemNavMobile />
 
@@ -33,11 +35,12 @@ export function DesignSystemPage() {
               <DesignSystemColorsSection />
               <DesignSystemTypographySection />
               <DesignSystemSpacingSection />
+              <DesignSystemAccessibilitySection />
               <DesignSystemSvgAnimationsSection />
               <DesignSystemComponentsSection />
             </div>
           </div>
-        </main>
+        </MainContent>
       </div>
     </div>
   );

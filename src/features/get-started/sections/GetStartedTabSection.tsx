@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { useEffect, useState } from "react";
 import { FeatureAccordion } from "@/components/shared/FeatureAccordion";
 import { PricingCard } from "@/components/shared/PricingCard";
@@ -16,7 +16,8 @@ import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 import { GetStartedServiceHeader } from "../components/GetStartedServicePanel";
 import { GetStartedServicePanel } from "../components/GetStartedServicePanel";
-import { GetStartedTabSwitch } from "../components/GetStartedTabSwitch";
+import { GetStartedTabSwitch, GET_STARTED_TABS_ID } from "../components/GetStartedTabSwitch";
+import { getTabId, getTabPanelId } from "@/components/shared/TabGroup";
 
 const GET_STARTED_PRICING_SECTION_ID = "get-started-pricing";
 /** Main nav bar height in GetStartedHeader — sticky tabs sit below it. */
@@ -95,7 +96,12 @@ export function GetStartedTabSection() {
         </Container>
       </div>
 
-      <Container className="mt-12 lg:mt-8">
+      <div
+        role="tabpanel"
+        id={getTabPanelId(GET_STARTED_TABS_ID, activeIndex)}
+        aria-labelledby={getTabId(GET_STARTED_TABS_ID, activeIndex)}
+      >
+        <Container className="mt-12 lg:mt-8">
         <GetStartedServicePanel className="w-full">
           <GetStartedServiceHeader
             iconSrc={panel.serviceIcon}
@@ -172,6 +178,7 @@ export function GetStartedTabSection() {
           )}
         </GetStartedServicePanel>
       </Container>
+      </div>
     </section>
   );
 }

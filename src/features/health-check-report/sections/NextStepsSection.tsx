@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { Container } from "@/components/ui/Container";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { Text } from "@/components/ui/Text";

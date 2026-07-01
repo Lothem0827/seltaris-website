@@ -8,6 +8,7 @@ import type { SlideItem } from "@/lib/types/slider";
 import { cn } from "@/lib/utils";
 import {
   useEffect,
+  useRef,
   useState,
   type ReactNode,
   type RefObject,
@@ -27,7 +28,13 @@ type ContentSliderProps = {
   /** Adds left padding so the track aligns with container content. */
   bleed?: boolean;
   onOverflowChange?: (hasOverflow: boolean) => void;
+  /** Stagger reveal each slide when the slider enters the viewport. */
+  staggerSlides?: boolean;
 };
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
 
 function resolveImageSrc(item: SlideItem): string {
   return item.imageSrc ?? "";
@@ -64,7 +71,7 @@ function bindNavigation(
   swiper.navigation.update();
 }
 
-function renderSlide(slide: SliderSlide) {
+function renderSlide(slide: SliderSlide, index: number) {
   switch (slide.type) {
     case "image":
       return (
@@ -73,11 +80,83 @@ function renderSlide(slide: SliderSlide) {
           title={slide.item.title}
           description={slide.item.description}
           width={slide.item.width}
+          priority={index === 0}
+          loading={index === 0 ? "eager" : "lazy"}
         />
       );
     case "custom":
       return slide.content;
   }
+}
+
+function useSlideStagger(enabled: boolean) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(!enabled);
+
+  useEffect(() => {
+    if (!enabled) {
+      setVisible(true);
+      return;
+    }
+
+    if (prefersReducedMotion()) {
+      setVisible(true);
+      return;
+    }
+
+    const element = ref.current;
+    if (!element) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [enabled]);
+
+  return { ref, visible };
+}
+
+function SlideStaggerItem({
+  index,
+  visible,
+  staggerSlides,
+  children,
+}: {
+  index: number;
+  visible: boolean;
+  staggerSlides: boolean;
+  children: ReactNode;
+}) {
+  if (!staggerSlides) {
+    return <>{children}</>;
+  }
+
+  const delayClass =
+    visible && index > 0
+      ? `reveal-up-delay-${Math.min(index, 6)}`
+      : undefined;
+
+  return (
+    <div
+      className={cn(
+        "reveal-up",
+        visible && "reveal-up-visible",
+        delayClass,
+      )}
+    >
+      {children}
+    </div>
+  );
 }
 
 /** Horizontal slide track with optional arrow navigation. */
@@ -88,9 +167,12 @@ export function ContentSlider({
   className,
   bleed = false,
   onOverflowChange,
+  staggerSlides = true,
 }: ContentSliderProps) {
   const isCarousel = slides.length > 1;
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { ref: staggerRef, visible: staggerVisible } = useSlideStagger(staggerSlides);
 
   useEffect(() => {
     onOverflowChange?.(isCarousel);
@@ -106,14 +188,32 @@ export function ContentSlider({
     if (!slide) return null;
 
     return (
-      <div className={cn(bleed && "slider-track-bleed", className)}>
-        {renderSlide(slide)}
+      <div
+        ref={staggerRef}
+        className={cn(bleed && "slider-track-bleed", className)}
+      >
+        <SlideStaggerItem
+          index={0}
+          visible={staggerVisible}
+          staggerSlides={staggerSlides}
+        >
+          {renderSlide(slide, 0)}
+        </SlideStaggerItem>
       </div>
     );
   }
 
   return (
-    <div className={cn(bleed && "slider-track-bleed", className)}>
+    <div
+      ref={staggerRef}
+      className={cn(bleed && "slider-track-bleed", className)}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Content slides"
+    >
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        Slide {activeIndex + 1} of {slides.length}
+      </p>
       <Swiper
         modules={[Navigation]}
         slidesPerView="auto"
@@ -133,13 +233,20 @@ export function ContentSlider({
           instance.navigation?.update();
         }}
         onSlideChange={(instance) => {
+          setActiveIndex(instance.activeIndex);
           instance.navigation?.update();
         }}
         className="overflow-visible!"
       >
-        {slides.map((slide) => (
+        {slides.map((slide, index) => (
           <SwiperSlide key={slide.id} className="w-auto! shrink-0">
-            {renderSlide(slide)}
+            <SlideStaggerItem
+              index={index}
+              visible={staggerVisible}
+              staggerSlides={staggerSlides}
+            >
+              {renderSlide(slide, index)}
+            </SlideStaggerItem>
           </SwiperSlide>
         ))}
       </Swiper>

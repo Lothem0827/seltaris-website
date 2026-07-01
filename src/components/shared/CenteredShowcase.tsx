@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
+import { RevealOnView } from "@/components/shared/RevealOnView";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import { cn } from "@/lib/utils";
@@ -34,15 +35,16 @@ export function CenteredShowcase({
     <div
       className={cn("flex flex-col items-center gap-12 text-center", className)}
     >
-      <div className="mx-auto max-w-3xl space-y-4">
+      <RevealOnView staggerIndex={0} className="mx-auto max-w-3xl space-y-4">
         <Heading level="sectionDisplay">{title}</Heading>
         {subtitle ? (
           <Text variant="body" className="text-subheading font-semibold">
             {subtitle}
           </Text>
         ) : null}
-      </div>
-      <div
+      </RevealOnView>
+      <RevealOnView
+        staggerIndex={1}
         className={cn(
           "relative w-full max-w-container overflow-hidden rounded-radius-lg",
           showcaseHeights[imageSize],
@@ -55,7 +57,7 @@ export function CenteredShowcase({
           className="object-contain"
           sizes="(max-width: 768px) 100vw, 1200px"
         />
-      </div>
+      </RevealOnView>
     </div>
   );
 }

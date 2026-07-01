@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { Container } from "@/components/ui/Container";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { IconSurface } from "@/components/ui/IconSurface";
@@ -31,7 +31,7 @@ export function HeroSection() {
         <div className="relative w-full max-w-content-wide">
           <div className="relative aspect-auto h-visual-data w-full lg:aspect-[3/2] lg:h-auto sm:aspect-[4/3]">
             <Image
-              src="/images/data-protection/hero-banner.png"
+              src="/images/data-protection/hero-banner.webp"
               alt="Advanced Data Protection"
               fill
               className="object-contain"

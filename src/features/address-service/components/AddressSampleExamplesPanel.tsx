@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { Text } from "@/components/ui/Text";
 import type { AddressServicePageSampleExamplesPanel } from "../types";
 

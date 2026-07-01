@@ -16,7 +16,7 @@ export function OptiSourceSection() {
         </div>
 
         <FeatureImage
-          src="/images/human-touch/optisource-diagram.svg"
+          src="/images/human-touch/optisource-diagram.webp"
           className="min-h-content-block-xl lg:min-h-content-block-lg"
         />
 

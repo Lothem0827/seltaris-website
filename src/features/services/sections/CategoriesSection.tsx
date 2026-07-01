@@ -312,9 +312,7 @@ function CategorySection({ category }: { category: ServiceCategory }) {
             <Text>{category.intro}</Text>
           </div>
 
-          <div className="flex justify-end">
-            <SliderNavButtons {...navButtonProps} />
-          </div>
+          <SliderNavButtons {...navButtonProps} />
         </div>
 
         <ContentSlider

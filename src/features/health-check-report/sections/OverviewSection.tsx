@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
@@ -54,7 +54,7 @@ export function OverviewSection() {
         <div className="overflow-hidden rounded-radius-panel border-4 border-brand">
           <div className="relative aspect-[3/2] w-full">
             <Image
-              src="/images/health-check-report/overview-photo.png"
+              src="/images/health-check-report/overview-photo.webp"
               alt="Team reviewing data quality report"
               fill
               className="object-cover"

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { RegionBadge } from "@/components/shared/RegionBadge";
 import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -32,7 +32,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
   {
     id: "health-check",
     iconSrc: "/images/seltaris-plus/health-check-filled.svg",
-    imageSrc: "/images/seltaris-plus/health-check-visual.png",
+    imageSrc: "/images/seltaris-plus/health-check-visual.webp",
     backgroundTone: "health",
     heading: "Health Check Report",
     body: "Get the full picture of your existing data.",
@@ -41,7 +41,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
   {
     id: "data-protection",
     iconSrc: "/images/seltaris-plus/advanced-data-protection-filled.svg",
-    imageSrc: "/images/seltaris-plus/data-protection-visual.png",
+    imageSrc: "/images/seltaris-plus/data-protection-visual.webp",
     backgroundTone: "protection",
     heading: (
       <>
@@ -56,7 +56,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
   {
     id: "shared-licensing",
     iconSrc: "/images/seltaris-plus/shared-licensing.svg",
-    imageSrc: "/images/seltaris-plus/shared-licensing-visual.png",
+    imageSrc: "/images/seltaris-plus/shared-licensing-visual.webp",
     backgroundTone: "licensing",
     heading: "Shared licensing",
     body: "Sharing is caring. So everyone can start repairing.",
@@ -65,7 +65,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
   {
     id: "volume-discounts",
     iconSrc: "/images/seltaris-plus/volume-discounts.svg",
-    imageSrc: "/images/seltaris-plus/volume-discounts-visual.png",
+    imageSrc: "/images/seltaris-plus/volume-discounts-visual.webp",
     backgroundTone: "volume",
     heading: "Volume discounts",
     body: "Buying big volumes of clean data? You deserve some credit.",

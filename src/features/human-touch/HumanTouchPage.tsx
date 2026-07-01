@@ -1,6 +1,7 @@
+import { CoreFeaturesSection } from "@/components/shared/CoreFeaturesSection";
 import { FooterSection } from "@/components/layout/FooterSection";
+import { MainContent } from "@/components/layout/MainContent";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { AltraserviceTeaserSection } from "./sections/AltraserviceTeaserSection";
 import { GeographicSection } from "./sections/GeographicSection";
 import { HeroSection } from "./sections/HeroSection";
 import { IntuitionSection } from "./sections/IntuitionSection";
@@ -12,15 +13,15 @@ export function HumanTouchPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <MainContent>
         <HeroSection />
         <IntuitionSection />
         <SmallDetailsSection />
         <GeographicSection />
         <UnverifiedSection />
         <OptiSourceSection />
-        <AltraserviceTeaserSection />
-      </main>
+        <CoreFeaturesSection />
+      </MainContent>
       <FooterSection />
     </>
   );

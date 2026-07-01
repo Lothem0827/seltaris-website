@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { IconSurface } from "@/components/ui/IconSurface";
 import { Text } from "@/components/ui/Text";
-import { HumanTouchAnimated } from "@/components/svg-animations/HumanTouchAnimated";
+import { LazyHumanTouchAnimated } from "@/components/lazy/client-modules";
 
 export function HeroSection() {
   return (
@@ -31,7 +31,7 @@ export function HeroSection() {
         </div>
 
         <div className="relative w-full max-w-container">
-          <HumanTouchAnimated />
+          <LazyHumanTouchAnimated />
         </div>
 
         <div className="grid w-full max-w-container grid-cols-2 items-start gap-16 lg:grid-cols-1 lg:gap-12 sm:gap-6">

@@ -1,5 +1,6 @@
 import { CoreFeaturesSection } from "@/components/shared/CoreFeaturesSection";
 import { FooterSection } from "@/components/layout/FooterSection";
+import { MainContent } from "@/components/layout/MainContent";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { HeroSection } from "./sections/HeroSection";
 import { NextStepsSection } from "./sections/NextStepsSection";
@@ -9,12 +10,12 @@ export function HealthCheckReportPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <MainContent>
         <HeroSection />
         <OverviewSection />
         <NextStepsSection />
         <CoreFeaturesSection />
-      </main>
+      </MainContent>
       <FooterSection />
     </>
   );

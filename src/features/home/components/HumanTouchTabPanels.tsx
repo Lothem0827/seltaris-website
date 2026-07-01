@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { TabGroup } from "@/components/shared/TabGroup";
+import { TabGroup, getTabId, getTabPanelId } from "@/components/shared/TabGroup";
 import { cn } from "@/lib/utils";
 import { ImageTextCard } from "./ImageTextCard";
+
+const HUMAN_TOUCH_TABS_ID = "human-touch-detail-tabs";
 
 const humanTouchTabs = [
   "Enhance existing data",
@@ -17,7 +19,7 @@ const humanTouchTabPanels = [
     cards: [
       {
         id: "formatting",
-        imageSrc: "/images/home/enhance-existing-data-1.svg",
+        imageSrc: "/images/home/enhance-existing-data-1.webp",
         body: (
           <>
             <strong>Correct formatting and missing details.</strong> See an
@@ -30,7 +32,7 @@ const humanTouchTabPanels = [
       },
       {
         id: "advanced",
-        imageSrc: "/images/home/enhance-existing-data-2.svg",
+        imageSrc: "/images/home/enhance-existing-data-2.webp",
         body: (
           <>
             <strong>Advanced address handling.</strong> Not all addresses are
@@ -43,7 +45,7 @@ const humanTouchTabPanels = [
       },
       {
         id: "vanity",
-        imageSrc: "/images/home/enhance-existing-data-3.svg",
+        imageSrc: "/images/home/enhance-existing-data-3.webp",
         body: (
           <>
             <strong>Vanity Suburbs. </strong>Swapping a suburb for a more
@@ -60,7 +62,7 @@ const humanTouchTabPanels = [
     cards: [
       {
         id: "sources",
-        imageSrc: "/images/home/quality-dataset-1.svg",
+        imageSrc: "/images/home/quality-dataset-1.webp",
         body: (
           <>
             <strong>Multiple verified sources.</strong> When it comes to
@@ -75,7 +77,7 @@ const humanTouchTabPanels = [
       },
       {
         id: "anz",
-        imageSrc: "/images/home/quality-dataset-2.svg",
+        imageSrc: "/images/home/quality-dataset-2.webp",
         body: (
           <>
             <strong>Australia & New Zealand Data.</strong> In Australia, we have
@@ -89,7 +91,7 @@ const humanTouchTabPanels = [
       },
       {
         id: "international",
-        imageSrc: "/images/home/quality-dataset-3.svg",
+        imageSrc: "/images/home/quality-dataset-3.webp",
         body: (
           <>
             <strong>International data.</strong> We partner with the leading
@@ -105,7 +107,7 @@ const humanTouchTabPanels = [
     cards: [
       {
         id: "field-corrections",
-        imageSrc: "/images/home/unverified-address-enhancement-1.svg",
+        imageSrc: "/images/home/unverified-address-enhancement-1.webp",
         badge: "NEW",
         body: (
           <>
@@ -121,7 +123,7 @@ const humanTouchTabPanels = [
       },
       {
         id: "standardisation",
-        imageSrc: "/images/home/unverified-address-enhancement-2.svg",
+        imageSrc: "/images/home/unverified-address-enhancement-2.webp",
         badge: "NEW",
         body: (
           <>
@@ -150,18 +152,26 @@ export function HumanTouchTabPanels({ className }: HumanTouchTabPanelsProps) {
   return (
     <div className={cn("flex w-full flex-col", className)}>
       <TabGroup
+        idPrefix={HUMAN_TOUCH_TABS_ID}
         tabs={humanTouchTabs}
         activeIndex={activeTab}
         onChange={setActiveTab}
         className="mb-12 sm:order-last"
       />
 
-      <div className="mb-12 grid grid-cols-3 items-start gap-6 lg:grid-cols-1">
-        {panel.cards.map((card) => (
+      <div
+        role="tabpanel"
+        id={getTabPanelId(HUMAN_TOUCH_TABS_ID, activeTab)}
+        aria-labelledby={getTabId(HUMAN_TOUCH_TABS_ID, activeTab)}
+        className="mb-12 grid grid-cols-3 items-start gap-6 lg:grid-cols-1"
+      >
+        {panel.cards.map((card, cardIndex) => (
           <ImageTextCard
             key={card.id}
             imageSrc={card.imageSrc}
             badge={"badge" in card ? card.badge : undefined}
+            loading="lazy"
+            imageAlt={`${humanTouchTabs[activeTab]} — card ${cardIndex + 1}`}
           >
             {card.body}
           </ImageTextCard>

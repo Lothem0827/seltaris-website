@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { CenteredShowcase } from "@/components/shared/CenteredShowcase";
 
-const PLATFORM_SHOWCASE = "/images/home/platform-showcase.png";
+const PLATFORM_SHOWCASE = "/images/home/platform-showcase.webp";
 
 export function DataProtectionShowcaseSection() {
   return (

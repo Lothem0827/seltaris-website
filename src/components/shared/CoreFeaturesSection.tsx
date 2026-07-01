@@ -15,10 +15,10 @@ import {
 
 const CORE_FEATURE_VISUALS = {
   humanTouchVisual: "/images/core-features/human-touch-visual.png",
-  altraserviceVisual: "/images/core-features/altraservice-visual.png",
-  dataProtectionVisual: "/images/core-features/data-protection-visual.png",
-  designVisual: "/images/core-features/design-visual.png",
-  healthCheckVisual: "/images/core-features/health-check-visual.png",
+  altraserviceVisual: "/images/core-features/altraservice-visual.webp",
+  dataProtectionVisual: "/images/core-features/data-protection-visual.webp",
+  designVisual: "/images/core-features/design-visual.webp",
+  healthCheckVisual: "/images/core-features/health-check-visual.webp",
 } as const;
 
 const features = [
@@ -35,7 +35,7 @@ const features = [
     ),
     body: "At the core of Seltaris lies our intuitive Human Touch Technology. This powerful software features large, highly capable intelligence models specifically tailored to read and process data as efficiently as humans do.",
     href: "/human-touch",
-    cta: "Learn more",
+    cta: "Learn more about Human Touch",
   },
   {
     id: "altraservice",
@@ -50,7 +50,7 @@ const features = [
     ),
     body: "Feel the need. The need for processing speed. Our latest step in pushing the boundaries of batch processing data, this time in the direction of fast processing speeds.",
     href: "/altraservice",
-    cta: "Learn more",
+    cta: "Learn more about Altraservice",
   },
   {
     id: "data-protection",
@@ -65,7 +65,7 @@ const features = [
     ),
     body: "Seltaris is meticulously designed to protect your data at every step. Integrated into the core of our secure cloud environment, it utilises advanced encryption processes to handle your data without ever storing it unencrypted.",
     href: "/advanced-data-protection",
-    cta: "Learn more",
+    cta: "Learn more about Advanced Data Protection",
   },
   {
     id: "design",
@@ -74,7 +74,7 @@ const features = [
     heading: "Innovation for all.",
     body: "The best innovations are built for everyone. We have always believed that data quality software should be simple.",
     href: "/design-made-simple",
-    cta: "Learn more",
+    cta: "Learn more about Design made simple",
   },
   {
     id: "health-check",
@@ -83,7 +83,7 @@ const features = [
     heading: "Data quality at its finest detail.",
     body: "This Health Check Report delivers a clear and comprehensive assessment of your submitted address data delivered in an easy to read PDF, analysed through the Seltaris service.",
     href: "/address-quality-health-check-report",
-    cta: "Learn more",
+    cta: "Learn more about Health Check Report",
   },
 ] as const;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { useEffect, useRef, useState } from "react";
@@ -9,6 +9,7 @@ import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
 import { MainNav } from "@/components/layout/MainNav";
 import { MobileNavDrawer } from "@/components/layout/MobileNavDrawer";
+import { SkipLink } from "@/components/layout/SkipLink";
 import { Text } from "@/components/ui/Text";
 import { SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
@@ -63,6 +64,7 @@ export function SiteHeader() {
 
   return (
     <header ref={headerRef} className="sticky top-0 z-50 w-full bg-white">
+      <SkipLink />
       <div
         className={cn(
           "overflow-hidden bg-brand-light transition-[max-height,opacity] duration-300 ease-in-out",
@@ -86,7 +88,10 @@ export function SiteHeader() {
                 style={{ height: 14, width: "auto" }}
               />
             </Link>
-            <nav className="flex items-center gap-6 font-label text-label uppercase tracking-wide text-text lg:hidden">
+            <nav
+              aria-label="GBG corporate"
+              className="flex items-center gap-6 font-label text-label uppercase tracking-wide text-text lg:hidden"
+            >
               <Link href="#about" tabIndex={isAtTop ? undefined : -1}>
                 About us
               </Link>

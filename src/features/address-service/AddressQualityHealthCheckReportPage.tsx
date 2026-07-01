@@ -88,7 +88,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
     ),
     rightBody:
       "These improvements are designed to strengthen the quality, deliverability, and reliability of your address data ensuring it is fully prepared for use across mailing, logistics, and compliance systems.",
-    heroMockupSrc: "/images/health-check-report/hero-mockup.png",
+    heroMockupSrc: "/images/health-check-report/hero-mockup.webp",
     heroMockupAlt: "Health Check Report preview on MacBook",
   },
   whatsIncludedSection: {
@@ -122,9 +122,9 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         label: "Address refinement codes",
         layout: "refinementCodes",
         verifiedImageKey:
-          "/images/health-check-report/verified-address-codes.svg",
+          "/images/health-check-report/verified-address-codes.webp",
         unverifiedImageKey:
-          "/images/health-check-report/unverified-address-codes.svg",
+          "/images/health-check-report/unverified-address-codes.webp",
         verifiedBody: (
           <>
             <p>
@@ -159,7 +159,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         id: "data-accuracy-codes",
         label: "Data accuracy codes",
         layout: "dataAccuracyCodes",
-        imageKey: "/images/health-check-report/data-accuracy-codes.png",
+        imageKey: "/images/health-check-report/data-accuracy-codes.webp",
         body: (
           <>
             <p>
@@ -181,7 +181,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         id: "sample-examples",
         label: "Sample examples",
         layout: "sampleExamples",
-        imageKey: "/images/health-check-report/sample-examples.png",
+        imageKey: "/images/health-check-report/sample-examples.webp",
         body: (
           <>
             <p>
@@ -267,7 +267,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
           </>
         ),
         learnMoreHref: "/human-touch",
-        heroImageKey: "/images/human-touch/optisource-diagram.svg",
+        heroImageKey: "/images/human-touch/optisource-diagram.webp",
       },
     ],
   },
@@ -305,8 +305,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
           </>
         ),
         learnMoreHref: "/altraservice",
-        heroImageKey:
-          "/images/address-quality-health-check-report/performance-composite.png",
+        heroImageKey: "altraserviceAnimated",
       },
       {
         id: "performance-speeds",
@@ -387,7 +386,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
           {
             id: "private-keys",
             imageKey:
-              "/images/address-quality-health-check-report/security-private-keys-card.png",
+              "/images/address-quality-health-check-report/security-private-keys-card.webp",
             body: (
               <>
                 <strong>Private Keys.</strong> Your very own unique security key —
@@ -399,7 +398,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
           {
             id: "encrypted-cloud",
             imageKey:
-              "/images/address-quality-health-check-report/security-encrypted-cloud-card.png",
+              "/images/address-quality-health-check-report/security-encrypted-cloud-card.webp",
             body: (
               <>
                 <strong>Encrypted Cloud Computing™.</strong> An exclusive cloud
@@ -446,7 +445,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
           </p>
         ),
         learnMoreHref: "/advanced-data-protection",
-        heroImageKey: "/images/health-check-report/standard-data-protection.png",
+        heroImageKey: "/images/health-check-report/standard-data-protection.webp",
       },
     ],
   },

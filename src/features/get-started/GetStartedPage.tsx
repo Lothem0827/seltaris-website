@@ -1,5 +1,6 @@
 import { GetStartedHeader } from "@/components/layout/GetStartedHeader";
 import { FooterSection } from "@/components/layout/FooterSection";
+import { MainContent } from "@/components/layout/MainContent";
 import { GetStartedHeroSection } from "./sections/GetStartedHeroSection";
 import { GetStartedPricingSection } from "./sections/GetStartedPricingSection";
 import { GetStartedTabSection } from "./sections/GetStartedTabSection";
@@ -9,12 +10,12 @@ export function GetStartedPage() {
   return (
     <>
       <GetStartedHeader />
-      <main>
+      <MainContent>
         <GetStartedHeroSection />
         <GetStartedTrustedSection />
         <GetStartedTabSection />
         <GetStartedPricingSection />
-      </main>
+      </MainContent>
       <FooterSection />
     </>
   );

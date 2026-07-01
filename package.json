@@ -2,10 +2,21 @@
   "name": "seltaris-website-clean",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "chrome >= 90",
+    "edge >= 90",
+    "firefox >= 90",
+    "safari >= 14"
+  ],
   "scripts": {
     "dev": "node server.mjs",
     "dev:next": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/fix-static-export.mjs",
+    "preview:static": "npx --yes serve out",
+    "analyze": "node scripts/run-analyze.mjs",
+    "compress-images": "node scripts/compress-images.mjs",
+    "psi": "node scripts/run-psi.mjs",
+    "test:a11y": "playwright test e2e/a11y.spec.ts",
     "start": "next start",
     "lint": "eslint"
   },
@@ -17,6 +28,9 @@
     "swiper": "^12.1.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@next/bundle-analyzer": "^16.2.9",
+    "@playwright/test": "^1.61.1",
     "@react-dev-inspector/babel-plugin": "^2.0.1",
     "@react-dev-inspector/middleware": "^2.0.1",
     "@tailwindcss/postcss": "^4",
@@ -25,6 +39,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "react-dev-inspector": "^2.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"

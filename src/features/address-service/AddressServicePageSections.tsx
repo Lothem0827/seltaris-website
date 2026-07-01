@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
@@ -11,10 +11,14 @@ import { IconSurface } from "@/components/ui/IconSurface";
 import { Text } from "@/components/ui/Text";
 import { PricingCard } from "@/components/shared/PricingCard";
 import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
+import { CursorGlowCard } from "@/components/molecules/CursorGlowCard";
 import { SupportedDatasetsBar } from "@/components/shared/SupportedDatasetsBar";
-import { TabGroup } from "@/components/shared/TabGroup";
-import { AddressValidateAnimation } from "@/components/svg-animations/AddressValidateAnimation";
-import { HumanTouchAnimated } from "@/components/svg-animations/HumanTouchAnimated";
+import { TabGroup, getTabId, getTabPanelId } from "@/components/shared/TabGroup";
+import {
+  LazyAddressValidateAnimation,
+  LazyAltraserviceAnimation,
+  LazyHumanTouchAnimated,
+} from "@/components/lazy/client-modules";
 import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 import { AddressDataAccuracyCodesPanel } from "./components/AddressDataAccuracyCodesPanel";
@@ -121,6 +125,28 @@ function GridTabPanelContent({
   );
 }
 
+function SplitIntroHeroVisual({ heroImageKey }: { heroImageKey: string }) {
+  if (heroImageKey === "humanTouchAnimated") {
+    return <LazyHumanTouchAnimated />;
+  }
+
+  if (heroImageKey === "altraserviceAnimated") {
+    return <LazyAltraserviceAnimation />;
+  }
+
+  return (
+    <div className="relative aspect-[1200/673] w-full">
+      <Image
+        src={heroImageKey}
+        alt=""
+        fill
+        className="object-contain"
+        sizes="1200px"
+      />
+    </div>
+  );
+}
+
 function SplitIntroTabPanelContent({
   panel,
 }: {
@@ -156,19 +182,7 @@ function SplitIntroTabPanelContent({
       </div>
 
       <div className="relative mx-auto w-full max-w-content-wide">
-        {panel.heroImageKey === "humanTouchAnimated" ? (
-          <HumanTouchAnimated />
-        ) : (
-          <div className="relative aspect-[1200/673] w-full">
-            <Image
-              src={panel.heroImageKey}
-              alt=""
-              fill
-              className="object-contain"
-              sizes="1200px"
-            />
-          </div>
-        )}
+        <SplitIntroHeroVisual heroImageKey={panel.heroImageKey} />
       </div>
     </div>
   );
@@ -327,6 +341,7 @@ function TabFeatureSection({
   const panel = section.panels[activeTab];
   const tabLabels = section.panels.map((item) => item.label);
   const contentVariant = section.contentVariant ?? "grid";
+  const tabsId = `${section.sectionId}-tabs`;
 
   return (
     <section id={section.sectionId} className="scroll-mt-24 pb-section">
@@ -337,19 +352,21 @@ function TabFeatureSection({
           </FeaturePageHeading>
 
           <TabGroup
+            idPrefix={tabsId}
             tabs={tabLabels}
             activeIndex={activeTab}
             onChange={setActiveTab}
           />
         </div>
 
-        {contentVariant === "grid" ? (
-          <div className="rounded-radius-panel ">
-            <TabPanelRenderer panel={panel} />
-          </div>
-        ) : (
+        <div
+          role="tabpanel"
+          id={getTabPanelId(tabsId, activeTab)}
+          aria-labelledby={getTabId(tabsId, activeTab)}
+          className={contentVariant === "grid" ? "rounded-radius-panel" : undefined}
+        >
           <TabPanelRenderer panel={panel} />
-        )}
+        </div>
       </Container>
     </section>
   );
@@ -420,24 +437,29 @@ export function AddressServicePageSectionNav() {
           className="grid grid-cols-6 gap-6 lg:grid-cols-3 sm:grid-cols-2"
         >
           {sectionNav.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="group flex flex-col items-center gap-3 text-center border-border border rounded-radius-md p-6 hover:border-brand/30 hover:bg-brand-light/30"
-            >
-              <IconSurface
-                src={item.iconSrc}
-                size="nav"
-                variant="custom"
-                backgroundClassName="bg-brand-surface"
-              />
-              <FeaturePageHeading
-                as="span"
-                variant="featureCardEyebrow"
-                className="text-paragraph"
+            <a key={item.id} href={`#${item.id}`} className="block">
+              <CursorGlowCard
+                className="h-full rounded-radius-md"
+                innerClassName={cn(
+                  "flex flex-col items-center gap-3 rounded-radius-md p-6 text-center transition-colors",
+                  "hover:border-brand/30 hover:bg-brand-light/30",
+                )}
+                glowRadius={160}
               >
-                {item.label}
-              </FeaturePageHeading>
+                <IconSurface
+                  src={item.iconSrc}
+                  size="nav"
+                  variant="custom"
+                  backgroundClassName="bg-brand-surface"
+                />
+                <FeaturePageHeading
+                  as="span"
+                  variant="featureCardEyebrow"
+                  className="text-paragraph"
+                >
+                  {item.label}
+                </FeaturePageHeading>
+              </CursorGlowCard>
             </a>
           ))}
         </nav>
@@ -470,7 +492,7 @@ export function AddressServicePageOverviewSection() {
 
         <div className="relative mx-auto w-full max-w-content-wide">
           {overview.heroMockupKey === "addressValidateAnimation" ? (
-            <AddressValidateAnimation />
+            <LazyAddressValidateAnimation />
           ) : (
             <div className="relative aspect-[1200/673] w-full lg:aspect-[3/2] sm:aspect-[4/3]">
               <Image

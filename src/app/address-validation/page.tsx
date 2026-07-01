@@ -2,12 +2,13 @@ import {
   AddressValidationPage,
   addressValidationPageMeta,
 } from "@/features/address-service/AddressValidationPage";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  pathname: "/address-validation",
   title: addressValidationPageMeta.title,
   description: addressValidationPageMeta.description,
-};
+});
 
 export default function Page() {
   return <AddressValidationPage />;

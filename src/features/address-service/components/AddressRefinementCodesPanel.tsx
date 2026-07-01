@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { Text } from "@/components/ui/Text";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";

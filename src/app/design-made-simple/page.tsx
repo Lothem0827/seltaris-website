@@ -1,11 +1,12 @@
 import { DesignMadeSimplePage } from "@/features/design-made-simple/DesignMadeSimplePage";
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
+  pathname: "/design-made-simple",
   title: "Design Made Simple | Seltaris",
   description:
     "The best innovations are built for everyone. Design made simple, so the complex work of cleaning data becomes easy enough for any non-technical person to do.",
-};
+});
 
 export default function SeltarisDesignMadeSimplePage() {
   return <DesignMadeSimplePage />;

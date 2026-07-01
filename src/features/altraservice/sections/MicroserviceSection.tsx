@@ -1,8 +1,7 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { Container } from "@/components/ui/Container";
 import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { Text } from "@/components/ui/Text";
-import { cn } from "@/lib/utils";
 
 export function MicroserviceSection() {
   return (
@@ -34,17 +33,14 @@ export function MicroserviceSection() {
           </Text>
         </div>
 
-        <div
-          className={cn(
-            "banner-media min-h-content-block-md lg:min-h-content-block",
-          )}
-        >
+        <div className="banner-media h-auto min-h-0">
           <Image
-            src="/images/altraservice/macbook.png"
+            src="/images/altraservice/macbook.webp"
             alt=""
-            fill
-            className="object-contain p-4"
-            sizes="512px"
+            width={1152}
+            height={515}
+            className="h-auto w-full"
+            sizes="(max-width: 1279px) 100vw, 1152px"
           />
         </div>
       </Container>

@@ -1,6 +1,8 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
+import { CursorGlowCard } from "@/components/molecules/CursorGlowCard";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
+import { cn } from "@/lib/utils";
 import {
   enterpriseIndustries,
   enterpriseStories,
@@ -8,8 +10,10 @@ import {
   type EnterpriseStory,
 } from "@/components/layout/enterprise-nav.content";
 
-const cardClass =
-  "flex min-w-0 flex-1 flex-col rounded-radius-lg border border-border px-6 py-8 transition-colors hover:border-brand/30 hover:bg-brand-light/30";
+const innerCardClass = cn(
+  "flex min-w-0 flex-1 flex-col rounded-radius-lg transition-colors",
+  "hover:border-brand/30 hover:bg-brand-light/30",
+);
 
 function EnterpriseStoryCard({ story }: { story: EnterpriseStory }) {
   return (
@@ -17,26 +21,32 @@ function EnterpriseStoryCard({ story }: { story: EnterpriseStory }) {
       href={story.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cardClass}
+      className="block min-w-0 flex-1"
     >
-      <div className="relative mb-6 flex items-center h-fit">
-        <Image
-          src={story.imageSrc}
-          alt=""
-          width={185}
-          height={68}
-          className="h-12 w-auto object-contain"
-        />
-      </div>
-      <div className="flex flex-col gap-2">
-        <Text variant="label">{story.category}</Text>
-        <p className="font-body text-body font-semibold text-text">
-          {story.title}
-        </p>
-        <Text variant="caption" className="w-[80%]">
-          {story.description}
-        </Text>
-      </div>
+      <CursorGlowCard
+        className="h-full rounded-radius-lg"
+        innerClassName={cn(innerCardClass, "px-6 py-8")}
+        glowRadius={230}
+      >
+        <div className="relative mb-6 flex h-fit items-center">
+          <Image
+            src={story.imageSrc}
+            alt=""
+            width={185}
+            height={68}
+            className="h-12 w-auto object-contain"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <Text variant="label">{story.category}</Text>
+          <p className="font-body text-body font-semibold text-text">
+            {story.title}
+          </p>
+          <Text variant="caption" className="w-[80%]">
+            {story.description}
+          </Text>
+        </div>
+      </CursorGlowCard>
     </a>
   );
 }
@@ -51,14 +61,20 @@ function EnterpriseIndustryCard({
       href={industry.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cardClass}
+      className="block min-w-0 flex-1"
     >
-      <div className="flex flex-col gap-2 w-[80%] h-fit">
-        <p className="font-body text-body font-semibold text-text">
-          {industry.title}
-        </p>
-        <Text variant="caption">{industry.description}</Text>
-      </div>
+      <CursorGlowCard
+        className="h-full rounded-radius-lg"
+        innerClassName={cn(innerCardClass, "px-6 py-8")}
+        glowRadius={230}
+      >
+        <div className="flex h-fit w-[80%] flex-col gap-2">
+          <p className="font-body text-body font-semibold text-text">
+            {industry.title}
+          </p>
+          <Text variant="caption">{industry.description}</Text>
+        </div>
+      </CursorGlowCard>
     </a>
   );
 }

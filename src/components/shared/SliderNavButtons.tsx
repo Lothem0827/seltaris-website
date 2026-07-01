@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 import { useRef, useState, type RefObject } from "react";
@@ -46,7 +46,11 @@ export function SliderNavButtons({
 }: SliderNavButtonsProps) {
   return (
     <div
-      className={cn("flex items-center gap-3", !visible && "hidden", className)}
+      className={cn(
+        "ml-auto flex shrink-0 items-center gap-3",
+        !visible && "hidden",
+        className,
+      )}
       aria-hidden={!visible}
     >
       <button

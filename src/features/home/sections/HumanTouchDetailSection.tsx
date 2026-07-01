@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { RevealOnView } from "@/components/shared/RevealOnView";
 import { HumanTouchTabPanels } from "../components/HumanTouchTabPanels";
 import { SplitIntro } from "@/components/shared/SplitIntro";
 
@@ -30,13 +31,17 @@ export function HumanTouchDetailSection() {
           className="mb-16"
         />
 
-        <HumanTouchTabPanels />
+        <RevealOnView staggerIndex={0}>
+          <HumanTouchTabPanels />
+        </RevealOnView>
 
-        <div className="flex justify-center">
-          <Button href="#features" variant="secondary">
-            Explore all features
-          </Button>
-        </div>
+        <RevealOnView staggerIndex={1}>
+          <div className="flex justify-center">
+            <Button href="#features" variant="secondary">
+              Explore all features
+            </Button>
+          </div>
+        </RevealOnView>
       </Container>
     </section>
   );

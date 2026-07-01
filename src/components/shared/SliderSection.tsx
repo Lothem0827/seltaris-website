@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { SplitIntro } from "@/components/shared/SplitIntro";
+import { RevealOnView } from "@/components/shared/RevealOnView";
 import {
   SliderNavButtons,
   useSliderNav,
@@ -54,30 +55,34 @@ export function SliderSection({
       <Container className="flex flex-col gap-12">
         {intro ? <SplitIntro {...intro} /> : null}
 
-        <div
-          className={cn(
-            "flex flex-col gap-6",
-            heading && navAlign === "header"
-              ? "flex-row items-end justify-between sm:flex-col sm:items-stretch"
-              : "items-start",
-          )}
-        >
-          {heading ? (
-            <Heading level="h1" className={headingClassName}>
-              {heading}
-            </Heading>
-          ) : null}
-          <SliderNavButtons {...navButtonProps} visible={showNav} />
-        </div>
+        <RevealOnView staggerIndex={0}>
+          <div
+            className={cn(
+              "flex gap-6",
+              heading && navAlign === "header"
+                ? "flex-row items-end justify-between sm:flex-col sm:items-stretch"
+                : "flex-row justify-end",
+            )}
+          >
+            {heading ? (
+              <Heading as="h2" level="h1" className={headingClassName}>
+                {heading}
+              </Heading>
+            ) : null}
+            <SliderNavButtons {...navButtonProps} visible={showNav} />
+          </div>
+        </RevealOnView>
 
         <ContentSlider {...sliderProps} slides={slides} />
 
         {cta ? (
-          <div className="flex justify-center pt-4">
-            <Button href={cta.href} variant={cta.variant ?? "primary"}>
-              {cta.label}
-            </Button>
-          </div>
+          <RevealOnView staggerIndex={2}>
+            <div className="flex justify-center pt-4">
+              <Button href={cta.href} variant={cta.variant ?? "primary"}>
+                {cta.label}
+              </Button>
+            </div>
+          </RevealOnView>
         ) : null}
       </Container>
     </section>

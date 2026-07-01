@@ -5,9 +5,9 @@ import { SliderSection } from "@/components/shared/SliderSection";
 import type { SliderSlide } from "@/components/shared/ContentSlider";
 
 const FEATURE_SLIDE_IMAGES = [
-  "/images/home/feature-slide-1.png",
-  "/images/home/feature-slide-2.png",
-  "/images/home/feature-slide-3.png",
+  "/images/home/feature-slide-1.webp",
+  "/images/home/feature-slide-2.webp",
+  "/images/home/feature-slide-3.webp",
 ] as const;
 
 const slides: SliderSlide[] = [

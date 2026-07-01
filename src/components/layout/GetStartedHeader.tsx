@@ -1,10 +1,11 @@
 "use client";
 
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/layout/Logo";
+import { SkipLink } from "@/components/layout/SkipLink";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import {
@@ -42,6 +43,7 @@ export function GetStartedHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white">
+      <SkipLink />
       <div
         className={cn(
           "overflow-hidden bg-brand-light transition-[max-height,opacity] duration-300 ease-in-out",
@@ -89,7 +91,8 @@ export function GetStartedHeader() {
                 alt="GBG"
                 width={100}
                 height={25}
-                className="h-gbg-logo w-auto sm:hidden"
+                className="sm:hidden"
+                style={{ height: "var(--height-gbg-logo)", width: "auto" }}
               />
             </Link>
             <div className="flex items-center gap-3">

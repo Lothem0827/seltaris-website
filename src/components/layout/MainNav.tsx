@@ -6,7 +6,7 @@ import { mainNavLinks } from "@/components/layout/main-nav.content";
 
 export function MainNav() {
   return (
-    <nav className="flex items-center gap-4 lg:hidden">
+    <nav aria-label="Main" className="flex items-center gap-4 lg:hidden">
       {mainNavLinks.map((link) => {
         if (link.hasDropdown && link.dropdown === "solutions") {
           return <SolutionsNavDropdown key={link.label} />;

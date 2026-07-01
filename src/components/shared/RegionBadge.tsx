@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { Badge } from "@/components/ui/Badge";
 import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
@@ -35,16 +35,16 @@ export function RegionBadge({
   className,
 }: RegionBadgeProps) {
   const { label, flag } = regions[region];
-  const iconSize = size === "sm" ? 16 : 20;
+  const iconSize = size === "sm" ? 14 : 18;
 
   return (
     <span
       className={cn(
         "inline-flex items-center rounded-radius-full border border-border bg-white font-body font-medium text-text",
         size === "sm"
-          ? "gap-1.5 pl-1.5 pr-3 py-1.5 text-sm"
-          : "gap-1.5 pl-1.5 pr-3 py-1.5 text-body-sm",
-        comingSoon && "opacity-50",
+          ? "gap-1.5 pl-2 pr-3 py-2 text-sm"
+          : "gap-1.5 pl-2 pr-3 py-2 text-body-sm",
+        comingSoon && "text-tab-inactive",
         className,
       )}
     >

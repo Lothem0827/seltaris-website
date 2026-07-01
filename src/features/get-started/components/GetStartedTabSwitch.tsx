@@ -3,6 +3,8 @@
 import { TabGroup } from "@/components/shared/TabGroup";
 import { cn } from "@/lib/utils";
 
+const GET_STARTED_TABS_ID = "get-started-tabs";
+
 type GetStartedTabSwitchProps = {
   tabs: readonly string[];
   activeIndex: number;
@@ -18,6 +20,7 @@ export function GetStartedTabSwitch({
 }: GetStartedTabSwitchProps) {
   return (
     <TabGroup
+      idPrefix={GET_STARTED_TABS_ID}
       tabs={tabs}
       activeIndex={activeIndex}
       onChange={onChange}
@@ -26,3 +29,5 @@ export function GetStartedTabSwitch({
     />
   );
 }
+
+export { GET_STARTED_TABS_ID };

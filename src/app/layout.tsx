@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { DevInspector } from "@/components/dev/DevInspector";
 import { ScrollToHash } from "@/components/providers/ScrollToHash";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
+import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 
@@ -11,6 +12,7 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+  display: "swap",
 });
 
 const mintGrotesk = localFont({
@@ -21,9 +23,16 @@ const mintGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`${SITE_URL}/`),
   title: "Seltaris | Bulk Data Enhancement",
   description:
     "High quality, secure, and powerful data quality platform for formatting, cleansing, repairing, and verifying your datasets.",
+  icons: {
+    icon: "/seltaris-logo-fav.svg",
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

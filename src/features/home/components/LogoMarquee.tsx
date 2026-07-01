@@ -1,8 +1,8 @@
-import Image from "next/image";
+import Image from "@/components/ui/Image";
 import { cn } from "@/lib/utils";
 
-const ROW_COUNT = 3;
-const MIN_PER_ROW = 8;
+const ROW_COUNT = 1;
+const MIN_PER_ROW = 12;
 
 function splitLogosIntoRows(logos: readonly string[]): string[][] {
   const perRow = Math.max(MIN_PER_ROW, Math.ceil(logos.length / ROW_COUNT));
@@ -46,8 +46,9 @@ function LogoMarqueeRow({ logos, reverse, rowIndex }: LogoMarqueeRowProps) {
               src={src}
               alt=""
               fill
+              loading="lazy"
               className="object-contain invert opacity-35 transition-opacity duration-200 hover:opacity-60"
-              sizes="128px"
+              sizes="(max-width: 640px) 112px, 128px"
             />
           </div>
         ))}
@@ -73,7 +74,7 @@ export function LogoMarquee({ logos }: LogoMarqueeProps) {
   const rows = splitLogosIntoRows(logos);
 
   return (
-    <div
+    <section
       className="flex w-full flex-col gap-12"
       aria-label="Trusted company logos"
     >
@@ -85,6 +86,6 @@ export function LogoMarquee({ logos }: LogoMarqueeProps) {
           reverse={rowIndex % 2 === 1}
         />
       ))}
-    </div>
+    </section>
   );
 }

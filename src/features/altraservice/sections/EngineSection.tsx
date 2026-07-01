@@ -1,24 +1,11 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { cn } from "@/lib/utils";
+import { EngineGlowBanner } from "./EngineGlowBanner";
 
 export function EngineSection() {
   return (
     <section className="pb-section">
       <Container>
-        <div
-          className={cn(
-            "banner-media min-h-content-block-alt lg:min-h-content-block",
-          )}
-        >
-          <Image
-            src="/images/altraservice/engine.png"
-            alt=""
-            fill
-            className="object-contain p-4"
-            sizes="512px"
-          />
-        </div>
+        <EngineGlowBanner />
       </Container>
     </section>
   );

@@ -7,7 +7,7 @@ const slides: SliderSlide[] = [
     id: "fastest",
     item: {
       id: "fastest",
-      imageSrc: "/images/home/altraservice-1.png",
+      imageSrc: "/images/home/altraservice-1.webp",
       description: (
         <>
           <strong>
@@ -26,7 +26,7 @@ const slides: SliderSlide[] = [
     id: "scale",
     item: {
       id: "scale",
-      imageSrc: "/images/home/altraservice-2.png",
+      imageSrc: "/images/home/altraservice-2.webp",
       description: (
         <>
           <strong>Designed to scale.</strong> On demand dynamic computational
@@ -42,7 +42,7 @@ const slides: SliderSlide[] = [
     id: "security",
     item: {
       id: "security",
-      imageSrc: "/images/home/altraservice-3.png",
+      imageSrc: "/images/home/altraservice-3.webp",
       description: (
         <>
           <strong>Speed is nothing without leading security.</strong> Advanced

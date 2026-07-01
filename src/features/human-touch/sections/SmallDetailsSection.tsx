@@ -78,7 +78,7 @@ export function SmallDetailsSection() {
   return (
     <section className="pb-section">
       <Container className="flex flex-col gap-20">
-        <BannerImage src="/images/human-touch/small-differences-banner.png">
+        <BannerImage src="/images/human-touch/small-differences-banner.webp">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
             <FeaturePageHeading as="h2" variant="bannerTitle">
               Small details making

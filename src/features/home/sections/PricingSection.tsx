@@ -4,19 +4,21 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
 import { PricingCard } from "@/components/shared/PricingCard";
+import { RevealGroup } from "@/components/shared/RevealGroup";
+import { RevealOnView } from "@/components/shared/RevealOnView";
 
 export function PricingSection() {
   return (
     <section className="py-section" id="get-started">
       <Container className="flex flex-col items-center gap-12">
-        <div className="max-w-2xl text-center">
+        <RevealOnView staggerIndex={0} className="max-w-2xl text-center">
           <Eyebrow label="Our Services" className="mb-5" />
           <Heading level="sectionDisplay">
             There&apos;s never been a better time to get started.
           </Heading>
-        </div>
+        </RevealOnView>
 
-        <div className="grid w-full grid-cols-3 gap-6 lg:grid-cols-1">
+        <RevealGroup className="grid w-full grid-cols-3 gap-6 lg:grid-cols-1">
           <PricingCard
             label="Repaired file only"
             tone="default"
@@ -62,15 +64,17 @@ export function PricingSection() {
             ]}
             cta={{ label: "Explore plans", href: "/seltaris-plus" }}
           />
-        </div>
+        </RevealGroup>
 
-        <Button
-          href="/services"
-          variant="secondary"
-          className="bg-text text-white"
-        >
-          View all services
-        </Button>
+        <RevealOnView staggerIndex={0}>
+          <Button
+            href="/services"
+            variant="secondary"
+            className="bg-text text-white"
+          >
+            View all services
+          </Button>
+        </RevealOnView>
       </Container>
     </section>
   );
