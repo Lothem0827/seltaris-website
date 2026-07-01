@@ -6,7 +6,6 @@ import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 import { HeroAnimatedIntro } from "@/features/home/components/HeroAnimatedIntro";
 import { HeroDeferredAddressDemo } from "@/features/home/components/HeroDeferredAddressDemo";
-import { HeroDeferredBackground } from "@/features/home/components/HeroDeferredBackground";
 import {
   HeroLoadIn,
   HeroLoadInItem,
@@ -39,7 +38,7 @@ export const TRUSTED_LOGOS = [
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100dvh-var(--site-header-height))] flex-col py-[100px] sm:min-h-[60vh] sm:py-[80px]">
+    <section className="relative flex min-h-[calc(100dvh-var(--site-header-height))] flex-col bg-[url('/images/home/hero-background-mobile.webp')] bg-size-[100%_auto] bg-top bg-no-repeat py-[100px] sm:min-h-[60vh] sm:bg-[url('/images/home/hero-background-mobile.webp')] sm:bg-bottom sm:py-[80px]">
       <Container className="z-10 flex flex-col items-center gap-40 text-center ">
         <HeroAnimatedIntro
           eyebrow={
@@ -66,8 +65,6 @@ export function HeroSection() {
           </HeroLoadInItem>
         </HeroLoadIn>
       </Container>
-
-      <HeroDeferredBackground />
     </section>
   );
 }
