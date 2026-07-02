@@ -1,7 +1,7 @@
 "use client";
 
 import { useRevealOnView } from "@/hooks/useRevealVisibility";
-import { useRef, useState, type ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type RevealOnViewProps = {
@@ -17,12 +17,10 @@ export function RevealOnView({
   staggerIndex = 0,
 }: RevealOnViewProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useRevealOnView(ref, setVisible);
+  const { visible, settled } = useRevealOnView(ref);
 
   const delayClass =
-    visible && staggerIndex > 0
+    !settled && visible && staggerIndex > 0
       ? `reveal-up-delay-${Math.min(staggerIndex, 6)}`
       : undefined;
 
@@ -31,7 +29,8 @@ export function RevealOnView({
       ref={ref}
       className={cn(
         "reveal-up",
-        visible && "reveal-up-visible",
+        settled && "reveal-up-settled",
+        !settled && visible && "reveal-up-visible",
         delayClass,
         className,
       )}

@@ -16,13 +16,13 @@ const seltarisPlusPlans: SeltarisPlusPlan[] = [
     tier: "standard",
     name: "Standard",
     tagline: "For small businesses.",
-    price: "$99",
+    price: "$0",
     gstNote: "(Ex. GST)",
-    cta: { label: "Join now for $99", href: SELTARIS_LOGIN_URL },
+    cta: { label: "Join now for free", href: SELTARIS_LOGIN_URL },
     features: [
       {
         label: "Health Check Reports",
-        value: "2x Reports",
+        value: "5x Reports",
         period: "/month",
         badge: "SAVE $500 PER REPORT",
       },
@@ -38,9 +38,7 @@ const seltarisPlusPlans: SeltarisPlusPlan[] = [
       },
       {
         label: "Shared Licences",
-        value: "+1 user",
-        subscriptionBadge: "1 FREE subscription",
-        subscriptionValue: "Valued $99 per month",
+        value: "+0 user",
       },
     ],
   },

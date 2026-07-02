@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { DevInspector } from "@/components/dev/DevInspector";
+import { RevealRouteMemory } from "@/components/providers/RevealRouteMemory";
 import { ScrollToHash } from "@/components/providers/ScrollToHash";
 import { BfcacheRevealRestore } from "@/components/providers/BfcacheRevealRestore";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className="min-h-screen antialiased" suppressHydrationWarning>
         <SmoothScroll>
           <BfcacheRevealRestore />
+          <RevealRouteMemory />
           <ScrollToHash />
           {process.env.NODE_ENV === "development" ? <DevInspector /> : null}
           {children}

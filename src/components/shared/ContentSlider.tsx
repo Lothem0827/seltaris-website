@@ -86,27 +86,25 @@ function renderSlide(slide: SliderSlide, index: number) {
 
 function useSlideStagger(enabled: boolean) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(!enabled);
+  const { visible, settled } = useRevealOnView(ref);
 
-  useRevealOnView(ref, setVisible);
-
-  useEffect(() => {
-    if (!enabled) {
-      setVisible(true);
-    }
-  }, [enabled]);
-
-  return { ref, visible };
+  return {
+    ref,
+    visible: enabled ? visible : true,
+    settled: enabled ? settled : true,
+  };
 }
 
 function SlideStaggerItem({
   index,
   visible,
+  settled,
   staggerSlides,
   children,
 }: {
   index: number;
   visible: boolean;
+  settled: boolean;
   staggerSlides: boolean;
   children: ReactNode;
 }) {
@@ -115,7 +113,7 @@ function SlideStaggerItem({
   }
 
   const delayClass =
-    visible && index > 0
+    !settled && visible && index > 0
       ? `reveal-up-delay-${Math.min(index, 6)}`
       : undefined;
 
@@ -123,7 +121,8 @@ function SlideStaggerItem({
     <div
       className={cn(
         "reveal-up",
-        visible && "reveal-up-visible",
+        settled && "reveal-up-settled",
+        !settled && visible && "reveal-up-visible",
         delayClass,
       )}
     >
@@ -145,7 +144,8 @@ export function ContentSlider({
   const isCarousel = slides.length > 1;
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const { ref: staggerRef, visible: staggerVisible } = useSlideStagger(staggerSlides);
+  const { ref: staggerRef, visible: staggerVisible, settled: staggerSettled } =
+    useSlideStagger(staggerSlides);
 
   useEffect(() => {
     void import("swiper/css");
@@ -172,6 +172,7 @@ export function ContentSlider({
         <SlideStaggerItem
           index={0}
           visible={staggerVisible}
+          settled={staggerSettled}
           staggerSlides={staggerSlides}
         >
           {renderSlide(slide, 0)}
@@ -220,6 +221,7 @@ export function ContentSlider({
             <SlideStaggerItem
               index={index}
               visible={staggerVisible}
+              settled={staggerSettled}
               staggerSlides={staggerSlides}
             >
               {renderSlide(slide, index)}

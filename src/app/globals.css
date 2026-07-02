@@ -579,6 +579,11 @@
   animation: reveal-up var(--motion-reveal-duration) ease forwards;
 }
 
+.reveal-up-settled {
+  opacity: 1;
+  transform: none;
+}
+
 .reveal-up-delay-1 {
   animation-delay: 80ms;
 }
@@ -616,6 +621,11 @@ html.reveal-bfcache-restored .hero-load-in .hero-load-in-item {
 
 .hero-load-in-visible .hero-load-in-item {
   animation: reveal-up var(--motion-reveal-duration) ease forwards;
+}
+
+.hero-load-in-settled .hero-load-in-item {
+  opacity: 1;
+  transform: none;
 }
 
 .hero-load-in-item-delay-1 {
@@ -657,8 +667,10 @@ html.reveal-bfcache-restored .hero-load-in .hero-load-in-item {
   .human-touch-card-visible,
   .reveal-up,
   .reveal-up-visible,
+  .reveal-up-settled,
   .hero-load-in .hero-load-in-item,
   .hero-load-in-visible .hero-load-in-item,
+  .hero-load-in-settled .hero-load-in-item,
   .group:hover .slider-slide-image,
   .group:focus-within .slider-slide-image {
     animation: none;

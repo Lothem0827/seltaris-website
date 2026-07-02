@@ -1,16 +1,7 @@
 "use client";
 
-import {
-  useRevealBackForwardRestore,
-  prefersReducedMotion,
-} from "@/hooks/useRevealVisibility";
-import {
-  Children,
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { useRevealOnView } from "@/hooks/useRevealVisibility";
+import { Children, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 type RevealGroupProps = {
@@ -20,43 +11,7 @@ type RevealGroupProps = {
 
 export function RevealGroup({ children, className }: RevealGroupProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useRevealBackForwardRestore(setVisible);
-
-  useEffect(() => {
-    if (prefersReducedMotion()) {
-      setVisible(true);
-      return;
-    }
-
-    const element = ref.current;
-    if (!element) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0, rootMargin: "0px 0px -8% 0px" },
-    );
-
-    observer.observe(element);
-
-    const rect = element.getBoundingClientRect();
-    const inView =
-      rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
-    if (inView) {
-      setVisible(true);
-      observer.disconnect();
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const { visible, settled } = useRevealOnView(ref);
 
   return (
     <div ref={ref} className={className}>
@@ -65,8 +20,10 @@ export function RevealGroup({ children, className }: RevealGroupProps) {
           key={index}
           className={cn(
             "reveal-up",
-            visible && "reveal-up-visible",
-            visible &&
+            settled && "reveal-up-settled",
+            !settled && visible && "reveal-up-visible",
+            !settled &&
+              visible &&
               index > 0 &&
               `reveal-up-delay-${Math.min(index, 6)}`,
           )}

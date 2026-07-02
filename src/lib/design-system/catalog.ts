@@ -303,6 +303,12 @@ export const MOTION_TOKENS: LayoutToken[] = [
     value: "0.5s",
   },
   {
+    name: "Reveal settled",
+    cssVar: "—",
+    tailwind: ".reveal-up-settled",
+    value: "opacity 1, no animation (return navigation)",
+  },
+  {
     name: "Slider image hover scale",
     cssVar: "--slider-image-hover-scale",
     tailwind: ".slider-slide-image (group hover)",

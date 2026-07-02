@@ -1,9 +1,16 @@
 "use client";
 
-import { useEffect, type RefObject } from "react";
+import { hasVisitedRoute } from "@/lib/reveal-route-memory";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect, useState, type RefObject } from "react";
 
 export function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function isElementInView(element: HTMLElement) {
+  const rect = element.getBoundingClientRect();
+  return rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
 }
 
 /**
@@ -13,28 +20,35 @@ export function prefersReducedMotion() {
  */
 export function useRevealBackForwardRestore(
   setVisible: (visible: boolean) => void,
+  setSettled?: (settled: boolean) => void,
 ) {
   useEffect(() => {
     const onPageShow = (event: PageTransitionEvent) => {
       if (event.persisted) {
         setVisible(true);
+        setSettled?.(true);
       }
     };
 
     window.addEventListener("pageshow", onPageShow);
     return () => window.removeEventListener("pageshow", onPageShow);
-  }, [setVisible]);
+  }, [setVisible, setSettled]);
 }
 
 export function useRevealOnView(
   ref: RefObject<HTMLElement | null>,
-  setVisible: (visible: boolean) => void,
-) {
-  useRevealBackForwardRestore(setVisible);
+): { visible: boolean; settled: boolean } {
+  const pathname = usePathname();
+  const isRevisit = hasVisitedRoute(pathname);
+  const [visible, setVisible] = useState(isRevisit);
+  const [settled, setSettled] = useState(isRevisit);
 
-  useEffect(() => {
-    if (prefersReducedMotion()) {
+  useRevealBackForwardRestore(setVisible, setSettled);
+
+  useLayoutEffect(() => {
+    if (isRevisit || prefersReducedMotion()) {
       setVisible(true);
+      setSettled(true);
       return;
     }
 
@@ -43,18 +57,15 @@ export function useRevealOnView(
       return;
     }
 
-    const revealIfIntersecting = (entry: IntersectionObserverEntry) => {
-      if (entry.isIntersecting) {
-        setVisible(true);
-        return true;
-      }
-
-      return false;
-    };
+    if (isElementInView(element)) {
+      setVisible(true);
+      return;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry && revealIfIntersecting(entry)) {
+        if (entry?.isIntersecting) {
+          setVisible(true);
           observer.disconnect();
         }
       },
@@ -63,14 +74,13 @@ export function useRevealOnView(
 
     observer.observe(element);
 
-    const rect = element.getBoundingClientRect();
-    const inView =
-      rect.top < window.innerHeight * 0.92 && rect.bottom > 0;
-    if (inView) {
-      setVisible(true);
-      observer.disconnect();
-    }
-
     return () => observer.disconnect();
-  }, [ref, setVisible]);
+  }, [ref, isRevisit]);
+
+  return { visible, settled };
+}
+
+export function useRevealRouteRevisit(): boolean {
+  const pathname = usePathname();
+  return hasVisitedRoute(pathname);
 }

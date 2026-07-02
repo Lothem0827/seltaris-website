@@ -165,17 +165,22 @@ export function HumanTouchTabPanels({ className }: HumanTouchTabPanelsProps) {
         aria-labelledby={getTabId(HUMAN_TOUCH_TABS_ID, activeTab)}
         className="mb-12 grid grid-cols-3 items-start gap-6 lg:grid-cols-1"
       >
-        {panel.cards.map((card, cardIndex) => (
-          <ImageTextCard
-            key={card.id}
-            imageSrc={card.imageSrc}
-            badge={"badge" in card ? card.badge : undefined}
-            loading="lazy"
-            imageAlt={`${humanTouchTabs[activeTab]} — card ${cardIndex + 1}`}
-          >
-            {card.body}
-          </ImageTextCard>
-        ))}
+        {panel.cards.map((card, cardIndex) => {
+          const isLcpCandidate = activeTab === 0 && cardIndex === 0;
+
+          return (
+            <ImageTextCard
+              key={card.id}
+              imageSrc={card.imageSrc}
+              badge={"badge" in card ? card.badge : undefined}
+              loading={isLcpCandidate ? "eager" : "lazy"}
+              priority={isLcpCandidate}
+              imageAlt={`${humanTouchTabs[activeTab]} — card ${cardIndex + 1}`}
+            >
+              {card.body}
+            </ImageTextCard>
+          );
+        })}
       </div>
     </div>
   );
