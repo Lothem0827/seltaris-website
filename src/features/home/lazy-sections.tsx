@@ -68,3 +68,19 @@ export const PricingSection = dynamic(
   () => import("./sections/PricingSection").then((m) => m.PricingSection),
   { loading: () => sectionPlaceholder },
 );
+
+export const HomeTrustedSection = dynamic(
+  () =>
+    import("./sections/HomeTrustedSection").then((m) => m.HomeTrustedSection),
+  { loading: () => sectionPlaceholder },
+);
+
+export const WhatIsSection = dynamic(
+  () => import("./sections/WhatIsSection").then((m) => m.WhatIsSection),
+  { loading: () => sectionPlaceholder },
+);
+
+export const ServicesSection = dynamic(
+  () => import("./sections/ServicesSection").then((m) => m.ServicesSection),
+  { loading: () => sectionPlaceholder },
+);

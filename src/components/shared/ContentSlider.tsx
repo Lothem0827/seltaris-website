@@ -15,8 +15,6 @@ import {
   type RefObject,
 } from "react";
 
-import "swiper/css";
-
 export type SliderSlide =
   | { type: "image"; id: string; item: SlideItem }
   | { type: "custom"; id: string; content: ReactNode };
@@ -148,6 +146,10 @@ export function ContentSlider({
   const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const { ref: staggerRef, visible: staggerVisible } = useSlideStagger(staggerSlides);
+
+  useEffect(() => {
+    void import("swiper/css");
+  }, []);
 
   useEffect(() => {
     onOverflowChange?.(isCarousel);

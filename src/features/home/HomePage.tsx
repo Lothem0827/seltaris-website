@@ -7,15 +7,15 @@ import {
   FeatureSliderSection,
   HealthCheckSliderSection,
   HealthCheckWorkflowSection,
+  HomeTrustedSection,
   HumanTouchDetailSection,
   HumanTouchShowcaseSection,
   PricingSection,
   SecuritySliderSection,
+  ServicesSection,
+  WhatIsSection,
 } from "./lazy-sections";
 import { HeroSection } from "./sections/HeroSection";
-import { HomeTrustedSection } from "./sections/HomeTrustedSection";
-import { ServicesSection } from "./sections/ServicesSection";
-import { WhatIsSection } from "./sections/WhatIsSection";
 
 export function HomePage() {
   return (

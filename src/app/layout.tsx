@@ -7,7 +7,6 @@ import { BfcacheRevealRestore } from "@/components/providers/BfcacheRevealRestor
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { SITE_URL } from "@/lib/site-url";
 import "./globals.css";
-import "lenis/dist/lenis.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",

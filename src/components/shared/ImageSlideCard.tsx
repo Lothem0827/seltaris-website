@@ -13,9 +13,9 @@ const widthClasses: Record<SlideCardWidth, string> = {
 };
 
 const imageSizes: Record<SlideCardWidth, string> = {
-  default: "(max-width: 640px) 88vw, 604px",
-  wide: "(max-width: 640px) 90vw, 604px",
-  narrow: "(max-width: 640px) 80vw, 441px",
+  default: "(max-width: 640px) 88vw, 414px",
+  wide: "(max-width: 640px) 90vw, 414px",
+  narrow: "(max-width: 640px) 80vw, 320px",
 };
 
 type ImageSlideCardProps = {

@@ -7,6 +7,8 @@ type DeferredMountProps = {
   placeholder?: ReactNode;
   /** When true, wait until the placeholder enters the viewport before scheduling mount. */
   whenVisible?: boolean;
+  /** When true, wait for scroll/wheel/pointer/keyboard before scheduling mount. */
+  whenEngaged?: boolean;
   rootMargin?: string;
   idleTimeoutMs?: number;
 };
@@ -15,6 +17,7 @@ export function DeferredMount({
   children,
   placeholder = null,
   whenVisible = false,
+  whenEngaged = false,
   rootMargin = "200px",
   idleTimeoutMs = 2_000,
 }: DeferredMountProps) {
@@ -48,6 +51,58 @@ export function DeferredMount({
     };
 
     const start = () => {
+      if (whenEngaged) {
+        let fallbackIdleId: number | undefined;
+
+        const mountNow = () => {
+          if (cancelled) {
+            return;
+          }
+          removeEngagementListeners();
+          if (fallbackIdleId !== undefined) {
+            const cancelIdle = window.cancelIdleCallback ?? clearTimeout;
+            cancelIdle(fallbackIdleId);
+          }
+          setMounted(true);
+        };
+
+        const removeEngagementListeners = () => {
+          window.removeEventListener("scroll", mountNow, { capture: true });
+          window.removeEventListener("wheel", mountNow, { capture: true });
+          window.removeEventListener("pointerdown", mountNow, { capture: true });
+          window.removeEventListener("keydown", mountNow, { capture: true });
+        };
+
+        window.addEventListener("scroll", mountNow, {
+          capture: true,
+          passive: true,
+        });
+        window.addEventListener("wheel", mountNow, {
+          capture: true,
+          passive: true,
+        });
+        window.addEventListener("pointerdown", mountNow, { capture: true });
+        window.addEventListener("keydown", mountNow, { capture: true });
+
+        const idle =
+          window.requestIdleCallback ??
+          ((callback: IdleRequestCallback) =>
+            window.setTimeout(
+              () => callback({ didTimeout: false, timeRemaining: () => 0 }),
+              1,
+            ));
+
+        fallbackIdleId = idle(
+          () => {
+            if (!cancelled) {
+              mountNow();
+            }
+          },
+          { timeout: idleTimeoutMs },
+        );
+        return;
+      }
+
       if (whenVisible) {
         const element = ref.current;
         if (!element) {
@@ -83,7 +138,7 @@ export function DeferredMount({
         clearTimeout(timeoutId);
       }
     };
-  }, [mounted, whenVisible, rootMargin, idleTimeoutMs]);
+  }, [mounted, whenVisible, whenEngaged, rootMargin, idleTimeoutMs]);
 
   return <div ref={ref}>{mounted ? children : placeholder}</div>;
 }

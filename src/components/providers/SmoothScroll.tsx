@@ -21,9 +21,13 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
     }
 
     let cancelled = false;
+    let engagementIdleId: number | undefined;
 
     const loadLenis = () => {
-      void import("lenis/react").then(({ ReactLenis }) => {
+      void Promise.all([
+        import("lenis/dist/lenis.css"),
+        import("lenis/react"),
+      ]).then(([, { ReactLenis }]) => {
         if (cancelled) return;
 
         const Wrapper = ({ children: inner }: LenisWrapperProps) => (
@@ -36,15 +40,54 @@ export function SmoothScroll({ children }: SmoothScrollProps) {
       });
     };
 
-    const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1));
-    const idleId = idle(loadLenis);
+    const startLenis = () => {
+      removeEngagementListeners();
+      if (engagementIdleId !== undefined) {
+        const cancelIdle = window.cancelIdleCallback ?? clearTimeout;
+        cancelIdle(engagementIdleId);
+      }
+      loadLenis();
+    };
+
+    const removeEngagementListeners = () => {
+      window.removeEventListener("scroll", startLenis, { capture: true });
+      window.removeEventListener("wheel", startLenis, { capture: true });
+      window.removeEventListener("pointerdown", startLenis, { capture: true });
+    };
+
+    window.addEventListener("scroll", startLenis, {
+      capture: true,
+      passive: true,
+    });
+    window.addEventListener("wheel", startLenis, {
+      capture: true,
+      passive: true,
+    });
+    window.addEventListener("pointerdown", startLenis, { capture: true });
+
+    const idle =
+      window.requestIdleCallback ??
+      ((callback: IdleRequestCallback) =>
+        window.setTimeout(
+          () => callback({ didTimeout: false, timeRemaining: () => 0 }),
+          1,
+        ));
+
+    engagementIdleId = idle(
+      () => {
+        if (!cancelled) {
+          startLenis();
+        }
+      },
+      { timeout: 8_000 },
+    );
 
     return () => {
       cancelled = true;
-      if (window.cancelIdleCallback) {
-        window.cancelIdleCallback(idleId as number);
-      } else {
-        window.clearTimeout(idleId as number);
+      removeEngagementListeners();
+      if (engagementIdleId !== undefined) {
+        const cancelIdle = window.cancelIdleCallback ?? clearTimeout;
+        cancelIdle(engagementIdleId);
       }
     };
   }, []);

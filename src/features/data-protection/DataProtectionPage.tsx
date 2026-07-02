@@ -15,8 +15,8 @@ export function DataProtectionPage() {
       <SiteHeader />
       <MainContent>
         <HeroSection />
-        <EncryptedCloudCardSection />
         <CloudIntroSection />
+        <EncryptedCloudCardSection />
         <HowItWorksSection />
         <PrivateKeysCardSection />
         <PrivateKeysSection />

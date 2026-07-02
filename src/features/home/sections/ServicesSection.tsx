@@ -75,7 +75,7 @@ export function ServicesSection() {
               with phone, email validation, and geocoding coming soon.
             </Text>
             <Button href="/services" variant="ghost" size="small">
-              Learn more
+              View all services
             </Button>
           </RevealOnView>
         </div>
