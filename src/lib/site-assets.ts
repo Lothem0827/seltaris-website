@@ -67,6 +67,9 @@ export const siteAssets = {
       "/images/svg-animations/design-made-simple/foreground-floating.svg",
   },
   supportSpecialist: "/images/seltaris-plus/support-specialist.webp",
+  navigation: {
+    solutionsNavLaptop: "/images/navigation/solutions-nav-laptop.png",
+  },
   getStarted: {
     heroLaptop: "/images/get-started/hero-laptop.png",
     healthCheckReportPreview:
@@ -88,6 +91,7 @@ export const SELTARIS_LOGIN_URL = "https://seltaris.gbg.com/login";
 export const GBG_ABOUT_URL = "https://www.gbg.com/en/about-us/";
 export const LOQATE_CONTACT_URL = "https://www.loqate.com/anz/contact/#form";
 export const SELTARIS_DEMO_URL = "/demo";
+export const GET_STARTED_DEMO_URL = "/get-started/demo";
 export const SELTARIS_GET_STARTED_PLAN_URLS = {
   free: "https://seltaris.gbg.com/plan/slt-free-zx4k",
   premium: "https://seltaris.gbg.com/plan/slt-prm-vx7r",

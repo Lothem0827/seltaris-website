@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
 import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { mainNavLinks } from "@/components/layout/main-nav.content";
-import { SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
+import { SELTARIS_DEMO_URL, SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
 type ExpandedSection = "solutions" | "features" | "enterprise" | null;
@@ -203,13 +203,23 @@ export function MobileNavDrawer({
         </div>
       </div>
 
-      <Button
-        href={SELTARIS_LOGIN_URL}
-        className="mt-6 w-full"
-        onClick={handleNavigate}
-      >
-        Get started
-      </Button>
+      <div className="mt-6 flex flex-col gap-3">
+        <Button
+          href={SELTARIS_DEMO_URL}
+          variant="outline"
+          className="w-full"
+          onClick={handleNavigate}
+        >
+          See a demo
+        </Button>
+        <Button
+          href={SELTARIS_LOGIN_URL}
+          className="w-full"
+          onClick={handleNavigate}
+        >
+          Get started
+        </Button>
+      </div>
     </div>
   );
 }

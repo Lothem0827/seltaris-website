@@ -209,7 +209,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         iconKey: "humanTouchLogo",
         leftHeading: (
           <>
-            DataTools
+            GBG
             <br />
             Human Touch™
           </>
@@ -219,7 +219,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         rightBody: (
           <>
             <p>
-              The DataTools Human Touch™ logic intelligently interprets address
+              The GBG Human Touch™ logic intelligently interprets address
               data, making sense of the information in the same intuitive way a
               human would.
             </p>
@@ -241,7 +241,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         iconKey: "humanTouchLogo",
         leftHeading: (
           <>
-            DataTools
+            GBG
             <br />
             OptiSource System™
           </>
@@ -257,7 +257,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
           <>
             <p>
               While most solutions rely solely on the standard government datasets
-              available in Australia and New Zealand, DataTools goes further.
+              available in Australia and New Zealand, GBG goes further.
               OptiSource System™ includes an expansive semantic index that
               organises and surfaces information from a variety of trusted data
               sources, including the Australian PAF, renowned for its 99% accuracy
@@ -283,7 +283,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         iconKey: "altraserviceLogo",
         leftHeading: (
           <>
-            DataTools
+            GBG
             <br />
             Altraservice™
           </>
@@ -297,7 +297,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
               optimising efficiency at every layer of our cloud technology stack.
             </p>
             <p className="mt-6">
-              As a result, we are proud to announce that DataTools Seltaris sets a
+              As a result, we are proud to announce that Seltaris sets a
               new industry standard as the world&apos;s fastest addressing batch
               processing tool, delivering unprecedented speed and reliability for
               all your data processing needs.
@@ -314,7 +314,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         iconKey: "altraserviceLogo",
         leftHeading: (
           <>
-            DataTools
+            GBG
             <br />
             Altraservice™
           </>
@@ -362,7 +362,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         seltarisPlusNote: (
           <>
             Free with eligible{" "}
-            <span className="underline">DataTools Seltaris+ plans.</span>
+            <span className="underline">Seltaris plans.</span>
           </>
         ),
         price: "A$249.00",
@@ -375,7 +375,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
             </p>
             <p className="mt-6">
               With private keys and our all-new Encrypted Cloud Computing
-              architecture, DataTools takes its industry-leading security to a
+              architecture, Seltaris takes its industry-leading security to a
               whole new level. Ensuring your data remains strictly confidential,
               heavily encrypted, and completely inaccessible.
             </p>
@@ -415,7 +415,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
             body: (
               <>
                 <strong>ISO27001 certified.</strong> Have peace of mind knowing
-                that DataTools doesn&apos;t just claim to prioritise security; its
+                that we don&apos;t just claim to prioritise security; our
                 practices have been thoroughly vetted by independent third
                 parties.
               </>

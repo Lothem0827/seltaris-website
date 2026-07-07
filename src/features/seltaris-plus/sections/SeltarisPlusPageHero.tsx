@@ -14,7 +14,7 @@ const seltarisPlusPlans: SeltarisPlusPlan[] = [
   {
     id: "standard",
     tier: "standard",
-    name: "Standard",
+    name: "Free Plan",
     tagline: "For small businesses.",
     price: "$0",
     gstNote: "(Ex. GST)",

@@ -1,6 +1,6 @@
 import Image from "@/components/ui/Image";
 import {
-  SELTARIS_DEMO_URL,
+  GET_STARTED_DEMO_URL,
   SELTARIS_LOGIN_URL,
   siteAssets,
 } from "@/lib/site-assets";
@@ -29,7 +29,7 @@ export function GetStartedHeroSection() {
             </div>
             <div className="flex flex-wrap items-center gap-4 ">
               <Button
-                href={SELTARIS_DEMO_URL}
+                href={GET_STARTED_DEMO_URL}
                 variant="outline"
                 className="sm:w-full"
               >

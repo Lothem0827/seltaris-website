@@ -15,7 +15,7 @@ export function EngineeringSection() {
           >
             Powered by
             <br />
-            DataTools Altraservice™
+            GBG Altraservice™
           </FeaturePageHeading>
           <div className="relative h-20 w-[4.375rem] shrink-0">
             <Image
@@ -34,7 +34,7 @@ export function EngineeringSection() {
               A truly remarkable feat of software engineering.
             </FeaturePageHeading>
             <Text>
-              DataTools Cloud Performance blasts forward with DataTools
+              Cloud Performance blasts forward with GBG
               Altraservice™. Built on the latest server technology, the all-new
               microservice architecture is able to perform at outrageous speeds
               and game-changing performance for processing batch files. This is
@@ -44,15 +44,15 @@ export function EngineeringSection() {
           </div>
           <Text as="div" className="prose-stack px-8 sm:px-0">
             <p>
-              DataTools Altraservice™, directly integrated into our cloud
+              GBG Altraservice™, directly integrated into our cloud
               infrastructure, enables us to correct each line of address data
               within fractions of a millisecond, this has enabled it to achieve
               a staggering 1 million records in just 2 minutes.
             </p>
             <p>
               To put that into perspective, validating Australia&apos;s 15.6
-              million deliverable addresses from start to finish with DataTools
-              Seltaris would only take a total of 32 minutes. Now that&apos;s
+              million deliverable addresses from start to finish with Seltaris
+              would only take a total of 32 minutes. Now that&apos;s
               ultra fast.
             </p>
           </Text>

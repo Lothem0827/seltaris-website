@@ -182,7 +182,7 @@ const addressValidationPageContent: AddressServicePageContent = {
           <>
             <p>
               While most solutions rely solely on the standard government
-              datasets available in Australia and New Zealand, DataTools goes
+              datasets available in Australia and New Zealand, GBG goes
               further. OptiSource System™ includes an expansive semantic index
               that organises and surfaces information from a variety of trusted
               data sources, including the Australian PAF, renowned for its 99%

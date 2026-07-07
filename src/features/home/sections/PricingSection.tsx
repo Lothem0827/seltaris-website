@@ -33,9 +33,8 @@ export function PricingSection() {
             footerNote="Only accessible after completing your Address Quality Health Check Report – Australia."
             showAustralia
             cta={{
-              label: "Coming soon",
-              variant: "secondary",
-              disabled: true,
+              label: "Get started",
+              href: "/address-quality-health-check-report",
             }}
           />
           <PricingCard

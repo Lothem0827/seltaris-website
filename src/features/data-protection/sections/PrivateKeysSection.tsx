@@ -36,9 +36,9 @@ export function PrivateKeysSection() {
               result file.
             </p>
             <p>
-              When you begin a batch job, DataTools generates a client secret
-              key that is never shared, stored, or accessible by anyone else —
-              not even DataTools staff. From that point forward, every stage of
+              When you begin a batch job, we generate a client secret
+              key that is never shared, stored, or accessible by anyone else.
+              From that point forward, every stage of
               your job relies on temporary, ephemeral keys managed through our
               secure identity servers. These working keys are used solely for
               in-memory processing and are destroyed the moment the job is
@@ -74,9 +74,9 @@ export function PrivateKeysSection() {
               </li>
             </ul>
             <p>
-              With DataTools, there are no backdoors, no hidden access points,
-              and no way for anyone else to step between you and your data. Even
-              under force, DataTools cannot hand over what it cannot see.
+              There are no backdoors, no hidden access points, and no way for
+              anyone else to step between you and your data. Even under force, we
+              cannot hand over what we cannot see.
             </p>
           </Text>
         </div>

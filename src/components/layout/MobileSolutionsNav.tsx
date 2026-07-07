@@ -3,9 +3,11 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
+import { SolutionsNavPromoCard } from "@/components/layout/SolutionsNavPromoCard";
 import { siteAssets } from "@/lib/site-assets";
 import {
   solutionsNavColumns,
+  solutionsNavPromo,
   type SolutionsNavItem,
 } from "@/components/layout/solutions-nav.content";
 
@@ -123,7 +125,8 @@ function SolutionsNavColumn({
 
 export function MobileSolutionsNav({ onNavigate }: MobileSolutionsNavProps) {
   return (
-    <div className="flex w-full flex-col gap-10 mt-3">
+    <div className="mt-3 flex w-full flex-col gap-10">
+      <SolutionsNavPromoCard {...solutionsNavPromo} onNavigate={onNavigate} />
       {solutionsNavColumns.map((column) => (
         <SolutionsNavColumn
           key={column.title}

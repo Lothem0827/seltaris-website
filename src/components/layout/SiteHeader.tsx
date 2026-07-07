@@ -14,6 +14,7 @@ import { Text } from "@/components/ui/Text";
 import {
   GBG_ABOUT_URL,
   LOQATE_CONTACT_URL,
+  SELTARIS_DEMO_URL,
   SELTARIS_LOGIN_URL,
   siteAssets,
 } from "@/lib/site-assets";
@@ -137,6 +138,14 @@ export function SiteHeader() {
           <MainNav />
         </div>
         <div className="flex min-w-0 items-center justify-self-stretch justify-end gap-3">
+          <Button
+            href={SELTARIS_DEMO_URL}
+            variant="outline"
+            size="small"
+            className="shrink-0 lg:hidden"
+          >
+            See a demo
+          </Button>
           <Button href={SELTARIS_LOGIN_URL} size="small" className="shrink-0">
             Get started
           </Button>

@@ -88,8 +88,8 @@ export function BuiltForSpeedSection() {
               Born to perform.
             </FeaturePageHeading>
             <Text className="max-w-md text-paragraph">
-              Explore the advanced processing techniques that power DataTools
-              Seltaris to industry leading performance.
+              Explore the advanced processing techniques that power Seltaris
+              to industry leading performance.
             </Text>
           </div>
           <SliderNavButtons {...navButtonProps} />

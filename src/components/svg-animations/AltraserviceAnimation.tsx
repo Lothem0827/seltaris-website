@@ -17,8 +17,8 @@ const GREEN_PAUSE_MS = 450;
 const CYCLE_PAUSE_MS = 1200;
 
 const GAUGE_RECORDS_TOTAL = 100_000;
-const GAUGE_SECONDS_START = 30;
-const GAUGE_COUNT_DURATION_MS = 30_000;
+const GAUGE_SECONDS_START = 6;
+const GAUGE_COUNT_DURATION_MS = 6_000;
 const GAUGE_COUNT_HOLD_MS = 1_200;
 
 type CyclePhase = "left" | "charlie" | "pause";

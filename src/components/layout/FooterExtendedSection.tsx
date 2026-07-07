@@ -133,13 +133,13 @@ function FooterBottomBar() {
     <div className="bg-surface-muted py-10">
       <Container>
         <div className="flex flex-row items-end justify-between gap-6 lg:flex-col lg:items-start lg:gap-6">
+          <Text as="p" variant="body-sm" className="max-w-xl lg:max-w-none">
+            {footerTagline}
+          </Text>
           <Text as="p" variant="body-sm" className="shrink-0">
             © {new Date().getFullYear()} GB Group plc (&apos;GBG&apos;).
             <br />
             GBG is the trading name and a trademark of GB Group plc.
-          </Text>
-          <Text as="p" variant="body-sm" className="max-w-xl lg:max-w-none">
-            {footerTagline}
           </Text>
         </div>
       </Container>

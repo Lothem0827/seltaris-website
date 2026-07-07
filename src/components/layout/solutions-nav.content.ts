@@ -1,5 +1,13 @@
 import { serviceCategoryPath } from "@/features/services/service-routes";
-import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
+import { SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
+
+export type SolutionsNavPromo = {
+  title: string;
+  description: string;
+  href: string;
+  imageSrc: string;
+  imageAlt: string;
+};
 
 export type SolutionsNavItem = {
   id: string;
@@ -14,6 +22,15 @@ export type SolutionsNavColumn = {
   title: string;
   items: SolutionsNavItem[];
   footerLink?: { label: string; href: string };
+};
+
+export const solutionsNavPromo: SolutionsNavPromo = {
+  title: "Health Check Report",
+  description:
+    "Not sure about your data's quality? Get an assessment before you buy.",
+  href: "/health-check-report",
+  imageSrc: siteAssets.navigation.solutionsNavLaptop,
+  imageAlt: "Health Check Report preview on a laptop",
 };
 
 export const solutionsNavColumns: SolutionsNavColumn[] = [

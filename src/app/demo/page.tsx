@@ -12,5 +12,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function DemoRoutePage() {
-  return <DemoPage />;
+  return <DemoPage nav="main" />;
 }

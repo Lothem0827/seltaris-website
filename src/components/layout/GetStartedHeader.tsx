@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import {
   GBG_CUSTOMER_SUPPORT_URL,
-  SELTARIS_DEMO_URL,
+  GET_STARTED_DEMO_URL,
   SELTARIS_LOGIN_URL,
   siteAssets,
 } from "@/lib/site-assets";
@@ -79,7 +79,7 @@ export function GetStartedHeader() {
 
       <div className="border-b border-border bg-white">
         <Container className="flex h-[74px] items-center justify-between">
-          <Logo href="/get-started" />
+          <Logo href="/" />
           <div className="flex items-center gap-5">
             <Link
               href="https://www.gbg.com"
@@ -96,7 +96,7 @@ export function GetStartedHeader() {
               />
             </Link>
             <div className="flex items-center gap-3">
-              <Button href={SELTARIS_DEMO_URL} variant="outline" size="small">
+              <Button href={GET_STARTED_DEMO_URL} variant="outline" size="small">
                 See a demo
               </Button>
               <Button href={SELTARIS_LOGIN_URL} size="small">

@@ -74,6 +74,12 @@ export const SITE_PAGES: SitePageEntry[] = [
     routeFile: "src/app/get-started/page.tsx",
   },
   {
+    path: "/get-started/demo",
+    title: "How to Get Started with Seltaris | Seltaris",
+    template: "DemoPage",
+    routeFile: "src/app/get-started/demo/page.tsx",
+  },
+  {
     path: "/demo",
     title: "How to Get Started with Seltaris | Seltaris",
     template: "DemoPage",
