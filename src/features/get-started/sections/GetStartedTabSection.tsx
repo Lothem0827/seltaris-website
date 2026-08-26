@@ -12,7 +12,7 @@ import {
   getStartedOfferingCards,
   getStartedTabs,
 } from "./GetStartedTabSection.content";
-import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
+import { SELTARIS_GET_STARTED_PLAN_URLS } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 import { GetStartedServiceHeader } from "../components/GetStartedServicePanel";
 import { GetStartedServicePanel } from "../components/GetStartedServicePanel";
@@ -108,7 +108,7 @@ export function GetStartedTabSection() {
             availability={panel.availability}
             serviceTitle={panel.serviceTitle}
             showDatasets={panel.showDatasets}
-            ctaHref={SELTARIS_LOGIN_URL}
+            ctaHref={SELTARIS_GET_STARTED_PLAN_URLS.free}
           />
 
           {panel.kind === "accordion" ? (

@@ -11,7 +11,7 @@ import { Container } from "@/components/ui/Container";
 import {
   GBG_CUSTOMER_SUPPORT_URL,
   GET_STARTED_DEMO_URL,
-  SELTARIS_LOGIN_URL,
+  SELTARIS_GET_STARTED_PLAN_URLS,
   siteAssets,
 } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
@@ -99,7 +99,7 @@ export function GetStartedHeader() {
               <Button href={GET_STARTED_DEMO_URL} variant="outline" size="small">
                 See a demo
               </Button>
-              <Button href={SELTARIS_LOGIN_URL} size="small">
+              <Button href={SELTARIS_GET_STARTED_PLAN_URLS.free} size="small">
                 Start for free
               </Button>
             </div>

@@ -14,6 +14,8 @@ type ButtonProps = {
   onClick?: () => void;
   type?: "button" | "submit";
   disabled?: boolean;
+  target?: React.HTMLAttributeAnchorTarget;
+  rel?: string;
 };
 
 const secondaryClasses =
@@ -112,6 +114,8 @@ export function Button({
   onClick,
   type = "button",
   disabled = false,
+  target,
+  rel,
 }: ButtonProps) {
   const showArrow =
     variant === "primary" ||
@@ -127,7 +131,12 @@ export function Button({
 
   if (href && !disabled) {
     return (
-      <Link href={href} className={classes}>
+      <Link
+        href={href}
+        className={classes}
+        target={target}
+        rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
+      >
         <ButtonContent showArrow={showArrow}>{children}</ButtonContent>
       </Link>
     );

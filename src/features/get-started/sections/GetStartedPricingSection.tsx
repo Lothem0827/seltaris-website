@@ -45,7 +45,10 @@ const getStartedPlans: SeltarisPlusPlan[] = [
     gstNote: "(Ex. GST) of $0.00",
     popular: true,
     popularLabel: "RECOMMENDED",
-    cta: { label: "Join now for $1", href: SELTARIS_GET_STARTED_PLAN_URLS.premium },
+    cta: {
+      label: "Join now for $1",
+      href: SELTARIS_GET_STARTED_PLAN_URLS.premium,
+    },
     features: [
       {
         label: "Health Check Reports",
@@ -75,7 +78,10 @@ const getStartedPlans: SeltarisPlusPlan[] = [
     tagline: "Ideal for large enterprises.",
     price: "$389",
     gstNote: "(Ex. GST) of $0.00",
-    cta: { label: "Join now for $1", href: SELTARIS_GET_STARTED_PLAN_URLS.premier },
+    cta: {
+      label: "Join now for $1",
+      href: SELTARIS_GET_STARTED_PLAN_URLS.premier,
+    },
     features: [
       {
         label: "Health Check Reports",

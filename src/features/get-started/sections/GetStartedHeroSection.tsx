@@ -1,7 +1,7 @@
 import Image from "@/components/ui/Image";
 import {
   GET_STARTED_DEMO_URL,
-  SELTARIS_LOGIN_URL,
+  SELTARIS_GET_STARTED_PLAN_URLS,
   siteAssets,
 } from "@/lib/site-assets";
 import { Button } from "@/components/ui/Button";
@@ -35,7 +35,10 @@ export function GetStartedHeroSection() {
               >
                 See a demo
               </Button>
-              <Button href={SELTARIS_LOGIN_URL} className="sm:w-full">
+              <Button
+                href={SELTARIS_GET_STARTED_PLAN_URLS.free}
+                className="sm:w-full"
+              >
                 Start for free
               </Button>
               <Text

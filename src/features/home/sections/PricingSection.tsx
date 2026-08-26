@@ -32,10 +32,7 @@ export function PricingSection() {
             ]}
             footerNote="Only accessible after completing your Address Quality Health Check Report – Australia."
             showAustralia
-            cta={{
-              label: "Get started",
-              href: "/address-quality-health-check-report",
-            }}
+            cta={{ label: "Get started", href: SELTARIS_LOGIN_URL }}
           />
           <PricingCard
             label="Health check report"
