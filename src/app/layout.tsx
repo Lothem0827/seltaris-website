@@ -47,6 +47,20 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${dmSans.variable} ${mintGrotesk.variable}`}
     >
+      <head>
+        <script
+          src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js"
+          type="text/javascript"
+          charSet="UTF-8"
+          data-domain-script="019dd358-3092-7f48-9d02-fed32f8def0e"
+        />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: "function OptanonWrapper() { }",
+          }}
+        />
+      </head>
       <body className="min-h-screen antialiased" suppressHydrationWarning>
         <SmoothScroll>
           <BfcacheRevealRestore />
