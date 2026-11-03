@@ -1,4 +1,5 @@
 import Image from "@/components/ui/Image";
+import Link from "next/link";
 import { CursorGlowCard } from "@/components/molecules/CursorGlowCard";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
@@ -16,38 +17,50 @@ const innerCardClass = cn(
 );
 
 function EnterpriseStoryCard({ story }: { story: EnterpriseStory }) {
-  return (
-    <a
-      href={story.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block min-w-0 flex-1"
+  const card = (
+    <CursorGlowCard
+      className="h-full rounded-radius-lg"
+      innerClassName={cn(innerCardClass, "px-6 py-8")}
+      glowRadius={230}
     >
-      <CursorGlowCard
-        className="h-full rounded-radius-lg"
-        innerClassName={cn(innerCardClass, "px-6 py-8")}
-        glowRadius={230}
+      <div className="relative mb-6 flex h-fit items-center">
+        <Image
+          src={story.imageSrc}
+          alt=""
+          width={185}
+          height={68}
+          className="h-12 w-auto object-contain"
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <Text variant="label">{story.category}</Text>
+        <p className="font-body text-body font-semibold text-text">
+          {story.title}
+        </p>
+        <Text variant="caption" className="w-[80%]">
+          {story.description}
+        </Text>
+      </div>
+    </CursorGlowCard>
+  );
+
+  if (story.external) {
+    return (
+      <a
+        href={story.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block min-w-0 flex-1"
       >
-        <div className="relative mb-6 flex h-fit items-center">
-          <Image
-            src={story.imageSrc}
-            alt=""
-            width={185}
-            height={68}
-            className="h-12 w-auto object-contain"
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <Text variant="label">{story.category}</Text>
-          <p className="font-body text-body font-semibold text-text">
-            {story.title}
-          </p>
-          <Text variant="caption" className="w-[80%]">
-            {story.description}
-          </Text>
-        </div>
-      </CursorGlowCard>
-    </a>
+        {card}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={story.href} className="block min-w-0 flex-1">
+      {card}
+    </Link>
   );
 }
 

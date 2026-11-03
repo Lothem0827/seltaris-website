@@ -91,4 +91,22 @@ export const SITE_PAGES: SitePageEntry[] = [
     template: "DesignSystemPage",
     routeFile: "src/app/design-system/page.tsx",
   },
+  {
+    path: "/success-stories/temple-webster",
+    title: "Temple & Webster | Success Stories | Seltaris",
+    template: "SuccessStoryPage",
+    routeFile: "src/app/success-stories/[slug]/page.tsx",
+  },
+  {
+    path: "/success-stories/bauer-media-group",
+    title: "Bauer Media Group | Success Stories | Seltaris",
+    template: "SuccessStoryPage",
+    routeFile: "src/app/success-stories/[slug]/page.tsx",
+  },
+  {
+    path: "/success-stories/queensland-police",
+    title: "Queensland Police | Success Stories | Seltaris",
+    template: "SuccessStoryPage",
+    routeFile: "src/app/success-stories/[slug]/page.tsx",
+  },
 ];

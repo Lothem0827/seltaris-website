@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "@/components/ui/Image";
+import Link from "next/link";
 import { CursorGlowCard } from "@/components/molecules/CursorGlowCard";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
@@ -32,15 +33,8 @@ export function MobileEnterpriseNav({ onNavigate }: MobileEnterpriseNavProps) {
       <div className="flex flex-col gap-6">
         <SectionLabel>Enterprise Stories</SectionLabel>
         <div className="flex flex-col gap-4">
-          {enterpriseStories.map((story) => (
-            <a
-              key={story.id}
-              href={story.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-              onClick={onNavigate}
-            >
+          {enterpriseStories.map((story) => {
+            const card = (
               <CursorGlowCard
                 className="rounded-radius-lg"
                 innerClassName={cn(innerCardClass, "gap-4 px-6 py-6")}
@@ -63,8 +57,34 @@ export function MobileEnterpriseNav({ onNavigate }: MobileEnterpriseNavProps) {
                   <Text variant="body">{story.description}</Text>
                 </div>
               </CursorGlowCard>
-            </a>
-          ))}
+            );
+
+            if (story.external) {
+              return (
+                <a
+                  key={story.id}
+                  href={story.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                  onClick={onNavigate}
+                >
+                  {card}
+                </a>
+              );
+            }
+
+            return (
+              <Link
+                key={story.id}
+                href={story.href}
+                className="block"
+                onClick={onNavigate}
+              >
+                {card}
+              </Link>
+            );
+          })}
         </div>
       </div>
 

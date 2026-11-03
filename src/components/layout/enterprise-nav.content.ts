@@ -5,7 +5,7 @@ export type EnterpriseStory = {
   description: string;
   imageSrc: string;
   href: string;
-  external: true;
+  external?: boolean;
 };
 
 export type EnterpriseIndustry = {
@@ -24,8 +24,7 @@ export const enterpriseStories: EnterpriseStory[] = [
     description:
       "Australia's leading pure-play online retailer for furniture and homewares.",
     imageSrc: "/images/enterprise/temple-webster.png",
-    href: "https://datatools.com.au/temple-webster/",
-    external: true,
+    href: "/success-stories/temple-webster",
   },
   {
     id: "bauer-media-group",
@@ -34,8 +33,7 @@ export const enterpriseStories: EnterpriseStory[] = [
     description:
       "Australia's leading magazine publisher across entertainment, lifestyle, fashion, food, parenting, and more.",
     imageSrc: "/images/enterprise/bauer-media-group.png",
-    href: "https://datatools.com.au/bauer-media-group/",
-    external: true,
+    href: "/success-stories/bauer-media-group",
   },
   {
     id: "queensland-police",
@@ -44,8 +42,7 @@ export const enterpriseStories: EnterpriseStory[] = [
     description:
       "Australia's state police service achieving digital transformation at scale.",
     imageSrc: "/images/enterprise/queensland-police.png",
-    href: "https://datatools.com.au/queensland-police/",
-    external: true,
+    href: "/success-stories/queensland-police",
   },
 ];
 
