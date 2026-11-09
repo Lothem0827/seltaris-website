@@ -1,9 +1,6 @@
 import Image from "@/components/ui/Image";
 import Link from "next/link";
-import { Badge } from "@/components/ui/Badge";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
-import { SolutionsNavPromoCard } from "@/components/layout/SolutionsNavPromoCard";
+import { Badge } from "@/components/ui/Badge";import { SolutionsNavPromoCard } from "@/components/layout/SolutionsNavPromoCard";
 import { siteAssets } from "@/lib/site-assets";
 import {
   solutionsNavColumns,
@@ -20,16 +17,14 @@ function SolutionsNavItemBody({ item }: { item: SolutionsNavItem }) {
         <p className="font-body text-body font-semibold text-text transition-colors group-hover:text-brand">
           {item.title}
         </p>
-        <Image
-          src={siteAssets.arrowUp}
+        <Image src={siteAssets.arrowUp}
           alt=""
           width={24}
           height={24}
           className="shrink-0 rotate-180 opacity-0 transition-opacity group-hover:opacity-70"
-          aria-hidden
-        />
+          aria-hidden />
       </div>
-      <Text variant="body-sm">{item.description}</Text>
+      <p className="type-14 text-paragraph">{item.description}</p>
       {item.comingSoon ? <Badge className="mt-1.5">COMING SOON</Badge> : null}
     </div>
   );
@@ -41,12 +36,10 @@ function SolutionsNavItemRow({ item }: { item: SolutionsNavItem }) {
   if (isLink) {
     if (item.external) {
       return (
-        <a
-          href={item.href}
+        <a href={item.href}
           target="_blank"
           rel="noopener noreferrer"
-          className={itemClass}
-        >
+          className={itemClass}>
           <SolutionsNavItemBody item={item} />
         </a>
       );
@@ -73,7 +66,7 @@ function SolutionsNavColumn({
 }: (typeof solutionsNavColumns)[number]) {
   return (
     <div className="flex min-w-0 flex-1 flex-col gap-6 self-stretch">
-      <Heading level="panel">{title}</Heading>
+      <p className="type-20 text-text">{title}</p>
       <div className="flex flex-1 flex-col border-l-2 border-border pl-6">
         <div className="flex flex-col">
           {items.map((item) => (
@@ -85,14 +78,12 @@ function SolutionsNavColumn({
                 <span className="font-body text-body font-semibold text-text transition-colors group-hover:text-brand">
                   {footerLink.label}
                 </span>
-                <Image
-                  src={siteAssets.arrowUp}
+                <Image src={siteAssets.arrowUp}
                   alt=""
                   width={24}
                   height={24}
                   className="shrink-0 rotate-180 opacity-0 transition-opacity group-hover:opacity-70"
-                  aria-hidden
-                />
+                  aria-hidden />
               </div>
             </Link>
           ) : null}

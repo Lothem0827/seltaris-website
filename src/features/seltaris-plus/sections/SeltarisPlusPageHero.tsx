@@ -1,9 +1,5 @@
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { IconSurface } from "@/components/ui/IconSurface";
-import { Text } from "@/components/ui/Text";
-import { SELTARIS_GET_STARTED_PLAN_URLS } from "@/lib/site-assets";
+import { Container } from "@/components/ui/Container";import { IconSurface } from "@/components/ui/IconSurface";import { SELTARIS_GET_STARTED_PLAN_URLS } from "@/lib/site-assets";
 import {
   SeltarisPlusPlanCard,
   SeltarisPlusSupportCard,
@@ -129,21 +125,19 @@ export function SeltarisPlusPageHero() {
     <section className="pt-16 pb-section">
       <Container className="flex flex-col items-center gap-16">
         <div className="flex flex-col items-center gap-4 text-center">
-          <IconSurface
-            src="/icons/features/seltaris.svg"
+          <IconSurface src="/icons/features/seltaris.svg"
             alt="Seltaris+"
-            size="feature"
-          />
+            size="feature" />
           <div className="mx-auto max-w-3xl space-y-5">
-            <FeaturePageHeading as="p" variant="pageEyebrow">
+            <p className="type-24-semi text-brand">
               Seltaris+
-            </FeaturePageHeading>
-            <FeaturePageHeading as="h1" variant="heroTitle">
+            </p>
+            <h1 className="type-48 text-text">
               A suite of benefits.
               <br />
               One subscription for it all.
-            </FeaturePageHeading>
-            <Text className="mx-auto max-w-hero-body text-paragraph">
+            </h1>
+            <p className="type-16 mx-auto max-w-hero-body text-paragraph">
               Seltaris+ brings together the best of Seltaris in one powerful
               subscription, giving your organisation advanced capabilities and
               real savings for a single monthly price. Every plan includes
@@ -152,7 +146,7 @@ export function SeltarisPlusPageHero() {
               our most advanced enterprise-level data protection architecture,
               volume discounts for bulk processing, and seamless sharing of
               these benefits across your organisation.
-            </Text>
+            </p>
           </div>
         </div>
 

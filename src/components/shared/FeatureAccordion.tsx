@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "@/components/ui/Image";
-import { useState } from "react";
-import { Text } from "@/components/ui/Text";
-import { siteAssets } from "@/lib/site-assets";
+import { useState } from "react";import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
 export type FeatureAccordionItem = {
@@ -40,25 +38,18 @@ export function FeatureAccordion({
         const panelId = `accordion-panel-${item.id}`;
 
         return (
-          <div
-            key={item.id}
-            className="w-full rounded-radius-lg bg-white/80 p-6 backdrop-blur-sm"
-          >
-            <button
-              type="button"
+          <div key={item.id}
+            className="w-full rounded-radius-lg bg-white/80 p-6 backdrop-blur-sm">
+            <button type="button"
               className="flex w-full items-center justify-between gap-4 text-left"
               aria-expanded={isOpen}
               aria-controls={panelId}
-              onClick={() => handleOpenChange(isOpen ? "" : item.id)}
-            >
-              <h3
-                id={headingId}
-                className="font-display text-xl leading-subheading font-bold text-text"
-              >
+              onClick={() => handleOpenChange(isOpen ? "" : item.id)}>
+              <h3 id={headingId}
+                className="font-display text-xl leading-subheading font-bold text-text">
                 {item.title}
               </h3>
-              <Image
-                src={
+              <Image src={
                   isOpen
                     ? siteAssets.getStarted.accordionMinus
                     : siteAssets.getStarted.accordionPlus
@@ -67,20 +58,17 @@ export function FeatureAccordion({
                 width={32}
                 height={32}
                 className="shrink-0"
-                aria-hidden
-              />
+                aria-hidden />
               <span className="sr-only">
                 {isOpen ? "Collapse section" : "Expand section"}
               </span>
             </button>
-            <div
-              id={panelId}
+            <div id={panelId}
               role="region"
               aria-labelledby={headingId}
               hidden={!isOpen}
-              className="pt-4"
-            >
-              <Text className="text-paragraph">{item.body}</Text>
+              className="pt-4">
+              <p className="type-16 text-paragraph">{item.body}</p>
             </div>
           </div>
         );

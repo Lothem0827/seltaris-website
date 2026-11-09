@@ -1,6 +1,4 @@
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { BannerImage } from "../components/MediaBlocks";
+import { Container } from "@/components/ui/Container";import { BannerImage } from "../components/MediaBlocks";
 import { SplitContentRow } from "../components/SplitContentRow";
 
 const SMALL_DETAIL_ROWS = [
@@ -80,24 +78,22 @@ export function SmallDetailsSection() {
       <Container className="flex flex-col gap-20">
         <BannerImage src="/images/human-touch/small-differences-banner.webp">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
-            <FeaturePageHeading as="h2" variant="bannerTitle">
+            <h2 className="type-48 text-text text-center">
               Small details making
               <br />
               <span className="text-brand">big differences.</span>
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="bannerSubtitle">
+            </h2>
+            <p className="type-18 text-paragraph text-center">
               Small inconsistencies modified to the correct address.
-            </FeaturePageHeading>
+            </p>
           </div>
         </BannerImage>
 
         <div className="flex flex-col gap-20">
           {SMALL_DETAIL_ROWS.map((row) => (
-            <SplitContentRow
-              key={row.id}
+            <SplitContentRow key={row.id}
               imageSrc={row.imageSrc}
-              imagePosition={row.imagePosition}
-            >
+              imagePosition={row.imagePosition}>
               {row.content}
             </SplitContentRow>
           ))}

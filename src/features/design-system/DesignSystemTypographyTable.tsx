@@ -25,7 +25,7 @@ export function DesignSystemTypographyTable() {
               Tracking
             </th>
             <th className="px-4 py-3 font-label text-label uppercase tracking-wider text-muted">
-              Token
+              Class
             </th>
             <th className="px-4 py-3 font-label text-label uppercase tracking-wider text-muted">
               Used by
@@ -58,7 +58,7 @@ export function DesignSystemTypographyTable() {
                 {group.tracking ?? "—"}
               </td>
               <td className="px-4 py-3 align-top">
-                <TokenCode>{group.cssVar}</TokenCode>
+                <TokenCode>{group.className}</TokenCode>
               </td>
               <td className="max-w-xs px-4 py-3 align-top text-paragraph">
                 {group.usages.join(" · ")}

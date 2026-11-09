@@ -1,9 +1,7 @@
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Heading } from "@/components/ui/Heading";
-import { PricingCard } from "@/components/shared/PricingCard";
+import { Eyebrow } from "@/components/ui/Eyebrow";import { PricingCard } from "@/components/shared/PricingCard";
 import { RevealGroup } from "@/components/shared/RevealGroup";
 import { RevealOnView } from "@/components/shared/RevealOnView";
 
@@ -13,14 +11,13 @@ export function PricingSection() {
       <Container className="flex flex-col items-center gap-12">
         <RevealOnView staggerIndex={0} className="max-w-2xl text-center">
           <Eyebrow label="Our Services" className="mb-5" />
-          <Heading level="sectionDisplay">
+          <h2 className="type-48 text-text">
             There&apos;s never been a better time to get started.
-          </Heading>
+          </h2>
         </RevealOnView>
 
         <RevealGroup className="grid w-full grid-cols-3 gap-6 lg:grid-cols-1">
-          <PricingCard
-            label="Repaired file only"
+          <PricingCard label="Repaired file only"
             tone="default"
             iconSrc="/images/home/pricing-icon-repaired.png"
             title="Address Validation"
@@ -32,10 +29,8 @@ export function PricingSection() {
             ]}
             footerNote="Only accessible after completing your Address Quality Health Check Report – Australia."
             showAustralia
-            cta={{ label: "Get started", href: SELTARIS_LOGIN_URL }}
-          />
-          <PricingCard
-            label="Health check report"
+            cta={{ label: "Get started", href: SELTARIS_LOGIN_URL }} />
+          <PricingCard label="Health check report"
             tone="success"
             iconSrc="/images/home/pricing-icon-health.png"
             title="Address Quality Health Check Report"
@@ -45,10 +40,8 @@ export function PricingSection() {
               "1x Repaired File Available for Purchase",
             ]}
             showAustralia
-            cta={{ label: "Get started", href: SELTARIS_LOGIN_URL }}
-          />
-          <PricingCard
-            label="Subscription"
+            cta={{ label: "Get started", href: SELTARIS_LOGIN_URL }} />
+          <PricingCard label="Subscription"
             tone="subscription"
             iconSrc="/seltaris-logo.svg"
             title="Seltaris+ Subscription"
@@ -57,16 +50,13 @@ export function PricingSection() {
               "1x Health Check Report",
               "Free Advanced Data Protection, Private Keys, volume discounts and licence sharing with your organisation.",
             ]}
-            cta={{ label: "Explore plans", href: "/seltaris-plus" }}
-          />
+            cta={{ label: "Explore plans", href: "/seltaris-plus" }} />
         </RevealGroup>
 
         <RevealOnView staggerIndex={0}>
-          <Button
-            href="/services"
+          <Button href="/services"
             variant="secondary"
-            className="bg-text text-white"
-          >
+            className="bg-text text-white">
             View all services
           </Button>
         </RevealOnView>

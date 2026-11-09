@@ -1,43 +1,37 @@
 import Image from "@/components/ui/Image";
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { IconSurface } from "@/components/ui/IconSurface";
+import { Container } from "@/components/ui/Container";import { IconSurface } from "@/components/ui/IconSurface";
 
 export function HeroSection() {
   return (
     <section className="pt-24 pb-section ">
       <Container className="flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-4 text-center">
-          <IconSurface
-            src="/icons/features/advanced-data-protection.svg"
+          <IconSurface src="/icons/features/advanced-data-protection.svg"
             alt="Advanced Data Protection"
-            size="feature"
-          />
+            size="feature" />
           <div className="mx-auto max-w-3xl space-y-5">
-            <FeaturePageHeading as="p" variant="pageEyebrow">
+            <p className="type-24-semi text-brand">
               Advanced Data Protection
-            </FeaturePageHeading>
-            <FeaturePageHeading as="h1" variant="heroTitle">
+            </p>
+            <h1 className="type-48 text-text">
               Enterprise grade security.
               <br />
               <span className="text-brand">Built from the ground up.</span>
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="heroSubtitle">
+            </h1>
+            <p className="type-18 text-paragraph">
               Your business is nobody else&apos;s. Not even GBG.
-            </FeaturePageHeading>
+            </p>
           </div>
         </div>
 
         <div className="relative w-full max-w-content-wide">
           <div className="relative aspect-auto h-visual-data w-full lg:aspect-[3/2] lg:h-auto sm:aspect-[4/3]">
-            <Image
-              src="/images/data-protection/hero-banner.webp"
+            <Image src="/images/data-protection/hero-banner.webp"
               alt="Advanced Data Protection"
               fill
               className="object-contain"
               sizes="1216px"
-              priority
-            />
+              priority />
           </div>
         </div>
       </Container>

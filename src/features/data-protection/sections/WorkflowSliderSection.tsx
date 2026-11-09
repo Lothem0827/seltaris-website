@@ -1,9 +1,6 @@
 "use client";
 
-import Image from "@/components/ui/Image";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-import {
+import Image from "@/components/ui/Image";import {
   ContentSlider,
   type SliderSlide,
 } from "@/components/shared/ContentSlider";
@@ -90,27 +87,25 @@ function WorkflowStepCard({
     <article className="group flex w-slide-card shrink-0 flex-col">
       <div className="relative">
         <div className="slider-slide-image-frame relative aspect-auto h-card-slide w-full overflow-hidden rounded-radius-lg border border-border sm:aspect-[4/3] sm:h-auto">
-          <Image
-            src={imageSrc}
+          <Image src={imageSrc}
             alt={title}
             fill
             priority={priority}
             loading={loading}
             className="slider-slide-image object-cover"
-            sizes="(max-width: 640px) 88vw, 572px"
-          />
+            sizes="(max-width: 640px) 88vw, 572px" />
         </div>
         <div className="absolute bottom-0 left-4 z-10 flex size-16 translate-y-1/2 items-center justify-center rounded-full border border-border bg-white">
-          <FeaturePageHeading as="p" variant="workflowStepNumber">
+          <p className="type-32 text-brand">
             {step}
-          </FeaturePageHeading>
+          </p>
         </div>
       </div>
       <div className="flex flex-col gap-4 px-4 pt-16">
-        <FeaturePageHeading as="h3" variant="workflowStepTitle">
+        <h3 className="type-24 text-text">
           {title}
-        </FeaturePageHeading>
-        <Text>{body}</Text>
+        </h3>
+        <p className="type-16 text-paragraph">{body}</p>
       </div>
     </article>
   );
@@ -120,14 +115,12 @@ const slides: SliderSlide[] = WORKFLOW_STEPS.map((item, index) => ({
   type: "custom",
   id: item.id,
   content: (
-    <WorkflowStepCard
-      step={item.step}
+    <WorkflowStepCard step={item.step}
       title={item.title}
       body={item.body}
       imageSrc={item.imageSrc}
       priority={index === 0}
-      loading={index === 0 ? "eager" : "lazy"}
-    />
+      loading={index === 0 ? "eager" : "lazy"} />
   ),
 }));
 

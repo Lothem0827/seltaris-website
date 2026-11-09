@@ -1,9 +1,6 @@
 "use client";
 
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-import {
+import { Container } from "@/components/ui/Container";import {
   SliderNavButtons,
   useSliderNav,
 } from "@/components/shared/SliderNavButtons";
@@ -82,15 +79,15 @@ export function BuiltForSpeedSection() {
       <Container>
         <div className="flex flex-row items-end justify-between gap-6 sm:flex-col">
           <div className="flex max-w-xl flex-col gap-6">
-            <FeaturePageHeading as="h2" variant="sectionTitleLg">
+            <h2 className="type-48 text-text">
               Built for speed.
               <br />
               Born to perform.
-            </FeaturePageHeading>
-            <Text className="max-w-md text-paragraph">
+            </h2>
+            <p className="type-16 max-w-md text-paragraph">
               Explore the advanced processing techniques that power Seltaris
               to industry leading performance.
-            </Text>
+            </p>
           </div>
           <SliderNavButtons {...navButtonProps} />
         </div>

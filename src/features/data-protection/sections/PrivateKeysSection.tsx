@@ -1,35 +1,29 @@
 import Image from "@/components/ui/Image";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-
-export function PrivateKeysSection() {
+import { Eyebrow } from "@/components/ui/Eyebrow";export function PrivateKeysSection() {
   return (
     <section className="pb-section">
       <Container className="flex flex-col gap-8">
         <div className="flex flex-row items-start justify-between gap-8 px-8 lg:flex-col sm:gap-6 sm:px-0">
           <div className="flex max-w-3xl flex-col gap-5">
             <Eyebrow label="Private Keys" />
-            <FeaturePageHeading as="h2" variant="sectionTitle">
+            <h2 className="type-32 text-text">
               Own private keys.
               <br />
               Control who sees.
-            </FeaturePageHeading>
+            </h2>
           </div>
           <div className="relative h-20 w-[7.5rem] shrink-0 sm:hidden">
-            <Image
-              src="/images/data-protection/private-keys-illustration.png"
+            <Image src="/images/data-protection/private-keys-illustration.png"
               alt=""
               fill
               className="object-contain "
-              sizes="120px"
-            />
+              sizes="120px" />
           </div>
         </div>
 
         <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1 sm:gap-6">
-          <Text as="div" className="prose-stack px-8 sm:px-0">
+          <div className="type-16 text-paragraph prose-stack px-8 sm:px-0">
             <p>
               A private key is your unique security credential, issued only to
               you, and it&apos;s the one and only way to unlock your final
@@ -51,8 +45,8 @@ export function PrivateKeysSection() {
               decrypted data can exist at rest, meaning administrators or third
               parties could potentially access your information.
             </p>
-          </Text>
-          <Text as="div" className="prose-stack px-8 sm:px-0">
+          </div>
+          <div className="type-16 text-paragraph prose-stack px-8 sm:px-0">
             <p>
               By giving you sole control of your private key, Advanced data
               protection guarantees:
@@ -78,7 +72,7 @@ export function PrivateKeysSection() {
               anyone else to step between you and your data. Even under force, we
               cannot hand over what we cannot see.
             </p>
-          </Text>
+          </div>
         </div>
       </Container>
     </section>

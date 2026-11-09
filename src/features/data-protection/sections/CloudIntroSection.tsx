@@ -1,10 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { IconSurface } from "@/components/ui/IconSurface";
-import { Text } from "@/components/ui/Text";
-
-export function CloudIntroSection() {
+import { Eyebrow } from "@/components/ui/Eyebrow";import { IconSurface } from "@/components/ui/IconSurface";export function CloudIntroSection() {
   return (
     <section className="pb-section">
       <Container className="flex flex-col gap-12">
@@ -12,20 +7,18 @@ export function CloudIntroSection() {
           <div className="grid-aside-layout">
             <div className="space-y-6 px-8 sm:px-0">
               <Eyebrow label="Encrypted Cloud Computing™" />
-              <FeaturePageHeading as="h2" variant="sectionTitle">
+              <h2 className="type-32 text-text">
                 Cloud security at its highest.
                 <br />
                 Protections at its tightest.
-              </FeaturePageHeading>
+              </h2>
             </div>
-            <IconSurface
-              src="/icons/features/advanced-data-protection.svg"
-              className="mx-0 shrink-0 lg:mx-auto sm:hidden"
-            />
+            <IconSurface src="/icons/features/advanced-data-protection.svg"
+              className="mx-0 shrink-0 lg:mx-auto sm:hidden" />
           </div>
 
           <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1 sm:gap-6">
-            <Text as="div" className="prose-stack px-8 sm:px-0">
+            <div className="type-16 text-paragraph prose-stack px-8 sm:px-0">
               <p>
                 We have spent nearly three decades pushing the boundaries of
                 what it means to turn your data quality from good to your
@@ -41,8 +34,8 @@ export function CloudIntroSection() {
                 these boundaries even further — with a goal to handle larger
                 batch files securely with groundbreaking speed and performance.
               </p>
-            </Text>
-            <Text as="div" className="prose-stack px-8 sm:px-0">
+            </div>
+            <div className="type-16 text-paragraph prose-stack px-8 sm:px-0">
               <p>
                 That led us to revisit our existing security stack and integrate
                 additional layers for higher volume workloads. An innovative
@@ -57,34 +50,30 @@ export function CloudIntroSection() {
                 airtight protections. Your data remains confidential, heavily
                 encrypted, and not accessible to anyone.
               </p>
-            </Text>
+            </div>
           </div>
         </div>
 
         <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1 sm:gap-6">
-          <FeaturePageHeading
-            as="h3"
-            variant="sectionTitle"
-            className="px-8 sm:px-0"
-          >
+          <h3 className="type-32 text-text px-8 sm:px-0">
             Why we built it
-          </FeaturePageHeading>
+          </h3>
           <div className="space-y-6 px-8 sm:px-0">
-            <Text>
+            <p className="type-16 text-paragraph">
               Competing cloud environments, while convenient, pose familiar
               risks. Once data is inside competing cloud platforms, enforcing
               zero-access guarantees becomes challenging. Logging systems,
               privileged support consoles, and broad administrative access can
               inadvertently expose data or leave it vulnerable during
               operational troubleshooting.
-            </Text>
-            <Text>
+            </p>
+            <p className="type-16 text-paragraph">
               That&apos;s not acceptable for your businesses highly sensitive
               data. With Encrypted Cloud Computing™, we&apos;ve taken a
               ground-up approach to cloud security that mirrors — and even
               surpasses — the standards we&apos;ve long upheld with cloud and
               on-premise processing.
-            </Text>
+            </p>
           </div>
         </div>
       </Container>

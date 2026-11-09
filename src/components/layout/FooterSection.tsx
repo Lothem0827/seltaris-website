@@ -1,10 +1,7 @@
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
-import { FooterExtendedSection } from "@/components/layout/FooterExtendedSection";
+import { Eyebrow } from "@/components/ui/Eyebrow";import { FooterExtendedSection } from "@/components/layout/FooterExtendedSection";
 
 export function FooterSection() {
   return (
@@ -14,13 +11,13 @@ export function FooterSection() {
           <div className="flex flex-col items-center gap-10">
             <div className="flex flex-col items-center gap-2.5">
               <Eyebrow label="Bulk Data Enhancement Tool" badge="AVAILABLE NOW" />
-              <Heading as="h2" level="display" className="max-w-4xl">
+              <h2 className="type-90 text-text max-w-4xl">
                 Seltaris
-              </Heading>
-              <Text className="max-w-3xl text-xl font-medium">
+              </h2>
+              <p className="type-16 text-paragraph max-w-3xl text-xl font-medium">
                 High quality results. Unbelievable performance. Incredibly
                 secure.
-              </Text>
+              </p>
             </div>
 
             <Button href={SELTARIS_LOGIN_URL}>Get started with Seltaris</Button>

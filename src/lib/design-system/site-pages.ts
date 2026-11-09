@@ -92,6 +92,18 @@ export const SITE_PAGES: SitePageEntry[] = [
     routeFile: "src/app/design-system/page.tsx",
   },
   {
+    path: "/enterprise/business",
+    title: "Enterprise | Seltaris",
+    template: "EnterprisePage",
+    routeFile: "src/app/enterprise/business/page.tsx",
+  },
+  {
+    path: "/enterprise/government",
+    title: "Government | Seltaris",
+    template: "EnterprisePage",
+    routeFile: "src/app/enterprise/government/page.tsx",
+  },
+  {
     path: "/success-stories/temple-webster",
     title: "Temple & Webster | Success Stories | Seltaris",
     template: "SuccessStoryPage",

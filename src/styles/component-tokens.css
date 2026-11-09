@@ -35,95 +35,27 @@
   --color-tier-premier-to: #2d0f6e;
 
   /* ─── Extended typography ─── */
-  --text-section-display-size: 3rem; /* 48px — compact display headings */
-  --text-micro-size: 0.625rem; /* 10px */
+  --text-section-display-size: 3rem; /* 48px — type-48 */
+  --text-micro-size: 0.625rem; /* 10px — type-10 */
   --text-micro-line: 0.8125rem; /* 13px */
+  --weight-micro: 600;
   --text-badge-size: 0.4375rem; /* 7px */
   --text-link-nav-size: 0.875rem; /* 14px — footer nav links */
 
-  /* ─── Feature page typography (seltaris.com Elementor kit — max desktop sizes) ─── */
-  --text-fp-eyebrow: 1.5rem; /* 24px — d39c97f */
-  --leading-fp-eyebrow: 1.3;
-  --weight-fp-eyebrow: 600;
-  --text-fp-hero: var(--text-section-display-size);
-  --leading-fp-hero: var(--text-h1-line);
-  --tracking-fp-hero: var(--text-h1-tracking);
-  --weight-fp-hero: 700;
-  --text-fp-hero-sub: var(--text-fp-subtitle-size);
-  --leading-fp-hero-sub: var(--leading-fp-subtitle);
-  --weight-fp-hero-sub: var(--weight-fp-subtitle);
-  --text-fp-banner: var(--text-section-display-size);
-  --leading-fp-banner: var(--text-h1-line);
-  --tracking-fp-banner: var(--text-h1-tracking);
-  --weight-fp-banner: 700;
-  --text-fp-banner-wide: var(--text-section-display-size);
-  --leading-fp-banner-wide: var(--text-h1-line);
-  --tracking-fp-banner-wide: var(--text-h1-tracking);
-  --weight-fp-banner-wide: 700;
-  --text-fp-banner-sub: var(--text-fp-subtitle-size);
-  --leading-fp-banner-sub: var(--leading-fp-subtitle);
-  --weight-fp-banner-sub: var(--weight-fp-subtitle);
-  --text-fp-section: var(--text-h1-size);
-  --leading-fp-section: var(--text-h1-line);
-  --weight-fp-section: 700;
-  --text-fp-section-lg: var(--text-section-display-size);
-  --leading-fp-section-lg: var(--text-h1-line);
-  --tracking-fp-section-lg: var(--text-h1-tracking);
-  --weight-fp-section-lg: 700;
-  --text-fp-section-xl: var(--text-section-display-size);
-  --leading-fp-section-xl: var(--text-h1-line);
-  --tracking-fp-section-xl: var(--text-h1-tracking);
-  --weight-fp-section-xl: 700;
-  --text-fp-heading-sm: var(--text-h1-size);
-  --leading-fp-heading-sm: var(--text-h1-line);
-  --tracking-fp-heading-sm: var(--text-h1-tracking);
-  --weight-fp-heading-sm: 700;
-  --text-fp-heading-md: var(--text-h1-size);
-  --leading-fp-heading-md: var(--text-h1-line);
-  --tracking-fp-heading-md: var(--text-h1-tracking);
-  --weight-fp-heading-md: 700;
-  --text-fp-heading-split: var(--text-h1-size);
-  --leading-fp-heading-split: var(--text-h1-line);
-  --tracking-fp-heading-split: var(--text-h1-tracking);
-  --weight-fp-heading-split: 700;
-  --text-fp-card: var(--text-h1-size);
-  --leading-fp-card: var(--text-h1-line);
-  --weight-fp-card: 700;
-  --text-fp-teaser: var(--text-section-display-size);
-  --leading-fp-teaser: var(--text-h1-line);
-  --tracking-fp-teaser: var(--text-h1-tracking);
-  --weight-fp-teaser: 700;
-  --text-fp-feature-eyebrow: var(--text-body-sm-size);
-  --leading-fp-feature-eyebrow: var(--text-body-sm-line);
-  --weight-fp-feature-eyebrow: 400;
-  --text-fp-feature-title: var(--text-fp-section);
-  --leading-fp-feature-title: var(--leading-fp-section);
-  --weight-fp-feature-title: var(--weight-fp-section);
-  --text-fp-slide-title: var(--text-subheading-size);
-  --leading-fp-slide-title: var(--text-subheading-line);
-  --weight-fp-slide-title: var(--weight-subheading);
-  --text-fp-workflow-num: var(--text-h1-size);
-  --leading-fp-workflow-num: var(--text-h1-line);
-  --weight-fp-workflow-num: 700;
-  --text-fp-workflow-title: var(--text-subheading-size);
-  --leading-fp-workflow-title: var(--text-subheading-line);
-  --tracking-fp-workflow-title: -1px;
-  --weight-fp-workflow-title: var(--weight-subheading);
-  --text-fp-stat-label: 1rem; /* 16px — 98449ba */
-  --leading-fp-stat-label: 1.4;
-  --weight-fp-stat-label: 500;
-  --text-fp-stat-value: var(--text-h1-size);
-  --leading-fp-stat-value: var(--text-h1-line);
-  --weight-fp-stat-value: 700;
-  --text-fp-body-lead: var(--text-h1-size);
-  --leading-fp-body-lead: var(--text-h1-line);
-  --tracking-fp-body-lead: var(--text-h1-tracking);
-  --weight-fp-body-lead: 700;
+  /* Canonical type scale extras (size/weight not in tokens.css) */
+  --text-type-40-size: 2.5rem; /* 40px — type-40 */
+  --leading-type-24-semi: 1.3;
+  --weight-type-24-semi: 600;
+  --leading-type-16-medium: 1.4;
+  --weight-type-16-medium: 500;
+  --weight-type-14-bold: 700;
+  --weight-type-12: 400;
 
-  /* Feature page heading — mobile (≤639px) */
-  --text-fp-display-mobile: 2.25rem; /* 36px — desktop 48px group */
-  --text-fp-h1-mobile: 1.75rem; /* 28px — desktop 32px group */
-  --text-fp-subheading-mobile: 1.25rem; /* 20px — desktop 24px group */
+  /* type-* mobile step-downs (≤639px) */
+  --text-type-48-mobile: 2.25rem; /* 36px */
+  --text-type-40-mobile: 2rem; /* 32px */
+  --text-type-32-mobile: 1.75rem; /* 28px */
+  --text-type-24-mobile: 1.25rem; /* 20px */
   /* ─── Layout widths ─── */
   --width-logo: 9.375rem;
   --height-logo: 2.625rem; /* Seltaris header logo display height — width follows SVG ratio */

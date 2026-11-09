@@ -1,9 +1,7 @@
 import Image from "@/components/ui/Image";
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { cn } from "@/lib/utils";
+import { Container } from "@/components/ui/Container";import { cn } from "@/lib/utils";
 
 type SeltarisPlusOfferingTone =
   | "health"
@@ -80,52 +78,40 @@ function OfferingCard({
   cta,
 }: SeltarisPlusOffering) {
   return (
-    <article
-      className={cn("grid-offering", offeringBackgrounds[backgroundTone])}
-    >
+    <article className={cn("grid-offering", offeringBackgrounds[backgroundTone])}>
       <div className="flex min-h-offering-panel flex-col justify-between p-12 sm:min-h-fit ">
         <div className="space-y-8">
-          <Image
-            src={iconSrc}
+          <Image src={iconSrc}
             alt=""
             width={60}
             height={60}
             className="object-contain"
             style={{ width: 60, height: 60 }}
-            sizes="60px"
-          />
+            sizes="60px" />
           <div className="space-y-2">
-            <FeaturePageHeading as="h2" variant="cardTitle">
+            <h2 className="type-32 text-text">
               {heading}
-            </FeaturePageHeading>
-            <FeaturePageHeading
-              as="p"
-              variant="bannerSubtitle"
-              className="text-left"
-            >
+            </h2>
+            <p className="type-18 text-paragraph text-center text-left">
               {body}
-            </FeaturePageHeading>
+            </p>
           </div>
         </div>
         {cta ? (
-          <Button
-            href={cta.href}
+          <Button href={cta.href}
             variant="ghost"
             size="small"
-            className="sm:mt-6"
-          >
+            className="sm:mt-6">
             {cta.label ?? "Learn more"}
           </Button>
         ) : null}
       </div>
       <div className="relative min-h-offering-panel lg:min-h-offering-image">
-        <Image
-          src={imageSrc}
+        <Image src={imageSrc}
           alt=""
           fill
           className="object-cover"
-          sizes="681px"
-        />
+          sizes="681px" />
       </div>
     </article>
   );
@@ -136,20 +122,16 @@ export function SeltarisPlusIncludedSection() {
     <section className="pb-section">
       <Container className="flex flex-col gap-16">
         <div className="mx-auto max-w-3xl space-y-5 text-center">
-          <FeaturePageHeading
-            as="p"
-            variant="bannerSubtitle"
-            className="text-brand"
-          >
+          <p className="type-18 text-brand">
             What&apos;s included in Seltaris+
-          </FeaturePageHeading>
-          <FeaturePageHeading as="h2" variant="sectionTitleLg">
+          </p>
+          <h2 className="type-48 text-text">
             <>
               Learn more about the
               <br />
               core offerings of <span className="text-brand">Seltaris+</span>
             </>
-          </FeaturePageHeading>
+          </h2>
         </div>
 
         <div className="flex flex-col gap-8">

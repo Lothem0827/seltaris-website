@@ -7,9 +7,7 @@ import { MobileEnterpriseNav } from "@/components/layout/MobileEnterpriseNav";
 import { MobileFeaturesNav } from "@/components/layout/MobileFeaturesNav";
 import { MobileSolutionsNav } from "@/components/layout/MobileSolutionsNav";
 import { Logo } from "@/components/layout/Logo";
-import { Button } from "@/components/ui/Button";
-import { Heading } from "@/components/ui/Heading";
-import { useFocusTrap } from "@/hooks/useFocusTrap";
+import { Button } from "@/components/ui/Button";import { useFocusTrap } from "@/hooks/useFocusTrap";
 import { mainNavLinks } from "@/components/layout/main-nav.content";
 import { SELTARIS_DEMO_URL, SELTARIS_LOGIN_URL, siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
@@ -32,17 +30,14 @@ function AccordionTrigger({
   onToggle: () => void;
 }) {
   return (
-    <button
-      type="button"
+    <button type="button"
       className="flex w-full items-center justify-between py-2 text-left"
       aria-expanded={isOpen}
-      onClick={onToggle}
-    >
-      <Heading as="p" level="h2">
+      onClick={onToggle}>
+      <p className="type-24 text-text">
         {label}
-      </Heading>
-      <Image
-        src={siteAssets.chevronDown}
+      </p>
+      <Image src={siteAssets.chevronDown}
         alt=""
         width={24}
         height={24}
@@ -50,8 +45,7 @@ function AccordionTrigger({
           "shrink-0 opacity-70 transition-transform",
           isOpen && "rotate-180",
         )}
-        aria-hidden
-      />
+        aria-hidden />
     </button>
   );
 }
@@ -117,31 +111,25 @@ export function MobileNavDrawer({
   const plainLinks = mainNavLinks.filter((link) => !link.hasDropdown);
 
   return (
-    <div
-      ref={drawerRef}
+    <div ref={drawerRef}
       id="mobile-nav-drawer"
       role="dialog"
       aria-modal="true"
       aria-label="Main menu"
-      className="fixed inset-0 z-dropdown flex flex-col bg-white p-container-padding"
-    >
+      className="fixed inset-0 z-dropdown flex flex-col bg-white p-container-padding">
       <div className="flex min-h-0 flex-1 flex-col gap-12">
         <div className="flex items-center justify-between">
           <Logo />
-          <button
-            ref={closeButtonRef}
+          <button ref={closeButtonRef}
             type="button"
             className="inline-flex size-7 shrink-0 items-center justify-center text-text"
             aria-label="Close menu"
-            onClick={onClose}
-          >
-            <Image
-              src={siteAssets.closeIcon}
+            onClick={onClose}>
+            <Image src={siteAssets.closeIcon}
               alt=""
               width={28}
               height={28}
-              aria-hidden
-            />
+              aria-hidden />
           </button>
         </div>
 
@@ -149,11 +137,9 @@ export function MobileNavDrawer({
           <nav aria-label="Mobile" className="flex flex-col gap-3">
             {(expandedSection === null || expandedSection === "solutions") && (
               <div className="flex flex-col gap-3">
-                <AccordionTrigger
-                  label="Solutions"
+                <AccordionTrigger label="Solutions"
                   isOpen={expandedSection === "solutions"}
-                  onToggle={() => toggleSection("solutions")}
-                />
+                  onToggle={() => toggleSection("solutions")} />
                 {expandedSection === "solutions" ? (
                   <MobileSolutionsNav onNavigate={handleNavigate} />
                 ) : null}
@@ -162,11 +148,9 @@ export function MobileNavDrawer({
 
             {(expandedSection === null || expandedSection === "features") && (
               <div className="flex flex-col gap-3">
-                <AccordionTrigger
-                  label="Features"
+                <AccordionTrigger label="Features"
                   isOpen={expandedSection === "features"}
-                  onToggle={() => toggleSection("features")}
-                />
+                  onToggle={() => toggleSection("features")} />
                 {expandedSection === "features" ? (
                   <MobileFeaturesNav onNavigate={handleNavigate} />
                 ) : null}
@@ -175,11 +159,9 @@ export function MobileNavDrawer({
 
             {(expandedSection === null || expandedSection === "enterprise") && (
               <div className="flex flex-col gap-3">
-                <AccordionTrigger
-                  label="Enterprise"
+                <AccordionTrigger label="Enterprise"
                   isOpen={expandedSection === "enterprise"}
-                  onToggle={() => toggleSection("enterprise")}
-                />
+                  onToggle={() => toggleSection("enterprise")} />
                 {expandedSection === "enterprise" ? (
                   <MobileEnterpriseNav onNavigate={handleNavigate} />
                 ) : null}
@@ -188,15 +170,13 @@ export function MobileNavDrawer({
 
             {expandedSection === null &&
               plainLinks.map((link) => (
-                <Link
-                  key={link.label}
+                <Link key={link.label}
                   href={link.href}
                   className="py-2"
-                  onClick={handleNavigate}
-                >
-                  <Heading as="p" level="h2">
+                  onClick={handleNavigate}>
+                  <p className="type-24 text-text">
                     {link.label}
-                  </Heading>
+                  </p>
                 </Link>
               ))}
           </nav>
@@ -204,19 +184,15 @@ export function MobileNavDrawer({
       </div>
 
       <div className="mt-6 flex flex-col gap-3">
-        <Button
-          href={SELTARIS_DEMO_URL}
+        <Button href={SELTARIS_DEMO_URL}
           variant="outline"
           className="w-full"
-          onClick={handleNavigate}
-        >
+          onClick={handleNavigate}>
           See a demo
         </Button>
-        <Button
-          href={SELTARIS_LOGIN_URL}
+        <Button href={SELTARIS_LOGIN_URL}
           className="w-full"
-          onClick={handleNavigate}
-        >
+          onClick={handleNavigate}>
           Get started
         </Button>
       </div>

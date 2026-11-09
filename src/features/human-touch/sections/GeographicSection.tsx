@@ -1,6 +1,4 @@
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { BannerImage } from "../components/MediaBlocks";
+import { Container } from "@/components/ui/Container";import { BannerImage } from "../components/MediaBlocks";
 import { SplitContentRow } from "../components/SplitContentRow";
 
 const GEOGRAPHIC_ROWS = [
@@ -90,22 +88,20 @@ export function GeographicSection() {
       <Container className="flex flex-col gap-20">
         <BannerImage src="/images/human-touch/geographic-banner.webp">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
-            <FeaturePageHeading as="h2" variant="bannerTitle">
+            <h2 className="type-48 text-text text-center">
               Geographic Intelligence
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="bannerSubtitle">
+            </h2>
+            <p className="type-18 text-paragraph text-center">
               Recognises the unique geographic nuances behind each address.
-            </FeaturePageHeading>
+            </p>
           </div>
         </BannerImage>
 
         <div className="flex flex-col gap-20">
           {GEOGRAPHIC_ROWS.map((row) => (
-            <SplitContentRow
-              key={row.id}
+            <SplitContentRow key={row.id}
               imageSrc={row.imageSrc}
-              imagePosition={row.imagePosition}
-            >
+              imagePosition={row.imagePosition}>
               {row.content}
             </SplitContentRow>
           ))}

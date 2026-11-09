@@ -13,7 +13,7 @@ export type EnterpriseIndustry = {
   title: string;
   description: string;
   href: string;
-  external: true;
+  external?: boolean;
 };
 
 export const enterpriseStories: EnterpriseStory[] = [
@@ -51,23 +51,20 @@ export const enterpriseIndustries: EnterpriseIndustry[] = [
     id: "b2c",
     title: "B2C",
     description: "Clean data powering every customer touchpoint.",
-    href: "https://datatools.com.au/datatools-enterprise/",
-    external: true,
+    href: "/enterprise/business",
   },
   {
     id: "b2b",
     title: "B2B",
     description:
       "Manage large datasets efficiently so you can focus on scaling.",
-    href: "https://datatools.com.au/datatools-enterprise/",
-    external: true,
+    href: "/enterprise/business",
   },
   {
     id: "government",
     title: "Government",
     description:
       "Helping agencies serve the public with confidence and transparency.",
-    href: "https://datatools.com.au/datatools-government/",
-    external: true,
+    href: "/enterprise/government",
   },
 ];

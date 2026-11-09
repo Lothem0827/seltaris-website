@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
-import { RegionBadge } from "@/components/shared/RegionBadge";
+import { Container } from "@/components/ui/Container";import { RegionBadge } from "@/components/shared/RegionBadge";
 import { RevealOnView } from "@/components/shared/RevealOnView";
 import { ServiceCard } from "@/components/shared/ServiceCard";
 import { ServicesDeferredAnimation } from "@/features/home/components/ServicesDeferredAnimation";
@@ -61,19 +58,19 @@ export function ServicesSection() {
       <Container className="flex flex-col gap-12">
         <div className="flex flex-row justify-between gap-10 lg:flex-col">
           <RevealOnView staggerIndex={0} className="max-w-md">
-            <Heading as="h2" level="h1">
+            <h2 className="type-32 text-text">
               Services designed to get you cleaning,{" "}
               <span className="text-brand">fast.</span>
-            </Heading>
+            </h2>
           </RevealOnView>
           <RevealOnView staggerIndex={1} className="max-w-md space-y-2.5">
-            <Text>
+            <p className="type-16 text-paragraph">
               Seltaris brings together a powerful suite of services designed to
               clean and enrich your organisation&apos;s data. We&apos;re proud
               to offer our most advanced tools that make data quality simple.
               Starting today, you can clean and validate Australian addresses
               with phone, email validation, and geocoding coming soon.
-            </Text>
+            </p>
             <Button href="/services" variant="ghost" size="small">
               View all services
             </Button>
@@ -87,18 +84,14 @@ export function ServicesSection() {
         <RevealOnView staggerIndex={3}>
           <div className="grid grid-cols-4 gap-4 xl:grid-cols-2 md:grid-cols-1">
             {services.map((service) => (
-              <Link
-                key={service.id}
+              <Link key={service.id}
                 href={serviceCategoryAnchor(service.categoryId)}
                 className="block h-full"
-                scroll={false}
-              >
-                <ServiceCard
-                  title={service.title}
+                scroll={false}>
+                <ServiceCard title={service.title}
                   description={service.description}
                   iconSrc={service.iconSrc}
-                  comingSoon={service.comingSoon}
-                />
+                  comingSoon={service.comingSoon} />
               </Link>
             ))}
           </div>
@@ -115,7 +108,7 @@ export function ServicesSection() {
 function AvailableFor() {
   return (
     <div className="flex flex-wrap  justify-center gap-6 sm:flex-col sm:gap-4 items-center">
-      <Text variant="utility">Available for:</Text>
+      <p className="type-12 text-paragraph">Available for:</p>
       <div className="flex flex-wrap items-center gap-3 ">
         <RegionBadge region="australia" className="sm:w-full" />
         <RegionBadge region="nz" comingSoon className="sm:w-full" />

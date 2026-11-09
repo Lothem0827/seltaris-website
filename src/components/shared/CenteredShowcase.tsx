@@ -1,8 +1,5 @@
 import Image from "@/components/ui/Image";
-import { RevealOnView } from "@/components/shared/RevealOnView";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
-import { cn } from "@/lib/utils";
+import { RevealOnView } from "@/components/shared/RevealOnView";import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 export type ShowcaseSize = "default" | "tall" | "data" | "health";
@@ -32,31 +29,25 @@ export function CenteredShowcase({
   className,
 }: CenteredShowcaseProps) {
   return (
-    <div
-      className={cn("flex flex-col items-center gap-12 text-center", className)}
-    >
+    <div className={cn("flex flex-col items-center gap-12 text-center", className)}>
       <RevealOnView staggerIndex={0} className="mx-auto max-w-3xl space-y-4">
-        <Heading level="sectionDisplay">{title}</Heading>
+        <h2 className="type-48 text-text">{title}</h2>
         {subtitle ? (
-          <Text variant="body" className="text-subheading font-semibold">
+          <p className="type-16 text-paragraph text-subheading font-semibold">
             {subtitle}
-          </Text>
+          </p>
         ) : null}
       </RevealOnView>
-      <RevealOnView
-        staggerIndex={1}
+      <RevealOnView staggerIndex={1}
         className={cn(
           "relative w-full max-w-container overflow-hidden rounded-radius-lg",
           showcaseHeights[imageSize],
-        )}
-      >
-        <Image
-          src={imageSrc}
+        )}>
+        <Image src={imageSrc}
           alt={imageAlt}
           fill
           className="object-contain"
-          sizes="(max-width: 768px) 100vw, 1200px"
-        />
+          sizes="(max-width: 768px) 100vw, 1200px" />
       </RevealOnView>
     </div>
   );

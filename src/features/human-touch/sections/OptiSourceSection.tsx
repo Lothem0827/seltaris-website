@@ -1,8 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-import { FeatureImage } from "../components/MediaBlocks";
+import { Eyebrow } from "@/components/ui/Eyebrow";import { FeatureImage } from "../components/MediaBlocks";
 
 export function OptiSourceSection() {
   return (
@@ -10,41 +7,35 @@ export function OptiSourceSection() {
       <Container className="flex flex-col gap-16">
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <Eyebrow label="OptiSource System™" />
-          <FeaturePageHeading as="h2" variant="bannerTitleWide">
+          <h2 className="type-48 text-text text-center">
             Quality datasets mean more accurate results
-          </FeaturePageHeading>
+          </h2>
         </div>
 
-        <FeatureImage
-          src="/images/human-touch/optisource-diagram.webp"
-          className="min-h-content-block-xl lg:min-h-content-block-lg"
-        />
+        <FeatureImage src="/images/human-touch/optisource-diagram.webp"
+          className="min-h-content-block-xl lg:min-h-content-block-lg" />
 
         <div className="grid grid-cols-2 items-start gap-12 lg:grid-cols-1">
           <div className="flex flex-col gap-8 p-8 sm:px-0">
             <div className="space-y-3">
-              <FeaturePageHeading as="h3" variant="headingSmall">
+              <h3 className="type-32 text-text">
                 Premium dataset options
-              </FeaturePageHeading>
-              <Text>
+              </h3>
+              <p className="type-16 text-paragraph">
                 While most solutions rely solely on the standard government
                 datasets available in Australia and New Zealand, Seltaris goes
                 further.
-              </Text>
+              </p>
             </div>
             <div className="w-full rounded-radius-lg border border-brand bg-brand-muted p-6 shadow-sm">
-              <Text>Australian Postal Data</Text>
-              <FeaturePageHeading
-                as="p"
-                variant="featureCardTitle"
-                className="mt-2 text-brand"
-              >
+              <p className="type-16 text-paragraph">Australian Postal Data</p>
+              <p className="type-32 mt-2 text-brand">
                 99% accuracy
-              </FeaturePageHeading>
+              </p>
             </div>
           </div>
           <div className="flex items-center p-8 sm:px-0">
-            <Text as="div" className="prose-stack">
+            <div className="type-16 text-paragraph prose-stack">
               <p>
                 GBG OptiSource System™ includes an expansive semantic
                 index that organises and surfaces information from a variety of
@@ -63,7 +54,7 @@ export function OptiSourceSection() {
                 This entire process happens in milliseconds, giving you the
                 fastest and most precise results, every time.
               </p>
-            </Text>
+            </div>
           </div>
         </div>
       </Container>

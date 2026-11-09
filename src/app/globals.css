@@ -67,9 +67,9 @@
   --text-label: var(--text-label-size);
   --text-nav-title: var(--text-nav-title-size);
   --text-section-display: var(--text-section-display-size);
-  --text-section-display-mobile: var(--text-fp-display-mobile);
-  --text-h1-mobile: var(--text-fp-h1-mobile);
-  --text-subheading-mobile: var(--text-fp-subheading-mobile);
+  --text-section-display-mobile: var(--text-type-48-mobile);
+  --text-h1-mobile: var(--text-type-32-mobile);
+  --text-subheading-mobile: var(--text-type-24-mobile);
   --text-micro: var(--text-micro-size);
   --text-badge: var(--text-badge-size);
   --text-link-nav: var(--text-link-nav-size);
@@ -706,212 +706,110 @@ body {
 }
 
 @layer components {
-  /* Feature page typography */
-  .fp-page-eyebrow {
+  /* Canonical type scale — font/size/weight/leading/tracking only */
+  .type-90 {
+    font-family: var(--font-display);
+    font-size: var(--text-display-size);
+    line-height: var(--text-display-line);
+    letter-spacing: var(--text-display-tracking);
+    font-weight: 700;
+  }
+  .type-48 {
+    font-family: var(--font-display);
+    font-size: var(--text-section-display-size);
+    line-height: var(--text-h1-line);
+    letter-spacing: var(--text-h1-tracking);
+    font-weight: 700;
+  }
+  .type-40 {
+    font-family: var(--font-display);
+    font-size: var(--text-type-40-size);
+    line-height: var(--text-h1-line);
+    letter-spacing: var(--text-h1-tracking);
+    font-weight: 700;
+  }
+  .type-32 {
+    font-family: var(--font-display);
+    font-size: var(--text-h1-size);
+    line-height: var(--text-h1-line);
+    letter-spacing: var(--text-h1-tracking);
+    font-weight: 700;
+  }
+  .type-24 {
+    font-family: var(--font-display);
+    font-size: var(--text-subheading-size);
+    line-height: var(--text-subheading-line);
+    font-weight: var(--weight-subheading);
+  }
+  .type-24-semi {
     font-family: var(--font-body);
-    font-size: var(--text-fp-eyebrow);
-    line-height: var(--leading-fp-eyebrow);
-    font-weight: var(--weight-fp-eyebrow);
-    color: var(--color-brand);
+    font-size: var(--text-subheading-size);
+    line-height: var(--leading-type-24-semi);
+    font-weight: var(--weight-type-24-semi);
   }
-  .fp-hero-title {
+  .type-20 {
     font-family: var(--font-display);
-    font-size: var(--text-fp-hero);
-    line-height: var(--leading-fp-hero);
-    letter-spacing: var(--tracking-fp-hero);
-    font-weight: var(--weight-fp-hero);
-    color: var(--color-text);
+    font-size: var(--text-nav-title-size);
+    line-height: var(--text-nav-title-line);
+    letter-spacing: var(--text-nav-title-tracking);
+    font-weight: 700;
   }
-  .fp-hero-subtitle {
+  .type-18 {
     font-family: var(--font-body);
-    font-size: var(--text-fp-hero-sub);
-    line-height: var(--leading-fp-hero-sub);
-    font-weight: var(--weight-fp-hero-sub);
-    color: var(--color-paragraph);
+    font-size: var(--text-type-18-size);
+    line-height: var(--leading-type-18);
+    font-weight: var(--weight-type-18);
   }
-  .fp-banner-title {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-banner);
-    line-height: var(--leading-fp-banner);
-    letter-spacing: var(--tracking-fp-banner);
-    font-weight: var(--weight-fp-banner);
-    color: var(--color-text);
-    text-align: center;
-  }
-  .fp-banner-title-wide {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-banner-wide);
-    line-height: var(--leading-fp-banner-wide);
-    letter-spacing: var(--tracking-fp-banner-wide);
-    font-weight: var(--weight-fp-banner-wide);
-    color: var(--color-text);
-    text-align: center;
-  }
-  .fp-banner-subtitle {
+  .type-16 {
     font-family: var(--font-body);
-    font-size: var(--text-fp-banner-sub);
-    line-height: var(--leading-fp-banner-sub);
-    font-weight: var(--weight-fp-banner-sub);
-    color: var(--color-paragraph);
-    text-align: center;
-  }
-  .fp-section-title {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-section);
-    line-height: var(--leading-fp-section);
-    font-weight: var(--weight-fp-section);
-    color: var(--color-text);
-  }
-  .fp-section-title-lg {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-section-lg);
-    line-height: var(--leading-fp-section-lg);
-    letter-spacing: var(--tracking-fp-section-lg);
-    font-weight: var(--weight-fp-section-lg);
-    color: var(--color-text);
-  }
-  .fp-section-title-xl {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-section-xl);
-    line-height: var(--leading-fp-section-xl);
-    letter-spacing: var(--tracking-fp-section-xl);
-    font-weight: var(--weight-fp-section-xl);
-    color: var(--color-text);
-    text-align: center;
-  }
-  .fp-heading-sm {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-heading-sm);
-    line-height: var(--leading-fp-heading-sm);
-    letter-spacing: var(--tracking-fp-heading-sm);
-    font-weight: var(--weight-fp-heading-sm);
-    color: var(--color-text);
-  }
-  .fp-heading-md {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-heading-md);
-    line-height: var(--leading-fp-heading-md);
-    letter-spacing: var(--tracking-fp-heading-md);
-    font-weight: var(--weight-fp-heading-md);
-    color: var(--color-text);
-  }
-  .fp-heading-split-mint,
-  .fp-heading-split-dm {
-    font-size: var(--text-fp-heading-split);
-    line-height: var(--leading-fp-heading-split);
-    letter-spacing: var(--tracking-fp-heading-split);
-    font-weight: var(--weight-fp-heading-split);
-  }
-  .fp-heading-split-mint {
-    font-family: var(--font-display);
-    color: var(--color-text);
-  }
-  .fp-heading-split-dm {
-    font-family: var(--font-display);
-    color: var(--color-text);
-  }
-  .fp-card-title {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-card);
-    line-height: var(--leading-fp-card);
-    font-weight: var(--weight-fp-card);
-    color: var(--color-text);
-  }
-  .fp-teaser-title {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-teaser);
-    line-height: var(--leading-fp-teaser);
-    letter-spacing: var(--tracking-fp-teaser);
-    font-weight: var(--weight-fp-teaser);
-    color: var(--color-text);
-    text-align: center;
-  }
-  .fp-feature-eyebrow {
-    font-family: var(--font-body);
-    font-size: var(--text-fp-feature-eyebrow);
-    line-height: var(--leading-fp-feature-eyebrow);
+    font-size: var(--text-body-size);
+    line-height: var(--text-body-line);
     font-weight: 400;
-    color: var(--color-brand);
   }
-  .fp-feature-title {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-feature-title);
-    line-height: var(--leading-fp-feature-title);
-    font-weight: var(--weight-fp-feature-title);
-    color: var(--color-text);
-  }
-  .fp-workflow-num {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-workflow-num);
-    line-height: var(--leading-fp-workflow-num);
-    font-weight: var(--weight-fp-workflow-num);
-    color: var(--color-brand);
-  }
-  .fp-workflow-title {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-workflow-title);
-    line-height: var(--leading-fp-workflow-title);
-    letter-spacing: var(--tracking-fp-workflow-title);
-    font-weight: var(--weight-fp-workflow-title);
-    color: var(--color-text);
-  }
-  .fp-stat-label {
+  .type-16-medium {
     font-family: var(--font-body);
-    font-size: var(--text-fp-stat-label);
-    line-height: var(--leading-fp-stat-label);
-    font-weight: var(--weight-fp-stat-label);
-    color: var(--color-paragraph);
+    font-size: var(--text-body-size);
+    line-height: var(--leading-type-16-medium);
+    font-weight: var(--weight-type-16-medium);
   }
-  .fp-stat-value {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-stat-value);
-    line-height: var(--leading-fp-stat-value);
-    font-weight: var(--weight-fp-stat-value);
-    color: var(--color-brand);
+  .type-14 {
+    font-family: var(--font-body);
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-line);
+    font-weight: 400;
   }
-  .fp-body-lead {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-body-lead);
-    line-height: var(--leading-fp-body-lead);
-    letter-spacing: var(--tracking-fp-body-lead);
-    font-weight: var(--weight-fp-body-lead);
-    color: var(--color-paragraph);
+  .type-14-bold {
+    font-family: var(--font-body);
+    font-size: var(--text-h3-size);
+    line-height: var(--text-h3-line);
+    font-weight: var(--weight-type-14-bold);
   }
-  .fp-slide-title {
-    font-family: var(--font-display);
-    font-size: var(--text-fp-slide-title);
-    line-height: var(--leading-fp-slide-title);
-    font-weight: var(--weight-fp-slide-title);
-    color: var(--color-text);
+  .type-12 {
+    font-family: var(--font-body);
+    font-size: var(--text-label-size);
+    line-height: var(--text-label-line);
+    font-weight: var(--weight-type-12);
+  }
+  .type-10 {
+    font-family: var(--font-body);
+    font-size: var(--text-micro-size);
+    line-height: var(--text-micro-line);
+    font-weight: var(--weight-micro);
   }
 
   @media (max-width: 639px) {
-    .fp-hero-title,
-    .fp-banner-title,
-    .fp-banner-title-wide,
-    .fp-section-title-lg,
-    .fp-section-title-xl,
-    .fp-teaser-title {
-      font-size: var(--text-fp-display-mobile);
+    .type-48 {
+      font-size: var(--text-type-48-mobile);
     }
-
-    .fp-section-title,
-    .fp-heading-sm,
-    .fp-heading-md,
-    .fp-heading-split-mint,
-    .fp-heading-split-dm,
-    .fp-card-title,
-    .fp-feature-title,
-    .fp-workflow-num,
-    .fp-stat-value,
-    .fp-body-lead {
-      font-size: var(--text-fp-h1-mobile);
+    .type-40 {
+      font-size: var(--text-type-40-mobile);
     }
-
-    .fp-page-eyebrow,
-    .fp-workflow-title,
-    .fp-slide-title {
-      font-size: var(--text-fp-subheading-mobile);
+    .type-32 {
+      font-size: var(--text-type-32-mobile);
+    }
+    .type-24,
+    .type-24-semi {
+      font-size: var(--text-type-24-mobile);
     }
   }
 

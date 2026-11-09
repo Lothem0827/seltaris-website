@@ -4,10 +4,7 @@ import Image from "@/components/ui/Image";
 import { useEffect, useState } from "react";
 import { FeatureAccordion } from "@/components/shared/FeatureAccordion";
 import { PricingCard } from "@/components/shared/PricingCard";
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-import {
+import { Container } from "@/components/ui/Container";import {
   GET_STARTED_TAB_LABELS,
   getStartedOfferingCards,
   getStartedTabs,
@@ -49,7 +46,7 @@ export function GetStartedTabSection() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setPricingInView(entry.intersectionRatio >= 0.5);
+        setPricingInView(entry.intersectionRatio>= 0.5);
       },
       { threshold: [0, 0.25, 0.5, 0.75, 1] },
     );
@@ -80,36 +77,28 @@ export function GetStartedTabSection() {
         </div>
       </Container>
 
-      <div
-        className={cn(
+      <div className={cn(
           "z-40 w-full bg-white py-4 lg:py-3",
           !pricingInView && "sticky",
         )}
-        style={!pricingInView ? { top: GET_STARTED_NAV_HEIGHT_PX } : undefined}
-      >
+        style={!pricingInView ? { top: GET_STARTED_NAV_HEIGHT_PX } : undefined}>
         <Container className="flex w-full justify-center">
-          <GetStartedTabSwitch
-            tabs={GET_STARTED_TAB_LABELS}
+          <GetStartedTabSwitch tabs={GET_STARTED_TAB_LABELS}
             activeIndex={activeIndex}
-            onChange={handleTabChange}
-          />
+            onChange={handleTabChange} />
         </Container>
       </div>
 
-      <div
-        role="tabpanel"
+      <div role="tabpanel"
         id={getTabPanelId(GET_STARTED_TABS_ID, activeIndex)}
-        aria-labelledby={getTabId(GET_STARTED_TABS_ID, activeIndex)}
-      >
+        aria-labelledby={getTabId(GET_STARTED_TABS_ID, activeIndex)}>
         <Container className="mt-12 lg:mt-8">
         <GetStartedServicePanel className="w-full">
-          <GetStartedServiceHeader
-            iconSrc={panel.serviceIcon}
+          <GetStartedServiceHeader iconSrc={panel.serviceIcon}
             availability={panel.availability}
             serviceTitle={panel.serviceTitle}
             showDatasets={panel.showDatasets}
-            ctaHref={SELTARIS_GET_STARTED_PLAN_URLS.free}
-          />
+            ctaHref={SELTARIS_GET_STARTED_PLAN_URLS.free} />
 
           {panel.kind === "accordion" ? (
             <div className="flex flex-row items-start gap-24 p-6 lg:flex-col lg:gap-8 lg:p-4 sm:p-0">
@@ -118,44 +107,39 @@ export function GetStartedTabSection() {
                   <h2 className="font-display text-3xl leading-subheading font-bold text-text">
                     {panel.headline.split("\n").map((line, index) => (
                       <span key={line}>
-                        {index > 0 ? <br /> : null}
+                        {index> 0 ? <br /> : null}
                         {line}
                       </span>
                     ))}
                   </h2>
-                  <Text className="text-paragraph">{panel.intro}</Text>
+                  <p className="type-16 text-paragraph">{panel.intro}</p>
                 </div>
-                <FeatureAccordion
-                  key={panel.id}
+                <FeatureAccordion key={panel.id}
                   items={panel.accordion}
                   defaultOpenId={panel.accordion[0]?.id}
-                  onOpenChange={setOpenAccordionId}
-                />
+                  onOpenChange={setOpenAccordionId} />
               </div>
               <div className="relative mx-auto w-full max-w-[440px] shrink-0 lg:hidden">
-                <Image
-                  key={activeAccordionItem?.visualSrc}
+                <Image key={activeAccordionItem?.visualSrc}
                   src={activeAccordionItem?.visualSrc ?? ""}
                   alt={activeAccordionItem?.visualAlt ?? ""}
                   width={440}
                   height={622}
                   className="h-auto w-full rounded-radius-lg object-cover"
-                  sizes="(max-width: 1024px) 100vw, 440px"
-                />
+                  sizes="(max-width: 1024px) 100vw, 440px" />
               </div>
             </div>
           ) : (
             <div className="flex flex-col gap-12 p-6 lg:gap-8 lg:p-4">
               <div className="grid grid-cols-2 gap-8 lg:grid-cols-1">
-                <FeaturePageHeading as="h3" variant="headingSplitMint">
+                <h3 className="type-32 text-text">
                   {panel.headline}
-                </FeaturePageHeading>
-                <Text className="text-paragraph">{panel.intro}</Text>
+                </h3>
+                <p className="type-16 text-paragraph">{panel.intro}</p>
               </div>
               <div className="grid grid-cols-3 gap-6 xl:grid-cols-1">
                 {getStartedOfferingCards.map((card) => (
-                  <PricingCard
-                    key={card.title}
+                  <PricingCard key={card.title}
                     label={card.label}
                     tone={card.tone}
                     iconSrc={card.iconSrc}
@@ -169,8 +153,7 @@ export function GetStartedTabSection() {
                       label: "Coming soon",
                       variant: "secondary",
                       disabled: true,
-                    }}
-                  />
+                    }} />
                 ))}
               </div>
             </div>

@@ -4,7 +4,6 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FeatureIcon } from "@/components/ui/FeatureIcon";
 import { IconSurface } from "@/components/ui/IconSurface";
-import { Text } from "@/components/ui/Text";
 import { siteAssets } from "@/lib/site-assets";
 import {
   ComponentDemo,
@@ -21,9 +20,9 @@ export function DesignSystemAtomsShowroom() {
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-1">
           <ComponentDemo name="Container" path="src/components/atoms/Container.tsx">
             <Container className="rounded-radius-sm border-2 border-dashed border-brand bg-brand-surface py-6 text-center">
-              <Text variant="body-sm">
+              <p className="type-14 text-paragraph">
                 <TokenCode>max-w-container px-container-padding</TokenCode>
-              </Text>
+              </p>
             </Container>
           </ComponentDemo>
 
@@ -49,7 +48,7 @@ export function DesignSystemAtomsShowroom() {
         <ComponentDemo
           name="Typography scale"
           path="src/lib/design-system/typography-scale.ts"
-          note={'Merged scale: Heading level="h2" uses subheading tokens; Text variant="tiny" aliases micro; fp-* variants share tokens per row below. Full table in Typography section.'}
+          note="Canonical type-* classes in globals.css. Color/align are separate utilities. Full table in Typography section."
         >
           <DesignSystemTypographyScale />
         </ComponentDemo>

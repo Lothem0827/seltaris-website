@@ -1,10 +1,7 @@
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
-import { HeroAnimatedIntro } from "@/features/home/components/HeroAnimatedIntro";
+import { Eyebrow } from "@/components/ui/Eyebrow";import { HeroAnimatedIntro } from "@/features/home/components/HeroAnimatedIntro";
 import { HeroDeferredAddressDemo } from "@/features/home/components/HeroDeferredAddressDemo";
 import {
   HeroLoadIn,
@@ -40,24 +37,22 @@ export function HeroSection() {
   return (
     <section className="relative flex min-h-[calc(100dvh-var(--site-header-height))] flex-col bg-[url('/images/home/hero-background.webp')] bg-size-[100%_auto] bg-top bg-no-repeat py-[100px] sm:min-h-[60vh] sm:bg-[url('/images/home/hero-background-mobile.webp')] sm:bg-bottom sm:py-[80px]">
       <Container className="z-10 flex flex-col items-center gap-40 text-center ">
-        <HeroAnimatedIntro
-          eyebrow={
+        <HeroAnimatedIntro eyebrow={
             <Eyebrow label="Bulk Data Enhancement Tool" badge="AVAILABLE NOW" />
           }
           heading={
-            <Heading level="display" className="max-w-4xl">
+            <h1 className="type-90 text-text max-w-4xl">
               Seltaris
-            </Heading>
+            </h1>
           }
           subtext={
-            <Text className="max-w-3xl text-xl font-medium">
+            <p className="type-16 text-paragraph max-w-3xl text-xl font-medium">
               High quality results. Unbelievable performance. Incredibly secure.
-            </Text>
+            </p>
           }
           cta={
             <Button href={SELTARIS_LOGIN_URL}>Get started with Seltaris</Button>
-          }
-        />
+          } />
 
         <HeroLoadIn>
           <HeroLoadInItem delayIndex={4} className="mt-16 sm:mt-0">

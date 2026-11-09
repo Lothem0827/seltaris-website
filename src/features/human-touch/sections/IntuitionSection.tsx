@@ -1,7 +1,4 @@
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-import { BannerImage, FeatureImage } from "../components/MediaBlocks";
+import { Container } from "@/components/ui/Container";import { BannerImage, FeatureImage } from "../components/MediaBlocks";
 
 export function IntuitionSection() {
   return (
@@ -9,19 +6,19 @@ export function IntuitionSection() {
       <Container className="flex flex-col gap-16">
         <BannerImage src="/images/human-touch/intuition-banner.webp">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
-            <FeaturePageHeading as="h2" variant="bannerTitle">
+            <h2 className="type-48 text-text text-center">
               Human-like intuition
-            </FeaturePageHeading>
-            <FeaturePageHeading as="p" variant="bannerSubtitle">
+            </h2>
+            <p className="type-18 text-paragraph text-center">
               Algorithms that make sense of information in the same intuitive
               way a human would.
-            </FeaturePageHeading>
+            </p>
           </div>
         </BannerImage>
 
         <div className="grid grid-cols-2 items-center gap-12 lg:grid-cols-1">
           <div className="px-8 sm:px-0">
-            <Text>
+            <p className="type-16 text-paragraph">
               <strong className="font-semibold text-text">
                 Incorrect or poorly entered data.
               </strong>{" "}
@@ -41,7 +38,7 @@ export function IntuitionSection() {
               Let&apos;s take a closer look at how Human Touch™ tackles the most
               common scenarios, where an address looks right at first glance,
               but quietly hides errors and inconsistencies.
-            </Text>
+            </p>
           </div>
           <FeatureImage src="/images/human-touch/poor-data-ui.png" />
         </div>

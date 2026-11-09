@@ -1,242 +1,184 @@
-import type { FeaturePageHeadingVariant } from "@/components/ui/FeaturePageHeading";
-
-type HeadingLevel =
-  | "display"
-  | "sectionDisplay"
-  | "h1"
-  | "h2"
-  | "h3"
-  | "subheading"
-  | "panel";
-
-type TextVariant =
-  | "body"
-  | "body-sm"
-  | "caption"
-  | "tiny"
-  | "micro"
-  | "label"
-  | "utility";
-
-export type TypographyPreview =
-  | { component: "heading"; level: HeadingLevel }
-  | { component: "text"; variant: TextVariant }
-  | { component: "fp"; variant: FeaturePageHeadingVariant };
-
-/** One visual style — multiple component APIs may map here. */
+/** One canonical type-* class — font, size, weight, leading, tracking only. */
 export type TypographyStyleGroup = {
   id: string;
   label: string;
+  className: string;
   font: "Mint Grotesk" | "DM Sans";
   size: string;
   weight: string;
   cssVar: string;
   tracking?: string;
   modifiers?: string;
-  preview: TypographyPreview;
   sample: string;
   usages: string[];
 };
 
 /**
- * Canonical typography scale — merged by font, size, and weight.
- * Source: tokens.css + component-tokens.css + globals.css fp-* classes.
+ * Canonical typography scale — one class per unique face+size+weight.
+ * Source: globals.css `.type-*` + tokens.css / component-tokens.css.
  */
 export const TYPOGRAPHY_STYLE_GROUPS: TypographyStyleGroup[] = [
   {
-    id: "display-90",
+    id: "type-90",
     label: "Display",
+    className: "type-90",
     font: "Mint Grotesk",
     size: "5.5rem / 90px",
     weight: "700 Bold",
     cssVar: "--text-display-size",
     tracking: "-0.009em",
-    preview: { component: "heading", level: "display" },
     sample: "Bulk data, elevated.",
-    usages: ['Heading level="display"'],
+    usages: ["Home hero brand", "Footer display"],
   },
   {
-    id: "section-display-48",
-    label: "Section display / feature 48px",
+    id: "type-48",
+    label: "Section display",
+    className: "type-48",
     font: "Mint Grotesk",
-    size: "3rem / 48px",
+    size: "3rem / 48px → 36px mobile",
     weight: "700 Bold",
     cssVar: "--text-section-display-size",
     tracking: "-0.02em",
-    preview: { component: "heading", level: "sectionDisplay" },
     sample: "Core features of Seltaris",
-    usages: [
-      'Heading level="sectionDisplay"',
-      'FeaturePageHeading variant="heroTitle"',
-      'variant="bannerTitle"',
-      'variant="bannerTitleWide"',
-      'variant="sectionTitleLg"',
-      'variant="sectionTitleXl"',
-      'variant="teaserTitle"',
-    ],
+    usages: ["Feature heroes", "Banners", "Section titles lg/xl", "Teasers"],
   },
   {
-    id: "heading-32-bold",
-    label: "Heading 1 / feature section",
+    id: "type-40",
+    label: "Display compact",
+    className: "type-40",
     font: "Mint Grotesk",
-    size: "2rem / 32px",
+    size: "2.5rem / 40px → 32px mobile",
+    weight: "700 Bold",
+    cssVar: "--text-type-40-size",
+    tracking: "-0.02em",
+    sample: "Enterprise grade security.",
+    usages: ["Mid-size display headings"],
+  },
+  {
+    id: "type-32",
+    label: "Heading",
+    className: "type-32",
+    font: "Mint Grotesk",
+    size: "2rem / 32px → 28px mobile",
     weight: "700 Bold",
     cssVar: "--text-h1-size",
     tracking: "-0.02em",
-    preview: { component: "heading", level: "h1" },
     sample: "Data quality at its finest detail.",
-    usages: [
-      'Heading level="h1"',
-      'FeaturePageHeading variant="sectionTitle"',
-      'variant="featureCardTitle"',
-      'variant="statValue"',
-      'variant="workflowStepNumber"',
-      'variant="headingSmall"',
-      'variant="headingMedium"',
-      'variant="headingSplitMint"',
-      'variant="headingSplitDm"',
-      'variant="cardTitle"',
-      'variant="bodyLead"',
-      "SplitIntro heading",
-    ],
+    usages: ["Section titles", "Card titles", "Stats", "Body lead"],
   },
   {
-    id: "subheading-24",
-    label: "Subheading / Heading h2 / slide title / workflow title",
+    id: "type-24",
+    label: "Subheading",
+    className: "type-24",
     font: "Mint Grotesk",
-    size: "1.5rem / 24px",
+    size: "1.5rem / 24px → 20px mobile",
     weight: "700 Bold",
     cssVar: "--text-subheading-size",
-    preview: { component: "heading", level: "subheading" },
     sample: "Built for everyone so anyone can use it.",
-    usages: [
-      'Heading level="subheading"',
-      'Heading level="h2"',
-      'FeaturePageHeading variant="workflowStepTitle"',
-      'variant="slideTitle"',
-      "ImageSlideCard",
-      "ValuePropCard, TestimonialCard, PricingCard titles",
-    ],
+    usages: ["Slide titles", "Workflow titles", "Card headings"],
   },
   {
-    id: "eyebrow-24-brand",
+    id: "type-24-semi",
     label: "Page eyebrow",
+    className: "type-24-semi",
     font: "DM Sans",
-    size: "1.5rem / 24px",
+    size: "1.5rem / 24px → 20px mobile",
     weight: "600 Semibold",
-    cssVar: "--text-fp-eyebrow",
-    modifiers: "Brand color",
-    preview: { component: "fp", variant: "pageEyebrow" },
+    cssVar: "--text-subheading-size",
+    modifiers: "Pair with text-brand",
     sample: "Human Touch™",
-    usages: ['FeaturePageHeading variant="pageEyebrow"'],
+    usages: ["Feature page eyebrows"],
   },
   {
-    id: "panel-20",
+    id: "type-20",
     label: "Panel title",
+    className: "type-20",
     font: "Mint Grotesk",
     size: "1.25rem / 20px",
     weight: "700 Bold",
     cssVar: "--text-nav-title-size",
     tracking: "-0.01em",
-    preview: { component: "heading", level: "panel" },
     sample: "Features",
-    usages: ['Heading level="panel"', "FeatureNavPanel"],
+    usages: ["Nav panels"],
   },
   {
-    id: "body-16",
+    id: "type-18",
+    label: "Subtitle",
+    className: "type-18",
+    font: "DM Sans",
+    size: "1.125rem / 18px",
+    weight: "500 Medium",
+    cssVar: "--text-type-18-size",
+    sample: "Built for everyone so anyone can use it.",
+    usages: ["Hero / banner subtitles"],
+  },
+  {
+    id: "type-16",
     label: "Body",
+    className: "type-16",
     font: "DM Sans",
     size: "1rem / 16px",
     weight: "400 Regular",
     cssVar: "--text-body-size",
-    preview: { component: "text", variant: "body" },
     sample: "Format, clean, repair and verify addresses.",
-    usages: ['Text variant="body"'],
+    usages: ["Body copy"],
   },
   {
-    id: "stat-label-16",
+    id: "type-16-medium",
     label: "Stat label",
+    className: "type-16-medium",
     font: "DM Sans",
     size: "1rem / 16px",
     weight: "500 Medium",
-    cssVar: "--text-fp-stat-label",
-    modifiers: "Paragraph color",
-    preview: { component: "fp", variant: "statLabel" },
+    cssVar: "--text-body-size",
+    modifiers: "Pair with text-paragraph",
     sample: "Records processed",
-    usages: ['FeaturePageHeading variant="statLabel"'],
+    usages: ["Stat labels"],
   },
   {
-    id: "fp-subtitle-18",
-    label: "Hero / banner subtitle",
-    font: "DM Sans",
-    size: "1.125rem / 18px",
-    weight: "500 Medium",
-    cssVar: "--text-fp-subtitle-size",
-    preview: { component: "fp", variant: "heroSubtitle" },
-    sample: "Built for everyone so anyone can use it.",
-    usages: [
-      'FeaturePageHeading variant="heroSubtitle"',
-      'variant="bannerSubtitle"',
-    ],
-  },
-  {
-    id: "body-sm-14",
-    label: "Body small / feature card eyebrow",
+    id: "type-14",
+    label: "Body small",
+    className: "type-14",
     font: "DM Sans",
     size: "0.875rem / 14px",
     weight: "400 Regular",
     cssVar: "--text-body-sm-size",
-    preview: { component: "text", variant: "body-sm" },
     sample: "Learn more about this feature.",
-    usages: [
-      'Text variant="body-sm"',
-      'FeaturePageHeading variant="featureCardEyebrow"',
-    ],
+    usages: ["Small body", "Feature card eyebrows (+ text-brand)"],
   },
   {
-    id: "compact-14-bold",
-    label: "Compact heading / card title",
+    id: "type-14-bold",
+    label: "Compact heading",
+    className: "type-14-bold",
     font: "DM Sans",
     size: "0.875rem / 14px",
     weight: "700 Bold",
     cssVar: "--text-h3-size",
-    preview: { component: "heading", level: "h3" },
     sample: "Bulk Address Data",
-    usages: ['Heading level="h3"', "ServiceCard titles"],
+    usages: ["Compact card titles"],
   },
   {
-    id: "label-12",
-    label: "Label / utility / caption",
+    id: "type-12",
+    label: "Label / utility",
+    className: "type-12",
     font: "DM Sans",
     size: "0.75rem / 12px",
-    weight: "400–600",
+    weight: "400 Regular",
     cssVar: "--text-label-size",
-    modifiers: "label: uppercase semibold · utility: normal · caption: body font",
-    preview: { component: "text", variant: "label" },
+    modifiers: "Add uppercase tracking-wider for label style",
     sample: "COMING SOON",
-    usages: [
-      'Text variant="label"',
-      'variant="utility"',
-      'variant="caption"',
-      "Eyebrow, nav links",
-    ],
+    usages: ["Labels", "Captions", "Utility text"],
   },
   {
-    id: "micro-10",
-    label: "Micro / Badge",
+    id: "type-10",
+    label: "Micro",
+    className: "type-10",
     font: "DM Sans",
     size: "0.625rem / 10px",
     weight: "600 Semibold",
     cssVar: "--text-micro-size",
-    modifiers: "Uppercase in Badge; Text variant=\"tiny\" aliases here",
-    preview: { component: "text", variant: "micro" },
     sample: "NEW",
-    usages: [
-      'Text variant="micro"',
-      'Text variant="tiny"',
-      "Badge",
-      "Footer legal copy",
-    ],
+    usages: ["Micro copy", "Badges"],
   },
 ];
 

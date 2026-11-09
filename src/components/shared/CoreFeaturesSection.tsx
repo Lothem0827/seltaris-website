@@ -1,9 +1,7 @@
 "use client";
 
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Heading } from "@/components/ui/Heading";
-import { CoreFeatureSlideCard } from "@/components/shared/CoreFeatureSlideCard";
+import { Eyebrow } from "@/components/ui/Eyebrow";import { CoreFeatureSlideCard } from "@/components/shared/CoreFeatureSlideCard";
 import {
   SliderNavButtons,
   useSliderNav,
@@ -91,14 +89,12 @@ const slides: SliderSlide[] = features.map((feature) => ({
   type: "custom",
   id: feature.id,
   content: (
-    <CoreFeatureSlideCard
-      visualSrc={feature.visualSrc}
+    <CoreFeatureSlideCard visualSrc={feature.visualSrc}
       eyebrow={feature.eyebrow}
       heading={feature.heading}
       body={feature.body}
       href={feature.href}
-      cta={feature.cta}
-    />
+      cta={feature.cta} />
   ),
 }));
 
@@ -111,11 +107,11 @@ export function CoreFeaturesSection() {
         <div className="flex flex-col gap-6">
           <Eyebrow label="Core Features" />
           <div className="flex flex-row items-end justify-between gap-6 sm:flex-col sm:items-start">
-            <Heading level="sectionDisplay">
+            <h2 className="type-48 text-text">
               Explore the core features
               <br />
               of <span className="text-brand">Seltaris</span>
-            </Heading>
+            </h2>
             <SliderNavButtons {...navButtonProps} />
           </div>
         </div>

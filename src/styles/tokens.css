@@ -43,15 +43,15 @@
   --text-h3-size: 0.875rem; /* 14px */
   --text-h3-line: var(--text-heading-line);
 
-  /* Subheading — also Heading level="h2" and fp-workflow-title */
+  /* Subheading — type-24 */
   --text-subheading-size: 1.5rem; /* 24px */
   --text-subheading-line: var(--text-heading-line);
   --weight-subheading: 700;
 
-  /* Feature page subtitle — hero & banner */
-  --text-fp-subtitle-size: 1.125rem; /* 18px */
-  --leading-fp-subtitle: 1.6;
-  --weight-fp-subtitle: 500;
+  /* type-18 — hero / banner subtitle */
+  --text-type-18-size: 1.125rem; /* 18px */
+  --leading-type-18: 1.6;
+  --weight-type-18: 500;
 
   /* Body */
   --text-body-size: 1rem; /* 16px */

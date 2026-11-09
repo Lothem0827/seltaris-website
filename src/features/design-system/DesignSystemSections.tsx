@@ -63,18 +63,14 @@ function ColorSwatch({
 
   return (
     <article className="overflow-hidden rounded-radius-md border border-border bg-white">
-      <div
-        className="h-24 w-full border-b border-border"
-        style={{ backgroundColor: `var(${cssVar})` }}
-      />
+      <div className="h-24 w-full border-b border-border"
+        style={{ backgroundColor: `var(${cssVar})` }} />
       <div className="space-y-2 p-4">
         <p className="font-body text-body-sm font-semibold text-text">{name}</p>
-        <p
-          className={cn(
+        <p className={cn(
             "font-label text-micro uppercase tracking-wider",
             isLight ? "text-paragraph" : "text-muted",
-          )}
-        >
+          )}>
           {hex}
         </p>
         <TokenCode className="block w-fit">{tailwind}</TokenCode>
@@ -89,11 +85,9 @@ function ColorSwatch({
 
 export function DesignSystemOverviewSection() {
   return (
-    <GuideSection
-      id="overview"
+    <GuideSection id="overview"
       title="Overview & Identity"
-      description="Living documentation for the Seltaris marketing site. Tokens are defined in CSS custom properties, exposed as Tailwind utilities via @theme in globals.css, and consumed by atoms and molecules across the app."
-    >
+      description="Living documentation for the Seltaris marketing site. Tokens are defined in CSS custom properties, exposed as Tailwind utilities via @theme in globals.css, and consumed by atoms and molecules across the app.">
       <div className="grid grid-cols-2 gap-6 lg:grid-cols-1">
         <DemoPanel label="Purpose">
           <ul className="space-y-3 font-body text-body text-paragraph leading-body">
@@ -151,11 +145,9 @@ export function DesignSystemOverviewSection() {
 
 export function DesignSystemPagesSection() {
   return (
-    <GuideSection
-      id="pages"
+    <GuideSection id="pages"
       title="Site pages"
-      description={`All ${SITE_PAGES.length} routes in this build. Each row links to the live page and lists the template component and App Router entry file.`}
-    >
+      description={`All ${SITE_PAGES.length} routes in this build. Each row links to the live page and lists the template component and App Router entry file.`}>
       <div className="overflow-x-auto">
         <table className="w-full min-w-[40rem] border-collapse text-left font-body text-body-sm">
           <thead>
@@ -168,15 +160,11 @@ export function DesignSystemPagesSection() {
           </thead>
           <tbody>
             {SITE_PAGES.map((page) => (
-              <tr
-                key={page.path}
-                className="border-b border-border last:border-0"
-              >
+              <tr key={page.path}
+                className="border-b border-border last:border-0">
                 <td className="py-2.5 pr-4 font-medium">
-                  <a
-                    href={page.path}
-                    className="text-text underline-offset-2 hover:text-brand hover:underline"
-                  >
+                  <a href={page.path}
+                    className="text-text underline-offset-2 hover:text-brand hover:underline">
                     {page.path}
                   </a>
                 </td>
@@ -198,11 +186,9 @@ export function DesignSystemPagesSection() {
 
 export function DesignSystemColorsSection() {
   return (
-    <GuideSection
-      id="colors"
+    <GuideSection id="colors"
       title="Color Palette"
-      description="Core system colors mapped from CSS variables to Tailwind utilities. Edit values in tokens.css — the @theme block in globals.css propagates changes site-wide."
-    >
+      description="Core system colors mapped from CSS variables to Tailwind utilities. Edit values in tokens.css — the @theme block in globals.css propagates changes site-wide.">
       <div className="space-y-12">
         {COLOR_GROUPS.map((group) => {
           const tokens = COLOR_TOKENS.filter((token) => token.group === group);
@@ -226,11 +212,9 @@ export function DesignSystemColorsSection() {
 
 export function DesignSystemTypographySection() {
   return (
-    <GuideSection
-      id="typography"
+    <GuideSection id="typography"
       title="Typography"
-      description="Two font families, one merged type scale. Heading, Text, and FeaturePageHeading (fp-*) share tokens where font, size, and weight match — see the table for canonical tokens and all usages per row."
-    >
+      description="Two font families, one canonical type-* class scale. Use semantic tags plus a type class (e.g. type-48); color and alignment stay as separate utilities.">
       <GuideSubheading>Font families</GuideSubheading>
       <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-1">
         {[
@@ -264,9 +248,9 @@ export function DesignSystemTypographySection() {
 
       <GuideSubheading>Type scale — review table</GuideSubheading>
       <p className="mb-6 max-w-3xl font-body text-body-sm text-paragraph">
-        Canonical styles after token merges (sorted largest → smallest). Each
-        row lists every Heading, Text, and FeaturePageHeading API that shares
-        the same font, size, and weight.
+        Canonical type-* classes (sorted largest → smallest). One class per
+        unique font, size, and weight — edit the class in globals.css to update
+        every usage.
       </p>
       <DesignSystemTypographyTable />
 
@@ -284,10 +268,8 @@ export function DesignSystemTypographySection() {
             { label: "Semibold 600", className: "font-semibold" },
             { label: "Bold 700", className: "font-bold" },
           ].map((weight) => (
-            <p
-              key={weight.label}
-              className={cn("font-body text-body text-text", weight.className)}
-            >
+            <p key={weight.label}
+              className={cn("font-body text-body text-text", weight.className)}>
               {weight.label}
             </p>
           ))}
@@ -299,24 +281,18 @@ export function DesignSystemTypographySection() {
 
 export function DesignSystemSpacingSection() {
   return (
-    <GuideSection
-      id="spacing"
+    <GuideSection id="spacing"
       title="Spacing & Layout"
-      description="Spacing tokens live in tokens.css. Container padding and section rhythm are mapped to Tailwind; other space-* values are available as CSS variables for custom layouts."
-    >
+      description="Spacing tokens live in tokens.css. Container padding and section rhythm are mapped to Tailwind; other space-* values are available as CSS variables for custom layouts.">
       <GuideSubheading>Spacing scale</GuideSubheading>
       <div className="space-y-3">
         {SPACING_TOKENS.map((token) => (
-          <div
-            key={token.cssVar}
-            className="grid grid-cols-[8rem_1fr_12rem] items-center gap-4 rounded-radius-sm border border-border bg-white px-4 py-3 sm:grid-cols-1"
-          >
+          <div key={token.cssVar}
+            className="grid grid-cols-[8rem_1fr_12rem] items-center gap-4 rounded-radius-sm border border-border bg-white px-4 py-3 sm:grid-cols-1">
             <TokenCode>{token.cssVar}</TokenCode>
             <div className="flex items-center gap-3">
-              <div
-                className="h-4 shrink-0 rounded-radius-xs bg-brand"
-                style={{ width: `var(${token.cssVar})` }}
-              />
+              <div className="h-4 shrink-0 rounded-radius-xs bg-brand"
+                style={{ width: `var(${token.cssVar})` }} />
               <span className="font-body text-body-sm text-muted">
                 visual width
               </span>
@@ -360,16 +336,12 @@ export function DesignSystemSpacingSection() {
         <GuideSubheading>Border radius</GuideSubheading>
         <div className="grid grid-cols-4 gap-4 xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1">
           {RADIUS_TOKENS.map((token) => (
-            <div
-              key={token.cssVar}
-              className="flex flex-col items-center gap-3 rounded-radius-md border border-border bg-white p-4"
-            >
-              <div
-                className={cn(
+            <div key={token.cssVar}
+              className="flex flex-col items-center gap-3 rounded-radius-md border border-border bg-white p-4">
+              <div className={cn(
                   "size-20 border-2 border-brand bg-brand-light",
                   token.tailwind,
-                )}
-              />
+                )} />
               <p className="font-body text-body-sm font-semibold text-text">
                 {token.name}
               </p>
@@ -399,11 +371,9 @@ export function DesignSystemAccessibilitySection() {
 
 export function DesignSystemSvgAnimationsSection() {
   return (
-    <GuideSection
-      id="svg-animations"
+    <GuideSection id="svg-animations"
       title="SVG Animations"
-      description="Animated SVG and motion components in src/components/svg-animations. Built from Figma frames — used for marketing demos and workflow illustrations."
-    >
+      description="Animated SVG and motion components in src/components/svg-animations. Built from Figma frames — used for marketing demos and workflow illustrations.">
       <GuideSubheading>Animation inventory</GuideSubheading>
       <div className="mb-10 overflow-x-auto">
         <table className="w-full min-w-[36rem] border-collapse text-left font-body text-body-sm">
@@ -417,15 +387,11 @@ export function DesignSystemSvgAnimationsSection() {
           </thead>
           <tbody>
             {SVG_ANIMATION_INVENTORY.map((entry) => (
-              <tr
-                key={entry.path}
-                className="border-b border-border last:border-0"
-              >
+              <tr key={entry.path}
+                className="border-b border-border last:border-0">
                 <td className="py-2.5 pr-4 font-medium">
-                  <a
-                    href={`#${getComponentDemoId(entry.name)}`}
-                    className="text-text underline-offset-2 hover:text-brand hover:underline"
-                  >
+                  <a href={`#${getComponentDemoId(entry.name)}`}
+                    className="text-text underline-offset-2 hover:text-brand hover:underline">
                     {entry.name}
                   </a>
                 </td>
@@ -442,41 +408,33 @@ export function DesignSystemSvgAnimationsSection() {
         </table>
       </div>
 
-      <ComponentDemo
-        name="AddressValidateAnimation"
+      <ComponentDemo name="AddressValidateAnimation"
         path="src/components/svg-animations/AddressValidateAnimation.tsx"
-        note="Address validation workflow — dirty inputs flow through Seltaris to a validated table. Figma frame address-validate-animation (4579:9069)."
-      >
+        note="Address validation workflow — dirty inputs flow through Seltaris to a validated table. Figma frame address-validate-animation (4579:9069).">
         <div className="overflow-x-auto rounded-radius-md bg-white p-10 lg:p-6">
           <AddressValidateAnimation />
         </div>
       </ComponentDemo>
 
-      <ComponentDemo
-        name="HumanTouchAnimated"
+      <ComponentDemo name="HumanTouchAnimated"
         path="src/components/svg-animations/HumanTouchAnimated.tsx"
-        note="Human Touch address repair — invalid input with suggestions repairs rows in a customer table. Figma frame human-touch-animated (4592:10201)."
-      >
+        note="Human Touch address repair — invalid input with suggestions repairs rows in a customer table. Figma frame human-touch-animated (4592:10201).">
         <div className="overflow-x-auto rounded-radius-md p-10 lg:p-6">
           <HumanTouchAnimated />
         </div>
       </ComponentDemo>
 
-      <ComponentDemo
-        name="AltraserviceAnimation"
+      <ComponentDemo name="AltraserviceAnimation"
         path="src/components/svg-animations/AltraserviceAnimation.tsx"
-        note="Altraservice performance demo — streaming addresses, lot repair, speed gauge, and Charlie Wilson address correction. Figma frame altraservice-animated (4593:10209)."
-      >
+        note="Altraservice performance demo — streaming addresses, lot repair, speed gauge, and Charlie Wilson address correction. Figma frame altraservice-animated (4593:10209).">
         <div className="overflow-x-auto rounded-radius-md bg-white p-10 lg:p-6">
           <AltraserviceAnimation />
         </div>
       </ComponentDemo>
 
-      <ComponentDemo
-        name="DesignMadeSimpleAnimation"
+      <ComponentDemo name="DesignMadeSimpleAnimation"
         path="src/components/svg-animations/DesignMadeSimpleAnimation.tsx"
-        note="Design made simple workflow — skeleton loading, field mapping UI, floating selectors, and job progress. Figma frame design-made-simple-animation (4659:9015)."
-      >
+        note="Design made simple workflow — skeleton loading, field mapping UI, floating selectors, and job progress. Figma frame design-made-simple-animation (4659:9015).">
         <div className="overflow-x-auto rounded-radius-md bg-white p-10 lg:p-6">
           <DesignMadeSimpleAnimation />
         </div>
@@ -489,11 +447,9 @@ export function DesignSystemComponentsSection() {
   const layers: ComponentLayer[] = ["atom", "molecule"];
 
   return (
-    <GuideSection
-      id="components"
+    <GuideSection id="components"
       title="Component Showroom"
-      description="Live-rendered atoms and molecules from src/components. Page-specific organisms (HeroSection, *PageSections, etc.) compose these primitives — they are not duplicated here."
-    >
+      description="Live-rendered atoms and molecules from src/components. Page-specific organisms (HeroSection, *PageSections, etc.) compose these primitives — they are not duplicated here.">
       <div className="space-y-12">
         <div>
           <GuideSubheading>Component inventory</GuideSubheading>
@@ -522,15 +478,11 @@ export function DesignSystemComponentsSection() {
                     {COMPONENT_INVENTORY.filter(
                       (entry) => entry.layer === layer,
                     ).map((entry) => (
-                      <tr
-                        key={entry.path}
-                        className="border-b border-border last:border-0"
-                      >
+                      <tr key={entry.path}
+                        className="border-b border-border last:border-0">
                         <td className="py-2.5 pr-4 font-medium">
-                          <a
-                            href={`#${getComponentDemoId(entry.name)}`}
-                            className="text-text underline-offset-2 hover:text-brand hover:underline"
-                          >
+                          <a href={`#${getComponentDemoId(entry.name)}`}
+                            className="text-text underline-offset-2 hover:text-brand hover:underline">
                             {entry.name}
                           </a>
                         </td>

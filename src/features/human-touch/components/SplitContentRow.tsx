@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
-import { Text } from "@/components/ui/Text";
-import { FeatureImage } from "../components/MediaBlocks";
+import type { ReactNode } from "react";import { FeatureImage } from "../components/MediaBlocks";
 
 export function SplitContentRow({
   imageSrc,
@@ -14,9 +12,9 @@ export function SplitContentRow({
   const image = <FeatureImage src={imageSrc} />;
   const text = (
     <div className="flex flex-col justify-center px-8 py-4 lg:px-6 sm:px-0">
-      <Text as="div" className="prose-list space-y-4">
+      <div className="type-16 text-paragraph prose-list space-y-4">
         {children}
-      </Text>
+      </div>
     </div>
   );
 

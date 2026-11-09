@@ -1,23 +1,19 @@
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-
-export function InnovationSection() {
+import { Container } from "@/components/ui/Container";export function InnovationSection() {
   return (
     <section className="pb-section">
       <Container>
         <div className="grid grid-cols-2 items-start gap-16 lg:grid-cols-1 lg:gap-12 sm:gap-6">
           <div className="space-y-6 px-8 sm:px-0">
-            <FeaturePageHeading as="h2" variant="headingSmall">
+            <h2 className="type-32 text-text">
               The best innovations are built for everyone.
-            </FeaturePageHeading>
-            <Text>
+            </h2>
+            <p className="type-16 text-paragraph">
               We have always believed that data quality software should be
               simple.
-            </Text>
+            </p>
           </div>
           <div className="px-8 pt-2 lg:pt-0 sm:px-0">
-            <Text as="div" className="prose-stack">
+            <div className="type-16 text-paragraph prose-stack">
               <p>
                 Our approach from the beginning (almost three decades ago) was
                 to make the complex work of cleaning data so simple that a
@@ -29,7 +25,7 @@ export function InnovationSection() {
                 software is used by technical people, doesn&apos;t mean it
                 should be hard.
               </p>
-            </Text>
+            </div>
           </div>
         </div>
       </Container>

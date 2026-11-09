@@ -1,9 +1,5 @@
 import Image from "@/components/ui/Image";
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-
-const NEXT_STEPS = [
+import { Container } from "@/components/ui/Container";const NEXT_STEPS = [
   {
     id: "buy-result",
     imageSrc: "/images/health-check-report/next-step-buy-visual.png",
@@ -30,25 +26,23 @@ export function NextStepsSection() {
       <Container>
         <div className="rounded-radius-panel bg-brand-surface px-12 py-24 sm:px-6 lg:py-16">
           <div className="mx-auto flex max-w-content-wide flex-col gap-12">
-            <FeaturePageHeading as="h2" variant="sectionTitle">
+            <h2 className="type-32 text-text">
               Next Steps
-            </FeaturePageHeading>
+            </h2>
 
             <div className="grid grid-cols-3 gap-8 lg:grid-cols-1">
               {NEXT_STEPS.map((step) => (
                 <article key={step.id} className="flex flex-col gap-6">
                   <div className="relative aspect-[445/426] overflow-hidden rounded-radius-lg">
-                    <Image
-                      src={step.imageSrc}
+                    <Image src={step.imageSrc}
                       alt=""
                       fill
                       className="object-cover"
-                      sizes="445px"
-                    />
+                      sizes="445px" />
                   </div>
-                  <Text as="div" className="prose-strong px-1.5">
+                  <div className="type-16 text-paragraph prose-strong px-1.5">
                     <strong>{step.lead}</strong> {step.body}
-                  </Text>
+                  </div>
                 </article>
               ))}
             </div>

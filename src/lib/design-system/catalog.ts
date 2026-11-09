@@ -85,7 +85,7 @@ export type DesignSystemSectionId =
 export const DESIGN_SYSTEM_SYNC_CHECKLIST = [
   "Add or update values in src/styles/tokens.css or component-tokens.css",
   "Map new tokens in src/app/globals.css @theme inline (if exposed as utilities)",
-  "Mirror changes in src/lib/design-system/catalog.ts and typography-scale.ts",
+  "Mirror type scale changes in src/lib/design-system/typography-scale.ts (and catalog.ts for new tokens)",
   "Add a live demo in src/components/organisms/design-system/ if it's a new component or variant",
   "Verify at /design-system",
 ] as const;
@@ -399,9 +399,6 @@ export const COMPONENT_INVENTORY: ComponentInventoryEntry[] = [
   { name: "FeatureIcon", layer: "atom", path: "atoms/FeatureIcon.tsx", usedOn: "Feature nav dropdown" },
   { name: "Image", layer: "atom", path: "atoms/Image.tsx", usedOn: "Site-wide next/image wrapper — preserves aspect ratio when CSS resizes one axis" },
   { name: "IconSurface", layer: "atom", path: "atoms/IconSurface.tsx", usedOn: "Address service pages" },
-  { name: "FeaturePageHeading", layer: "atom", path: "atoms/FeaturePageHeading.tsx", usedOn: "All feature pages" },
-  { name: "Heading", layer: "atom", path: "atoms/Heading.tsx", usedOn: "Marketing sections & cards" },
-  { name: "Text", layer: "atom", path: "atoms/Text.tsx", usedOn: "Body copy across site" },
   { name: "AddressResultFilePanel", layer: "molecule", path: "features/address-service/components/AddressResultFilePanel.tsx", usedOn: "Address validation — What's included" },
   { name: "AddressSampleExamplesPanel", layer: "molecule", path: "features/address-service/components/AddressSampleExamplesPanel.tsx", usedOn: "Address service pages — What's included" },
   { name: "AddressDataAccuracyCodesPanel", layer: "molecule", path: "features/address-service/components/AddressDataAccuracyCodesPanel.tsx", usedOn: "Address service pages — What's included" },

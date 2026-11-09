@@ -1,7 +1,4 @@
-import Image from "@/components/ui/Image";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { Text } from "@/components/ui/Text";
-import { cn } from "@/lib/utils";
+import Image from "@/components/ui/Image";import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
 type SlideCardWidth = "default" | "wide" | "narrow";
@@ -38,27 +35,23 @@ export function ImageSlideCard({
   imageAlt,
 }: ImageSlideCardProps) {
   return (
-    <article
-      className={cn("group flex shrink-0 flex-col gap-4", widthClasses[width])}
-    >
+    <article className={cn("group flex shrink-0 flex-col gap-4", widthClasses[width])}>
       <div className="slider-slide-image-frame relative isolate aspect-auto h-card-slide w-full overflow-hidden rounded-radius-lg sm:aspect-[4/3] sm:h-auto">
-        <Image
-          src={imageSrc}
+        <Image src={imageSrc}
           alt={imageAlt ?? title ?? ""}
           fill
           priority={priority}
           loading={loading}
           className="slider-slide-image rounded-radius-lg object-cover"
-          sizes={imageSizes[width]}
-        />
+          sizes={imageSizes[width]} />
       </div>
       <div className="space-y-2 px-4 py-2">
         {title ? (
-          <FeaturePageHeading as="h3" variant="slideTitle">
+          <h3 className="type-24 text-text">
             {title}
-          </FeaturePageHeading>
+          </h3>
         ) : null}
-        <Text className="prose-strong">{description}</Text>
+        <p className="type-16 text-paragraph prose-strong">{description}</p>
       </div>
     </article>
   );

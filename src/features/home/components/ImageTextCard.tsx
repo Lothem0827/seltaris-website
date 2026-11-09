@@ -1,7 +1,5 @@
 import Image from "@/components/ui/Image";
-import { Badge } from "@/components/ui/Badge";
-import { Text } from "@/components/ui/Text";
-import type { ReactNode } from "react";
+import { Badge } from "@/components/ui/Badge";import type { ReactNode } from "react";
 
 type ImageTextCardProps = {
   imageSrc: string;
@@ -23,15 +21,13 @@ export function ImageTextCard({
   return (
     <article className="flex w-full flex-col gap-6">
       <div className="relative aspect-square w-full overflow-hidden rounded-radius-lg ">
-        <Image
-          src={imageSrc}
+        <Image src={imageSrc}
           alt={imageAlt}
           fill
           priority={priority}
           loading={loading}
           className="object-contain"
-          sizes="(max-width: 1024px) 90vw, 360px"
-        />
+          sizes="(max-width: 1024px) 90vw, 360px" />
       </div>
       <div className="flex flex-col gap-3 px-1.5">
         {badge ? (
@@ -39,7 +35,7 @@ export function ImageTextCard({
             {badge}
           </Badge>
         ) : null}
-        <Text className="prose-strong">{children}</Text>
+        <p className="type-16 text-paragraph prose-strong">{children}</p>
       </div>
     </article>
   );

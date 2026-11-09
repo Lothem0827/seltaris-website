@@ -1,9 +1,10 @@
 import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
 import { Image } from "@/components/ui/Image";
-import { Text } from "@/components/ui/Text";
 import Link from "next/link";
-import type { SuccessStory, SuccessStoryQuote } from "../success-stories.content";
+import type {
+  SuccessStory,
+  SuccessStoryQuote,
+} from "../success-stories.content";
 
 type StoryBodySectionProps = {
   story: SuccessStory;
@@ -14,23 +15,14 @@ function QuoteCard({ quote }: { quote: SuccessStoryQuote }) {
     <blockquote className="flex flex-col gap-8 rounded-radius-panel bg-brand p-10">
       <div className="flex flex-col gap-5">
         {quote.paragraphs.map((paragraph) => (
-          <FeaturePageHeading
-            key={paragraph}
-            as="p"
-            variant="heroSubtitle"
-            className="text-white"
-          >
+          <p key={paragraph} className="type-18 text-white">
             {paragraph}
-          </FeaturePageHeading>
+          </p>
         ))}
       </div>
       <div>
-        <Text className="font-semibold text-white">{quote.author}</Text>
-        {quote.role ? (
-          <Text variant="body-sm" className="text-white">
-            {quote.role}
-          </Text>
-        ) : null}
+        <p className="type-16 font-semibold text-white">{quote.author}</p>
+        {quote.role ? <p className="type-14 text-white">{quote.role}</p> : null}
       </div>
     </blockquote>
   );
@@ -43,9 +35,7 @@ export function StoryBodySection({ story }: StoryBodySectionProps) {
         <div className="mx-auto flex w-full max-w-hero-body flex-col items-center gap-16">
           <div className="flex w-full flex-col gap-12">
             {story.intro ? (
-              <FeaturePageHeading as="p" variant="heroSubtitle">
-                {story.intro}
-              </FeaturePageHeading>
+              <p className="type-18 text-paragraph">{story.intro}</p>
             ) : null}
 
             <nav
@@ -56,13 +46,9 @@ export function StoryBodySection({ story }: StoryBodySectionProps) {
                 {story.toc.map((item) => (
                   <li key={item.id}>
                     <Link href={`#${item.id}`}>
-                      <FeaturePageHeading
-                        as="span"
-                        variant="heroSubtitle"
-                        className="font-display font-bold text-brand underline"
-                      >
+                      <span className="type-18 font-display font-bold text-brand underline">
                         {item.label}
-                      </FeaturePageHeading>
+                      </span>
                     </Link>
                   </li>
                 ))}
@@ -72,21 +58,12 @@ export function StoryBodySection({ story }: StoryBodySectionProps) {
 
           {story.sections.map((section) => (
             <div key={section.id} className="flex w-full flex-col gap-16">
-              <div
-                id={section.id}
-                className="flex scroll-mt-24 flex-col gap-5"
-              >
-                <FeaturePageHeading as="h2" variant="headingSmall">
-                  {section.title}
-                </FeaturePageHeading>
+              <div id={section.id} className="flex scroll-mt-24 flex-col gap-5">
+                <h2 className="type-24 text-text">{section.title}</h2>
                 {section.paragraphs.map((paragraph) => (
-                  <FeaturePageHeading
-                    key={paragraph}
-                    as="p"
-                    variant="heroSubtitle"
-                  >
+                  <p key={paragraph} className="type-16 text-paragraph">
                     {paragraph}
-                  </FeaturePageHeading>
+                  </p>
                 ))}
               </div>
 

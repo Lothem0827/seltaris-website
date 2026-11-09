@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
-import { FeaturePageHeading } from "@/components/ui/FeaturePageHeading";
-import { ServiceCard } from "@/components/shared/ServiceCard";
+import { Container } from "@/components/ui/Container";import { ServiceCard } from "@/components/shared/ServiceCard";
 import {
   serviceCategoryAnchor,
   type ServiceCategoryId,
@@ -48,24 +46,20 @@ export function HeroSection() {
   return (
     <section className="bg-brand-surface py-section">
       <Container className="flex flex-col items-center gap-12">
-        <FeaturePageHeading as="h1" variant="sectionTitleLg">
+        <h1 className="type-48 text-text">
           Seltaris Services
-        </FeaturePageHeading>
+        </h1>
 
         <div className="grid grid-cols-4 gap-4 xl:grid-cols-2 md:grid-cols-1">
           {CATEGORY_CARDS.map((category) => (
-            <Link
-              key={category.id}
+            <Link key={category.id}
               href={serviceCategoryAnchor(category.id)}
               className="block h-full"
-              scroll={false}
-            >
-              <ServiceCard
-                title={category.title}
+              scroll={false}>
+              <ServiceCard title={category.title}
                 description={category.description}
                 iconSrc={category.iconSrc}
-                comingSoon={category.comingSoon}
-              />
+                comingSoon={category.comingSoon} />
             </Link>
           ))}
         </div>

@@ -1,9 +1,6 @@
 import Image from "@/components/ui/Image";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
-import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
+import { Button } from "@/components/ui/Button";import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
 import { cn } from "@/lib/utils";
 
 export type SeltarisPlusPlanFeature = {
@@ -70,27 +67,23 @@ function getFeatureIconSrc(feature: SeltarisPlusPlanFeature): string {
 function PlanTierIcon({ tier }: { tier: SeltarisPlusPlan["tier"] }) {
   return (
     <div className="relative size-12 shrink-0">
-      <Image
-        src={tierIcons[tier]}
+      <Image src={tierIcons[tier]}
         alt=""
         fill
         className="object-contain"
-        sizes="48px"
-      />
+        sizes="48px" />
     </div>
   );
 }
 
 function FeatureStatusIcon({ feature }: { feature: SeltarisPlusPlanFeature }) {
   return (
-    <Image
-      src={getFeatureIconSrc(feature)}
+    <Image src={getFeatureIconSrc(feature)}
       alt=""
       width={14}
       height={14}
       className="shrink-0"
-      aria-hidden
-    />
+      aria-hidden />
   );
 }
 
@@ -98,18 +91,16 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
   const isPopular = Boolean(plan.popular);
 
   return (
-    <div
-      className={cn(
+    <div className={cn(
         "flex flex-col gap-4 border-t border-border",
         isPopular ? "py-6" : "py-5",
-      )}
-    >
+      )}>
       {plan.features.map((feature) => (
         <div key={feature.label} className="flex flex-col gap-2">
           <div className="flex flex-col gap-0.5">
-            <Text variant="caption" className="font-medium text-paragraph/70">
+            <p className="type-12 font-medium text-paragraph/70">
               {feature.label}
-            </Text>
+            </p>
             <div className="flex items-center gap-2">
               <FeatureStatusIcon feature={feature} />
               <span className="font-body text-body text-text">
@@ -127,9 +118,9 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
             <div className="flex flex-wrap items-center gap-2">
               <Badge>{feature.subscriptionBadge}</Badge>
               {feature.subscriptionValue ? (
-                <Text variant="tiny" className="italic text-paragraph/70">
+                <p className="type-10 italic text-paragraph/70">
                   {feature.subscriptionValue}
-                </Text>
+                </p>
               ) : null}
             </div>
           ) : null}
@@ -143,20 +134,18 @@ export function SeltarisPlusPlanCard({ plan }: { plan: SeltarisPlusPlan }) {
   const isPopular = Boolean(plan.popular);
 
   const card = (
-    <article
-      className={cn(
+    <article className={cn(
         "flex flex-col justify-between rounded-radius-lg bg-white p-8",
         !isPopular && "border-2 border-border",
-      )}
-    >
+      )}>
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-5">
           <PlanTierIcon tier={plan.tier} />
           <div className="space-y-1">
-            <Heading as="h3" level="h2">
+            <h3 className="type-24 text-text">
               {plan.name}
-            </Heading>
-            <Text className="font-medium text-paragraph">{plan.tagline}</Text>
+            </h3>
+            <p className="type-16 font-medium text-paragraph">{plan.tagline}</p>
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-end gap-1.5">
@@ -167,22 +156,20 @@ export function SeltarisPlusPlanCard({ plan }: { plan: SeltarisPlusPlan }) {
                 /month
               </span>
             </div>
-            <Text variant="body-sm" className="text-paragraph">
+            <p className="type-14 text-paragraph">
               {plan.gstNote}
-            </Text>
+            </p>
           </div>
         </div>
         <PlanFeatureList plan={plan} />
       </div>
-      <Button
-        href={plan.cta.href}
+      <Button href={plan.cta.href}
         variant={isPopular ? "primary" : "secondary"}
         className={cn(
           "mt-8 w-full",
           !isPopular &&
             "border-brand/20 bg-pricing-accent-bg text-brand hover:bg-pricing-accent-bg/90",
-        )}
-      >
+        )}>
         {plan.cta.label}
       </Button>
     </article>
@@ -211,16 +198,14 @@ export function SeltarisPlusSupportCard() {
         <p className="font-body text-xl font-semibold tracking-tight text-text">
           Need more licences?
         </p>
-        <Text>
+        <p className="type-16 text-paragraph">
           Have a chat with a Data Quality Specialist to discuss custom plans for
           your enterprise organisation.
-        </Text>
+        </p>
       </div>
-      <SupportSpecialistCard
-        heading="Need GBG support?"
+      <SupportSpecialistCard heading="Need GBG support?"
         linkText="Ask a Data Quality Specialist"
-        className="shrink-0 border-0"
-      />
+        className="shrink-0 border-0" />
     </div>
   );
 }

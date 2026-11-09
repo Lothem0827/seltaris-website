@@ -2,9 +2,7 @@
 
 import { type ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { Heading } from "@/components/ui/Heading";
-import { SplitIntro } from "@/components/shared/SplitIntro";
+import { Container } from "@/components/ui/Container";import { SplitIntro } from "@/components/shared/SplitIntro";
 import { RevealOnView } from "@/components/shared/RevealOnView";
 import {
   SliderNavButtons,
@@ -41,33 +39,29 @@ export function SliderSection({
   backgroundClassName,
 }: SliderSectionProps) {
   const { navButtonProps, sliderProps } = useSliderNav();
-  const showNav = slides.length > 1;
+  const showNav = slides.length> 1;
 
   return (
-    <section
-      id={id}
+    <section id={id}
       className={cn(
         "overflow-hidden py-section",
         backgroundClassName,
         className,
-      )}
-    >
+      )}>
       <Container className="flex flex-col gap-12">
         {intro ? <SplitIntro {...intro} /> : null}
 
         <RevealOnView staggerIndex={0}>
-          <div
-            className={cn(
+          <div className={cn(
               "flex gap-6",
               heading && navAlign === "header"
                 ? "flex-row items-end justify-between sm:flex-col sm:items-stretch"
                 : "flex-row justify-end",
-            )}
-          >
+            )}>
             {heading ? (
-              <Heading as="h2" level="h1" className={headingClassName}>
+              <h2 className={cn("type-32 text-text", headingClassName)}>
                 {heading}
-              </Heading>
+              </h2>
             ) : null}
             <SliderNavButtons {...navButtonProps} visible={showNav} />
           </div>

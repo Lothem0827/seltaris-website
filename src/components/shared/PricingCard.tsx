@@ -1,9 +1,6 @@
 import Image from "@/components/ui/Image";
 import { RegionBadge } from "@/components/shared/RegionBadge";
-import { Button } from "@/components/ui/Button";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
-import { siteAssets } from "@/lib/site-assets";
+import { Button } from "@/components/ui/Button";import { siteAssets } from "@/lib/site-assets";
 import { cn } from "@/lib/utils";
 
 export type PricingCardTone = "default" | "success" | "subscription";
@@ -61,13 +58,11 @@ export function PricingCard({
         : null;
 
   return (
-    <article
-      className={cn(
+    <article className={cn(
         "flex min-h-pricing-card flex-1 flex-col overflow-hidden rounded-radius-lg p-1",
         headerTones[tone],
         borderClass,
-      )}
-    >
+      )}>
       <p className="py-3 text-center font-body text-sm font-extrabold uppercase tracking-widest text-white">
         {label}
       </p>
@@ -85,10 +80,10 @@ export function PricingCard({
 
         <div className="flex flex-1 flex-col gap-6">
           <div className="space-y-2">
-            <Heading as="h3" level="panel" className="w-[80%]">
+            <h3 className="type-20 text-text w-[80%]">
               {title}
-            </Heading>
-            <Text>{description}</Text>
+            </h3>
+            <p className="type-16 text-paragraph">{description}</p>
             {learnMoreHref ? (
               <Button href={learnMoreHref} variant="ghost" size="small">
                 Learn more
@@ -99,15 +94,13 @@ export function PricingCard({
           <ul className="space-y-2">
             {features.map((feature) => (
               <li key={feature} className="flex gap-3">
-                <Image
-                  src={siteAssets.checkIcon}
+                <Image src={siteAssets.checkIcon}
                   alt=""
                   width={24}
                   height={24}
                   className="shrink-0"
-                  aria-hidden
-                />
-                <Text>{feature}</Text>
+                  aria-hidden />
+                <p className="type-16 text-paragraph">{feature}</p>
               </li>
             ))}
           </ul>
@@ -115,29 +108,27 @@ export function PricingCard({
 
         <div className="mt-8 space-y-3">
           {footerNote ? (
-            <Text variant="micro" className="text-center text-muted">
+            <p className="type-10 text-center text-muted">
               {footerNote}
-            </Text>
+            </p>
           ) : null}
           {price ? (
             <div className="space-y-1">
               <p className="font-display text-xl font-bold text-text">
                 {price.amount}
               </p>
-              {price.gst ? <Text variant="body-sm">{price.gst}</Text> : null}
-              {price.note ? <Text variant="body-sm">{price.note}</Text> : null}
+              {price.gst ? <p className="type-14 text-paragraph">{price.gst}</p> : null}
+              {price.note ? <p className="type-14 text-paragraph">{price.note}</p> : null}
             </div>
           ) : null}
-          <Button
-            href={cta.disabled ? undefined : cta.href}
+          <Button href={cta.disabled ? undefined : cta.href}
             variant={cta.variant === "secondary" ? "secondary" : "primary"}
             disabled={cta.disabled}
             className={cn(
               "w-full",
               cta.variant === "secondary" &&
                 "bg-text text-white hover:bg-text/90",
-            )}
-          >
+            )}>
             {cta.label}
           </Button>
         </div>
