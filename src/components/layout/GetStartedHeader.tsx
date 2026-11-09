@@ -99,8 +99,8 @@ export function GetStartedHeader() {
               <Button href={GET_STARTED_DEMO_URL} variant="outline" size="small">
                 See a demo
               </Button>
-              <Button href={SELTARIS_GET_STARTED_PLAN_URLS.free} size="small">
-                Start for free
+              <Button href={SELTARIS_GET_STARTED_PLAN_URLS.prepaid} size="small">
+                Get started
               </Button>
             </div>
           </div>

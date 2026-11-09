@@ -361,12 +361,12 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         ),
         seltarisPlusNote: (
           <>
-            Free with eligible{" "}
-            <span className="underline">Seltaris plans.</span>
+            Free on Prepaid and{" "}
+            <span className="underline">Postpaid.</span>
           </>
         ),
-        price: "A$249.00",
-        gstNote: "Includes GST of A$13.55",
+        price: "Free",
+        gstNote: "Included with both billing options.",
         rightBody: (
           <>
             <p>
@@ -473,7 +473,7 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         "1x Health Check Report",
         "1x Repaired File Available for Purchase",
       ],
-      price: { amount: "$500.00", gst: "Excludes GST of $50.00" },
+      price: { amount: "Free" },
       learnMoreHref: "/address-quality-health-check-report",
       cta: {
         label: "Coming soon",
@@ -495,30 +495,25 @@ const addressQualityHealthCheckReportPageContent: AddressServicePageContent = {
         "1x Health Check Report",
         "1x Repaired File Available for Purchase",
       ],
-      price: { amount: "$500.00", gst: "Excludes GST of $50.00" },
+      price: { amount: "Free" },
       learnMoreHref: "/address-quality-health-check-report",
       cta: { label: "Get started", href: SELTARIS_LOGIN_URL },
       showAustralia: true,
     },
     {
-      id: "subscription",
-      label: "Subscription",
+      id: "billing",
+      label: "Billing",
       tone: "subscription",
       iconKey: "subscription",
-      title: "Seltaris+ Subscription",
+      title: "Prepaid or Postpaid",
       description:
-        "Seltaris+ brings together the best of Seltaris in one powerful subscription, giving your organisation advanced capabilities and real savings for a single monthly price.",
+        "Load credits for high-volume automated jobs, or pay immediately by Visa, Mastercard, or American Express. Health Check Reports and Advanced Data Protection are free on both.",
       features: [
-        "1x Health Check Report",
-        "Free Advanced Data Protection, Private Keys, volume discounts and licence sharing with your organisation.",
+        "Free Health Check Reports",
+        "Free Advanced Data Protection and Private Keys",
+        "Prepaid credits or Postpaid by card",
       ],
-      footerNote: "Available only on eligible plans.",
-      price: {
-        amount: "$1 for 1 month",
-        gst: "Excludes GST of $0.10",
-        note: "Get your first month for $1, then ongoing pricing from $99.00/month.",
-      },
-      cta: { label: "Explore plans", href: "/seltaris-plus" },
+      cta: { label: "Explore billing options", href: "/seltaris-plus" },
     },
   ],
 };

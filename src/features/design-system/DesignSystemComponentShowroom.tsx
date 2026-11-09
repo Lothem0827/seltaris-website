@@ -64,7 +64,7 @@ export function DesignSystemComponentShowroom() {
             className="mt-1 size-4 shrink-0 rounded-radius-xs border border-border accent-brand"
           />
           <span className="font-body text-body text-paragraph leading-body">
-            Include Health Check Report in my subscription
+            Include Health Check Report with Prepaid or Postpaid
           </span>
         </label>
       </DemoPanel>

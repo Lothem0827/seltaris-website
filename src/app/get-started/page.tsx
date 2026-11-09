@@ -5,7 +5,7 @@ export const metadata = createPageMetadata({
   pathname: "/get-started",
   title: "Get Started | Seltaris",
   description:
-    "Get a comprehensive report on your existing datasets for free. Start Seltaris today — no credit card required.",
+    "Get a free Health Check Report on your existing datasets. Choose Prepaid credits or Postpaid by card.",
 });
 
 export default function GetStartedRoutePage() {

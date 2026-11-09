@@ -27,12 +27,12 @@
   --color-tier-standard-from: #11c4f5;
   --color-tier-standard-via: #0a45da;
   --color-tier-standard-to: #0a64da;
-  --color-tier-premium-from: #8c4a09;
-  --color-tier-premium-via: #e7cc63;
-  --color-tier-premium-to: #bf923d;
-  --color-tier-premier-from: #3a1a8f;
-  --color-tier-premier-via: #6b3fd4;
-  --color-tier-premier-to: #2d0f6e;
+  --color-tier-prepaid-from: #8c4a09;
+  --color-tier-prepaid-via: #e7cc63;
+  --color-tier-prepaid-to: #bf923d;
+  --color-tier-postpaid-from: #3a1a8f;
+  --color-tier-postpaid-via: #6b3fd4;
+  --color-tier-postpaid-to: #2d0f6e;
 
   /* ─── Extended typography ─── */
   --text-section-display-size: 3rem; /* 48px — type-48 */
@@ -68,7 +68,7 @@
   --size-split-intro: 19.6875rem;
   --max-w-footer-logo: 74.375rem;
   --max-w-support-card: 50rem;
-  --max-w-plans-grid: 74rem;
+  --max-w-plans-grid: 50rem;
   --max-w-hero-body: 49.1875rem;
   --max-w-visual-hero: 100rem;
   --max-w-content-wide: 76rem;

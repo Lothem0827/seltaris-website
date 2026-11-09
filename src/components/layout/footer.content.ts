@@ -46,12 +46,12 @@ export const footerLegalDisclosures: FooterLegalBlock[] = [
     ],
   },
   {
-    title: "f. Subscription & Pricing",
+    title: "f. Billing & Pricing",
     items: [
-      "1. DataTools Seltaris+ subscription pricing is displayed in AUD and excludes GST unless otherwise stated.",
-      "2. Introductory offers (e.g., $1 for the first month) are only valid once per organisation and only available on eligible plans.",
-      "3. Ongoing subscription pricing (e.g., from $99.00/month) applies after the introductory period ends, unless cancelled.",
-      "4. Included benefits (such as Health Check Reports, Advanced Data Protection, Private Keys, Volume discounts and Subscription sharing) may vary based on plan and region.",
+      "1. DataTools Seltaris billing is offered as Prepaid (credit balance) or Postpaid (card payment via Visa, Mastercard, or American Express). Amounts are displayed in AUD and exclude GST unless otherwise stated.",
+      "2. Prepaid transactions deduct from your pre-paid credit balance. Postpaid charges the transaction immediately through the secure payment gateway.",
+      "3. Health Check Reports and Advanced Data Protection are included at no charge on both Prepaid and Postpaid.",
+      "4. Other processing charges and volume arrangements may vary by region and usage. Contact a Data Quality Specialist for enterprise billing.",
     ],
   },
   {

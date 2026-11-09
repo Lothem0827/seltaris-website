@@ -1,7 +1,8 @@
 import { SELTARIS_LOGIN_URL } from "@/lib/site-assets";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";import { PricingCard } from "@/components/shared/PricingCard";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PricingCard } from "@/components/shared/PricingCard";
 import { RevealGroup } from "@/components/shared/RevealGroup";
 import { RevealOnView } from "@/components/shared/RevealOnView";
 
@@ -36,21 +37,23 @@ export function PricingSection() {
             title="Address Quality Health Check Report"
             description="Test your Australian data and return advanced reporting that pinpoints areas for improvement. After the job, a repaired high quality version of your data is available for purchase."
             features={[
-              "1x Health Check Report",
+              "Free Health Check Report",
               "1x Repaired File Available for Purchase",
             ]}
+            price={{ amount: "Free" }}
             showAustralia
             cta={{ label: "Get started", href: SELTARIS_LOGIN_URL }} />
-          <PricingCard label="Subscription"
+          <PricingCard label="Billing"
             tone="subscription"
             iconSrc="/seltaris-logo.svg"
-            title="Seltaris+ Subscription"
-            description="Seltaris+ brings together the best of Seltaris in one powerful subscription, giving your organisation advanced capabilities and real savings for a single monthly price."
+            title="Prepaid or Postpaid"
+            description="Load credits for high-volume automated jobs, or pay immediately by card. Health Check Reports and Advanced Data Protection are free on both."
             features={[
-              "1x Health Check Report",
-              "Free Advanced Data Protection, Private Keys, volume discounts and licence sharing with your organisation.",
+              "Free Health Check Reports",
+              "Free Advanced Data Protection",
+              "Prepaid credits or Postpaid by card",
             ]}
-            cta={{ label: "Explore plans", href: "/seltaris-plus" }} />
+            cta={{ label: "Explore billing options", href: "/seltaris-plus" }} />
         </RevealGroup>
 
         <RevealOnView staggerIndex={0}>

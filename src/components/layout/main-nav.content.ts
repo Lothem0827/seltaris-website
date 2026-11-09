@@ -15,7 +15,7 @@ export type MainNavLink =
 export const mainNavLinks: MainNavLink[] = [
   { label: "Solutions", hasDropdown: true, dropdown: "solutions" },
   { label: "Features", hasDropdown: true, dropdown: "features" },
-  { label: "Plans", href: "/seltaris-plus" },
+  { label: "Billing", href: "/seltaris-plus" },
   { label: "Enterprise", hasDropdown: true, dropdown: "enterprise" },
   { label: "Support", href: GBG_CUSTOMER_SUPPORT_URL },
 ];

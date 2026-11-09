@@ -159,13 +159,14 @@ export function SiteHeader() {
         <div className="py-3">
           <Container className="text-center">
             <span className="type-12 text-paragraph">
-              Enjoy free Health Check Reports and volume discounts with{" "}
-              <strong className="font-semibold text-text">Seltaris+</strong>.
+              Free Health Check Reports and Advanced Data Protection with{" "}
+              <strong className="font-semibold text-text">Prepaid</strong> or{" "}
+              <strong className="font-semibold text-text">Postpaid</strong>.
             </span>{" "}
             <Link href="/seltaris-plus"
               className="group inline-flex items-center font-label text-label text-brand underline"
               tabIndex={isAtTop ? undefined : -1}>
-              <HoverArrowContent>Start with Seltaris+ today.</HoverArrowContent>
+              <HoverArrowContent>Explore billing options.</HoverArrowContent>
             </Link>
           </Container>
         </div>

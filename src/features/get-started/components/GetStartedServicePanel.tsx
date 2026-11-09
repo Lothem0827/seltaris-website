@@ -77,7 +77,7 @@ export function GetStartedServiceHeader({
           </div>
         ) : null}
         <Button href={ctaHref} size="small" className="shrink-0">
-          Start for free
+          Get started
         </Button>
       </div>
     </div>

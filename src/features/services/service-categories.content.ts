@@ -46,7 +46,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description:
           "Test your Australian data and return advanced reporting that pinpoints areas for improvement. After the job, a repaired high quality version of your data is available for purchase.",
         features: [
-          "1x Health Check Report",
+          "Free Health Check Report",
           "1x Repaired file available for purchase",
         ],
         learnMoreHref: "/address-quality-health-check-report",
@@ -65,7 +65,7 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
         description:
           "Test your New Zealand data and return advanced reporting that pinpoints areas for improvement. After the job, a repaired high quality version of your data is available for purchase.",
         features: [
-          "1x Health Check Report",
+          "Free Health Check Report",
           "1x Repaired file available for purchase",
         ],
         learnMoreHref: "/address-quality-health-check-report",

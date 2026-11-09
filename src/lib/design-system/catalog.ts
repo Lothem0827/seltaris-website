@@ -428,7 +428,7 @@ export const COMPONENT_INVENTORY: ComponentInventoryEntry[] = [
   { name: "NavLink", layer: "molecule", path: "molecules/NavLink.tsx", usedOn: "Site header" },
   { name: "PricingCard", layer: "molecule", path: "molecules/PricingCard.tsx", usedOn: "Homepage pricing" },
   { name: "ServiceCard", layer: "molecule", path: "molecules/ServiceCard.tsx", usedOn: "Homepage services" },
-  { name: "SeltarisPlusPlanCard", layer: "molecule", path: "features/seltaris-plus/components/SeltarisPlusPlanCard.tsx", usedOn: "/seltaris-plus" },
+  { name: "SeltarisPlusPlanCard", layer: "molecule", path: "features/seltaris-plus/components/SeltarisPlusPlanCard.tsx", usedOn: "/seltaris-plus — Prepaid / Postpaid billing cards" },
   { name: "SliderNavButtons", layer: "molecule", path: "molecules/SliderNavButtons.tsx", usedOn: "All carousels" },
   { name: "SplitIntro", layer: "molecule", path: "molecules/SplitIntro.tsx", usedOn: "Slider sections, Human Touch" },
   { name: "SupportedDatasetsBar", layer: "molecule", path: "molecules/SupportedDatasetsBar.tsx", usedOn: "Address service pages — hero & OptiSource panel" },

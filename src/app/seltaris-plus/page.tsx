@@ -5,7 +5,7 @@ export const metadata = createPageMetadata({
   pathname: "/seltaris-plus",
   title: "Seltaris+ | Seltaris",
   description:
-    "Seltaris+ brings together the best of Seltaris in one powerful subscription — Health Check Reports, Advanced Data Protection, volume discounts, and shared licences.",
+    "Choose Prepaid credits or Postpaid by card. Health Check Reports and Advanced Data Protection are free on both billing options.",
 });
 
 export default function SeltarisPlusRoutePage() {

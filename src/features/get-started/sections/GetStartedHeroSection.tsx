@@ -29,12 +29,12 @@ import { Container } from "@/components/ui/Container";export function GetStarte
                 className="sm:w-full">
                 See a demo
               </Button>
-              <Button href={SELTARIS_GET_STARTED_PLAN_URLS.free}
+              <Button href={SELTARIS_GET_STARTED_PLAN_URLS.prepaid}
                 className="sm:w-full">
-                Start for free
+                Get started
               </Button>
               <p className="type-14  text-paragraph sm:text-center sm:w-full">
-                Get started for free. No credit card required.
+                Prepaid credits or Postpaid by card. Health Check Reports are free.
               </p>
             </div>
           </div>

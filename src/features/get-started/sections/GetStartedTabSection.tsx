@@ -98,7 +98,7 @@ export function GetStartedTabSection() {
             availability={panel.availability}
             serviceTitle={panel.serviceTitle}
             showDatasets={panel.showDatasets}
-            ctaHref={SELTARIS_GET_STARTED_PLAN_URLS.free} />
+            ctaHref={SELTARIS_GET_STARTED_PLAN_URLS.prepaid} />
 
           {panel.kind === "accordion" ? (
             <div className="flex flex-row items-start gap-24 p-6 lg:flex-col lg:gap-8 lg:p-4 sm:p-0">

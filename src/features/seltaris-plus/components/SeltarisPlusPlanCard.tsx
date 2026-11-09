@@ -1,6 +1,7 @@
 import Image from "@/components/ui/Image";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
+import { Button } from "@/components/ui/Button";
+import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
 import { cn } from "@/lib/utils";
 
 export type SeltarisPlusPlanFeature = {
@@ -15,10 +16,12 @@ export type SeltarisPlusPlanFeature = {
 
 export type SeltarisPlusPlan = {
   id: string;
-  tier: "free" | "standard" | "premium" | "premier";
+  tier: "prepaid" | "postpaid";
   name: string;
   tagline: string;
   price: string;
+  /** Empty string hides the period suffix (billing is not monthly). */
+  pricePeriod?: string;
   gstNote: string;
   features: SeltarisPlusPlanFeature[];
   cta: { label: string; href: string };
@@ -27,10 +30,8 @@ export type SeltarisPlusPlan = {
 };
 
 const tierIcons = {
-  free: "/images/seltaris-plus/standard.svg",
-  standard: "/images/seltaris-plus/standard.svg",
-  premium: "/images/seltaris-plus/premium.svg",
-  premier: "/images/seltaris-plus/premier.svg",
+  prepaid: "/images/seltaris-plus/standard.svg",
+  postpaid: "/images/seltaris-plus/premier.svg",
 } as const;
 
 const planFeatureIcons = {
@@ -45,13 +46,15 @@ const planFeatureIcons = {
 function getFeatureIconSrc(feature: SeltarisPlusPlanFeature): string {
   switch (feature.label) {
     case "Health Check Reports":
-      return feature.value.toLowerCase().includes("unlimited")
-        ? planFeatureIcons.infinity
-        : planFeatureIcons.healthCheck;
+      return feature.included === false
+        ? planFeatureIcons.notIncluded
+        : planFeatureIcons.infinity;
     case "Advanced Data Protection":
       return feature.included
         ? planFeatureIcons.dataProtection
         : planFeatureIcons.notIncluded;
+    case "Payment":
+      return planFeatureIcons.database;
     case "Volume discounts":
     case "Volume Discounts":
       return feature.included
@@ -67,23 +70,27 @@ function getFeatureIconSrc(feature: SeltarisPlusPlanFeature): string {
 function PlanTierIcon({ tier }: { tier: SeltarisPlusPlan["tier"] }) {
   return (
     <div className="relative size-12 shrink-0">
-      <Image src={tierIcons[tier]}
+      <Image
+        src={tierIcons[tier]}
         alt=""
         fill
         className="object-contain"
-        sizes="48px" />
+        sizes="48px"
+      />
     </div>
   );
 }
 
 function FeatureStatusIcon({ feature }: { feature: SeltarisPlusPlanFeature }) {
   return (
-    <Image src={getFeatureIconSrc(feature)}
+    <Image
+      src={getFeatureIconSrc(feature)}
       alt=""
       width={14}
       height={14}
       className="shrink-0"
-      aria-hidden />
+      aria-hidden
+    />
   );
 }
 
@@ -91,10 +98,12 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
   const isPopular = Boolean(plan.popular);
 
   return (
-    <div className={cn(
+    <div
+      className={cn(
         "flex flex-col gap-4 border-t border-border",
         isPopular ? "py-6" : "py-5",
-      )}>
+      )}
+    >
       {plan.features.map((feature) => (
         <div key={feature.label} className="flex flex-col gap-2">
           <div className="flex flex-col gap-0.5">
@@ -132,44 +141,47 @@ function PlanFeatureList({ plan }: { plan: SeltarisPlusPlan }) {
 
 export function SeltarisPlusPlanCard({ plan }: { plan: SeltarisPlusPlan }) {
   const isPopular = Boolean(plan.popular);
+  const pricePeriod = plan.pricePeriod ?? "/month";
 
   const card = (
-    <article className={cn(
+    <article
+      className={cn(
         "flex flex-col justify-between rounded-radius-lg bg-white p-8",
         !isPopular && "border-2 border-border",
-      )}>
+      )}
+    >
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-5">
           <PlanTierIcon tier={plan.tier} />
           <div className="space-y-1">
-            <h3 className="type-24 text-text">
-              {plan.name}
-            </h3>
+            <h3 className="type-24 text-text">{plan.name}</h3>
             <p className="type-16 font-medium text-paragraph">{plan.tagline}</p>
           </div>
           <div className="flex flex-col gap-1">
             <div className="flex items-end gap-1.5">
-              <span className="font-body text-2xl font-medium text-text">
+              <span className="font-body text-lg font-medium text-text">
                 {plan.price}
               </span>
-              <span className="pb-1 font-body text-body font-medium text-paragraph">
-                /month
-              </span>
+              {pricePeriod ? (
+                <span className="pb-1 font-body text-body font-medium text-paragraph">
+                  {pricePeriod}
+                </span>
+              ) : null}
             </div>
-            <p className="type-14 text-paragraph">
-              {plan.gstNote}
-            </p>
+            <p className="type-14 text-paragraph">{plan.gstNote}</p>
           </div>
         </div>
         <PlanFeatureList plan={plan} />
       </div>
-      <Button href={plan.cta.href}
+      <Button
+        href={plan.cta.href}
         variant={isPopular ? "primary" : "secondary"}
         className={cn(
           "mt-8 w-full",
           !isPopular &&
             "border-brand/20 bg-pricing-accent-bg text-brand hover:bg-pricing-accent-bg/90",
-        )}>
+        )}
+      >
         {plan.cta.label}
       </Button>
     </article>
@@ -196,16 +208,18 @@ export function SeltarisPlusSupportCard() {
     <div className="mx-auto flex w-full max-w-support-card flex-row items-center justify-between gap-8 rounded-radius-lg border border-border bg-white px-6 py-5 lg:flex-col lg:items-stretch">
       <div className="space-y-2">
         <p className="font-body text-xl font-semibold tracking-tight text-text">
-          Need more licences?
+          Need a custom billing setup?
         </p>
         <p className="type-16 text-paragraph">
-          Have a chat with a Data Quality Specialist to discuss custom plans for
-          your enterprise organisation.
+          Have a chat with a Data Quality Specialist to discuss prepaid credits
+          or Postpaid options for your enterprise organisation.
         </p>
       </div>
-      <SupportSpecialistCard heading="Need GBG support?"
+      <SupportSpecialistCard
+        heading="Need GBG support?"
         linkText="Ask a Data Quality Specialist"
-        className="shrink-0 border-0" />
+        className="shrink-0 border-0"
+      />
     </div>
   );
 }

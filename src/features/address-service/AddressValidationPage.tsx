@@ -274,12 +274,12 @@ const addressValidationPageContent: AddressServicePageContent = {
         ),
         seltarisPlusNote: (
           <>
-            Free with eligible{" "}
-            <span className="underline">Seltaris+ plans.</span>
+            Free on Prepaid and{" "}
+            <span className="underline">Postpaid.</span>
           </>
         ),
-        price: "A$249.00",
-        gstNote: "Excludes GST of $24.90",
+        price: "Free",
+        gstNote: "Included with both billing options.",
         rightBody: (
           <>
             <p>

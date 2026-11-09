@@ -33,7 +33,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
     imageSrc: "/images/seltaris-plus/health-check-visual.webp",
     backgroundTone: "health",
     heading: "Health Check Report",
-    body: "Get the full picture of your existing data.",
+    body: "Free on Prepaid and Postpaid. Get the full picture of your existing data.",
     cta: { href: "/health-check-report" },
   },
   {
@@ -48,7 +48,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
         Data Protection
       </>
     ),
-    body: "Enterprise grade security. Built from the ground up.",
+    body: "Free on Prepaid and Postpaid. Enterprise grade security built from the ground up.",
     cta: { href: "/advanced-data-protection" },
   },
   {
@@ -65,7 +65,7 @@ const seltarisPlusOfferings: SeltarisPlusOffering[] = [
     imageSrc: "/images/seltaris-plus/volume-discounts-visual.webp",
     backgroundTone: "volume",
     heading: "Volume discounts",
-    body: "Buying big volumes of clean data? You deserve some credit.",
+    body: "Buying big volumes of clean data? Prepaid credits are built for high-volume jobs.",
   },
 ];
 

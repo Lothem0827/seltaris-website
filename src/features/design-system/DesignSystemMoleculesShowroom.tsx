@@ -18,8 +18,8 @@ import { ServiceCard } from "@/components/shared/ServiceCard";
 import {
   SeltarisPlusPlanCard,
   SeltarisPlusSupportCard,
-  type SeltarisPlusPlan,
 } from "@/features/seltaris-plus/components/SeltarisPlusPlanCard";
+import { seltarisPlusPlans } from "@/features/seltaris-plus/plans.content";
 import { SliderNavButtons } from "@/components/shared/SliderNavButtons";
 import { SplitIntro } from "@/components/shared/SplitIntro";
 import { SupportSpecialistCard } from "@/components/molecules/SupportSpecialistCard";
@@ -40,76 +40,6 @@ import {
   GuideSubheading,
   TokenCode,
 } from "./DesignSystemPrimitives";
-
-const standardPlan: SeltarisPlusPlan = {
-  id: "standard",
-  tier: "standard",
-  name: "Standard",
-  tagline: "For small businesses.",
-  price: "$99",
-  gstNote: "(Ex. GST)",
-  cta: { label: "Join now for $99", href: "#get-started" },
-  features: [
-    {
-      label: "Health Check Reports",
-      value: "2x Reports",
-      period: "/month",
-      badge: "SAVE $500 PER REPORT",
-    },
-    {
-      label: "Advanced Data Protection",
-      value: "Not Included",
-      included: false,
-    },
-    {
-      label: "Volume discounts",
-      value: "Not Included",
-      included: false,
-    },
-    {
-      label: "Shared Licences",
-      value: "+1 user",
-      subscriptionBadge: "1 FREE subscription",
-      subscriptionValue: "Valued $99 per month",
-    },
-  ],
-};
-const popularPlan: SeltarisPlusPlan = {
-  id: "premium",
-  tier: "premium",
-  name: "Premium",
-  tagline: "For fast-growing businesses.",
-  price: "$139",
-  gstNote: "(Ex. GST)",
-  popular: true,
-  cta: { label: "Join now for $139", href: "#get-started" },
-  features: [
-    {
-      label: "Health Check Reports",
-      value: "Unlimited",
-      period: "/month",
-      badge: "SAVE $500 PER REPORT",
-    },
-    {
-      label: "Advanced Data Protection",
-      value: "Included",
-      included: true,
-      badge: "Save $249 per job",
-    },
-    {
-      label: "Volume discounts",
-      value: "Included",
-      included: true,
-      badge: "Save 5% per job.",
-    },
-    {
-      label: "Shared Licences",
-      value: "+5 users",
-      subscriptionBadge: "5 FREE subscriptions",
-      subscriptionValue: "Valued $695 per month",
-    },
-  ],
-};
 
 export function DesignSystemMoleculesShowroom() {
   const prevRef = useRef<HTMLButtonElement>(null);
@@ -210,21 +140,24 @@ export function DesignSystemMoleculesShowroom() {
                   iconSrc="/images/home/pricing-icon-health.png"
                   title="Address Quality Health Check Report"
                   description="Advanced reporting that pinpoints areas for improvement."
-                  features={["1x Health Check Report", "1x Repaired File"]}
+                  features={["Free Health Check Report", "1x Repaired File"]}
+                  price={{ amount: "Free" }}
                   showAustralia
                   cta={{ label: "Get started", href: SELTARIS_LOGIN_URL }}
                 />
               </div>
               <div className="w-full min-w-72 max-w-sm shrink-0">
                 <PricingCard
-                  label="Subscription"
+                  label="Billing"
                   tone="subscription"
                   iconSrc="/seltaris-logo.svg"
-                  title="Seltaris+ Subscription"
-                  description="Advanced capabilities and real savings in one monthly price."
-                  features={["Health Check Reports", "Advanced Data Protection"]}
-                  price={{ amount: "$99", gst: "Ex. GST", note: "per month" }}
-                  cta={{ label: "Join now", href: "#components" }}
+                  title="Prepaid or Postpaid"
+                  description="Load credits or pay by card. HCR and Advanced Data Protection are free on both."
+                  features={[
+                    "Free Health Check Reports",
+                    "Free Advanced Data Protection",
+                  ]}
+                  cta={{ label: "Explore billing options", href: "#components" }}
                 />
               </div>
             </div>
@@ -274,8 +207,9 @@ export function DesignSystemMoleculesShowroom() {
             path="src/features/seltaris-plus/components/SeltarisPlusPlanCard.tsx"
           >
             <div className="grid grid-cols-2 gap-8 lg:grid-cols-1">
-              <SeltarisPlusPlanCard plan={standardPlan} />
-              <SeltarisPlusPlanCard plan={popularPlan} />
+              {seltarisPlusPlans.map((plan) => (
+                <SeltarisPlusPlanCard key={plan.id} plan={plan} />
+              ))}
             </div>
           </ComponentDemo>
 

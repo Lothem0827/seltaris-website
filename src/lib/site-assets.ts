@@ -92,10 +92,10 @@ export const GBG_ABOUT_URL = "https://www.gbg.com/en/about-us/";
 export const LOQATE_CONTACT_URL = "https://www.loqate.com/anz/contact/#form";
 export const SELTARIS_DEMO_URL = "/demo";
 export const GET_STARTED_DEMO_URL = "/get-started/demo";
+// shortcut: temporary deep links until product ships prepaid/postpaid plan URLs
 export const SELTARIS_GET_STARTED_PLAN_URLS = {
-  free: "https://seltaris.gbg.com/plan/slt-free-zx4k",
-  premium: "https://seltaris.gbg.com/plan/slt-prm-vx7r",
-  premier: "https://seltaris.gbg.com/plan/slt-pmr-jt3p",
+  prepaid: "https://seltaris.gbg.com/plan/slt-free-zx4k",
+  postpaid: "https://seltaris.gbg.com/plan/slt-prm-vx7r",
 } as const;
 export const GBG_CUSTOMER_SUPPORT_URL =
   "https://www.gbg.com/en/contact/customer-support/";

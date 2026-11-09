@@ -46,12 +46,12 @@
   --color-tier-standard-from: var(--color-tier-standard-from);
   --color-tier-standard-via: var(--color-tier-standard-via);
   --color-tier-standard-to: var(--color-tier-standard-to);
-  --color-tier-premium-from: var(--color-tier-premium-from);
-  --color-tier-premium-via: var(--color-tier-premium-via);
-  --color-tier-premium-to: var(--color-tier-premium-to);
-  --color-tier-premier-from: var(--color-tier-premier-from);
-  --color-tier-premier-via: var(--color-tier-premier-via);
-  --color-tier-premier-to: var(--color-tier-premier-to);
+  --color-tier-prepaid-from: var(--color-tier-prepaid-from);
+  --color-tier-prepaid-via: var(--color-tier-prepaid-via);
+  --color-tier-prepaid-to: var(--color-tier-prepaid-to);
+  --color-tier-postpaid-from: var(--color-tier-postpaid-from);
+  --color-tier-postpaid-via: var(--color-tier-postpaid-via);
+  --color-tier-postpaid-to: var(--color-tier-postpaid-to);
 
   /* Typography — families from layout.tsx font variables */
   --font-display: var(--font-mint-grotesk), system-ui, sans-serif;
@@ -881,8 +881,8 @@ body {
   /* Brand accents (formerly multi-stop gradients) */
   .bg-gradient-popular,
   .bg-gradient-tier-standard,
-  .bg-gradient-tier-premium,
-  .bg-gradient-tier-premier {
+  .bg-gradient-tier-prepaid,
+  .bg-gradient-tier-postpaid {
     background-color: var(--color-brand);
     background-image: none;
   }
